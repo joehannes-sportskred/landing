@@ -24,7 +24,7 @@
   display: -ms-flexbox;
   display: flex;
   margin: 1rem 0em;
-  font-family: 'Raleway', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Arvo', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   background: #fff;
   font-weight: normal;
   border: none;
@@ -86,9 +86,9 @@
       -ms-user-select: none;
           user-select: none;
   background: none;
-  padding: 0.92307692em 1.15384615em;
+  padding: 0.94117647em 1.11764706em;
   text-transform: none;
-  color: #666;
+  color: #575757;
   font-weight: normal;
   -webkit-transition: background 0.1s ease, color 0.1s ease, -webkit-box-shadow 0.1s ease;
   transition: background 0.1s ease, color 0.1s ease, -webkit-box-shadow 0.1s ease;
@@ -137,7 +137,7 @@
 .ui.menu .item > i.icon {
   opacity: 0.9;
   float: none;
-  margin: 0em 0.38461538em 0em 0em;
+  margin: 0em 0.29411765em 0em 0em;
 }
 
 /*--------------
@@ -148,8 +148,8 @@
   position: relative;
   top: 0em;
   margin: -0.5em 0em;
-  padding-bottom: 0.76923077em;
-  padding-top: 0.76923077em;
+  padding-bottom: 0.76470588em;
+  padding-top: 0.76470588em;
   font-size: 1em;
 }
 
@@ -185,8 +185,8 @@
 }
 .ui.menu .item > .input input {
   font-size: 1em;
-  padding-top: 0.61538462em;
-  padding-bottom: 0.61538462em;
+  padding-top: 0.47058824em;
+  padding-bottom: 0.47058824em;
 }
 
 /*--------------
@@ -237,7 +237,7 @@
   margin: 0;
   text-align: left;
   font-size: 1em !important;
-  padding: 0.76923077em 1.15384615em !important;
+  padding: 0.76470588em 1.11764706em !important;
   background: transparent !important;
   color: rgba(0, 0, 0, 0.87) !important;
   text-transform: none !important;
@@ -274,7 +274,7 @@
 .ui.secondary.menu .dropdown.item > .menu,
 .ui.text.menu .dropdown.item > .menu {
   border-radius: 4px;
-  margin-top: 0.38461538em;
+  margin-top: 0.29411765em;
 }
 
 /* Pointing */
@@ -330,17 +330,17 @@
   background: #212121;
   color: #FFFFFF;
   margin-left: 1em;
-  padding: 0.3em 0.76923077em;
+  padding: 0.3em 0.76470588em;
 }
 .ui.vertical.menu .item > .label {
   background: #212121;
   color: #FFFFFF;
   margin-top: -0.15em;
   margin-bottom: -0.15em;
-  padding: 0.3em 0.76923077em;
+  padding: 0.3em 0.76470588em;
 }
 .ui.menu .item > .floating.label {
-  padding: 0.3em 0.76923077em;
+  padding: 0.3em 0.76470588em;
 }
 
 /*--------------
@@ -565,12 +565,12 @@ Floated Menu / Item
 /*--- Sub Menu ---*/
 
 .ui.vertical.menu .item > .menu {
-  margin: 0.5em -1.15384615em 0em;
+  margin: 0.5em -1.11764706em 0em;
 }
 .ui.vertical.menu .menu .item {
   background: none;
-  padding: 0.5em 1.34615385em;
-  font-size: 0.84615385em;
+  padding: 0.5em 1.30392157em;
+  font-size: 0.88235294em;
   color: rgba(0, 0, 0, 0.5);
 }
 .ui.vertical.menu .item .menu a.item:hover,
@@ -627,8 +627,8 @@ Floated Menu / Item
   border-left: 1px solid transparent;
   border-right: 1px solid transparent;
   border-top: 2px solid transparent;
-  padding: 0.92307692em 1.46153846em;
-  color: #666;
+  padding: 0.94117647em 1.41176471em;
+  color: #575757;
 }
 .ui.tabular.menu .item:before {
   display: none;
@@ -781,7 +781,7 @@ Floated Menu / Item
 /* Active */
 .ui.pagination.menu .active.item {
   border-top: none;
-  padding-top: 0.92307692em;
+  padding-top: 0.94117647em;
   background-color: rgba(0, 0, 0, 0.05);
   color: rgba(0, 0, 0, 0.95);
   -webkit-box-shadow: none;
@@ -794,8 +794,8 @@ Floated Menu / Item
 
 .ui.secondary.menu {
   background: none;
-  margin-left: -0.38461538em;
-  margin-right: -0.38461538em;
+  margin-left: -0.29411765em;
+  margin-right: -0.29411765em;
   border-radius: 0em;
   border: none;
   -webkit-box-shadow: none;
@@ -809,8 +809,8 @@ Floated Menu / Item
   -webkit-box-shadow: none;
           box-shadow: none;
   border: none;
-  padding: 0.76923077em 0.92307692em;
-  margin: 0em 0.38461538em;
+  padding: 0.76470588em 0.94117647em;
+  margin: 0em 0.29411765em;
   background: none;
   -webkit-transition: color 0.1s ease;
   transition: color 0.1s ease;
@@ -890,11 +890,11 @@ Floated Menu / Item
 
 /* Sub Menu */
 .ui.vertical.secondary.menu .item:not(.dropdown) > .menu {
-  margin: 0em -0.92307692em;
+  margin: 0em -0.94117647em;
 }
 .ui.vertical.secondary.menu .item:not(.dropdown) > .menu > .item {
   margin: 0em;
-  padding: 0.53846154em 1.34615385em;
+  padding: 0.41176471em 1.30392157em;
 }
 
 /*---------------------
@@ -903,7 +903,7 @@ Floated Menu / Item
 
 .ui.secondary.vertical.menu > .item {
   border: none;
-  margin: 0em 0em 0.38461538em;
+  margin: 0em 0em 0.29411765em;
   border-radius: 4px !important;
 }
 .ui.secondary.vertical.menu > .header.item {
@@ -936,7 +936,7 @@ Floated Menu / Item
   -ms-flex-item-align: end;
       align-self: flex-end;
   margin: 0em 0em -2px;
-  padding: 0.84615385em 1.15384615em;
+  padding: 0.88235294em 1.11764706em;
   border-bottom-width: 2px;
   -webkit-transition: color 0.1s ease;
   transition: color 0.1s ease;
@@ -1049,7 +1049,7 @@ Floated Menu / Item
   -webkit-box-shadow: none;
           box-shadow: none;
   border: none;
-  margin: 1em -0.53846154em;
+  margin: 1em -0.41176471em;
 }
 .ui.text.menu .item {
   border-radius: 0px;
@@ -1058,7 +1058,7 @@ Floated Menu / Item
   -ms-flex-item-align: center;
       align-self: center;
   margin: 0em 0em;
-  padding: 0.38461538em 0.53846154em;
+  padding: 0.29411765em 0.41176471em;
   font-weight: normal;
   color: rgba(0, 0, 0, 0.6);
   -webkit-transition: opacity 0.1s ease;
@@ -1076,7 +1076,7 @@ Floated Menu / Item
   background-color: transparent;
   opacity: 1;
   color: rgba(0, 0, 0, 0.85);
-  font-size: 0.92307692em;
+  font-size: 0.94117647em;
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -1104,16 +1104,16 @@ Floated Menu / Item
   margin-bottom: 0rem;
 }
 .ui.vertical.text.menu .item {
-  margin: 0.61538462em 0em;
+  margin: 0.47058824em 0em;
   padding-left: 0em;
   padding-right: 0em;
 }
 .ui.vertical.text.menu .item > i.icon {
   float: none;
-  margin: 0em 0.38461538em 0em 0em;
+  margin: 0em 0.29411765em 0em 0em;
 }
 .ui.vertical.text.menu .header.item {
-  margin: 0.61538462em 0em 0.76923077em;
+  margin: 0.47058824em 0em 0.58823529em;
 }
 
 /* Vertical Sub Menu */
@@ -1122,7 +1122,7 @@ Floated Menu / Item
 }
 .ui.vertical.text.menu .item:not(.dropdown) > .menu > .item {
   margin: 0em;
-  padding: 0.53846154em 0em;
+  padding: 0.41176471em 0em;
 }
 
 /*--- hover ---*/
@@ -1244,7 +1244,7 @@ Floated Menu / Item
 .ui.labeled.icon.menu .item > .icon:not(.dropdown) {
   height: 1em;
   display: block;
-  font-size: 1.69230769em !important;
+  font-size: 1.70588235em !important;
   margin: 0em auto 0.5rem !important;
 }
 
@@ -1646,14 +1646,14 @@ Floated Menu / Item
 .ui.horizontally.fitted.menu .item,
 .ui.horizontally.fitted.menu .item .menu .item,
 .ui.menu .horizontally.fitted.item {
-  padding-top: 0.92307692em;
-  padding-bottom: 0.92307692em;
+  padding-top: 0.94117647em;
+  padding-bottom: 0.94117647em;
 }
 .ui.vertically.fitted.menu .item,
 .ui.vertically.fitted.menu .item .menu .item,
 .ui.menu .vertically.fitted.item {
-  padding-left: 1.15384615em;
-  padding-right: 1.15384615em;
+  padding-left: 1.11764706em;
+  padding-right: 1.11764706em;
 }
 
 /*--------------
@@ -1836,8 +1836,8 @@ Floated Menu / Item
           transform: translateX(-50%) translateY(-50%) rotate(45deg);
   background: none;
   margin: 0.5px 0em 0em;
-  width: 0.61538462em;
-  height: 0.61538462em;
+  width: 0.47058824em;
+  height: 0.47058824em;
   border: none;
   border-bottom: 1px solid #D4D4D5;
   border-right: 1px solid #D4D4D5;
@@ -1967,7 +1967,7 @@ Floated Menu / Item
 
 /* Mini */
 .ui.mini.menu {
-  font-size: 0.84615385rem;
+  font-size: 0.64705882rem;
 }
 .ui.mini.vertical.menu {
   width: 9rem;
@@ -1975,7 +1975,7 @@ Floated Menu / Item
 
 /* Tiny */
 .ui.tiny.menu {
-  font-size: 0.92307692rem;
+  font-size: 0.70588235rem;
 }
 .ui.tiny.vertical.menu {
   width: 11rem;
@@ -1983,7 +1983,7 @@ Floated Menu / Item
 
 /* Small */
 .ui.small.menu {
-  font-size: 1rem;
+  font-size: 0.76470588rem;
 }
 .ui.small.vertical.menu {
   width: 13rem;
@@ -1999,7 +1999,7 @@ Floated Menu / Item
 
 /* Large */
 .ui.large.menu {
-  font-size: 1.15384615rem;
+  font-size: 0.88235294rem;
 }
 .ui.large.vertical.menu {
   width: 18rem;
@@ -2007,7 +2007,7 @@ Floated Menu / Item
 
 /* Huge */
 .ui.huge.menu {
-  font-size: 1.23076923rem;
+  font-size: 0.94117647rem;
 }
 .ui.huge.vertical.menu {
   width: 20rem;
@@ -2015,7 +2015,7 @@ Floated Menu / Item
 
 /* Big */
 .ui.big.menu {
-  font-size: 1.30769231rem;
+  font-size: 1rem;
 }
 .ui.big.vertical.menu {
   width: 22rem;
@@ -2023,7 +2023,7 @@ Floated Menu / Item
 
 /* Massive */
 .ui.massive.menu {
-  font-size: 1.38461538rem;
+  font-size: 1.05882353rem;
 }
 .ui.massive.vertical.menu {
   width: 25rem;

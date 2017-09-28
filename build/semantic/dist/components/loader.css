@@ -84,51 +84,51 @@
 /* Sizes */
 .ui.mini.loader:before,
 .ui.mini.loader:after {
-  width: 1.07692308rem;
-  height: 1.07692308rem;
-  margin: 0em 0em 0em -0.53846154rem;
+  width: 0.82352941rem;
+  height: 0.82352941rem;
+  margin: 0em 0em 0em -0.41176471rem;
 }
 .ui.tiny.loader:before,
 .ui.tiny.loader:after {
-  width: 1.23076923rem;
-  height: 1.23076923rem;
-  margin: 0em 0em 0em -0.61538462rem;
+  width: 0.94117647rem;
+  height: 0.94117647rem;
+  margin: 0em 0em 0em -0.47058824rem;
 }
 .ui.small.loader:before,
 .ui.small.loader:after {
-  width: 1.84615385rem;
-  height: 1.84615385rem;
-  margin: 0em 0em 0em -0.92307692rem;
+  width: 1.41176471rem;
+  height: 1.41176471rem;
+  margin: 0em 0em 0em -0.70588235rem;
 }
 .ui.loader:before,
 .ui.loader:after {
-  width: 2.46153846rem;
-  height: 2.46153846rem;
-  margin: 0em 0em 0em -1.23076923rem;
+  width: 1.88235294rem;
+  height: 1.88235294rem;
+  margin: 0em 0em 0em -0.94117647rem;
 }
 .ui.large.loader:before,
 .ui.large.loader:after {
-  width: 3.69230769rem;
-  height: 3.69230769rem;
-  margin: 0em 0em 0em -1.84615385rem;
+  width: 2.82352941rem;
+  height: 2.82352941rem;
+  margin: 0em 0em 0em -1.41176471rem;
 }
 .ui.big.loader:before,
 .ui.big.loader:after {
-  width: 4rem;
-  height: 4rem;
-  margin: 0em 0em 0em -2rem;
+  width: 3.05882353rem;
+  height: 3.05882353rem;
+  margin: 0em 0em 0em -1.52941176rem;
 }
 .ui.huge.loader:before,
 .ui.huge.loader:after {
-  width: 4.46153846rem;
-  height: 4.46153846rem;
-  margin: 0em 0em 0em -2.23076923rem;
+  width: 3.41176471rem;
+  height: 3.41176471rem;
+  margin: 0em 0em 0em -1.70588235rem;
 }
 .ui.massive.loader:before,
 .ui.massive.loader:after {
-  width: 4.92307692rem;
-  height: 4.92307692rem;
-  margin: 0em 0em 0em -2.46153846rem;
+  width: 3.76470588rem;
+  height: 3.76470588rem;
+  margin: 0em 0em 0em -1.88235294rem;
 }
 
 /*-------------------
@@ -214,85 +214,85 @@
 /* Loader */
 .ui.inverted.dimmer .ui.mini.loader,
 .ui.mini.loader {
-  width: 1.07692308rem;
-  height: 1.07692308rem;
-  font-size: 0.76923077em;
+  width: 0.82352941rem;
+  height: 0.82352941rem;
+  font-size: 0.76470588em;
 }
 .ui.inverted.dimmer .ui.tiny.loader,
 .ui.tiny.loader {
-  width: 1.23076923rem;
-  height: 1.23076923rem;
-  font-size: 0.84615385em;
+  width: 0.94117647rem;
+  height: 0.94117647rem;
+  font-size: 0.88235294em;
 }
 .ui.inverted.dimmer .ui.small.loader,
 .ui.small.loader {
-  width: 1.84615385rem;
-  height: 1.84615385rem;
-  font-size: 0.92307692em;
+  width: 1.41176471rem;
+  height: 1.41176471rem;
+  font-size: 0.94117647em;
 }
 .ui.inverted.dimmer .ui.loader,
 .ui.loader {
-  width: 2.46153846rem;
-  height: 2.46153846rem;
+  width: 1.88235294rem;
+  height: 1.88235294rem;
   font-size: 1em;
 }
 .ui.inverted.dimmer .ui.large.loader,
 .ui.large.loader {
-  width: 3.69230769rem;
-  height: 3.69230769rem;
-  font-size: 1.15384615em;
+  width: 2.82352941rem;
+  height: 2.82352941rem;
+  font-size: 1.11764706em;
 }
 .ui.inverted.dimmer .ui.big.loader,
 .ui.big.loader {
-  width: 4rem;
-  height: 4rem;
-  font-size: 1.30769231em;
+  width: 3.05882353rem;
+  height: 3.05882353rem;
+  font-size: 1.29411765em;
 }
 .ui.inverted.dimmer .ui.huge.loader,
 .ui.huge.loader {
-  width: 4.46153846rem;
-  height: 4.46153846rem;
-  font-size: 1.46153846em;
+  width: 3.41176471rem;
+  height: 3.41176471rem;
+  font-size: 1.41176471em;
 }
 .ui.inverted.dimmer .ui.massive.loader,
 .ui.massive.loader {
-  width: 4.92307692rem;
-  height: 4.92307692rem;
-  font-size: 1.69230769em;
+  width: 3.76470588rem;
+  height: 3.76470588rem;
+  font-size: 1.70588235em;
 }
 
 /* Text Loader */
 .ui.mini.text.loader {
-  min-width: 1.07692308rem;
-  padding-top: 1.84615385rem;
+  min-width: 0.82352941rem;
+  padding-top: 1.58823529rem;
 }
 .ui.tiny.text.loader {
-  min-width: 1.23076923rem;
-  padding-top: 2rem;
+  min-width: 0.94117647rem;
+  padding-top: 1.70588235rem;
 }
 .ui.small.text.loader {
-  min-width: 1.84615385rem;
-  padding-top: 2.61538462rem;
+  min-width: 1.41176471rem;
+  padding-top: 2.17647059rem;
 }
 .ui.text.loader {
-  min-width: 2.46153846rem;
-  padding-top: 3.23076923rem;
+  min-width: 1.88235294rem;
+  padding-top: 2.64705882rem;
 }
 .ui.large.text.loader {
-  min-width: 3.69230769rem;
-  padding-top: 4.46153846rem;
+  min-width: 2.82352941rem;
+  padding-top: 3.58823529rem;
 }
 .ui.big.text.loader {
-  min-width: 4rem;
-  padding-top: 4.76923077rem;
+  min-width: 3.05882353rem;
+  padding-top: 3.82352941rem;
 }
 .ui.huge.text.loader {
-  min-width: 4.46153846rem;
-  padding-top: 5.23076923rem;
+  min-width: 3.41176471rem;
+  padding-top: 4.17647059rem;
 }
 .ui.massive.text.loader {
-  min-width: 4.92307692rem;
-  padding-top: 5.69230769rem;
+  min-width: 3.76470588rem;
+  padding-top: 4.52941176rem;
 }
 
 /*-------------------

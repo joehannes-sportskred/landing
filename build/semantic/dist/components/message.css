@@ -44,14 +44,14 @@
 /* Header */
 .ui.message .header {
   display: block;
-  font-family: 'Audiowide', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Righteous', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-weight: bold;
   margin: -0.14285714em 0em 0rem 0em;
 }
 
 /* Default font size */
 .ui.message .header:not(.ui) {
-  font-size: 1.15384615em;
+  font-size: 1.11764706em;
 }
 
 /* Paragraph */
@@ -276,7 +276,7 @@
 /* Positive */
 .ui.positive.message {
   background-color: #FCFFF5;
-  color: #4CAF50;
+  color: #3e1c00;
 }
 .ui.positive.message,
 .ui.attached.positive.message {
@@ -289,8 +289,8 @@
 
 /* Negative */
 .ui.negative.message {
-  background-color: #f9bdbb;
-  color: #e51c23;
+  background-color: #FFF6F6;
+  color: #970808;
 }
 .ui.negative.message,
 .ui.attached.negative.message {
@@ -303,8 +303,8 @@
 
 /* Info */
 .ui.info.message {
-  background-color: #e1bee7;
-  color: #9C27B0;
+  background-color: #077070;
+  color: #276F86;
 }
 .ui.info.message,
 .ui.attached.info.message {
@@ -317,7 +317,7 @@
 
 /* Warning */
 .ui.warning.message {
-  background-color: #ffe0b2;
+  background-color: #ba0b0b;
   color: #573A08;
 }
 .ui.warning.message,
@@ -331,8 +331,8 @@
 
 /* Error */
 .ui.error.message {
-  background-color: #f9bdbb;
-  color: #e51c23;
+  background-color: #FFF6F6;
+  color: #970808;
 }
 .ui.error.message,
 .ui.attached.error.message {
@@ -346,7 +346,7 @@
 /* Success */
 .ui.success.message {
   background-color: #FCFFF5;
-  color: #4CAF50;
+  color: #3e1c00;
 }
 .ui.success.message,
 .ui.attached.success.message {
@@ -468,28 +468,28 @@
 ---------------*/
 
 .ui.mini.message {
-  font-size: 0.76923077em;
+  font-size: 0.76470588em;
 }
 .ui.tiny.message {
-  font-size: 0.84615385em;
+  font-size: 0.88235294em;
 }
 .ui.small.message {
-  font-size: 0.92307692em;
+  font-size: 0.94117647em;
 }
 .ui.message {
   font-size: 1em;
 }
 .ui.large.message {
-  font-size: 1.15384615em;
+  font-size: 1.11764706em;
 }
 .ui.big.message {
-  font-size: 1.30769231em;
+  font-size: 1.29411765em;
 }
 .ui.huge.message {
-  font-size: 1.46153846em;
+  font-size: 1.41176471em;
 }
 .ui.massive.message {
-  font-size: 1.69230769em;
+  font-size: 1.70588235em;
 }
 .ui.message a:not(.button) {
   font-weight: bold;

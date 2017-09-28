@@ -54,9 +54,9 @@
 
 .ui.form .field > label {
   display: block;
-  margin: 0em 0em 0.30769231rem 0em;
+  margin: 0em 0em 0.23529412rem 0em;
   color: rgba(0, 0, 0, 0.87);
-  font-size: 0.92307692em;
+  font-size: 0.94117647em;
   font-weight: bold;
   text-transform: none;
 }
@@ -99,13 +99,13 @@
 .ui.form input[type="text"],
 .ui.form input[type="file"],
 .ui.form input[type="url"] {
-  font-family: 'Raleway', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Arvo', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   margin: 0em;
   outline: none;
   -webkit-appearance: none;
   tap-highlight-color: rgba(255, 255, 255, 0);
   line-height: 1.21428571em;
-  padding: 0.73901099em 1.07692308em;
+  padding: 0.53991597em 0.82352941em;
   font-size: 1em;
   background: #FFFFFF;
   border: 1px solid rgba(34, 36, 38, 0.15);
@@ -122,7 +122,7 @@
   margin: 0em;
   -webkit-appearance: none;
   tap-highlight-color: rgba(255, 255, 255, 0);
-  padding: 0.84615385em 1.07692308em;
+  padding: 0.64705882em 0.82352941em;
   background: #FFFFFF;
   border: 1px solid rgba(34, 36, 38, 0.15);
   outline: none;
@@ -167,7 +167,7 @@
   border-radius: 0;
   -webkit-box-shadow: 0em 0em 0em 0em transparent inset;
           box-shadow: 0em 0em 0em 0em transparent inset;
-  padding: 0.62em 1.07692308em;
+  padding: 0.62em 0.82352941em;
   color: rgba(0, 0, 0, 0.87);
   -webkit-transition: color 0.1s ease, border-color 0.1s ease;
   transition: color 0.1s ease, border-color 0.1s ease;
@@ -261,7 +261,7 @@
   white-space: normal;
   background: #FFFFFF !important;
   border: 1px solid #E0B4B4 !important;
-  color: #8b1014 !important;
+  color: #002828 !important;
 }
 .ui.form .inline.fields .field .prompt,
 .ui.form .inline.field .prompt {
@@ -334,22 +334,22 @@
 
 /* Error Placeholder */
 .ui.form .error ::-webkit-input-placeholder {
-  color: #ef787c;
+  color: #02f2f2;
 }
 .ui.form .error :-ms-input-placeholder {
-  color: #ef787c !important;
+  color: #02f2f2 !important;
 }
 .ui.form .error ::-moz-placeholder {
-  color: #ef787c;
+  color: #02f2f2;
 }
 .ui.form .error :focus::-webkit-input-placeholder {
-  color: #ea4a4f;
+  color: #01c0c0;
 }
 .ui.form .error :focus:-ms-input-placeholder {
-  color: #ea4a4f !important;
+  color: #01c0c0 !important;
 }
 .ui.form .error :focus::-moz-placeholder {
-  color: #ea4a4f;
+  color: #01c0c0;
 }
 
 /*--------------------
@@ -444,11 +444,11 @@
 .ui.form .field.error label,
 .ui.form .fields.error .field .input,
 .ui.form .field.error .input {
-  color: #8b1014;
+  color: #002828;
 }
 .ui.form .fields.error .field .corner.label,
 .ui.form .field.error .corner.label {
-  border-color: #8b1014;
+  border-color: #002828;
   color: #FFFFFF;
 }
 .ui.form .fields.error .field textarea,
@@ -479,9 +479,9 @@
 .ui.form .field.error input[type="text"],
 .ui.form .field.error input[type="file"],
 .ui.form .field.error input[type="url"] {
-  background: #f9bdbb;
+  background: #FFF6F6;
   border-color: #E0B4B4;
-  color: #8b1014;
+  color: #002828;
   border-radius: '';
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -500,9 +500,9 @@
 .ui.form .field.error input[type="text"]:focus,
 .ui.form .field.error input[type="file"]:focus,
 .ui.form .field.error input[type="url"]:focus {
-  background: #f9bdbb;
+  background: #FFF6F6;
   border-color: #E0B4B4;
-  color: #e51c23;
+  color: #970808;
   -webkit-appearance: none;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -522,8 +522,8 @@
 .ui.form .field.error .ui.dropdown,
 .ui.form .field.error .ui.dropdown .text,
 .ui.form .field.error .ui.dropdown .item {
-  background: #f9bdbb;
-  color: #8b1014;
+  background: #FFF6F6;
+  color: #002828;
 }
 .ui.form .fields.error .field .ui.dropdown,
 .ui.form .field.error .ui.dropdown {
@@ -540,7 +540,7 @@
 .ui.form .fields.error .field .ui.multiple.selection.dropdown > .label,
 .ui.form .field.error .ui.multiple.selection.dropdown > .label {
   background-color: #EACBCB;
-  color: #e51c23;
+  color: #970808;
 }
 
 /* Hover */
@@ -569,20 +569,20 @@
 .ui.form .field.error .checkbox:not(.toggle):not(.slider) label,
 .ui.form .fields.error .field .checkbox:not(.toggle):not(.slider) .box,
 .ui.form .field.error .checkbox:not(.toggle):not(.slider) .box {
-  color: #8b1014;
+  color: #002828;
 }
 .ui.form .fields.error .field .checkbox:not(.toggle):not(.slider) label:before,
 .ui.form .field.error .checkbox:not(.toggle):not(.slider) label:before,
 .ui.form .fields.error .field .checkbox:not(.toggle):not(.slider) .box:before,
 .ui.form .field.error .checkbox:not(.toggle):not(.slider) .box:before {
-  background: #f9bdbb;
+  background: #FFF6F6;
   border-color: #E0B4B4;
 }
 .ui.form .fields.error .field .checkbox label:after,
 .ui.form .field.error .checkbox label:after,
 .ui.form .fields.error .field .checkbox .box:after,
 .ui.form .field.error .checkbox .box:after {
-  color: #8b1014;
+  color: #002828;
 }
 
 /*--------------------
@@ -681,7 +681,7 @@
 .ui.form .required.field > .checkbox:after {
   margin: -0.2em 0em 0em 0.2em;
   content: '*';
-  color: #e51c23;
+  color: #018d8d;
 }
 .ui.form .required.fields:not(.grouped) > .field > label:after,
 .ui.form .required.fields.grouped > label:after,
@@ -754,9 +754,9 @@
   margin-bottom: 0em;
 }
 .ui.form .grouped.fields > label {
-  margin: 0em 0em 0.30769231rem 0em;
+  margin: 0em 0em 0.23529412rem 0em;
   color: rgba(0, 0, 0, 0.87);
-  font-size: 0.92307692em;
+  font-size: 0.94117647em;
   font-weight: bold;
   text-transform: none;
 }
@@ -990,7 +990,7 @@
   margin-top: 0em;
   margin-bottom: 0em;
   vertical-align: baseline;
-  font-size: 0.92307692em;
+  font-size: 0.94117647em;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.87);
   text-transform: none;
@@ -1017,7 +1017,7 @@
 /* Label */
 .ui.form .inline.fields .field > :first-child,
 .ui.form .inline.field > :first-child {
-  margin: 0em 0.84615385em 0em 0em;
+  margin: 0em 0.88235294em 0em 0em;
 }
 .ui.form .inline.fields .field > :only-child,
 .ui.form .inline.field > :only-child {
@@ -1043,28 +1043,28 @@
 ---------------------*/
 
 .ui.mini.form {
-  font-size: 0.76923077rem;
+  font-size: 0.76470588rem;
 }
 .ui.tiny.form {
-  font-size: 0.84615385rem;
+  font-size: 0.88235294rem;
 }
 .ui.small.form {
-  font-size: 0.92307692rem;
+  font-size: 0.94117647rem;
 }
 .ui.form {
   font-size: 1rem;
 }
 .ui.large.form {
-  font-size: 1.15384615rem;
+  font-size: 1.11764706rem;
 }
 .ui.big.form {
-  font-size: 1.30769231rem;
+  font-size: 1.29411765rem;
 }
 .ui.huge.form {
-  font-size: 1.46153846rem;
+  font-size: 1.41176471rem;
 }
 .ui.massive.form {
-  font-size: 1.69230769rem;
+  font-size: 1.70588235rem;
 }
 .ui.form input,
 .ui.form select,

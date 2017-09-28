@@ -13,13 +13,12 @@
              Page
 *******************************/
 
-@import url('https://fonts.googleapis.com/css?family=Audiowide:400,700,400italic,700italic,Raleway:400,700,400italic,700italic');
 html,
 body {
   height: 100%;
 }
 html {
-  font-size: 13px;
+  font-size: 17px;
 }
 body {
   margin: 0px;
@@ -27,8 +26,8 @@ body {
   overflow-x: hidden;
   min-width: 320px;
   background: #FFFFFF;
-  font-family: 'Raleway', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  font-size: 13px;
+  font-family: 'Arvo', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-size: 17px;
   line-height: 1.846;
   color: rgba(0, 0, 0, 0.87);
   font-smoothing: antialiased;
@@ -44,7 +43,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: 'Audiowide', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Righteous', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   line-height: 1.28571429em;
   margin: calc(2rem -  0.14285714em ) 0em 1rem;
   font-weight: 1.2;

@@ -76,7 +76,7 @@
 
 .ui.modal > .header {
   display: block;
-  font-family: 'Audiowide', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Righteous', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   background: #FFFFFF;
   margin: 0em;
   padding: 1.25rem 1.5rem;
@@ -86,7 +86,7 @@
   border-bottom: transparent;
 }
 .ui.modal > .header:not(.ui) {
-  font-size: 1.46153846rem;
+  font-size: 1.41176471rem;
   line-height: 1.28571429em;
   font-weight: bold;
 }

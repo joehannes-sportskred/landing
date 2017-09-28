@@ -28,7 +28,7 @@
   background: '';
   -webkit-box-shadow: none;
           box-shadow: none;
-  line-height: 1.15384615em;
+  line-height: 1.11764706em;
   border-radius: 4px;
   border: 1px solid rgba(34, 36, 38, 0.15);
 }
@@ -70,7 +70,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   margin: 0em 0em;
-  padding: 1.15384615em 2em;
+  padding: 1.11764706em 2em;
   background: #FFFFFF;
   color: rgba(0, 0, 0, 0.87);
   -webkit-box-shadow: none;
@@ -94,8 +94,8 @@
   right: 0%;
   border: medium none;
   background-color: #FFFFFF;
-  width: 1.15384615em;
-  height: 1.15384615em;
+  width: 1.11764706em;
+  height: 1.11764706em;
   border-style: solid;
   border-color: rgba(34, 36, 38, 0.15);
   border-width: 0px 1px 1px 0px;
@@ -135,8 +135,8 @@
 
 /* Title */
 .ui.steps .step .title {
-  font-family: 'Audiowide', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  font-size: 1.15384615em;
+  font-family: 'Righteous', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-size: 1.11764706em;
   font-weight: bold;
 }
 .ui.steps .step > .title {
@@ -146,7 +146,7 @@
 /* Description */
 .ui.steps .step .description {
   font-weight: normal;
-  font-size: 0.92307692em;
+  font-size: 0.94117647em;
   color: rgba(0, 0, 0, 0.87);
 }
 .ui.steps .step > .description {
@@ -239,12 +239,12 @@
       -ms-flex-pack: start;
           justify-content: flex-start;
   border-radius: 0em;
-  padding: 1.15384615em 2em;
+  padding: 1.11764706em 2em;
   border-right: none;
   border-bottom: 1px solid rgba(34, 36, 38, 0.15);
 }
 .ui.vertical.steps .step:first-child {
-  padding: 1.15384615em 2em;
+  padding: 1.11764706em 2em;
   border-radius: 4px 4px 0em 0em;
 }
 .ui.vertical.steps .step:last-child {
@@ -301,10 +301,10 @@
         -ms-flex-direction: column;
             flex-direction: column;
     border-radius: 0em;
-    padding: 1.15384615em 2em;
+    padding: 1.11764706em 2em;
   }
   .ui.steps:not(.unstackable) .step:first-child {
-    padding: 1.15384615em 2em;
+    padding: 1.11764706em 2em;
     border-radius: 4px 4px 0em 0em;
   }
   .ui.steps:not(.unstackable) .step:last-child {
@@ -395,7 +395,7 @@
 /* Completed */
 .ui.steps .step.completed > .icon:before,
 .ui.ordered.steps .step.completed:before {
-  color: #4CAF50;
+  color: #055a5a;
 }
 
 /* Disabled */
@@ -444,10 +444,10 @@
         -ms-flex-direction: column;
             flex-direction: column;
     border-radius: 0em;
-    padding: 1.15384615em 2em;
+    padding: 1.11764706em 2em;
   }
   .ui[class*="tablet stackable"].steps .step:first-child {
-    padding: 1.15384615em 2em;
+    padding: 1.11764706em 2em;
     border-radius: 4px 4px 0em 0em;
   }
   .ui[class*="tablet stackable"].steps .step:last-child {
@@ -571,15 +571,15 @@
 
 .ui.mini.steps .step,
 .ui.mini.step {
-  font-size: 0.76923077rem;
+  font-size: 0.76470588rem;
 }
 .ui.tiny.steps .step,
 .ui.tiny.step {
-  font-size: 0.84615385rem;
+  font-size: 0.88235294rem;
 }
 .ui.small.steps .step,
 .ui.small.step {
-  font-size: 0.92307692rem;
+  font-size: 0.94117647rem;
 }
 .ui.steps .step,
 .ui.step {
@@ -587,19 +587,19 @@
 }
 .ui.large.steps .step,
 .ui.large.step {
-  font-size: 1.15384615rem;
+  font-size: 1.11764706rem;
 }
 .ui.big.steps .step,
 .ui.big.step {
-  font-size: 1.30769231rem;
+  font-size: 1.29411765rem;
 }
 .ui.huge.steps .step,
 .ui.huge.step {
-  font-size: 1.46153846rem;
+  font-size: 1.41176471rem;
 }
 .ui.massive.steps .step,
 .ui.massive.step {
-  font-size: 1.69230769rem;
+  font-size: 1.70588235rem;
 }
 
 

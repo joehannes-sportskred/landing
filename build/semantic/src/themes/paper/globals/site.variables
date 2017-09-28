@@ -2,8 +2,8 @@
        Fonts
 --------------------*/
 
-@fontNameHeader    : 'Audiowide';
-@fontNamePages     : 'Raleway';
+@fontNameHeader    : 'Righteous';
+@fontNamePages     : 'Arvo';
 @fontSmoothing     : antialiased;
 
 @headerFont        : @fontNameHeader, 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -23,10 +23,10 @@
 --------------------*/
 
 /* This is the single variable that controls them all */
-@emSize   : 18px;
+@emSize   : 21px;
 
 /* The size of page text  */
-@fontSize : 18px;
+@fontSize : 21px;
 
 
 @gray-base:              #000;
@@ -79,10 +79,10 @@
 @negativeColor: @rgba-complement-1;
 @negativeTextColor: @rgba-secondary-2-0;
 
-@textcolor: @gray;
-@fontName: "Roboto";
-@emSize: 13px;
-@fontSize: 13px;
+@textcolor: @gray-darker;
+@fontName: "Arvo";
+@emSize: 17px;
+@fontSize: 17px;
 
 @h1: 56 / 13;
 @h2: 45 / 13;
