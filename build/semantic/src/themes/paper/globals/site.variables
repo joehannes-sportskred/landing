@@ -76,8 +76,8 @@
 @warningColor: @rgba-secondary-2-4;
 @warningTextClor: @rgba-secondary-1-0;
 
-@negativeColor: @rgba-complement-1;
-@negativeTextColor: @rgba-secondary-2-0;
+@negativeColor: @rgba-secondary-2-0
+@negativeTextColor: @rgba-complement-4;
 
 @textcolor: @gray-darker;
 @fontName: "Arvo";

@@ -3511,7 +3511,7 @@
 /* Standard */
 .ui.negative.buttons .button,
 .ui.negative.button {
-  background-color: #018d8d;
+  background-color: #DF0024;
   color: #FFFFFF;
   text-shadow: none;
   background-image: none;
@@ -3522,19 +3522,19 @@
 }
 .ui.negative.buttons .button:hover,
 .ui.negative.button:hover {
-  background-color: #007475;
+  background-color: #c60020;
   color: #FFFFFF;
   text-shadow: none;
 }
 .ui.negative.buttons .button:focus,
 .ui.negative.button:focus {
-  background-color: #006565;
+  background-color: #b6001d;
   color: #FFFFFF;
   text-shadow: none;
 }
 .ui.negative.buttons .button:active,
 .ui.negative.button:active {
-  background-color: #015a5a;
+  background-color: #ac001c;
   color: #FFFFFF;
   text-shadow: none;
 }
@@ -3542,7 +3542,7 @@
 .ui.negative.buttons .active.button:active,
 .ui.negative.active.button,
 .ui.negative.button .active.button:active {
-  background-color: #007475;
+  background-color: #c60020;
   color: #FFFFFF;
   text-shadow: none;
 }
@@ -3550,36 +3550,36 @@
 /* Basic */
 .ui.basic.negative.buttons .button,
 .ui.basic.negative.button {
-  -webkit-box-shadow: 0px 0px 0px 1px #018d8d inset !important;
-          box-shadow: 0px 0px 0px 1px #018d8d inset !important;
-  color: #018d8d !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #DF0024 inset !important;
+          box-shadow: 0px 0px 0px 1px #DF0024 inset !important;
+  color: #DF0024 !important;
 }
 .ui.basic.negative.buttons .button:hover,
 .ui.basic.negative.button:hover {
   background: transparent !important;
-  -webkit-box-shadow: 0px 0px 0px 1px #007475 inset !important;
-          box-shadow: 0px 0px 0px 1px #007475 inset !important;
-  color: #007475 !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #c60020 inset !important;
+          box-shadow: 0px 0px 0px 1px #c60020 inset !important;
+  color: #c60020 !important;
 }
 .ui.basic.negative.buttons .button:focus,
 .ui.basic.negative.button:focus {
   background: transparent !important;
-  -webkit-box-shadow: 0px 0px 0px 1px #006565 inset !important;
-          box-shadow: 0px 0px 0px 1px #006565 inset !important;
-  color: #007475 !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #b6001d inset !important;
+          box-shadow: 0px 0px 0px 1px #b6001d inset !important;
+  color: #c60020 !important;
 }
 .ui.basic.negative.buttons .active.button,
 .ui.basic.negative.active.button {
   background: transparent !important;
-  -webkit-box-shadow: 0px 0px 0px 1px #007475 inset !important;
-          box-shadow: 0px 0px 0px 1px #007475 inset !important;
-  color: #015a5a !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #c60020 inset !important;
+          box-shadow: 0px 0px 0px 1px #c60020 inset !important;
+  color: #ac001c !important;
 }
 .ui.basic.negative.buttons .button:active,
 .ui.basic.negative.button:active {
-  -webkit-box-shadow: 0px 0px 0px 1px #015a5a inset !important;
-          box-shadow: 0px 0px 0px 1px #015a5a inset !important;
-  color: #015a5a !important;
+  -webkit-box-shadow: 0px 0px 0px 1px #ac001c inset !important;
+          box-shadow: 0px 0px 0px 1px #ac001c inset !important;
+  color: #ac001c !important;
 }
 .ui.buttons:not(.vertical) > .basic.primary.button:not(:first-child) {
   margin-left: -1px;
