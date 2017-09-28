@@ -1,19 +1,83 @@
+/*-------------------
+       Fonts
+--------------------*/
+
+@fontNameHeader    : 'Audiowide';
+@fontNamePages     : 'Raleway';
+@fontSmoothing     : antialiased;
+
+@headerFont        : @fontNameHeader, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@pageFont          : @fontNamePages, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
+@importGoogleFonts : true;
+@googleFontSizes   : '400,700,400italic,700italic';
+@googleSubset      : 'latin';
+@googleFontNameH   : '@{fontNameHeader}:@{googleFontSizes}';
+@googleFontNameP   : '@{fontNamePages}:@{googleFontSizes}';
+
+@googleProtocol    : 'https://';
+@googleFontRequest : '@{googleFontNameH},@{googleFontNameP}';
+
+/*-------------------
+      Base Sizes
+--------------------*/
+
+/* This is the single variable that controls them all */
+@emSize   : 18px;
+
+/* The size of page text  */
+@fontSize : 18px;
+
+
 @gray-base:              #000;
 @gray-darker:            lighten(@gray-base, 13.5%); // #222
 @gray-dark:              #212121;
-@gray:                   #666;
+@gray:                   #575757;
 @gray-light:             #bbb;
 @gray-lighter:           lighten(@gray-base, 93.5%); // #eee
 
-@primaryColor: #2196F3;
-@positiveColor: #4CAF50;
-@positiveTextColor: #4CAF50;
-@infoColor: #9C27B0;
-@infoTextColor: #9C27B0;
-@warningColor: #ff9800;
-@warningTextClor: #ff9800;
-@negativeColor: #e51c23;
-@negativeTextColor: #e51c23;
+@rgba-primary-0: rgba(151, 73,  8,1); // Main Primary color */
+@rgba-primary-1: rgba(235,107,  2,1);
+@rgba-primary-2: rgba(186, 90, 11,1);
+@rgba-primary-3: rgba(105, 48,  0,1);
+@rgba-primary-4: rgba( 62, 28,  0,1);
+
+@rgba-secondary-1-0: rgba(151,103,  8,1); // Main Secondary color (1) */
+@rgba-secondary-1-1: rgba(235,157,  2,1);
+@rgba-secondary-1-2: rgba(186,128, 11,1);
+@rgba-secondary-1-3: rgba(105, 70,  0,1);
+@rgba-secondary-1-4: rgba( 62, 41,  0,1);
+
+@rgba-secondary-2-0: rgba(151,  8,  8,1); // Main Secondary color (2) */
+@rgba-secondary-2-1: rgba(235,  2,  2,1);
+@rgba-secondary-2-2: rgba(186, 11, 11,1);
+@rgba-secondary-2-3: rgba(105,  0,  0,1);
+@rgba-secondary-2-4: rgba( 62,  0,  0,1);
+
+@rgba-complement-0: rgba(  5, 90, 90,1);  // Main Complement color */
+@rgba-complement-1: rgba(  1,141,141,1);
+@rgba-complement-2: rgba(  7,112,112,1);
+@rgba-complement-3: rgba(  0, 63, 63,1);
+@rgba-complement-4: rgba(  0, 37, 37,1);
+
+
+@primaryColor        : @rgba-primary-1;
+@secondaryColor      : @rgba-secondary-1-3;
+
+@lightPrimaryColor   : @rgba-primary-0;
+@lightSecondaryColor : @rgba-secondary-1-1;
+
+@positiveColor: @rgba-complement-0;
+@positiveTextColor: @rgba-primary-4;
+
+@infoColor: @rgba-complement-4;
+@infoTextColor: #@rgba-primary-1;
+
+@warningColor: @rgba-secondary-2-4;
+@warningTextClor: @rgba-secondary-1-0;
+
+@negativeColor: @rgba-complement-1;
+@negativeTextColor: @rgba-secondary-2-0;
 
 @textcolor: @gray;
 @fontName: "Roboto";
@@ -32,6 +96,6 @@
 
 @absoluteBorderRadius: 4px;
 
-@infoBackgroundColor: #e1bee7;
-@warningBackgroundColor: #ffe0b2;
-@negativeBackgroundColor: #f9bdbb;
+@infoBackgroundColor: @rgba-complement-2;
+@warningBackgroundColor: @rgba-secondary-2-2;
+@negativeBackgroundColor: #@rgba-secondary-2-3;
