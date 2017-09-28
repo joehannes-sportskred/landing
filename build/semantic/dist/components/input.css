@@ -36,13 +36,13 @@
   outline: none;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   text-align: left;
-  line-height: 1.21428571em;
+  line-height: 1.846;
   font-family: 'Raleway', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  padding: 0.50396825em 0.77777778em;
-  background: #FFFFFF;
-  border: 1px solid rgba(34, 36, 38, 0.15);
+  padding: 0.877em 1.07692308em;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.15);
   color: rgba(0, 0, 0, 0.87);
-  border-radius: 0.22222222rem;
+  border-radius: 0;
   -webkit-transition: border-color 0.1s ease, -webkit-box-shadow 0.1s ease;
   transition: border-color 0.1s ease, -webkit-box-shadow 0.1s ease;
   transition: box-shadow 0.1s ease, border-color 0.1s ease;
@@ -58,13 +58,13 @@
 
 /* browsers require these rules separate */
 .ui.input input::-webkit-input-placeholder {
-  color: rgba(191, 191, 191, 0.87);
+  color: #bbb;
 }
 .ui.input input::-moz-placeholder {
-  color: rgba(191, 191, 191, 0.87);
+  color: #bbb;
 }
 .ui.input input:-ms-input-placeholder {
-  color: rgba(191, 191, 191, 0.87);
+  color: #bbb;
 }
 
 
@@ -108,9 +108,9 @@
   content: '';
   top: 50%;
   left: 50%;
-  margin: -0.63888889em 0em 0em -0.63888889em;
-  width: 1.27777778em;
-  height: 1.27777778em;
+  margin: -0.65384615em 0em 0em -0.65384615em;
+  width: 1.30769231em;
+  height: 1.30769231em;
   border-radius: 500rem;
   border: 0.2em solid rgba(0, 0, 0, 0.1);
 }
@@ -119,9 +119,9 @@
   content: '';
   top: 50%;
   left: 50%;
-  margin: -0.63888889em 0em 0em -0.63888889em;
-  width: 1.27777778em;
-  height: 1.27777778em;
+  margin: -0.65384615em 0em 0em -0.65384615em;
+  width: 1.30769231em;
+  height: 1.30769231em;
   -webkit-animation: button-spin 0.6s linear;
           animation: button-spin 0.6s linear;
   -webkit-animation-iteration-count: infinite;
@@ -141,7 +141,7 @@
 .ui.input.focus input,
 .ui.input input:focus {
   border-color: #85B7D9;
-  background: #FFFFFF;
+  background: transparent;
   color: rgba(0, 0, 0, 0.8);
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -164,33 +164,33 @@
 ---------------------*/
 
 .ui.input.error input {
-  background-color: #FFF6F6;
+  background-color: #f9bdbb;
   border-color: #E0B4B4;
-  color: #9F3A38;
+  color: #e51c23;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
 /* Error Placeholder */
 .ui.input.error input::-webkit-input-placeholder {
-  color: #e7bdbc;
+  color: #fad3d4;
 }
 .ui.input.error input::-moz-placeholder {
-  color: #e7bdbc;
+  color: #fad3d4;
 }
 .ui.input.error input:-ms-input-placeholder {
-  color: #e7bdbc !important;
+  color: #fad3d4 !important;
 }
 
 /* Focused Error Placeholder */
 .ui.input.error input:focus::-webkit-input-placeholder {
-  color: #da9796;
+  color: #f5a5a8;
 }
 .ui.input.error input:focus::-moz-placeholder {
-  color: #da9796;
+  color: #f5a5a8;
 }
 .ui.input.error input:focus:-ms-input-placeholder {
-  color: #da9796 !important;
+  color: #f5a5a8 !important;
 }
 
 
@@ -255,9 +255,9 @@
   right: 0px;
   margin: 0em;
   height: 100%;
-  width: 2.32222222em;
+  width: 3.7em;
   opacity: 0.5;
-  border-radius: 0em 0.22222222rem 0.22222222rem 0em;
+  border-radius: 0em 0 0 0em;
   -webkit-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
 }
@@ -265,7 +265,7 @@
   pointer-events: none;
 }
 .ui.icon.input input {
-  padding-right: 2.32222222em !important;
+  padding-right: 3.7em !important;
 }
 .ui.icon.input > i.icon:before,
 .ui.icon.input > i.icon:after {
@@ -288,15 +288,15 @@
 .ui[class*="left icon"].input > i.icon {
   right: auto;
   left: 1px;
-  border-radius: 0.22222222rem 0em 0em 0.22222222rem;
+  border-radius: 0 0em 0em 0;
 }
 .ui[class*="left icon"].input > i.circular.icon {
   right: auto;
   left: 0.5em;
 }
 .ui[class*="left icon"].input > input {
-  padding-left: 2.32222222em !important;
-  padding-right: 0.77777778em !important;
+  padding-left: 3.7em !important;
+  padding-right: 1.07692308em !important;
 }
 
 /* Focus */
@@ -318,8 +318,8 @@
   font-size: 1em;
 }
 .ui.labeled.input > .label:not(.corner) {
-  padding-top: 0.61111111em;
-  padding-bottom: 0.61111111em;
+  padding-top: 1.3em;
+  padding-bottom: 1.3em;
 }
 
 /* Regular Label on Left */
@@ -354,8 +354,8 @@
 .ui.labeled.input .corner.label {
   top: 1px;
   right: 1px;
-  font-size: 0.5em;
-  border-radius: 0em 0.22222222rem 0em 0em;
+  font-size: 0.69230769em;
+  border-radius: 0em 0 0em 0em;
 }
 
 /* Spacing with corner label */
@@ -408,8 +408,8 @@
 }
 .ui.action.input > .button,
 .ui.action.input > .buttons > .button {
-  padding-top: 0.61111111em;
-  padding-bottom: 0.61111111em;
+  padding-top: 1.3em;
+  padding-bottom: 1.3em;
   margin: 0;
 }
 
@@ -427,7 +427,7 @@
 .ui.action.input:not([class*="left action"]) > .dropdown:last-child,
 .ui.action.input:not([class*="left action"]) > .button:last-child,
 .ui.action.input:not([class*="left action"]) > .buttons:last-child > .button {
-  border-radius: 0px 0.22222222rem 0.22222222rem 0px;
+  border-radius: 0px 0 0 0px;
 }
 
 /* Input Focus */
@@ -449,7 +449,7 @@
 .ui[class*="left action"].input > .dropdown:first-child,
 .ui[class*="left action"].input > .button:first-child,
 .ui[class*="left action"].input > .buttons:first-child > .button {
-  border-radius: 0.22222222rem 0px 0px 0.22222222rem;
+  border-radius: 0 0px 0px 0;
 }
 
 /* Input Focus */
@@ -485,32 +485,38 @@
 ---------------------*/
 
 .ui.mini.input {
-  font-size: 0.77777778em;
+  font-size: 0.76923077em;
 }
 .ui.small.input {
-  font-size: 0.94444444em;
+  font-size: 0.92307692em;
 }
 .ui.input {
   font-size: 1em;
 }
 .ui.large.input {
-  font-size: 1.16666667em;
+  font-size: 1.15384615em;
 }
 .ui.big.input {
-  font-size: 1.27777778em;
+  font-size: 1.30769231em;
 }
 .ui.huge.input {
-  font-size: 1.44444444em;
+  font-size: 1.46153846em;
 }
 .ui.massive.input {
-  font-size: 1.72222222em;
+  font-size: 1.69230769em;
 }
-
-
-/*******************************
-         Theme Overrides
-*******************************/
-
+.ui.icon.input {
+  background: transparent;
+}
+.ui.labeled.input:not(.corner) .label {
+  line-height: 1.846;
+}
+.ui.input input {
+  border-width: 0 0 1px 0 !important;
+}
+.ui.input input:focus {
+  border-width: 0 0 2px 0 !important;
+}
 
 
 /*******************************

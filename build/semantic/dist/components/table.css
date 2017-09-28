@@ -22,7 +22,7 @@
   border: 1px solid rgba(34, 36, 38, 0.15);
   -webkit-box-shadow: none;
           box-shadow: none;
-  border-radius: 0.22222222rem;
+  border-radius: 4px;
   text-align: left;
   color: rgba(0, 0, 0, 0.87);
   border-collapse: separate;
@@ -58,7 +58,7 @@
   background: #F9FAFB;
   text-align: inherit;
   color: rgba(0, 0, 0, 0.87);
-  padding: 0.94444444em 0.77777778em;
+  padding: 0.92307692em 0.76923077em;
   vertical-align: inherit;
   font-style: none;
   font-weight: bold;
@@ -70,13 +70,13 @@
   border-left: none;
 }
 .ui.table thead tr:first-child > th:first-child {
-  border-radius: 0.22222222rem 0em 0em 0em;
+  border-radius: 4px 0em 0em 0em;
 }
 .ui.table thead tr:first-child > th:last-child {
-  border-radius: 0em 0.22222222rem 0em 0em;
+  border-radius: 0em 4px 0em 0em;
 }
 .ui.table thead tr:first-child > th:only-child {
-  border-radius: 0.22222222rem 0.22222222rem 0em 0em;
+  border-radius: 4px 4px 0em 0em;
 }
 
 /* Footer */
@@ -90,7 +90,7 @@
   background: #F9FAFB;
   text-align: inherit;
   color: rgba(0, 0, 0, 0.87);
-  padding: 0.77777778em 0.77777778em;
+  padding: 0.76923077em 0.76923077em;
   vertical-align: middle;
   font-style: normal;
   font-weight: normal;
@@ -100,13 +100,13 @@
   border-left: none;
 }
 .ui.table tfoot tr:first-child > th:first-child {
-  border-radius: 0em 0em 0em 0.22222222rem;
+  border-radius: 0em 0em 0em 4px;
 }
 .ui.table tfoot tr:first-child > th:last-child {
-  border-radius: 0em 0em 0.22222222rem 0em;
+  border-radius: 0em 0em 4px 0em;
 }
 .ui.table tfoot tr:first-child > th:only-child {
-  border-radius: 0em 0em 0.22222222rem 0.22222222rem;
+  border-radius: 0em 0em 4px 4px;
 }
 
 /* Table Row */
@@ -119,7 +119,7 @@
 
 /* Table Cells */
 .ui.table td {
-  padding: 0.77777778em 0.77777778em;
+  padding: 0.76923077em 0.76923077em;
   text-align: inherit;
 }
 
@@ -309,7 +309,7 @@
 .ui.table tr.positive,
 .ui.table td.positive {
   background: #FCFFF5 !important;
-  color: #2C662D !important;
+  color: #4CAF50 !important;
 }
 
 /*--------------
@@ -323,8 +323,8 @@
 }
 .ui.table tr.negative,
 .ui.table td.negative {
-  background: #FFF6F6 !important;
-  color: #9F3A38 !important;
+  background: #f9bdbb !important;
+  color: #e51c23 !important;
 }
 
 /*--------------
@@ -338,8 +338,8 @@
 }
 .ui.table tr.error,
 .ui.table td.error {
-  background: #FFF6F6 !important;
-  color: #9F3A38 !important;
+  background: #f9bdbb !important;
+  color: #e51c23 !important;
 }
 
 /*--------------
@@ -353,7 +353,7 @@
 }
 .ui.table tr.warning,
 .ui.table td.warning {
-  background: #FFFAF3 !important;
+  background: #ffe0b2 !important;
   color: #573A08 !important;
 }
 
@@ -513,20 +513,20 @@
 .ui.table tbody tr td.selectable > a:not(.ui) {
   display: block;
   color: inherit;
-  padding: 0.77777778em 0.77777778em;
+  padding: 0.76923077em 0.76923077em;
 }
 
 /* Other States */
 .ui.selectable.table tr.error:hover,
 .ui.table tr td.selectable.error:hover,
 .ui.selectable.table tr:hover td.error {
-  background: #ffe7e7 !important;
-  color: #943634 !important;
+  background: #f8afad !important;
+  color: #d91920 !important;
 }
 .ui.selectable.table tr.warning:hover,
 .ui.table tr td.selectable.warning:hover,
 .ui.selectable.table tr:hover td.warning {
-  background: #fff4e4 !important;
+  background: #ffdaa3 !important;
   color: #493107 !important;
 }
 .ui.selectable.table tr.active:hover,
@@ -539,13 +539,13 @@
 .ui.table tr td.selectable.positive:hover,
 .ui.selectable.table tr:hover td.positive {
   background: #f7ffe6 !important;
-  color: #275b28 !important;
+  color: #47a44b !important;
 }
 .ui.selectable.table tr.negative:hover,
 .ui.table tr td.selectable.negative:hover,
 .ui.selectable.table tr:hover td.negative {
-  background: #ffe7e7 !important;
-  color: #943634 !important;
+  background: #f8afad !important;
+  color: #d91920 !important;
 }
 
 /*-------------------
@@ -575,7 +575,7 @@
   margin-bottom: 0em;
   top: 0px;
   margin-top: 1em;
-  border-radius: 0.22222222rem 0.22222222rem 0em 0em;
+  border-radius: 4px 4px 0em 0em;
 }
 .ui.table[class*="top attached"]:first-child {
   margin-top: 0em;
@@ -589,7 +589,7 @@
   margin-bottom: 1em;
   -webkit-box-shadow: none, none;
           box-shadow: none, none;
-  border-radius: 0em 0em 0.22222222rem 0.22222222rem;
+  border-radius: 0em 0em 4px 4px;
 }
 .ui[class*="bottom attached"].table:last-child {
   margin-bottom: 0em;
@@ -1124,6 +1124,12 @@
 /* Large */
 .ui.large.table {
   font-size: 1.1em;
+}
+.ui.selectable.table > tbody > tr,
+.ui.selectable.table > tbody > tr > th,
+.ui.selectable.table > tbody > tr > td {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 
