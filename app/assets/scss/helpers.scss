@@ -1,0 +1,92 @@
+$medium: 20px;
+$color_team: $red;
+$color_athlete: $blue;
+$color_brand: $green;
+$color_agentm: $yellow;
+$color_agents: $grey;
+
+.shiny {
+  &.white {
+    box-shadow: 0 0 10px $white;
+    border-radius: 500em !important;
+    border: 1px solid $white !important;
+  }
+}
+
+.text, .text-color {
+	&.white {
+		color: white !important;
+	}
+  &.primary {
+    color: $black !important;
+  }
+  &.team {
+    color: $color_team !important;
+  }
+  &.brand {
+    color: $color_brand !important;
+  }
+  &.athlete {
+    color: $color_athlete !important;
+  }
+  &.agentm {
+    color: $color_agentm !important;
+  }
+  &.agents {
+    color: $color_agents !important;
+  }
+  &.neutral {
+    color: $black !important;
+  }
+	&.shiny.white {
+		text-shadow: 0 0 1px white !important;
+	}
+  &.shiny.black {
+    text-shadow: 0 0 1px $black !important;
+  }
+  &.uppercase {
+    text-transform: uppercase !important;
+  }
+}
+.margin {
+  &.no {
+    &.top {
+      margin-top: 0 !important;
+    }
+  }
+  &.top {
+    &.medium {
+      margin-top: $medium !important;
+    }
+  }
+}
+.padding {
+  &.no {
+    &.top {
+      padding-top: 0 !important;
+    }
+  }
+  &.bottom {
+    &.medium {
+      padding-bottom: $medium !important;
+    }
+  }
+  &.top {
+    &.medium {
+      padding-top: $medium !important;
+    }
+  }
+}
+
+.display-block {
+  display: block !important;
+}
+
+.fancy.image {
+  padding: 7px !important;
+  background-image: $pattern_url_light_very;
+  opacity: .9;
+  border: 1px solid $white;
+  border-radius: 3px;
+  box-shadow: 0 0 7px 0 rgba(0,0,0,.3);
+}
