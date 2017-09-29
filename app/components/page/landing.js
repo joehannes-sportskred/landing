@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image } from 'semantic-ui-react';
+import { Container, Grid, Image } from 'semantic-ui-react';
 import TransitionGroup from 'react-transition-group/TransitionGroup';
 
 import Dimmer from '../../store/containers/dimmer';
@@ -29,23 +29,31 @@ class Page extends Component {
     intro: true,
   };
   render = () => (
-    <main>
-      <Menu.Primary />
-      {this.state.intro ?
-        <LayoutCenteredWide
-          content={Intro}
-          className="main landing page intro"
-          callback={() => this.setState({ intro: false })}
-        /> :
-        <LayoutBalanced
-          content={PhotoScreens}
-          className="main landing page rolechooser"
-          style={{ display: 'none' }}
-        />
-      }
-      <AboutUs />
+    <Container fluid as="main">
+      <Grid stretched verticalAlign="middle">
+        <Grid.Row>
+          <Menu.Primary />
+        </Grid.Row>
+        <Grid.Row stretched verticalAlign="middle">
+          {this.state.intro ?
+            <LayoutCenteredWide
+              content={Intro}
+              className="main landing page intro"
+              callback={() => this.setState({ intro: false })}
+            /> :
+            <LayoutBalanced
+              content={PhotoScreens}
+              className="main landing page rolechooser"
+              style={{ display: 'none' }}
+            />
+          }
+        </Grid.Row>
+        <Grid.Row style={{ bottom: 0 }}>
+          <AboutUs />
+        </Grid.Row>
+      </Grid>
       <Dimmer />
-    </main>
+    </Container>
   );
 }
 

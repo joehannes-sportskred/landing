@@ -14,30 +14,6 @@ $color_agents: $grey;
 }
 
 .text, .text-color {
-	&.white {
-		color: white !important;
-	}
-  &.primary {
-    color: $black !important;
-  }
-  &.team {
-    color: $color_team !important;
-  }
-  &.brand {
-    color: $color_brand !important;
-  }
-  &.athlete {
-    color: $color_athlete !important;
-  }
-  &.agentm {
-    color: $color_agentm !important;
-  }
-  &.agents {
-    color: $color_agents !important;
-  }
-  &.neutral {
-    color: $black !important;
-  }
 	&.shiny.white {
 		text-shadow: 0 0 1px white !important;
 	}

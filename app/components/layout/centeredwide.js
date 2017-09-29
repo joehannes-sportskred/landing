@@ -7,8 +7,8 @@ const LayoutCenteredWide = ({ content, className, opts, callback }) => {
 
   return (
     <Container fluid textAlign="justified" className={className || ''}>
-      <Grid style={{ margin: 'auto' }}>
-        <Grid.Row only="computer">
+      <Grid style={{ height: '100%' }} stretched verticalAlign="middle">
+        <Grid.Row only="computer" verticalAlign="middle">
           <Grid.Column width={2} />
           <Grid.Column width={12}>
             <Content style={{ verticalAlign: 'middle' }} callback={callback} />

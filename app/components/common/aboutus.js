@@ -7,7 +7,7 @@ import SocialIcons from './socialicons';
 import { LINKS, TEXT } from '../../assets/data/enum';
 
 const Component = () => (
-  <Menu as="nav" fluid stackable size="large" className="bottom about menu">
+  <Menu as="nav" fluid size="large" className="bottom about menu">
     <Menu.Item as="article">
       <SocialIcons />
     </Menu.Item>

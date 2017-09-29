@@ -7,7 +7,7 @@ const LayoutBalanced = ({ content, className, opts }) => {
 
   return (
     <Container fluid className={className}>
-      <Grid>
+      <Grid stretched style={{ height: '100%' }}>
         <Grid.Row only="computer">
           <Grid.Column width={2} />
           <Grid.Column verticalAlign="middle" width={6}>
