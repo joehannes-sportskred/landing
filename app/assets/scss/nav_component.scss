@@ -4,7 +4,7 @@ nav.ui.main.navigation.menu {
   left: 0;
   margin-top: 0 !important;
   z-index: 999;
-  background-image: $pattern_url_light;
+  background: $pattern_url_light;
   background-repeat: repeat;
   &> .item:first-child {
     padding-top: 0 !important;
@@ -57,7 +57,7 @@ nav.ui.main.navigation.menu {
 }
 
 .ui.labeled.icon.menu {
-  background-image: $pattern_url_dark_very;
+  @include pattern($pattern_url_dark_very, $primary-bg-1, 10);
   background-repeat: repeat;
   &> a.header.item {
     color: white;
