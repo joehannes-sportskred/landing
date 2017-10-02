@@ -25,9 +25,6 @@ import PhotoScreens from './landing/photoscreens';
 import { IMG } from '../../assets/data/enum';
 
 class Page extends Component {
-  state = {
-    intro: true,
-  };
   render = () => (
     <Container fluid as="main">
       <Grid stretched verticalAlign="middle">
@@ -35,18 +32,11 @@ class Page extends Component {
           <Menu.Primary />
         </Grid.Row>
         <Grid.Row stretched verticalAlign="middle">
-          {this.state.intro ?
-            <LayoutCenteredWide
-              content={Intro}
-              className="main landing page intro"
-              callback={() => this.setState({ intro: false })}
-            /> :
-            <LayoutBalanced
-              content={PhotoScreens}
-              className="main landing page rolechooser"
-              style={{ display: 'none' }}
-            />
-          }
+          <LayoutBalanced
+            content={PhotoScreens}
+            className="main landing page rolechooser"
+            style={{ display: 'none' }}
+          />
         </Grid.Row>
         <Grid.Row style={{ bottom: 0 }}>
           <AboutUs />

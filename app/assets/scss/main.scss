@@ -14,21 +14,21 @@ $pattern_url_dark: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CA
 $pattern_url_dark_very: $pattern_url_dark;
 
 @mixin pattern($p, $c, $potential) {
-  background-image: $p;
-  z-index: #{-1 * (1000/$potential)} !important;
-  &:after {
+  &:before {
     content: ' ';
     position: absolute !important;
+    background-image: $p;
     top: 0 !important;
     left: 0 !important;
     width: 100% !important;
     height: 100% !important;
-    z-index: #{-2 * (1000/$potential)} !important;
+  }
+  & {
     background-color: $c !important;
   }
 }
 
-@import 'nav_component';
+@import 'menu';
 @import 'animations';
 @import 'helpers';
 
@@ -40,8 +40,9 @@ html, body, #root, main, main > .ui {
 main {
   &> .ui.stretched.grid {
     margin-top: 0 !important;
-    @include pattern($pattern_url_dark, $complementary-bg-1, -1000);
+    @include pattern($pattern_url_dark, $complementary_bg_0, -1);
     &> .row {
+      @include pattern($pattern_url_dark, $complementary_bg_0, 0)
       &:first-child {
         padding-top: 0 !important;
         padding-bottom: 0 !important;
@@ -57,9 +58,10 @@ main {
   }
 }
 .inverted {
-  @include pattern($pattern_url_dark, $transparent, 100);
+  @include pattern($pattern_url_dark, $transparent, 1000);
   &.lightly {
-    @include pattern($pattern_url_light, $primary-bg-0, 100);
+    @include pattern($pattern_url_light, $primary_bg_0, 1000);
+    box-shadow: inset 0 0 21px 3px $primary_bg_1 !important;
   }
 }
 

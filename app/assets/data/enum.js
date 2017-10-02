@@ -167,6 +167,7 @@ export const LINKS = {
     PRIVACY_POLICY: 'privacy',
   },
   TOUR: 'tour',
+  LANDING: 'landing',
 };
 
 export const IMG = {
