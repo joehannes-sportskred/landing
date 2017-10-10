@@ -5,10 +5,7 @@ import { browserHistory } from 'history';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import Intro from './components/page/intro';
 import Landing from './components/page/landing';
-import Legal from './components/page/legal';
-import Tour from './components/page/tour';
 
 import reducers from './store/reducers';
 
@@ -22,11 +19,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
       <Switch>
-        <Route path="/" exact component={Intro} />
-        <Route path={`/${LINKS.LANDING}`} component={Landing} />
-        <Route path={`/${LINKS.LEGAL.TERMS_OF_USE}`} component={Legal.TermsOfUse} />
-        <Route path={`/${LINKS.LEGAL.PRIVACY_POLICY}`} component={Legal.PrivacyPolicy} />
-        <Route path={`/${LINKS.TOUR}`} component={Tour.Brand} />
+        <Route path="/" exact component={Landing} />
       </Switch>
     </Router>
   </Provider>,
