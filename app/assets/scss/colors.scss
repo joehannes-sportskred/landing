@@ -4,34 +4,60 @@ $youtube-red: #ff0000;
 $twitter-blue: #1DA1F2;
 $instagram-purple: #A536B9;
 
-$rgba-primary-0: rgba(151, 73,  8,1); // Main Primary color */
-$rgba-primary-1: rgba(235,107,  2,1);
-$rgba-primary-2: rgba(186, 90, 11,1);
-$rgba-primary-3: rgba(105, 48,  0,1);
-$rgba-primary-4: rgba( 62, 28,  0,1);
+// As hex codes */
+$color-primary-0: #FFAE6B;	// Main Primary color */
+$color-primary-1: #FFD9BA;
+$color-primary-2: #FFC18F;
+$color-primary-3: #FF9D4C;
+$color-primary-4: #E97E25;
 
-$rgba-secondary-1-0: rgba(151,103,  8,1); // Main Secondary color (1) */
-$rgba-secondary-1-1: rgba(235,157,  2,1);
-$rgba-secondary-1-2: rgba(186,128, 11,1);
-$rgba-secondary-1-3: rgba(105, 70,  0,1);
-$rgba-secondary-1-4: rgba( 62, 41,  0,1);
+$color-secondary-1-0: #5F7EC6;	// Main Secondary color (1) */
+$color-secondary-1-1: #B6C7F0;
+$color-secondary-1-2: #85A0DD;
+$color-secondary-1-3: #4061AD;
+$color-secondary-1-4: #264A9C;
 
-$rgba-secondary-2-0: rgba(151,  8,  8,1); // Main Secondary color (2) */
-$rgba-secondary-2-1: rgba(235,  2,  2,1);
-$rgba-secondary-2-2: rgba(186, 11, 11,1);
-$rgba-secondary-2-3: rgba(105,  0,  0,1);
-$rgba-secondary-2-4: rgba( 62,  0,  0,1);
+$color-secondary-2-0: #5CDD5C;	// Main Secondary color (2) */
+$color-secondary-2-1: #B3F6B3;
+$color-secondary-2-2: #83EA83;
+$color-secondary-2-3: #3DCD3D;
+$color-secondary-2-4: #1DBB1D;
 
-$rgba-complement-0: rgba(  5, 90, 90,1);  // Main Complement color */
-$rgba-complement-1: rgba(  1,141,141,1);
-$rgba-complement-2: rgba(  7,112,112,1);
-$rgba-complement-3: rgba(  0, 63, 63,1);
-$rgba-complement-4: rgba(  0, 37, 37,1);
+$color-complement-0: #4EBABA;	// Main Complement color */
+$color-complement-1: #ACEDED;
+$color-complement-2: #77D5D5;
+$color-complement-3: #2E9C9C;
+$color-complement-4: #168C8C;
 
-$primary_bg_0: rgba(151,73,8,0.3);
-$primary_bg_1: rgba(151,73,8,0.7);
-$complementary_bg_0:rgba(5,90,90,0.3);
-$complementary_bg_1:rgba(5,90,90,0.7);
+// As RGBa codes */
+$rgba-primary-0: rgba(255,174,107,1);	// Main Primary color */
+$rgba-primary-1: rgba(255,217,186,1);
+$rgba-primary-2: rgba(255,193,143,1);
+$rgba-primary-3: rgba(255,157, 76,1);
+$rgba-primary-4: rgba(233,126, 37,1);
+
+$rgba-secondary-1-0: rgba( 95,126,198,1);	// Main Secondary color (1) */
+$rgba-secondary-1-1: rgba(182,199,240,1);
+$rgba-secondary-1-2: rgba(133,160,221,1);
+$rgba-secondary-1-3: rgba( 64, 97,173,1);
+$rgba-secondary-1-4: rgba( 38, 74,156,1);
+
+$rgba-secondary-2-0: rgba( 92,221, 92,1);	// Main Secondary color (2) */
+$rgba-secondary-2-1: rgba(179,246,179,1);
+$rgba-secondary-2-2: rgba(131,234,131,1);
+$rgba-secondary-2-3: rgba( 61,205, 61,1);
+$rgba-secondary-2-4: rgba( 29,187, 29,1);
+
+$rgba-complement-0: rgba( 78,186,186,1);	// Main Complement color */
+$rgba-complement-1: rgba(172,237,237,1);
+$rgba-complement-2: rgba(119,213,213,1);
+$rgba-complement-3: rgba( 46,156,156,1);
+$rgba-complement-4: rgba( 22,140,140,1);
+
+$primary_bg_0: rgba($rgba-complement-1, 0.3);
+$primary_bg_1: rgba($rgba-complement-1, 0.7);
+$complementary_bg_0:rgba($rgba-complement-4, 0.3);
+$complementary_bg_1:rgba($rgba-complement-4, 0.7);
 
 $transparent: rgba(0,0,0,0);
 
