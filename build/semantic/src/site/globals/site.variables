@@ -1,3 +1,5 @@
 /*******************************
      User Global Variables
 *******************************/
+
+@fontPath: "./themes/paper/assets/fonts/";

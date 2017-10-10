@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Menu } from 'semantic-ui-react';
+import { Button, Icon, Menu } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 import Steps from './steps';
@@ -10,7 +10,7 @@ import Actions from '../../store/containers/landingactions';
 import Logo from '../../store/containers/dynamiclogo';
 
 const AbstractComponent = ({ SubMenu }) => (
-  <Menu as="nav" fluid pointing size="large" className="main navigation menu">
+  <Menu as="nav" fluid pointing size="large" className="main navigation">
     <Menu.Item name="about" active>
       <Logo logoType="light" />
     </Menu.Item>
@@ -28,7 +28,11 @@ AbstractComponent.propTypes = {
 };
 
 const Primary = () => (
-  <div />
+  <Menu.Menu>
+    <Menu.Item>
+      <Button circular primary icon="facebook" />
+    </Menu.Item>
+  </Menu.Menu>
 );
 
 const Tour = () => (

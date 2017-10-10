@@ -61,3 +61,5 @@ npm-debug.log
 /coverage
 /dist
 /heroku
+
+.DS_Store

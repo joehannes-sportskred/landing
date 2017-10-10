@@ -34,7 +34,7 @@ html, body, #root, main, main > .ui {
 
 main {
   &> .ui.stretched.grid {
-    margin-top: 0 !important;
+    margin: 0 !important;
     @include pattern($pattern_url_dark, $complementary_bg_0, -1);
     &> .row {
       @include pattern($pattern_url_dark, $complementary_bg_0, 0)
@@ -52,6 +52,7 @@ main {
     }
   }
 }
+
 .inverted {
   @include pattern($pattern_url_dark, $transparent, 1000);
   &.lightly {
