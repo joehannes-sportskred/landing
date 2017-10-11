@@ -7,17 +7,12 @@ import { ACTION, ANIMATION, LINKS, TEXT } from '../../assets/data/enum';
 
 const Component = ({ active, onActivate }) => (
   <Button.Group fluid>
-    <Button animated={active !== 'about' ? false : ANIMATION.STD.BUTTON} primary onClick={() => (active !== 'about' && onActivate(ACTION.DIMMER.SIGN_UP))}>
-      <Button.Content visible>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{TEXT.SIGN_UP.TITLE}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      </Button.Content>
-      <Button.Content hidden>
-        {TEXT.ROLE.TITLE}
-      </Button.Content>
+    <Button secondary onClick={() => onActivate(ACTION.DIMMER.LOG_IN)}>
+      {TEXT.LOG_IN.TITLE}
     </Button>
     <Button.Or />
-    <Button positive onClick={() => onActivate(ACTION.DIMMER.LOG_IN)}>
-      {TEXT.LOG_IN.TITLE}
+    <Button primary onClick={() => (onActivate(ACTION.DIMMER.SIGN_UP))}>
+      {TEXT.SIGN_UP.TITLE}
     </Button>
   </Button.Group>
 );
