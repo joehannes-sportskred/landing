@@ -1,7 +1,7 @@
 {
-  "name": "react-webpack-boilerplate",
+  "name": "sportskred-landing",
   "version": "2.0.0",
-  "description": "Minimalistic ES6 React boilerplate",
+  "description": "Progressive enhancement of the current landing page",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
@@ -11,10 +11,10 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "coverage": "jest --coverage",
-    "precommit": "cross-env npm run lint && npm test",
-    "prepush": "cross-env npm run lint && npm test"
+    "precommit": "cross-env npm run lint",
+    "prepush": "cross-env npm run lint"
   },
-  "author": "Kliment Petrov <kleopetroff@gmail.com>",
+  "author": "Johannes Neugschwentner <johannes@sportskred.com>",
   "license": "MIT",
   "jest": {
     "mapCoverage": true,
