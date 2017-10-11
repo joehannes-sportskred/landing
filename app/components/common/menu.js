@@ -28,9 +28,15 @@ AbstractComponent.propTypes = {
 };
 
 const Primary = () => (
-  <Menu.Menu>
-    <Menu.Item>
-      <Button circular primary icon="facebook" />
+  <Menu.Menu className="fab-menu">
+    <Menu.Item className="fab-trigger">
+      <Button circular primary icon="sidebar" />
+    </Menu.Item>
+    <Menu.Item className="fab-item">
+      <Button circular icon="mail" />
+    </Menu.Item>
+    <Menu.Item className="fab-item">
+      <Button circular icon="newspaper" />
     </Menu.Item>
   </Menu.Menu>
 );
