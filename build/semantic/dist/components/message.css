@@ -276,7 +276,7 @@
 /* Positive */
 .ui.positive.message {
   background-color: #FCFFF5;
-  color: #3e1c00;
+  color: #e97e25;
 }
 .ui.positive.message,
 .ui.attached.positive.message {
@@ -303,7 +303,7 @@
 
 /* Info */
 .ui.info.message {
-  background-color: #077070;
+  background-color: #77d5d5;
   color: #276F86;
 }
 .ui.info.message,
@@ -317,7 +317,7 @@
 
 /* Warning */
 .ui.warning.message {
-  background-color: #ba0b0b;
+  background-color: #83ea83;
   color: #573A08;
 }
 .ui.warning.message,
@@ -346,7 +346,7 @@
 /* Success */
 .ui.success.message {
   background-color: #FCFFF5;
-  color: #3e1c00;
+  color: #e97e25;
 }
 .ui.success.message,
 .ui.attached.success.message {

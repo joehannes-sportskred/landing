@@ -2,4 +2,4 @@
     User Variable Overrides
 *******************************/
 
-@fontPath: "./themes/paper/assets/fonts/";
+@fontPath: "../themes/paper/assets/fonts";

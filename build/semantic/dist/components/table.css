@@ -309,7 +309,7 @@
 .ui.table tr.positive,
 .ui.table td.positive {
   background: #FCFFF5 !important;
-  color: #3e1c00 !important;
+  color: #e97e25 !important;
 }
 
 /*--------------
@@ -353,7 +353,7 @@
 }
 .ui.table tr.warning,
 .ui.table td.warning {
-  background: #ba0b0b !important;
+  background: #83ea83 !important;
   color: #573A08 !important;
 }
 
@@ -526,7 +526,7 @@
 .ui.selectable.table tr.warning:hover,
 .ui.table tr td.selectable.warning:hover,
 .ui.selectable.table tr:hover td.warning {
-  background: #ac0a0a !important;
+  background: #76e876 !important;
   color: #493107 !important;
 }
 .ui.selectable.table tr.active:hover,
@@ -539,7 +539,7 @@
 .ui.table tr td.selectable.positive:hover,
 .ui.selectable.table tr:hover td.positive {
   background: #f7ffe6 !important;
-  color: #2f1500 !important;
+  color: #e77617 !important;
 }
 .ui.selectable.table tr.negative:hover,
 .ui.table tr td.selectable.negative:hover,
