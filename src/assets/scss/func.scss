@@ -1,0 +1,14 @@
+@mixin pattern($p, $c, $potential) {
+  &:before {
+    content: ' ';
+    position: absolute !important;
+    background-image: $p;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  & {
+    background-color: $c !important;
+  }
+}
