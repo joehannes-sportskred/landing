@@ -15,8 +15,8 @@ export const TOUR = {
       IMG: 'assets/img/tour/action/discover.png',
       TITLE: 'Discover inspiring athletes and teams',
       DESCRIPTION: `
-        Search and select the right athletes and teams to sponsor, 
-        based on common values and your target audience. 
+        Search and select the right athletes and teams to sponsor,
+        based on common values and your target audience.
         There are hundreds to choose from and more joining every day...`,
       SLOGAN: 'Discover inspiring athletes and teams',
       IMG_DETAIL: 'assets/img/tour/brand/discover.png',
@@ -39,7 +39,7 @@ export const TOUR = {
     }, {
       IMG: 'assets/img/tour/action/measure.png',
       TITLE: 'Measure the impact and results',
-      DESCRIPTION: `Measure the impact of your digital sponsorship and make decisions to 
+      DESCRIPTION: `Measure the impact of your digital sponsorship and make decisions to
         improve the results. Everything in digital is measurable, so make the best use
         of the analysis to optimise campaigns.`,
       SLOGAN: 'Measure the impact and results',
@@ -149,11 +149,31 @@ export const TEXT = {
 };
 
 export const VIDEO = {
-  CODE: 'oihQlsZFNXw',
-  POSTER: 'assets/img/video_poster.png',
-  TITLE: 'Sportskred in 2 minutes',
+  CODE: 'gltP7MBDo9o',
+  POSTER: 'assets/video/poster_3.png',
   PROVIDER: 'youtube',
 };
+
+export const VIDEO_ICONS = [
+  {
+    AVATAR: 'assets/video/avatar_1.png',
+    CODE: 'H0cg6hcKL7I',
+    POSTER: 'assets/video/poster_1.png',
+    PROVIDER: 'youtube',
+  },
+  {
+    AVATAR: 'assets/video/avatar_2.png',
+    CODE: 'bTImyy0fl5U',
+    POSTER: 'assets/video/poster_2.png',
+    PROVIDER: 'youtube',
+  },
+  {
+    AVATAR: 'assets/video/avatar_3.png',
+    CODE: 'gltP7MBDo9o',
+    POSTER: 'assets/video/poster_3.png',
+    PROVIDER: 'youtube',
+  }
+];
 
 export const LINKS = {
   SOCIAL: {

@@ -1,61 +1,62 @@
 import React from 'react';
-import { Button, Embed, Header, Icon, Image, Label, Menu, Segment } from 'semantic-ui-react';
+import { Button, Embed, Image, Reveal, Segment } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 import SocialIcons from '../../common/socialicons';
 import Actions from '../../../store/containers/landingactions';
 import Roles from '../../../store/containers/role';
 
-import { TEXT, VIDEO } from '../../../assets/data/enum';
+import { LINKS, TEXT, VIDEO, VIDEO_ICONS } from '../../../assets/data/enum';
 
 const Left = () => (
-  <Segment.Group raised>
-    <Segment attached="top">
-      <Embed
-        id={VIDEO.CODE}
-        placeholder={VIDEO.POSTER}
-        source={VIDEO.PROVIDER}
-      />
-    </Segment>
-    <Segment inverted attached="bottom">
-      <Header as="h2" content={VIDEO.TITLE} />
-    </Segment>
+  <Segment.Group basic compact>
+    {VIDEO_ICONS.map((icon, i) => (
+      <Segment basic key={`videoicon_${i}`}>
+        <Reveal animated='fade' style={{ transform: 'translateX(33px)', zIndex: 9 }}>
+          <Reveal.Content visible>
+            <Image
+              shape="circular"
+              size="small"
+              src={icon.AVATAR}
+              style={{ maxWidth: '69px', marginLeft: '-1px', marginTop: '-1px' }}
+            />
+          </Reveal.Content>
+          <Reveal.Content hidden>
+            <Button circular primary size="massive" icon="play" />
+          </Reveal.Content>
+        </Reveal>
+      </Segment>
+    ))}
   </Segment.Group>
+);
+
+const Center = () => (
+  <Embed
+    id={VIDEO.CODE}
+    placeholder={VIDEO.POSTER}
+    source={VIDEO.PROVIDER}
+    style={{ opacity: '0.67' }}
+  />
 );
 
 const Right = () => (
-  <Segment.Group raised>
-    <Segment inverted attached="top">
-      <Header as="h1" textAlign="right" content={TEXT.SLOGAN.TITLE} />
-    </Segment>
-    <Segment attached style={{ textAlign: 'center' }}>
-      {TEXT.SLOGAN.EXPLANATION}
-    </Segment>
-    <Segment.Group horizontal>
-      <Segment basic attached className="very">
-        <Icon circular inverted size="large" name="trophy" />
+  <Segment.Group basic compact>
+    {Object.keys(LINKS.SOCIAL).map((key, i) => (
+      <Segment basic key={`socialicon_${i}`} style={{ transform: 'translateX(-69px)' }}>
+        <Button
+          as="a"
+          circular
+          color={key.toLowerCase()}
+          size="small"
+          icon={key.toLowerCase()}
+          href={LINKS.SOCIAL[key]}
+          target="_blank"
+         />
       </Segment>
-      <Segment basic attached className="very">
-        <SocialIcons />
-      </Segment>
-    </Segment.Group>
+    ))}
   </Segment.Group>
 );
 
-const Bottom = () => (
-  <Segment.Group raised>
-    <Segment inverted attached="top">
-      <Header as="h2" content="Choose your role" textAlign="center" />
-    </Segment>
-    <Segment attached>
-      <Roles />
-    </Segment>
-    <Segment attached="bottom">
-      <Actions />
-    </Segment>
-  </Segment.Group>
-);
-
-const Content = { Left, Right, Bottom };
+const Content = { Left, Center, Right };
 
 export default Content;

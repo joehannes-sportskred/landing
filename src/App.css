@@ -76,6 +76,9 @@ main > .ui.stretched.grid {
   padding-top: 20px !important;
   padding-bottom: 20px !important; }
 
+.ui.embed {
+  box-shadow: 0 0 33px 3px #000000; }
+
 nav.ui.menu:before {
   content: ' ';
   position: absolute !important;

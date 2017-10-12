@@ -13,14 +13,12 @@ import LayoutLefty from '../layout/lefty';
 import LayoutCentered from '../layout/centered';
 import LayoutCenteredWide from '../layout/centeredwide';
 import LayoutBalanced from '../layout/balanced';
+import LayoutRailedCenteredWide from '../layout/railedcenteredwide';
 
-// import Content from './landing/primary';
+import Content from './landing/primary';
 // import TeamContent from './landing/secondary';
 // import WhyContent from './landing/tertiary';
 // import HowContent from './landing/quaternary';
-
-import Intro from './landing/slogan';
-import PhotoScreens from './landing/photoscreens';
 
 import { IMG } from '../../assets/data/enum';
 
@@ -32,10 +30,9 @@ class Page extends Component {
           <Menu.Primary />
         </Grid.Row>
         <Grid.Row stretched verticalAlign="middle">
-          <LayoutBalanced
-            content={PhotoScreens}
-            className="main landing page rolechooser"
-            style={{ display: 'none' }}
+          <LayoutRailedCenteredWide
+            content={Content}
+            className="main landing page"
           />
         </Grid.Row>
         <Grid.Row style={{ bottom: 0 }}>

@@ -43,3 +43,7 @@ main {
   padding-top: $fixed_anchor_top_space * 1/3 !important;
   padding-bottom: $fixed_anchor_top_space * 1/3 !important;
 }
+
+.ui.embed {
+  box-shadow: 0 0 33px 3px $black;
+}
