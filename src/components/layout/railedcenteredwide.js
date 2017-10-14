@@ -13,7 +13,7 @@ const LayoutRailedCenteredWide = ({ content, className, opts, callback }) => {
           <Grid.Column width={1}>
             <Content.Left />
           </Grid.Column>
-          <Grid.Column width={12}>
+          <Grid.Column width={12} style={{ height: '100%' }}>
             <Content.Center style={{ verticalAlign: 'middle' }} callback={callback} />
           </Grid.Column >
           <Grid.Column width={1}>
