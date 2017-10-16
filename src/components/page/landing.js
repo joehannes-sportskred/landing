@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Container, Grid, Image } from 'semantic-ui-react';
-import TransitionGroup from 'react-transition-group/TransitionGroup';
 
 import Dimmer from '../../store/containers/dimmer';
 
