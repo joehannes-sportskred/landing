@@ -5,6 +5,10 @@
   "main": "index.js",
   "author": "Johannes Neugschwentner <johannes@sportskred.com>",
   "license": "MIT",
+  "engines": {
+    "node": "8.7.0",
+    "npm": "5.5.1"
+  }
   "jest": {
     "mapCoverage": true,
     "collectCoverageFrom": [
