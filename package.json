@@ -59,6 +59,7 @@
     "eslint-plugin-import": "2.7.0",
     "eslint-plugin-jsx-a11y": "5.1.0",
     "eslint-plugin-react": "7.2.0",
+    "gulp": "^3.9.1",
     "node-sass": "^4.5.3"
   }
 }

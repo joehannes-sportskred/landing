@@ -60,25 +60,25 @@
 @rgba-complement-3: rgba( 46,156,156,1);
 @rgba-complement-4: rgba( 22,140,140,1);
 
-@primaryColor        : @rgba-primary-1;
-@secondaryColor      : @rgba-secondary-1-3;
+@primaryColor        : @rgba-primary-4;
+@secondaryColor      : @rgba-secondary-1-0;
 
 @lightPrimaryColor   : @rgba-primary-0;
 @lightSecondaryColor : @rgba-secondary-1-1;
 
-@positiveColor: @rgba-complement-0;
-@positiveTextColor: @rgba-primary-4;
+@positiveColor: @rgba-secondary-2-4;
+@positiveTextColor: #FFFFFF;
 
-@infoColor: @rgba-complement-4;
-@infoTextColor: #@rgba-primary-1;
+@infoColor: @rgba-complement-1;
+@infoTextColor: #000000;
 
-@warningColor: @rgba-secondary-2-4;
-@warningTextClor: @rgba-secondary-1-0;
+@warningColor: red;
+@warningTextClor: white;
 
-@negativeColor: @rgba-secondary-2-0
-@negativeTextColor: @rgba-complement-4;
+@negativeColor: #282828; // youtube almost black color
+@negativeTextColor: white;
 
-@textcolor: @gray-darker;
+@textcolor: @gray;
 @fontName: "Arvo";
 @emSize: 17px;
 @fontSize: 17px;

@@ -276,7 +276,7 @@
 /* Positive */
 .ui.positive.message {
   background-color: #FCFFF5;
-  color: #e97e25;
+  color: #FFFFFF;
 }
 .ui.positive.message,
 .ui.attached.positive.message {
@@ -290,7 +290,7 @@
 /* Negative */
 .ui.negative.message {
   background-color: #FFF6F6;
-  color: #9F3A38;
+  color: white;
 }
 .ui.negative.message,
 .ui.attached.negative.message {
@@ -304,7 +304,7 @@
 /* Info */
 .ui.info.message {
   background-color: #77d5d5;
-  color: #276F86;
+  color: #000000;
 }
 .ui.info.message,
 .ui.attached.info.message {
@@ -332,7 +332,7 @@
 /* Error */
 .ui.error.message {
   background-color: #FFF6F6;
-  color: #9F3A38;
+  color: white;
 }
 .ui.error.message,
 .ui.attached.error.message {
@@ -346,7 +346,7 @@
 /* Success */
 .ui.success.message {
   background-color: #FCFFF5;
-  color: #e97e25;
+  color: #FFFFFF;
 }
 .ui.success.message,
 .ui.attached.success.message {

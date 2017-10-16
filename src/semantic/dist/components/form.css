@@ -261,7 +261,7 @@
   white-space: normal;
   background: #FFFFFF !important;
   border: 1px solid #E0B4B4 !important;
-  color: #790014 !important;
+  color: #000000 !important;
 }
 .ui.form .inline.fields .field .prompt,
 .ui.form .inline.field .prompt {
@@ -334,22 +334,22 @@
 
 /* Error Placeholder */
 .ui.form .error ::-webkit-input-placeholder {
-  color: #ff4664;
+  color: #666666;
 }
 .ui.form .error :-ms-input-placeholder {
-  color: #ff4664 !important;
+  color: #666666 !important;
 }
 .ui.form .error ::-moz-placeholder {
-  color: #ff4664;
+  color: #666666;
 }
 .ui.form .error :focus::-webkit-input-placeholder {
-  color: #ff1339;
+  color: #4d4d4d;
 }
 .ui.form .error :focus:-ms-input-placeholder {
-  color: #ff1339 !important;
+  color: #4d4d4d !important;
 }
 .ui.form .error :focus::-moz-placeholder {
-  color: #ff1339;
+  color: #4d4d4d;
 }
 
 /*--------------------
@@ -444,11 +444,11 @@
 .ui.form .field.error label,
 .ui.form .fields.error .field .input,
 .ui.form .field.error .input {
-  color: #790014;
+  color: #000000;
 }
 .ui.form .fields.error .field .corner.label,
 .ui.form .field.error .corner.label {
-  border-color: #790014;
+  border-color: #000000;
   color: #FFFFFF;
 }
 .ui.form .fields.error .field textarea,
@@ -481,7 +481,7 @@
 .ui.form .field.error input[type="url"] {
   background: #FFF6F6;
   border-color: #E0B4B4;
-  color: #790014;
+  color: #000000;
   border-radius: '';
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -502,7 +502,7 @@
 .ui.form .field.error input[type="url"]:focus {
   background: #FFF6F6;
   border-color: #E0B4B4;
-  color: #9F3A38;
+  color: white;
   -webkit-appearance: none;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -523,7 +523,7 @@
 .ui.form .field.error .ui.dropdown .text,
 .ui.form .field.error .ui.dropdown .item {
   background: #FFF6F6;
-  color: #790014;
+  color: #000000;
 }
 .ui.form .fields.error .field .ui.dropdown,
 .ui.form .field.error .ui.dropdown {
@@ -540,7 +540,7 @@
 .ui.form .fields.error .field .ui.multiple.selection.dropdown > .label,
 .ui.form .field.error .ui.multiple.selection.dropdown > .label {
   background-color: #EACBCB;
-  color: #9F3A38;
+  color: white;
 }
 
 /* Hover */
@@ -569,7 +569,7 @@
 .ui.form .field.error .checkbox:not(.toggle):not(.slider) label,
 .ui.form .fields.error .field .checkbox:not(.toggle):not(.slider) .box,
 .ui.form .field.error .checkbox:not(.toggle):not(.slider) .box {
-  color: #790014;
+  color: #000000;
 }
 .ui.form .fields.error .field .checkbox:not(.toggle):not(.slider) label:before,
 .ui.form .field.error .checkbox:not(.toggle):not(.slider) label:before,
@@ -582,7 +582,7 @@
 .ui.form .field.error .checkbox label:after,
 .ui.form .fields.error .field .checkbox .box:after,
 .ui.form .field.error .checkbox .box:after {
-  color: #790014;
+  color: #000000;
 }
 
 /*--------------------
@@ -681,7 +681,7 @@
 .ui.form .required.field > .checkbox:after {
   margin: -0.2em 0em 0em 0.2em;
   content: '*';
-  color: #DF0024;
+  color: #282828;
 }
 .ui.form .required.fields:not(.grouped) > .field > label:after,
 .ui.form .required.fields.grouped > label:after,
