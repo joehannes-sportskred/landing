@@ -25,6 +25,7 @@
   "dependencies": {
     "cross-env": "5.0.1",
     "d3": "^4.10.2",
+    "fbjs": "^0.8.16",
     "gsap": "^1.20.2",
     "history": "^4.7.2",
     "lodash": "^4.17.4",
