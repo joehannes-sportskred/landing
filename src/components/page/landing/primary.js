@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import YouTube from 'react-youtube';
 
 import SocialIcons from '../../common/socialicons';
-import Player from '../../common/player';
 import Actions from '../../../store/containers/landingactions';
 import Roles from '../../../store/containers/role';
 
