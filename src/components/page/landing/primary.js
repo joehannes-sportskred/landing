@@ -38,16 +38,22 @@ class Center extends React.Component {
   render () {
     if (this.state.poster === true) {
       return (
-        <Container fluid onClick={() => this.setState({ poster: false })}>
+        <Container
+          fluid
+          onClick={() => this.setState({ poster: false })}
+          id="player-wrapper"
+        >
           <Image
             src={VIDEO.POSTER}
             style={{
               position: 'absolute',
               top: '50%',
-              left: '16px',
-              right: '0',
-              transform: 'translateY(-50%)',
+              left: '50%',
+              transform: 'translateY(-50%) translateX(-50%)',
            }}
+           height="100%"
+           width="auto"
+           centered
           />
           <Icon
             size="massive"
