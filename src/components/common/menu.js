@@ -10,7 +10,7 @@ import Actions from '../../store/containers/landingactions';
 import Logo from '../../store/containers/dynamiclogo';
 
 const AbstractComponent = ({ SubMenu }) => (
-  <Menu as="nav" fluid pointing size="large" className="main navigation">
+  <Menu as="nav" fluid size="large" className="main navigation">
     <Menu.Item name="about" active>
       <Logo logoType="light" />
     </Menu.Item>
