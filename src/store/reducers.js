@@ -12,6 +12,10 @@ const role = (state = 'about', action) => {
   }
 };
 
+const video = (state = 0, action) => {
+  return action.video || state;
+}
+
 const dimmer = (state = ACTION.DIMMER.OFF, action) => {
   switch (action.type) {
     case ACTION.DIMMER.SIGN_UP:

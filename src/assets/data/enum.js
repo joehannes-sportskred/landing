@@ -149,7 +149,7 @@ export const TEXT = {
 };
 
 export const VIDEO = {
-  CODE: 'gltP7MBDo9o',
+  CODE: 'sHFqNYYjogY',
   POSTER: 'assets/video/poster_3.png',
   PROVIDER: 'youtube',
 };

@@ -6,30 +6,11 @@ import YouTube from 'react-youtube';
 import SocialIcons from '../../common/socialicons';
 import Actions from '../../../store/containers/landingactions';
 import Roles from '../../../store/containers/role';
+import VIDEO_ICONS from '../../../store/container/video_icons';
 
 import { LINKS, TEXT, VIDEO, VIDEO_ICONS } from '../../../assets/data/enum';
 
-const Left = () => (
-  <Segment.Group compact basic>
-    {VIDEO_ICONS.map((icon, i) => (
-      <Segment basic key={`videoicon_${i}`}>
-        <Reveal animated='fade' style={{ transform: 'translateX(33px)', zIndex: 9 }}>
-          <Reveal.Content visible>
-            <Image
-              shape="circular"
-              size="small"
-              src={icon.AVATAR}
-              style={{ maxWidth: '69px', marginLeft: '-1px', marginTop: '-1px' }}
-            />
-          </Reveal.Content>
-          <Reveal.Content hidden>
-            <Button circular primary size="massive" icon="play" />
-          </Reveal.Content>
-        </Reveal>
-      </Segment>
-    ))}
-  </Segment.Group>
-);
+const Left = () => <VIDEO_ICONS />;
 
 class Center extends React.Component {
   state = {
