@@ -5,10 +5,10 @@ import { Button, Image, Reveal, Segment } from 'semantic-ui-react';
 import { VIDEO_ICONS } from '../../assets/data/enum';
 
 const Component = ({ active, onActivate }) => (
-  <Segment.Group compact basic>
+  <Segment.Group compact>
     {VIDEO_ICONS.map((icon, i) => (
-      <Segment basic key={`videoicon_${i}`}>
-        <Reveal animated='fade' style={{ transform: 'translateX(33px)', zIndex: 9 }}>
+      <Segment key={`videoicon_${i}`} basic>
+        <Reveal animated='move up' style={{ transform: 'translateX(33px)', zIndex: 9 }}>
           <Reveal.Content visible>
             <Image
               shape="circular"
@@ -35,7 +35,7 @@ const Component = ({ active, onActivate }) => (
 );
 
 Component.propTypes = {
-  active: PropTypes.string.isRequired,
+  active: PropTypes.number.isRequired,
   onActivate: PropTypes.func.isRequired,
 }
 

@@ -146,6 +146,11 @@ export const TEXT = {
       BACK: 'Back',
     },
   },
+  INACTION: {
+    MAIN: 'See Sportskred in Action',
+    BRAND: 'As a Marketeer',
+    ATHLETE: 'As an Athlete',
+  },
 };
 
 export const VIDEO = {
@@ -188,6 +193,10 @@ export const LINKS = {
   },
   TOUR: 'tour',
   LANDING: 'landing',
+  INACTION: {
+    BRAND: 'inaction/marketeer',
+    ATHLETE: 'inaction/athlete',
+  },
 };
 
 export const IMG = {

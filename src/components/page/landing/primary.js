@@ -12,10 +12,10 @@ import { LINKS, TEXT, VIDEO, VIDEO_ICONS } from '../../../assets/data/enum';
 
 const Left = () => <VideoIcons />;
 
-const Center = () => <Player />
+const Center = () => <Player />;
 
 const Right = () => (
-  <Segment.Group basic compact>
+  <Segment.Group compact>
     {Object.keys(LINKS.SOCIAL).map((key, i) => (
       <Segment basic key={`socialicon_${i}`} style={{ transform: 'translateX(-36px)' }}>
         <Button

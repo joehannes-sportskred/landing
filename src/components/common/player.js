@@ -58,8 +58,8 @@ const Component = ({ active, video, poster, onActivate }) => {
 
 Component.propTypes = {
   active: PropTypes.bool.isRequired,
-  video: PropTypes.string.isRequired,
-  poster: PropTypes.string.isRequired,
+  video: PropTypes.number.isRequired,
+  poster: PropTypes.number.isRequired,
   onActivate: PropTypes.func.isRequired,
 };
 
