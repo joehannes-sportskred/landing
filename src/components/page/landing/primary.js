@@ -6,11 +6,11 @@ import YouTube from 'react-youtube';
 import SocialIcons from '../../common/socialicons';
 import Actions from '../../../store/containers/landingactions';
 import Roles from '../../../store/containers/role';
-import VIDEO_ICONS from '../../../store/container/video_icons';
+import VIDICONS from '../../../store/container/video_icons';
 
 import { LINKS, TEXT, VIDEO, VIDEO_ICONS } from '../../../assets/data/enum';
 
-const Left = () => <VIDEO_ICONS />;
+const Left = () => <VIDICONS />;
 
 class Center extends React.Component {
   state = {
