@@ -5,14 +5,14 @@ import { Button, Icon, Menu } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 import Steps from './steps';
+import Logo from './dynamiclogo';
 import Roles from '../../store/containers/role';
 import Actions from '../../store/containers/landingactions';
-import Logo from '../../store/containers/dynamiclogo';
 
 const AbstractComponent = ({ SubMenu }) => (
   <Menu as="nav" fluid size="large" className="main navigation">
     <Menu.Item name="about" active>
-      <Logo logoType="light" />
+      <Logo logoType="dark" />
     </Menu.Item>
     <SubMenu />
     <Menu.Menu position="right">
