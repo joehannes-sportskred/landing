@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Button, Image, Reveal, Segment } from 'semantic-ui-react';
 
-import { VIDEO_ICONS } from '../../../assets/data/enum';
+import { VIDEO_ICONS } from '../../assets/data/enum';
 
 const Component = ({ active, onActivate }) => (
   <Segment.Group compact basic>

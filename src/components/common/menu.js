@@ -33,10 +33,10 @@ const Primary = () => (
       <Button circular primary icon="sidebar" />
     </Menu.Item>
     <Menu.Item className="fab-item">
-      <Button circular icon="mail" />
+      <Button icon="mail" content="Contact Us" />
     </Menu.Item>
     <Menu.Item className="fab-item">
-      <Button circular icon="newspaper" />
+      <Button icon="newspaper" content="Blog" />
     </Menu.Item>
   </Menu.Menu>
 );

@@ -215,6 +215,11 @@ export const ACTION = {
     ENABLE: 'ENABLE_UNDO_HISTORY',
     DISABLE: 'DISABLE_UNDO_HISTORY',
   },
+  VIDEO: {
+    PROVIDER: {
+      YOUTUBE: 'YOUTUBE',
+    },
+  },
 };
 
 export const ROLE = {

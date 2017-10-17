@@ -9,13 +9,13 @@ nav.ui.menu {
 
 .fab-item > button {
   opacity: 0;
-  transform: translateX(-100%) !important;
+  transform: translateX(-73%) !important;
   transition: opacity .5s, transform .5s;
   &:before { display: none; }
 }
 .fab-item:nth-of-type(odd) > button {
-  transform: translateX(-200%) !important;
-  transition-delay: .15s;
+  transform: translateX(-133%) !important;
+  transition-delay: .2s;
 }
 
 .fab-menu:hover > .fab-item {
@@ -24,6 +24,6 @@ nav.ui.menu {
     transform: translateX(0) !important;
   }
   &:nth-of-type(odd) > button {
-    transform: translateX(-33%) !important;
+    transform: translateX(0) !important;
   }
 }

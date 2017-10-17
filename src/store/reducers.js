@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import addHistory, { distinctState } from 'redux-undo';
 
-import { ACTION } from '../assets/data/enum';
+import { ACTION, VIDEO } from '../assets/data/enum';
 
 const role = (state = 'about', action) => {
   switch (action.type) {
@@ -13,7 +13,11 @@ const role = (state = 'about', action) => {
 };
 
 const video = (state = 0, action) => {
-  return action.video || state;
+  return action.type == ACTION.VIDEO.PROVIDER.YOUTUBE && (action.video || state);
+}
+
+const videoStatus = (state = false, action) => {
+  return action.type == ACTION.VIDEO.PROVIDER.YOUTUBE && (action.status || state);
 }
 
 const dimmer = (state = ACTION.DIMMER.OFF, action) => {
