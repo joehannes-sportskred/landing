@@ -54,10 +54,10 @@ $rgba-complement-2: rgba(119,213,213,1);
 $rgba-complement-3: rgba( 46,156,156,1);
 $rgba-complement-4: rgba( 22,140,140,1);
 
-$primary_bg_0: rgba($rgba-complement-1, 0.3);
-$primary_bg_1: rgba($rgba-complement-1, 0.7);
-$complementary_bg_0:rgba($rgba-complement-4, 0.3);
-$complementary_bg_1:rgba($rgba-complement-4, 0.7);
+$primary_bg_0: rgba($rgba-primary-0, 0.3);
+$primary_bg_1: rgba($rgba-primary-0, 0.7);
+$complementary_bg_0:rgba($rgba-secondary-1-0, 0.3);
+$complementary_bg_1:rgba($rgba-secondary-1-0, 0.7);
 
 $transparent: rgba(0,0,0,0);
 

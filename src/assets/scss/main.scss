@@ -53,6 +53,9 @@ main {
   left: 0px;
   background-color: $black;
   box-shadow: 0 0 33px 3px $black;
+  &> i:before {
+    top: auto !important;
+  }
 }
 
 iframe#player {

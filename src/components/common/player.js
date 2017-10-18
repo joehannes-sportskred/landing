@@ -27,7 +27,7 @@ const Component = ({ active, video, poster, onActivate }) => {
         centered
       />
       <Icon
-        size="massive"
+        size="huge"
         name="play"
         inverted
         style={{
@@ -38,6 +38,7 @@ const Component = ({ active, video, poster, onActivate }) => {
         }}
         width="100%"
         height="100%"
+        circular
       />
     </Container>
   ) : (

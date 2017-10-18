@@ -34,7 +34,7 @@ class Page extends Component {
             className="main landing page"
           />
         </Grid.Row>
-        <Grid.Row style={{ bottom: 0 }}>
+        <Grid.Row style={{ bottom: 0, position: 'absolute' }}>
           <AboutUs />
         </Grid.Row>
       </Grid>
