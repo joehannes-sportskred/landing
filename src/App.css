@@ -94,6 +94,7 @@ iframe#player {
   box-shadow: 0 0 33px 3px #000000; }
 
 nav.ui.menu {
+  max-height: 64px;
   z-index: 9999999; }
   nav.ui.menu:before {
     content: ' ';
@@ -118,7 +119,7 @@ nav.ui.menu {
 .fab-item > button {
   opacity: 0;
   transform: translateX(-34%) !important;
-  transition: opacity 1s, transform .5s;
+  transition: opacity 1s ease-out, transform .5s ease-out;
   transition-delay: 0.25s, 0s !important; }
   .fab-item > button:before {
     display: none; }
@@ -127,13 +128,13 @@ nav.ui.menu {
   transform: translateX(-73%) !important;
   transition-delay: .2s !important; }
 
-.fab-menu:hover > .fab-item > button {
+.fab-menu.active > .fab-item > button {
   opacity: 1; }
 
-.fab-menu:hover > .fab-item:nth-of-type(even) > button {
+.fab-menu.active > .fab-item:nth-of-type(even) > button {
   transform: translateX(0) !important; }
 
-.fab-menu:hover > .fab-item:nth-of-type(odd) > button {
+.fab-menu.active > .fab-item:nth-of-type(odd) > button {
   transform: translateX(0) !important; }
 
 .video-container {

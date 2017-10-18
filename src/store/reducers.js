@@ -16,13 +16,16 @@ const video = (state = 0, action) => {
   return action.type == ACTION.VIDEO.PROVIDER.YOUTUBE ? (action.video || state) : state;
 }
 
+const contextfab = (state = false, action) => {
+  switch (action.type) {
+    case ACTION.MENU.FAB:
+      return typeof action.status !== 'undefined' ? action.status : state;
+    default:
+      return state;
+  }
+}
+
 const videoStatus = (state = false, action) => {
-  console.log('hello from reducer');
-  console.log(action.type);
-  console.log(ACTION.VIDEO.PROVIDER.YOUTUBE);
-  console.log(action.status);
-  console.log(state);
-  console.log("----");
   return action.type == ACTION.VIDEO.PROVIDER.YOUTUBE ? !!action.status : state;
 }
 
@@ -57,6 +60,7 @@ const rootReducer = combineReducers({
   undoable,
   videoStatus,
   video,
+  contextfab,
 });
 
 export default rootReducer;

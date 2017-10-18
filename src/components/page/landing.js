@@ -25,7 +25,7 @@ class Page extends Component {
   render = () => (
     <Container fluid as="main">
       <Grid stretched verticalAlign="middle">
-        <Grid.Row>
+        <Grid.Row style={{ maxHeight: '64px' }}>
           <Menu.Primary />
         </Grid.Row>
         <Grid.Row stretched verticalAlign="middle">

@@ -229,6 +229,9 @@ export const ACTION = {
       YOUTUBE: 'YOUTUBE',
     },
   },
+  MENU: {
+    FAB: 'CONTEXT_FAB',
+  },
 };
 
 export const ROLE = {

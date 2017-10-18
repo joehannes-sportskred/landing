@@ -8,6 +8,7 @@ import Steps from './steps';
 import Logo from './dynamiclogo';
 import Roles from '../../store/containers/role';
 import Actions from '../../store/containers/landingactions';
+import ContextFAB from '../../store/containers/contextfab';
 
 const AbstractComponent = ({ SubMenu }) => (
   <Menu as="nav" fluid size="large" className="main navigation">
@@ -27,23 +28,9 @@ AbstractComponent.propTypes = {
   SubMenu: PropTypes.func.isRequired,
 };
 
-const Primary = () => (
-  <Menu.Menu className="fab-menu">
-    <Menu.Item className="fab-trigger">
-      <Button circular primary icon="sidebar" />
-    </Menu.Item>
-    <Menu.Item className="fab-item">
-      <Button icon="mail" content="Contact Us" />
-    </Menu.Item>
-    <Menu.Item className="fab-item">
-      <Button icon="newspaper" content="Blog" />
-    </Menu.Item>
-  </Menu.Menu>
-);
+const Primary = () => <ContextFAB />;
 
-const Tour = () => (
-  <Steps />
-);
+const Tour = () => <Steps />;
 
 const Component = {
   Bare: ({ Dynamic }) => <AbstractComponent SubMenu={Dynamic} />,
