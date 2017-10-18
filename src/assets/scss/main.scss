@@ -17,7 +17,7 @@ main {
         padding-bottom: 0 !important;
       }
       &.stretched {
-        height: calc(100% - #{$fixed_anchor_top_space + $fixed_anchor_bottom_space})
+        height: calc(100% - #{$fixed_anchor_top_space + $fixed_anchor_bottom_space});
       }
       &:last-child {
         padding-top: 0 !important;

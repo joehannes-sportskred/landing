@@ -26,6 +26,7 @@ const Right = () => (
           icon={key.toLowerCase()}
           href={LINKS.SOCIAL[key]}
           target="_blank"
+          className="shiny dark"
          />
       </Segment>
     ))}

@@ -155,7 +155,7 @@ export const TEXT = {
 
 export const VIDEO = {
   CODE: 'sHFqNYYjogY',
-  POSTER: 'assets/video/poster_3.png',
+  POSTER: 'assets/video/poster_0.jpg',
   PROVIDER: 'youtube',
 };
 
@@ -163,19 +163,19 @@ export const VIDEO_ICONS = [
   {
     AVATAR: 'assets/video/avatar_1.png',
     CODE: 'H0cg6hcKL7I',
-    POSTER: 'assets/video/poster_1.png',
+    POSTER: 'assets/video/poster_1.jpg',
     PROVIDER: 'youtube',
   },
   {
     AVATAR: 'assets/video/avatar_2.png',
     CODE: 'bTImyy0fl5U',
-    POSTER: 'assets/video/poster_2.png',
+    POSTER: 'assets/video/poster_2.jpg',
     PROVIDER: 'youtube',
   },
   {
     AVATAR: 'assets/video/avatar_3.png',
     CODE: 'gltP7MBDo9o',
-    POSTER: 'assets/video/poster_3.png',
+    POSTER: 'assets/video/poster_3.jpg',
     PROVIDER: 'youtube',
   }
 ];

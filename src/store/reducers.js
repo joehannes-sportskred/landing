@@ -13,11 +13,17 @@ const role = (state = 'about', action) => {
 };
 
 const video = (state = 0, action) => {
-  return action.type == ACTION.VIDEO.PROVIDER.YOUTUBE && (action.video || state);
+  return action.type == ACTION.VIDEO.PROVIDER.YOUTUBE ? (action.video || state) : state;
 }
 
 const videoStatus = (state = false, action) => {
-  return action.type == ACTION.VIDEO.PROVIDER.YOUTUBE && (action.status || state);
+  console.log('hello from reducer');
+  console.log(action.type);
+  console.log(ACTION.VIDEO.PROVIDER.YOUTUBE);
+  console.log(action.status);
+  console.log(state);
+  console.log("----");
+  return action.type == ACTION.VIDEO.PROVIDER.YOUTUBE ? !!action.status : state;
 }
 
 const dimmer = (state = ACTION.DIMMER.OFF, action) => {
@@ -49,6 +55,8 @@ const rootReducer = combineReducers({
   role,
   dimmer: addHistory(dimmer, { filter: distinctState() }),
   undoable,
+  videoStatus,
+  video,
 });
 
 export default rootReducer;

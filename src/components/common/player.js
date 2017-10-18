@@ -7,23 +7,24 @@ import YouTube from 'react-youtube';
 import { VIDEO, VIDEO_ICONS } from '../../assets/data/enum';
 
 const Component = ({ active, video, poster, onActivate }) => {
-  return active ? (
+  return !active ? (
     <Container
       fluid
-      onClick={() => onActivate(true)}
       id="player-wrapper"
+      onClick={() => onActivate(true)}
+      style={{ cursor: 'pointer' }}
     >
       <Image
-        src={poster ? VIDEO_ICONS[poster].POSTER : VIDEO.POSTER}
+        src={poster > 0 ? VIDEO_ICONS[poster - 1].POSTER : VIDEO.POSTER}
         style={{
           position: 'absolute',
           top: '50%',
           left: '50%',
           transform: 'translateY(-50%) translateX(-50%)',
-       }}
-       height="100%"
-       width="auto"
-       centered
+        }}
+        height="100%"
+        width="auto"
+        centered
       />
       <Icon
         size="massive"
@@ -41,7 +42,7 @@ const Component = ({ active, video, poster, onActivate }) => {
     </Container>
   ) : (
     <YouTube
-      videoId={video ? VIDEO_ICONS[video].CODE : VIDEO.CODE}
+      videoId={video > 0 ? VIDEO_ICONS[video - 1].CODE : VIDEO.CODE}
       style={{ opacity: '0.85' }}
       onEnd={() => onActivate(false)}
       id="player"

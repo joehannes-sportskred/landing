@@ -1,6 +1,15 @@
 nav.ui.menu {
   @include pattern($pattern_url_light, $primary-bg-1, 0);
   z-index: 9999999;
+  &> .fab-menu {
+    overflow: hidden;
+    &> .fab-item {
+      z-index: 1;
+    }
+  }
+  &> :first-child, &> .fab-menu > .fab-trigger {
+    z-index: 9;
+  }
 }
 
 .fab-item:before {
@@ -9,16 +18,17 @@ nav.ui.menu {
 
 .fab-item > button {
   opacity: 0;
-  transform: translateX(-73%) !important;
-  transition: opacity .5s, transform .5s;
+  transform: translateX(-34%) !important;
+  transition: opacity 1s ease-out, transform .5s ease-out;
+  transition-delay: 0.25s, 0s !important;
   &:before { display: none; }
 }
 .fab-item:nth-of-type(odd) > button {
-  transform: translateX(-133%) !important;
-  transition-delay: .2s;
+  transform: translateX(-73%) !important;
+  transition-delay: .2s !important;
 }
 
-.fab-menu:hover > .fab-item {
+.fab-menu.active > .fab-item {
   &> button { opacity: 1; }
   &:nth-of-type(even) > button {
     transform: translateX(0) !important;

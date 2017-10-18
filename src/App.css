@@ -105,20 +105,27 @@ nav.ui.menu {
     height: 100% !important; }
   nav.ui.menu {
     background-color: rgba(172, 237, 237, 0.7) !important; }
+  nav.ui.menu > .fab-menu {
+    overflow: hidden; }
+    nav.ui.menu > .fab-menu > .fab-item {
+      z-index: 1; }
+  nav.ui.menu > :first-child, nav.ui.menu > .fab-menu > .fab-trigger {
+    z-index: 9; }
 
 .fab-item:before {
   display: none; }
 
 .fab-item > button {
   opacity: 0;
-  transform: translateX(-73%) !important;
-  transition: opacity .5s, transform .5s; }
+  transform: translateX(-34%) !important;
+  transition: opacity 1s, transform .5s;
+  transition-delay: 0.25s, 0s !important; }
   .fab-item > button:before {
     display: none; }
 
 .fab-item:nth-of-type(odd) > button {
-  transform: translateX(-133%) !important;
-  transition-delay: .2s; }
+  transform: translateX(-73%) !important;
+  transition-delay: .2s !important; }
 
 .fab-menu:hover > .fab-item > button {
   opacity: 1; }
@@ -129,10 +136,26 @@ nav.ui.menu {
 .fab-menu:hover > .fab-item:nth-of-type(odd) > button {
   transform: translateX(0) !important; }
 
+.video-container {
+  transform: translateX(33px);
+  z-index: 9; }
+  .video-container .video-poster {
+    transition: transform 0.5s bounce-out;
+    transform: scale(1) !important; }
+  .video-container .video-container:hover .video-poster {
+    transform: scale(0) !important; }
+  .video-container .video-inactive {
+    box-shadow: 0 0 10px 1px black; }
+  .video-container .video-active {
+    box-shadow: 0 0 10px 1px white; }
+
 .shiny.white {
   box-shadow: 0 0 10px #FFFFFF;
   border-radius: 500em !important;
   border: 1px solid #FFFFFF !important; }
+
+.shiny.dark {
+  box-shadow: 0 0 15px 1px black !important; }
 
 .text.shiny.white, .text-color.shiny.white {
   text-shadow: 0 0 1px white !important; }

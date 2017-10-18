@@ -1,0 +1,17 @@
+.video-container {
+  transform: translateX(33px);
+  z-index: 9;
+  .video-poster {
+    transition: transform 0.5s bounce-out;
+    transform: scale(1) !important;
+  }
+  .video-container:hover .video-poster {
+    transform: scale(0) !important;
+  }
+  .video-inactive {
+    box-shadow: 0 0 10px 1px black;
+  }
+  .video-active {
+    box-shadow: 0 0 10px 1px white;
+  }
+}

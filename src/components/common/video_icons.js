@@ -5,27 +5,27 @@ import { Button, Image, Reveal, Segment } from 'semantic-ui-react';
 import { VIDEO_ICONS } from '../../assets/data/enum';
 
 const Component = ({ active, onActivate }) => (
-  <Segment.Group compact>
+  <Segment.Group compact className="video-conatiner-group">
     {VIDEO_ICONS.map((icon, i) => (
       <Segment key={`videoicon_${i}`} basic>
-        <Reveal animated='move up' style={{ transform: 'translateX(33px)', zIndex: 9 }}>
+        <Reveal animated="rotate left" className="video-container">
           <Reveal.Content visible>
             <Image
               shape="circular"
               size="small"
               src={icon.AVATAR}
               style={{ maxWidth: '69px', marginLeft: '-1px', marginTop: '-1px' }}
-              className={ active == (i + 1) ? 'video-active' : 'video-inactive' }
+              className={`video-poster ${active == (i + 1) ? 'video-active' : 'video-inactive'}`}
             />
           </Reveal.Content>
-          <Reveal.Content hidden>
+          <Reveal.Content hidden className="video-trigger">
             <Button
               circular
               primary
               size="massive"
               icon="play"
-              className={ active == (i + 1) ? 'video-active' : 'video-inactive' }
-              onClick={ () => onActivate(i + 1) }
+              className={`video-trigger ${active == (i + 1) ? 'video-active' : 'video-inactive'}`}
+              onClick={ () => active !== (i + 1) && onActivate(i + 1) }
             />
           </Reveal.Content>
         </Reveal>
