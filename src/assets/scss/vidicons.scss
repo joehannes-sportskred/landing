@@ -3,13 +3,14 @@
   z-index: 9;
   .video-poster {
     transition: transform 0.5s bounce-out;
-    transform: scale(1) !important;
+    transform: translateX(0) !important;
   }
-  .video-container:hover .video-poster {
-    transform: scale(0) !important;
+  .ui.content.video-poster:hover , .ui.content.video-trigger:hover ~ .video-poster {
+    transform: translateX(-121%) !important;
   }
   .video-inactive {
     box-shadow: 0 0 10px 1px black;
+    cursor: pointer;
   }
   .video-active {
     box-shadow: 0 0 10px 1px white;

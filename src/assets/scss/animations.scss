@@ -9,3 +9,14 @@
     text-shadow: 0 0 0 rgba(255,255,255, 0.3);
   }
 }
+
+@keyframes movein-right {
+  0% {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

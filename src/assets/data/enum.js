@@ -165,19 +165,31 @@ export const VIDEO_ICONS = [
     CODE: 'H0cg6hcKL7I',
     POSTER: 'assets/video/poster_1.jpg',
     PROVIDER: 'youtube',
+    TOOLTIP: {
+      NAME: 'SONIA DOUBELL',
+      HASHTAGS: '#YOGA #FITNESS #HEALTH #NAMASTE',
+    },
   },
   {
     AVATAR: 'assets/video/avatar_2.png',
     CODE: 'bTImyy0fl5U',
     POSTER: 'assets/video/poster_2.jpg',
     PROVIDER: 'youtube',
+    TOOLTIP: {
+      NAME: 'FAISAL MOHAMMED',
+      HASHTAGS: '#KICKBOXING #BOXING #SPORTS #IAKSA'
+    },
   },
   {
     AVATAR: 'assets/video/avatar_3.png',
     CODE: 'gltP7MBDo9o',
     POSTER: 'assets/video/poster_3.jpg',
     PROVIDER: 'youtube',
-  }
+    TOOLTIP: {
+      NAME: 'THE TEAM',
+      HASHTAGS: '#BBL #HOOPS #TEAM',
+    }
+  },
 ];
 
 export const LINKS = {

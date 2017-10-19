@@ -9,6 +9,14 @@
   100% {
     text-shadow: 0 0 0 rgba(255, 255, 255, 0.3); } }
 
+@keyframes movein-right {
+  0% {
+    transform: translateX(50%);
+    opacity: 0; }
+  100% {
+    transform: translateX(0);
+    opacity: 1; } }
+
 html, body, #root, main, main > .ui {
   position: relative;
   height: 100%; }
@@ -144,11 +152,12 @@ nav.ui.menu {
   z-index: 9; }
   .video-container .video-poster {
     transition: transform 0.5s bounce-out;
-    transform: scale(1) !important; }
-  .video-container .video-container:hover .video-poster {
-    transform: scale(0) !important; }
+    transform: translateX(0) !important; }
+  .video-container .ui.content.video-poster:hover, .video-container .ui.content.video-trigger:hover ~ .video-poster {
+    transform: translateX(-121%) !important; }
   .video-container .video-inactive {
-    box-shadow: 0 0 10px 1px black; }
+    box-shadow: 0 0 10px 1px black;
+    cursor: pointer; }
   .video-container .video-active {
     box-shadow: 0 0 10px 1px white; }
 
