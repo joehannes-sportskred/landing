@@ -8,10 +8,10 @@ import { Provider } from 'react-redux';
 import registerServiceWorker from './registerServiceWorker';
 
 import Landing from './components/page/landing';
+import Legal from './components/page/legal';
+import Tour from './components/page/tour';
 
 import reducers from './store/reducers';
-
-// import { LINKS } from './assets/data/enum';
 
 import './semantic/dist/semantic.css';
 import './App.css';
@@ -24,6 +24,10 @@ ReactDOM.render(
     <Router history={history}>
       <Switch>
         <Route path="/" exact component={Landing} />
+        <Route path="/terms" component={Legal.TermsOfUse} />
+        <Route path="/privacy" component={Legal.PrivacyPolicy} />
+        <Route path="/tour/marketeer" component={Tour.Marketeer} />
+        <Route path="/tour/athlete" component={Tour.Athlete} />
       </Switch>
     </Router>
   </Provider>,

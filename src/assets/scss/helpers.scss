@@ -73,3 +73,8 @@ $color_agents: $grey;
 .primary-bg-color {
   background-color: $color-primary-0 !important;
 }
+
+.children-centered {
+  display: flex !important;
+  align-items: center;
+}

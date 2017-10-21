@@ -1,40 +1,16 @@
 nav.ui.menu {
-  max-height: 64px;
   @include pattern($pattern_url_light, $primary-bg-0, 0);
+
   z-index: 9999999;
-  &> .fab-menu {
-    overflow: hidden;
-    &> .fab-item {
-      z-index: 1;
-    }
-  }
-  &> :first-child, &> .fab-menu > .fab-trigger {
-    z-index: 9;
-  }
-}
+  max-height: 64px;
 
-.fab-item:before {
-  display: none;
-}
-
-.fab-item > button {
-  opacity: 0;
-  transform: translateX(-34%) !important;
-  transition: opacity 1s ease-out, transform .5s ease-out;
-  transition-delay: 0.25s, 0s !important;
-  &:before { display: none; }
-}
-.fab-item:nth-of-type(odd) > button {
-  transform: translateX(-73%) !important;
-  transition-delay: .2s !important;
-}
-
-.fab-menu.active > .fab-item {
-  &> button { opacity: 1; }
-  &:nth-of-type(even) > button {
-    transform: translateX(0) !important;
+  &+ div {
+    position: relative;
+    margin-top: 64px;
+    padding-top: 2rem;
   }
-  &:nth-of-type(odd) > button {
-    transform: translateX(0) !important;
+  &~ div:last-of-type {
+    position: relative;
+    margin-bottom: calc(64px + 2rem);
   }
 }

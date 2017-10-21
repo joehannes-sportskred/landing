@@ -11,7 +11,7 @@ import Actions from '../../store/containers/landingactions';
 import ContextFAB from '../../store/containers/contextfab';
 
 const AbstractComponent = ({ SubMenu }) => (
-  <Menu as="nav" fluid size="large" className="main navigation">
+  <Menu as="nav" fixed="top" fluid size="large" className="main navigation">
     <Menu.Item name="about" active>
       <Logo logoType="dark" />
     </Menu.Item>

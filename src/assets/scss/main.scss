@@ -1,15 +1,16 @@
 $fixed_anchor_top_space: 60px;
 $fixed_anchor_bottom_space: 100px;
 
-html, body, #root, main, main > .ui {
+html, body, #root, main {
   position: relative;
   height: 100%;
 }
 
 main {
   &> .ui.stretched.grid {
-    margin: 0 !important;
     @include pattern($pattern_url_dark, $complementary_bg_0, -1);
+    margin: 0 !important;
+    height: 100%;
     &> .row {
       @include pattern($pattern_url_dark, $complementary_bg_0, 0);
       &:first-child {

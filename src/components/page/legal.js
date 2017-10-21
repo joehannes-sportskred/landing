@@ -35,7 +35,9 @@ const Details = {
 const AbstractLayout = ({ concretePage }) => (
   <main>
     <Menu.Primary />
-    <Image wrapped centered fluid spaced src={IMG.LOGO} className="landing page hero image" />
+    <Segment basic fluid inverted className="children-centered">
+      <Image centered fluid spaced src={IMG.LOGO} size="large" className="landing page hero image" />
+    </Segment>
     <Layout content={concretePage} className="landing page" />
     <AboutUs />
     <Dimmer />

@@ -8,7 +8,7 @@ import InAction from './inaction';
 import { LINKS, TEXT } from '../../assets/data/enum';
 
 const Component = () => (
-  <Menu as="nav" fluid size="large" className="bottom about menu">
+  <Menu as="nav" fixed="bottom" fluid size="large" className="bottom about menu">
     <Menu.Item as="article">
       <SocialIcons />
     </Menu.Item>

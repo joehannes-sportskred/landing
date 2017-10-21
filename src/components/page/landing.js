@@ -21,26 +21,24 @@ import Content from './landing/primary';
 
 import { IMG } from '../../assets/data/enum';
 
-class Page extends Component {
-  render = () => (
-    <Container fluid as="main">
-      <Grid stretched verticalAlign="middle">
-        <Grid.Row style={{ maxHeight: '64px' }}>
-          <Menu.Primary />
-        </Grid.Row>
-        <Grid.Row stretched verticalAlign="middle">
-          <LayoutRailedCenteredWide
-            content={Content}
-            className="main landing page"
-          />
-        </Grid.Row>
-        <Grid.Row style={{ bottom: 0, position: 'absolute' }}>
-          <AboutUs />
-        </Grid.Row>
-      </Grid>
-      <Dimmer />
-    </Container>
-  );
-}
+const Page = () => (
+  <Container fluid as="main">
+    <Grid stretched verticalAlign="middle">
+      <Grid.Row style={{ maxHeight: '64px' }}>
+        <Menu.Primary />
+      </Grid.Row>
+      <Grid.Row stretched verticalAlign="middle">
+        <LayoutRailedCenteredWide
+          content={Content}
+          className="main landing page"
+        />
+      </Grid.Row>
+      <Grid.Row style={{ bottom: 0, position: 'absolute' }}>
+        <AboutUs />
+      </Grid.Row>
+    </Grid>
+    <Dimmer />
+  </Container>
+);
 
 export default Page;

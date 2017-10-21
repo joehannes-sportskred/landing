@@ -35,7 +35,7 @@ AbstractPage.propTypes = {
 const Page = {
   Brand: () => (
     <Container fluid>
-      <Menu.Tour />
+      <Menu.Primary />
       <AbstractPage Layout={LayoutRightyVery} Theme={ROLE.BRAND.name} Slogan={TOUR.BRAND.SLOGAN} ConcreteContent={Content.Home} />
       <AbstractPage Layout={LayoutRighty} Theme={ROLE.BRAND.name} Slogan={TOUR.BRAND.SLOGAN} ConcreteContent={Content.Discover} />
       <AbstractPage Layout={LayoutLefty} Theme={ROLE.BRAND.name} Slogan={TOUR.BRAND.SLOGAN} ConcreteContent={Content.Choose} />

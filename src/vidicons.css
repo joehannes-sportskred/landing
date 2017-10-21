@@ -1,0 +1,19 @@
+.social-icons-vertical-container {
+  justify-content: center; }
+
+.video-container-group {
+  justify-content: center;
+  align-self: flex-end; }
+  .video-container-group .video-container {
+    transform: translateX(94px);
+    z-index: 9; }
+    .video-container-group .video-container .video-poster {
+      transition: transform 0.5s bounce-out;
+      transform: translateX(0) !important; }
+    .video-container-group .video-container .ui.content.video-poster:hover, .video-container-group .video-container .ui.content.video-trigger:hover ~ .video-poster {
+      transform: translateX(-121%) !important; }
+    .video-container-group .video-container .video-inactive {
+      box-shadow: 0 0 10px 1px black;
+      cursor: pointer; }
+    .video-container-group .video-container .video-active {
+      box-shadow: 0 0 10px 1px white; }

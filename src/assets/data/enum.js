@@ -206,8 +206,8 @@ export const LINKS = {
   TOUR: 'tour',
   LANDING: 'landing',
   INACTION: {
-    BRAND: 'inaction/marketeer',
-    ATHLETE: 'inaction/athlete',
+    BRAND: 'tour/marketeer',
+    ATHLETE: 'tour/athlete',
   },
 };
 

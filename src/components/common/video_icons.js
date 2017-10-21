@@ -5,7 +5,7 @@ import { Button, Image, Reveal, Segment, Popup } from 'semantic-ui-react';
 import { VIDEO_ICONS } from '../../assets/data/enum';
 
 const Component = ({ active, onActivate }) => (
-  <Segment.Group compact className="video-conatiner-group">
+  <Segment.Group compact className="video-container-group">
     {VIDEO_ICONS.map((icon, i) => (
       <Segment key={`videoicon_${i}`} basic>
         <Reveal className="video-container">
