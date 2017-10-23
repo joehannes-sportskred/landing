@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
-import { Header, Image } from 'semantic-ui-react';
+import { Header, Image, Visibility } from 'semantic-ui-react';
 
 class Animated extends React.Component {
   componentDidMount (callback) {
@@ -17,6 +17,10 @@ class Animated extends React.Component {
   render() {
     return <div />;
   }
+}
+
+Animated.propTypes = {
+  animationSource: PropTypes.func.isRequired,
 }
 
 class Letters extends Animated {
@@ -50,8 +54,8 @@ Photo.propTypes = {
   animationSource: PropTypes.func.isRequired,
   src: PropTypes.string.isRequired,
 }
-
 const Component = {
+  Raw: Animated,
   Letters,
   Photo,
 };

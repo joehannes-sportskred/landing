@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container, Header, Image } from 'semantic-ui-react';
+import Scroll from 'react-scroll';
+import { Container, Grid, Header, Image, Visibility } from 'semantic-ui-react';
 
 import Dimmer from '../../store/containers/dimmer';
 
 import Menu from '../common/menu';
 import AboutUs from '../common/aboutus';
-import Content from './tour/brand';
+import Content from './tour/marketeer';
 
 import LayoutGoldenRatio from '../layout/goldenratio';
 import LayoutRighty from '../layout/righty';
@@ -17,13 +18,9 @@ import LayoutCenteredWide from '../layout/centeredwide';
 
 import { ROLE, TOUR, DATA, IMG } from '../../assets/data/enum';
 
-const AbstractPage = ({ Layout, Theme, Slogan, ConcreteContent }) => {
-  return (
-    <main>
-      <Layout content={ConcreteContent} className="main tour page" />
-    </main>
-  );
-};
+const AbstractPage = ({ Theme, Slogan, ConcreteContent, Layout }) => (
+  <Layout content={ConcreteContent} className="main tour page" />
+);
 
 AbstractPage.propTypes = {
   Theme: PropTypes.string.isRequired,
@@ -33,16 +30,24 @@ AbstractPage.propTypes = {
 };
 
 const Page = {
-  Brand: () => (
-    <Container fluid>
-      <Menu.Primary />
-      <AbstractPage Layout={LayoutRightyVery} Theme={ROLE.BRAND.name} Slogan={TOUR.BRAND.SLOGAN} ConcreteContent={Content.Home} />
-      <AbstractPage Layout={LayoutRighty} Theme={ROLE.BRAND.name} Slogan={TOUR.BRAND.SLOGAN} ConcreteContent={Content.Discover} />
-      <AbstractPage Layout={LayoutLefty} Theme={ROLE.BRAND.name} Slogan={TOUR.BRAND.SLOGAN} ConcreteContent={Content.Choose} />
-      <AbstractPage Layout={LayoutRighty} Theme={ROLE.BRAND.name} Slogan={TOUR.BRAND.SLOGAN} ConcreteContent={Content.Reach} />
-      <AbstractPage Layout={LayoutLefty} Theme={ROLE.BRAND.name} Slogan={TOUR.BRAND.SLOGAN} ConcreteContent={Content.Measure} />
-      <AbstractPage Layout={LayoutCentered} Theme={ROLE.BRAND.name} Slogan={TOUR.BRAND.SLOGAN} ConcreteContent={Content.Action} />
-      <AboutUs />
+  Marketeer: () => (
+    <Container fluid as="main">
+      <Grid stretched verticalAlign="middle">
+        <Grid.Row style={{ maxHeight: '64px' }}>
+          <Menu.Primary />
+        </Grid.Row>
+        <Grid.Row stretched verticalAlign="middle">
+          <AbstractPage Layout={LayoutRightyVery} Theme={ROLE.BRAND.name} Slogan={TOUR.BRAND.SLOGAN} ConcreteContent={Content.Home} />
+          <AbstractPage Layout={LayoutRighty} Theme={ROLE.BRAND.name} Slogan={TOUR.BRAND.SLOGAN} ConcreteContent={Content.Discover} />
+          <AbstractPage Layout={LayoutLefty} Theme={ROLE.BRAND.name} Slogan={TOUR.BRAND.SLOGAN} ConcreteContent={Content.Choose} />
+          <AbstractPage Layout={LayoutRighty} Theme={ROLE.BRAND.name} Slogan={TOUR.BRAND.SLOGAN} ConcreteContent={Content.Reach} />
+          <AbstractPage Layout={LayoutLefty} Theme={ROLE.BRAND.name} Slogan={TOUR.BRAND.SLOGAN} ConcreteContent={Content.Measure} />
+          <AbstractPage Layout={LayoutCentered} Theme={ROLE.BRAND.name} Slogan={TOUR.BRAND.SLOGAN} ConcreteContent={Content.Action} />
+        </Grid.Row>
+        <Grid.Row style={{ bottom: 0, position: 'absolute' }}>
+          <AboutUs />
+        </Grid.Row>
+      </Grid>
       <Dimmer />
     </Container>
   ),
