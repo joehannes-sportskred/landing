@@ -19,9 +19,9 @@ export const TOUR = {
         based on common values and your target audience.
         There are hundreds to choose from and more joining every day...`,
       SLOGAN: 'Discover inspiring athletes and teams',
-      IMG_DETAIL_MAIN: '/assets/img/tour/brand/discover_main.jpg',
-      IMG_DETAIL_DETAIL_1: '/assets/img/tour/brand/discover_detail_1.jpg',
-      IMG_DETAIL_DETAIL_2: '/assets/img/tour/brand/discover_detail_2.jpg',
+      IMG_DETAIL_MAIN: '/assets/img/tour/marketeer/discover_main.jpg',
+      IMG_DETAIL_DETAIL_1: '/assets/img/tour/marketeer/discover_detail_1.jpg',
+      IMG_DETAIL_DETAIL_2: '/assets/img/tour/marketeer/discover_detail_2.jpg',
     }, {
       ICON: 'tasks',
       TITLE: 'Choose flexible sponsorship packages',
@@ -110,7 +110,44 @@ export const TOUR = {
 
   },
   ATHLETE: {
-
+    SLOGAN: ['MAXIMISE YOUR DIGITAL PRESENCE WITH', 'INNOVATIVE SOCIAL MEDIA SPONSORSHIPS'],
+    ACTION: [{
+      ICON: 'paint brush',
+      TITLE: 'Create an attractive profile',
+      DESCRIPTION: `
+        Create your athlete profile, connect your social media channels
+        and define the rates for your sponsorship packages - make it look attractive and unique,
+        this is what the brands will see...`,
+      SLOGAN: 'Create an attractive profile',
+      IMG_DETAIL_MAIN: '/assets/img/tour/brand/discover_main.jpg',
+    }, {
+      ICON: 'find',
+      TITLE: 'Get discovered by brands',
+      DESCRIPTION: `
+        Receive offers from innovative brands that want to sponsor you.
+        You’ll get to decide if you want to accept the offers,
+        discuss them further or decline them...`,
+      SLOGAN: 'Get discovered by brands',
+      IMG_DETAIL: 'assets/img/tour/brand/choose.png',
+    }, {
+      ICON: 'money',
+      TITLE: 'Monetise your social media presence',
+      DESCRIPTION: `
+        Use your imagination to promote your sponsor and make the most out
+        of this relationship - the more original and engaging,
+        the better for you and your sponsor`,
+      SLOGAN: 'Monetise your social media presence',
+      IMG_DETAIL: 'assets/img/tour/brand/reach.png',
+    }, {
+      ICON: 'fire',
+      TITLE: 'Focus on your passion',
+      DESCRIPTION: `
+        Use the financial support to follow you passion
+        and focus on training and competing.
+        Your online presence can support your on-field performance!`,
+      SLOGAN: 'Focus on your passion',
+      IMG_DETAIL: 'assets/img/tour/brand/measure.png',
+    }],
   },
   SIGNUP: {
     SLOGAN: 'Create your free account now and start benefiting from digital sport sponsorships',
@@ -272,14 +309,16 @@ export const LINKS = {
 };
 
 export const IMG = {
-  TEAM: 'assets/img/team_poster.png',
-  LOGO: 'assets/img/logo_large_white.png',
+  TEAM: '/assets/img/team_poster.png',
+  LOGO: '/assets/img/logo_large_white.png',
   DYNAMICLOGO: {
     PREFIX: 'assets/img/logo_inner_',
     SUFFIX: '.png',
   },
   TOUR: {
-    ACTION: 'assets/img/tour/img_in_action.png',
+    ACTION: '/assets/img/tour/img_in_action.png',
+    MARKETEER: '/assets/img/tour/marketeer/cyclist.png',
+    ATHLETE: '/assets/img/tour/athlete/runner.png',
   },
 };
 

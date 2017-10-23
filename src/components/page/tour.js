@@ -31,7 +31,7 @@ AbstractPage.propTypes = {
 
 const Page = {
   Marketeer: () => (
-    <Container fluid as="main">
+    <Container fluid as="main" className="main tour marketeer page">
       <Grid stretched verticalAlign="middle">
         <Grid.Row style={{ maxHeight: '64px' }}>
           <Menu.Primary />

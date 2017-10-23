@@ -4,7 +4,14 @@
     height: 100%;
   }
 }
-.ui.grid > .row {
+.main.tour.page .ui.grid > .row {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
+}
+
+.fluid.main.tour.page.container:not(:first-child) {
+  border-top: 3px groove $orange;
+  &:last-child {
+    margin-bottom: 64px;
+  }
 }

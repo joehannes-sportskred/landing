@@ -26,6 +26,9 @@ main {
       }
     }
   }
+  &.main.landing.page {
+    @include pattern($pattern_url_dark, $complementary_bg_0, 0);
+  }
 }
 
 .inverted {
@@ -56,6 +59,7 @@ main {
   box-shadow: 0 0 33px 3px $black;
   &> i:before {
     top: auto !important;
+    transform: translateX(-50%);
   }
 }
 

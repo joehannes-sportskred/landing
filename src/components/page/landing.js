@@ -22,7 +22,7 @@ import Content from './landing/primary';
 import { IMG } from '../../assets/data/enum';
 
 const Page = () => (
-  <Container fluid as="main">
+  <Container fluid as="main" className="main landing page">
     <Grid stretched verticalAlign="middle">
       <Grid.Row style={{ maxHeight: '64px' }}>
         <Menu.Primary />

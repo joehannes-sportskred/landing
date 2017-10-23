@@ -33,15 +33,15 @@ import { InteractiveForceGraph, ForceGraphNode, ForceGraphLink } from 'react-vis
 
 import Chart from '../../common/chart';
 
-import { DATA, TOUR } from '../../../assets/data/enum';
+import { DATA, TOUR, IMG } from '../../../assets/data/enum';
 import { TOUR as JSON_TOUR } from '../../../assets/data/sports';
 
 const Home = {
   Left: () => (
     <Segment basic className="image">
-      <Image fluid verticalAlign="middle" src="/assets/img/tour/cyclist.png" className="cyclist" />
-      <Image fluid verticalAlign="middle" src="/assets/img/tour/cyclist.png" className="cyclist" />
-      <Image fluid verticalAlign="middle" src="/assets/img/tour/cyclist.png" className="cyclist" />
+      <Image fluid verticalAlign="middle" src={IMG.TOUR.MARKETEER} className="cyclist" />
+      <Image fluid verticalAlign="middle" src={IMG.TOUR.MARKETEER} className="cyclist" />
+      <Image fluid verticalAlign="middle" src={IMG.TOUR.MARKETEER} className="cyclist" />
     </Segment>
   ),
   Right: () => (
@@ -271,7 +271,7 @@ const Action = () => (
     <Header inverted as="h3" sub textAlign="center" className="main action-signup header">
       {TOUR.SIGNUP.SLOGAN}
     </Header>
-    <Button fluid size="huge" color="yellow">
+    <Button fluid size="huge" color="orange">
       {TOUR.SIGNUP.BUTTON}
     </Button>
   </Container>
