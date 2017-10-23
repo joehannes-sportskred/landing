@@ -12,16 +12,18 @@ export const TOUR = {
     },
     SLOGAN: ['COMMUNICATE WITH ENGAGED COMMUNITIES WITH', 'ORIGINAL SOCIAL MEDIA SPONSORSHIPS'],
     ACTION: [{
-      IMG: 'assets/img/tour/action/discover.png',
+      ICON: 'find',
       TITLE: 'Discover inspiring athletes and teams',
       DESCRIPTION: `
         Search and select the right athletes and teams to sponsor,
         based on common values and your target audience.
         There are hundreds to choose from and more joining every day...`,
       SLOGAN: 'Discover inspiring athletes and teams',
-      IMG_DETAIL: 'assets/img/tour/brand/discover.png',
+      IMG_DETAIL_MAIN: '/assets/img/tour/brand/discover_main.jpg',
+      IMG_DETAIL_DETAIL_1: '/assets/img/tour/brand/discover_detail_1.jpg',
+      IMG_DETAIL_DETAIL_2: '/assets/img/tour/brand/discover_detail_2.jpg',
     }, {
-      IMG: 'assets/img/tour/action/choose.png',
+      ICON: 'tasks',
       TITLE: 'Choose flexible sponsorship packages',
       DESCRIPTION: `
         For your prefered athletes and teams, select the sponsorship package that suits your needs.
@@ -29,7 +31,7 @@ export const TOUR = {
       SLOGAN: 'Choose flexible sponsorship packages',
       IMG_DETAIL: 'assets/img/tour/brand/choose.png',
     }, {
-      IMG: 'assets/img/tour/action/reach.png',
+      ICON: 'users',
       TITLE: 'Reach large targeted audiences and communities',
       DESCRIPTION: `Engage with large targeted audiences through the social media
          of your selected athletes and teams, and reach engaged communities.
@@ -37,7 +39,7 @@ export const TOUR = {
       SLOGAN: 'Reach large targeted audiences and communities',
       IMG_DETAIL: 'assets/img/tour/brand/reach.png',
     }, {
-      IMG: 'assets/img/tour/action/measure.png',
+      ICON: 'line chart',
       TITLE: 'Measure the impact and results',
       DESCRIPTION: `Measure the impact of your digital sponsorship and make decisions to
         improve the results. Everything in digital is measurable, so make the best use
@@ -45,6 +47,64 @@ export const TOUR = {
       SLOGAN: 'Measure the impact and results',
       IMG_DETAIL: 'assets/img/tour/brand/measure.png',
     }],
+    PACKAGES: {
+      FACEBOOK: {
+        GOLD: {
+          TEXT: "Sharing 3 posts from brand's account + posting 6 original images + posting 1 original video + sponsored cover & profile pictures per month",
+          SELECTED: true,
+        },
+        SILVER: {
+          TEXT: "Sharing 2 posts from brand's account + posting 4 original images + posting 1 original video per month",
+          SELECTED: false,
+        },
+        BRONZE: {
+          TEXT: "Sharing 1 post from brand's account + posting 2 original images per month",
+          SELECTED: false,
+        }
+      },
+      TWITTER: {
+        GOLD: {
+          TEXT: "3 re-tweets of brand's tweet + 8 tweets + mention on bio + sponsored cover & header photos per month",
+          SELECTED: false,
+        },
+        SILVER: {
+          TEXT: "2 re-tweets of brand's tweet + 6 tweets per month",
+          SELECTED: true,
+        },
+        BRONZE: {
+          TEXT: "1 re-tweet of brand's tweet + 2 tweets per month",
+          SELECTED: false,
+        }
+      },
+      INSTAGRAM: {
+        GOLD: {
+          TEXT: "Sharing 2 brand's images + posting 5 original images + posting 2 original videos + mention in bio as sponsor per month",
+          SELECTED: false,
+        },
+        SILVER: {
+          TEXT: "Sharing 2 brand's images + posting 3 original images + posting 1 original video per month",
+          SELECTED: false,
+        },
+        BRONZE: {
+          TEXT: "Sharing 1 brand's image + posting 2 original images per month",
+          SELECTED: true,
+        }
+      },
+      YOUTUBE: {
+        GOLD: {
+          TEXT: "Uploading 2 brand's videos + creating 4 original videos + sponsored profile picture per month",
+          SELECTED: true,
+        },
+        SILVER: {
+          TEXT: "Uploading 1 brand's video + creating 2 original videos per month",
+          SELECTED: false,
+        },
+        BRONZE: {
+          TEXT: "Creating 1 original video per month",
+          SELECTED: false,
+        }
+      }
+    },
   },
   'MARKETING AGENT': {
 

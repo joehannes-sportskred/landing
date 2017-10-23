@@ -20,3 +20,39 @@
     opacity: 1;
   }
 }
+
+@keyframes speed-shake {
+  10% {
+    filter: blur(3px);
+    transform: translateX(10%);
+  }
+  15% {
+    filter: blur(0);
+  }
+  25% {
+    filter: blur(7px);
+    transform: translateX(-15%);
+  }
+  45% {
+    filter: blur(7px);
+    transform: translateX(20%);
+  }
+  50% {
+    filter: blur(0);
+  }
+  70% {
+    filter: blur(7px);
+    transform: translateX(-15%);
+  }
+  75% {
+    filter: blur(0);
+  }
+  85% {
+    filter: blur(7px);
+    transform: translateX(5%);
+  }
+  100% {
+    filter: blur(0);
+    transform: translateX(0);
+  }
+}

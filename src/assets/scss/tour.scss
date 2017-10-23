@@ -1,0 +1,109 @@
+.main.tour.page {
+  @include pattern($pattern_url_dark, $complementary_bg_0, 0);
+  &> .grid:first-child {
+    .basic.image.segment {
+      &:hover {
+        animation: speed-shake 1s alternate;
+      }
+      &:after {
+        content: ' ';
+        position: absolute;
+        bottom: -1rem;
+        right: 0;
+        left: -100%;
+        width: 200%;
+        border-top: 1rem solid $orange;
+        :before {
+          content: ' ';
+          position: absolute;
+          top: -100%;
+          left: 0;
+          width: 100%;
+          border-top: 1rem solid rgba($orange, .5);
+        }
+      }
+      &> img.cyclist:first-child {
+        z-index: 99;
+      }
+    }
+    img.cyclist:not(:first-of-type) {
+      position: absolute;
+      &:nth-child(2) {
+        transform: translateX(-125%) scale(0.5) translateY(-25%);
+        filter: blur(3px);
+        z-index: 9;
+      }
+      &:nth-child(3) {
+        transform: translateX(-145%) scale(0.25) translateY(-50%);
+        filter: blur(7px);
+      }
+    }
+    .container.one {
+      &> .segment:first-child {
+        background-color: $complementary_bg_0 !important;
+        &> h6 > span:first-child {
+          background: linear-gradient(to bottom, transparent 20%, $primary_bg_1 40%, $primary_bg_1 60%, transparent 80%);
+        }
+        transition: all .3s ease-in;
+        &:hover {
+          transform: scale(1.13);
+          background-color: $rgba-secondary-1-3 !important;
+        }
+      }
+    }
+  }
+  .card {
+    background-color: $complementary_bg_0 !important;
+    padding: 1rem;
+    &:hover {
+      transform: scale(1.13);
+      z-index: 9;
+      background-color: $rgba-secondary-1-3 !important;
+      transition: all .3s ease-in;
+      .rotated-icon-border {
+        transform: translateY(-25%) translateX(-50%) rotate(45deg);
+      }
+      i.icon {
+        transform: translateY(-50%);
+      }
+    }
+    .rotated-icon-border {
+      position: absolute;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+      border: 1px solid $orange;
+      box-shadow: 5px 5px 10px 1px $orange;
+    }
+    i.icon {
+      margin: 2rem auto;
+    }
+  }
+  .discover.main.header {
+    border: 1px solid $black;
+    border-bottom: none;
+    box-shadow: 0 0 10px 1px rgba($white, .3);
+  }
+  img.discover.main.image {
+    border: 1px soliid $black;
+    border-top: none;
+    box-shadow: 0 0 10px 1px rgba($white, .3);
+  }
+  img.discover.detail.image {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    border: 1px solid $black;
+    box-shadow: 0 0 10px 1px rgba($white, .3);
+    &.one {
+      transform: translateX(-75%) rotate(21deg);
+    }
+    &.two {
+      transform: translateX(-25%) rotate(-17deg);
+    }
+  }
+  .main.choose-packages.container, .main.reach-audience.container {
+    border: 1px solid $black;
+    box-shadow: 0 0 10px 1px rgba($white, .3);
+  }
+}

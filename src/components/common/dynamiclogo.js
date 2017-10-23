@@ -7,7 +7,7 @@ import { IMG } from '../../assets/data/enum';
 
 const Component = ({ logoType }) => (
   <Link to="/">
-    <Image src={unescape(IMG.DYNAMICLOGO.PREFIX) + logoType.toLowerCase() + IMG.DYNAMICLOGO.SUFFIX} size="small" />
+    <Image src={"/" + unescape(IMG.DYNAMICLOGO.PREFIX) + logoType.toLowerCase() + IMG.DYNAMICLOGO.SUFFIX} size="small" />
   </Link>
 );
 
