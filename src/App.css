@@ -212,9 +212,19 @@ iframe#player {
   .main.tour.page img.discover.detail.image.two {
     transform: translateX(-25%) rotate(-17deg); }
 
-.main.tour.page .main.choose-packages.container, .main.tour.page .main.reach-audience.container {
+.main.tour.page .main.choose-packages.container, .main.tour.page .main.reach-audience.container, .main.tour.page .main.measure-impact.container, .main.tour.page .main.action-signup.container {
   border: 1px solid #000000;
   box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.3); }
+
+.main.tour.page .main.measure-impact.container, .main.tour.page .recharts-legend-item-text, .main.tour.page .recharts-text {
+  color: #E16224;
+  fill: #E16224; }
+
+.main.tour.page .main.action-signup.container {
+  position: relative;
+  top: 50%;
+  left: 0;
+  transform: translateY(-100%); }
 
 nav.ui.menu {
   z-index: 9999999;

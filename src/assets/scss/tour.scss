@@ -102,8 +102,18 @@
       transform: translateX(-25%) rotate(-17deg);
     }
   }
-  .main.choose-packages.container, .main.reach-audience.container {
+  .main.choose-packages.container, .main.reach-audience.container, .main.measure-impact.container, .main.action-signup.container {
     border: 1px solid $black;
     box-shadow: 0 0 10px 1px rgba($white, .3);
+  }
+  .main.measure-impact.container, .recharts-legend-item-text, .recharts-text {
+    color: $orange;
+    fill: $orange;
+  }
+  .main.action-signup.container {
+    position: relative;
+    top: 50%;
+    left: 0;
+    transform: translateY(-100%);
   }
 }

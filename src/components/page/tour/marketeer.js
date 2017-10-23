@@ -1,5 +1,19 @@
-import { Link } from 'react-router-dom';
 import React from 'react';
+import { Link } from 'react-router-dom';
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  RadarChart,
+  Radar,
+  PolarGrid,
+  PolarAngleAxis,
+  PolarRadiusAxis
+} from 'recharts';
 import {
   Button,
   Card,
@@ -20,6 +34,7 @@ import { InteractiveForceGraph, ForceGraphNode, ForceGraphLink } from 'react-vis
 import Chart from '../../common/chart';
 
 import { DATA, TOUR } from '../../../assets/data/enum';
+import { TOUR as JSON_TOUR } from '../../../assets/data/sports';
 
 const Home = {
   Left: () => (
@@ -135,7 +150,7 @@ const Choose = {
 
 const Reach = {
   Left: () => (
-    <Card color="yellow">
+    <Card color="orange">
       <Icon color="orange" size="large" name={TOUR.BRAND.ACTION[2].ICON} />
       <Segment basic padded className="rotated-icon-border" />
       <Card.Header as="h4">
@@ -212,16 +227,38 @@ const Reach = {
 
 const Measure = {
   Left: () => (
-    <Container fluid>
-      <Header as="h4" style={{ fontWeight: 'bold' }}>
+    <Container fluid className="main measure-impact">
+      <Header inverted as="h3" sub textAlign="center" className="main measure-impact header">
         {TOUR.BRAND.ACTION[3].SLOGAN}
       </Header>
-      <Image centered src={TOUR.BRAND.ACTION[3].IMG_DETAIL} />
+      <BarChart width={550} height={250} data={JSON_TOUR.IMPRESSIONS}
+        margin={{top: 5, right: 30, left: 20, bottom: 5}}>
+         <XAxis dataKey="name"/>
+         <YAxis/>
+         <CartesianGrid strokeDasharray="3 3"/>
+         <Tooltip/>
+         <Legend />
+         <Bar dataKey="facebook" fill="#4267b2" />
+         <Bar dataKey="twitter" fill="#1DA1F2" />
+         <Bar dataKey="instagram" fill="#8a3ab9" />
+         <Bar dataKey="youtube" fill="#ff0000" />
+      </BarChart>
+      <RadarChart cx={200} cy={250} outerRadius={150} width={550} height={450} data={JSON_TOUR.RADAR}>
+        <Radar name="Facebook" dataKey="Facebook" stroke="#4267b2" fill="#4267b2" fillOpacity={0.1}/>
+        <Radar name="Twitter" dataKey="Twitter" stroke="#1DA1F2" fill="#1DA1F2" fillOpacity={0.1}/>
+        <Radar name="Youtube" dataKey="Youtube" stroke="#8a3ab9" fill="#8a3ab9" fillOpacity={0.1}/>
+        <Radar name="Instagram" dataKey="Instagram" stroke="#ff0000" fill="#ff0000" fillOpacity={0.1}/>
+        <PolarGrid />
+        <Legend />
+        <PolarAngleAxis dataKey="subject" />
+        <PolarRadiusAxis angle={30} domain={[0, 100]}/>
+      </RadarChart>
     </Container>
   ),
   Right: () => (
-    <Card color="yellow">
-      <Image centered width="100px" src={TOUR.BRAND.ACTION[3].IMG} />
+    <Card color="orange">
+      <Icon color="orange" size="large" name={TOUR.BRAND.ACTION[3].ICON} />
+      <Segment basic padded className="rotated-icon-border" />
       <Card.Header as="h4">
         {TOUR.BRAND.ACTION[3].DESCRIPTION}
       </Card.Header>
@@ -230,8 +267,8 @@ const Measure = {
 };
 
 const Action = () => (
-  <Container fluid>
-    <Header as="h3" textAlign="center">
+  <Container fluid className="main action-signup">
+    <Header inverted as="h3" sub textAlign="center" className="main action-signup header">
       {TOUR.SIGNUP.SLOGAN}
     </Header>
     <Button fluid size="huge" color="yellow">

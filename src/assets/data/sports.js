@@ -45,3 +45,85 @@ const Sports = [
 ];
 
 export default Sports;
+
+const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+const currentMonth = new Date().getMonth();
+
+export const TOUR = {
+  IMPRESSIONS: [
+    {
+      name: monthNames[currentMonth < 2 ? 10 + currentMonth : currentMonth - 2],
+      facebook: 37450,
+      twitter: 14900,
+      youtube: 67949,
+      instagram: 101101,
+    },
+    {
+      name: monthNames[currentMonth == 0 ? 12 : currentMonth - 1],
+      facebook: 40493,
+      twitter: 16000,
+      youtube: 70001,
+      instagram: 99498,
+    },
+    {
+      name: monthNames[currentMonth],
+      facebook: 42949,
+      twitter: 17390,
+      youtube: 39483,
+      instagram: 134009,
+    },
+  ],
+  RADAR: [
+    { subject: 'Impressions', Facebook: 77, Twitter: 23, Youtube: 83, Instagram: 99, fullMark: 100 },
+    { subject: 'Reach', Facebook: 67, Twitter: 13, Youtube: 63, Instagram: 69, fullMark: 100 },
+    { subject: 'Engagement', Facebook: 37, Twitter: 3, Youtube: 23, Instagram: 29,  fullMark: 100 },
+  ],
+  REACH: [
+    {
+      name: monthNames[currentMonth < 2 ? 10 + currentMonth : currentMonth - 2],
+      facebook: 37450 * Math.min(1, Math.random() + .2),
+      twitter: 14900 * Math.min(1, Math.random() + .2),
+      youtube: 67949 * Math.min(1, Math.random() + .2),
+      instagram: 101101 * Math.min(1, Math.random() + .2),
+    },
+    {
+      name: monthNames[currentMonth == 0 ? 12 : currentMonth - 1],
+      facebook: 40493 * Math.min(1, Math.random() + .2),
+      twitter: 16000 * Math.min(1, Math.random() + .2),
+      youtube: 70001 * Math.min(1, Math.random() + .2),
+      instagram: 99498 * Math.min(1, Math.random() + .2),
+    },
+    {
+      name: monthNames[currentMonth],
+      facebook: 42949 * Math.min(1, Math.random() + .2),
+      twitter: 17390 * Math.min(1, Math.random() + .2),
+      youtube: 39483 * Math.min(1, Math.random() + .2),
+      instagram: 134009 * Math.min(1, Math.random() + .2),
+    },
+  ],
+  ENGAGEMENTS: [
+    {
+      name: monthNames[currentMonth < 2 ? 10 + currentMonth : currentMonth - 2],
+      facebook: 37450 * Math.min(0.25, Math.random() + .1),
+      twitter: 14900 * Math.min(0.25, Math.random() + .1),
+      youtube: 67949 * Math.min(0.25, Math.random() + .1),
+      instagram: 101101 * Math.min(0.25, Math.random() + .1),
+    },
+    {
+      name: monthNames[currentMonth == 0 ? 12 : currentMonth - 1],
+      facebook: 40493 * Math.min(0.25, Math.random() + .1),
+      twitter: 16000 * Math.min(0.25, Math.random() + .1),
+      youtube: 70001 * Math.min(0.25, Math.random() + .1),
+      instagram: 99498 * Math.min(0.25, Math.random() + .1),
+    },
+    {
+      name: monthNames[currentMonth],
+      facebook: 42949 * Math.min(0.25, Math.random() + .1),
+      twitter: 17390 * Math.min(0.25, Math.random() + .1),
+      youtube: 39483 * Math.min(0.25, Math.random() + .1),
+      instagram: 134009 * Math.min(0.25, Math.random() + .1),
+    },
+  ],
+};
