@@ -1,0 +1,8 @@
+#root > .container, .page {
+  height: 100%; }
+  #root > .container > .grid:only-child, .page > .grid:only-child {
+    height: 100%; }
+
+.main.tour.page .ui.grid > .row {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important; }
