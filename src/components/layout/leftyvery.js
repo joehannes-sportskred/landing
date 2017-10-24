@@ -33,10 +33,10 @@ const LayoutLeftyVery = ({ content, className, opts }) => {
   );
 };
 
-LayoutLefty.propTypes = {
+LayoutLeftyVery.propTypes = {
   content: PropTypes.any.isRequired,
   className: PropTypes.string,
   opts: PropTypes.object,
 };
 
-export default LayoutLefty;
+export default LayoutLeftyVery;

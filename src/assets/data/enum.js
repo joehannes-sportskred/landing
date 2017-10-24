@@ -111,6 +111,13 @@ export const TOUR = {
   },
   ATHLETE: {
     SLOGAN: ['MAXIMISE YOUR DIGITAL PRESENCE WITH', 'INNOVATIVE SOCIAL MEDIA SPONSORSHIPS'],
+    PROPOSAL: {
+      STATE: {
+        "primary": "New",
+        "secondary": "In discussion",
+        "positive": "Accepted",
+      },
+    },
     ACTION: [{
       ICON: 'paint brush',
       TITLE: 'Create an attractive profile',
@@ -136,6 +143,46 @@ export const TOUR = {
         discuss them further or decline them...`,
       SLOGAN: 'Get discovered by brands',
       IMG_DETAIL: 'assets/img/tour/brand/choose.png',
+      DETAILS: [{
+        LOGO: '/assets/img/tour/athlete/discovered_logo_0.jpg',
+        TRADEMARK: 'Yonex',
+        TITLE: 'Launching new tennis racket',
+        DURATION: '31 October 2017 - 31 January 2018',
+        DEADLINE: '30 September 2017',
+        LABEL: 'secondary',
+        OFFER: '£ 700',
+        DATE: '22 September 2017',
+      },
+      {
+        LOGO: '/assets/img/tour/athlete/discovered_logo_1.jpg',
+        TRADEMARK: 'YogaStudio',
+        TITLE: 'Free classes for new members',
+        DURATION: '30 September 2017 - 30 September 2021',
+        DEADLINE: '26 September 2017',
+        LABEL: 'positive',
+        OFFER: '£ 525',
+        DATE: '19 September 2017',
+      },
+      {
+        LOGO: '/assets/img/tour/athlete/discovered_logo_2.png',
+        TRADEMARK: 'Protein Works',
+        TITLE: 'Looking for Brand Ambassadors',
+        DURATION: '8 November 2017 - 8 November 2018',
+        DEADLINE: '7 November 2017',
+        LABEL: 'primary',
+        OFFER: '£ 1420',
+        DATE: '13 September 2017',
+      },/*
+      {
+        LOGO: '/assets/img/tour/athlete/discovered_logo_3.png',
+        TRADEMARK: 'Nike Running',
+        TITLE: 'Launching new running shoes',
+        DURATION: '5 November 2017 - 5 February 2018',
+        DEADLINE: '1 November 2017',
+        LABEL: 'primary',
+        OFFER: '£ 2500',
+        DATE: '9 October 2017',
+      }*/],
     }, {
       ICON: 'money',
       TITLE: 'Monetise your social media presence',

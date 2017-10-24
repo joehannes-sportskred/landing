@@ -116,4 +116,12 @@
     left: 0;
     transform: translateY(-100%);
   }
+  .mini.circular.image.athlete.proposal.logo > img {
+    max-width: 32px !important;
+  }
+  .main.proposals.container {
+    border: 1px solid $black;
+    box-shadow: 0 0 10px 1px rgba($white, .3);
+    background-color: $white;
+  }
 }

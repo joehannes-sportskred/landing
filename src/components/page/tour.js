@@ -14,6 +14,7 @@ import LayoutGoldenRatio from '../layout/goldenratio';
 import LayoutRighty from '../layout/righty';
 import LayoutRightyVery from '../layout/rightyvery';
 import LayoutLefty from '../layout/lefty';
+import LayoutLeftyVery from '../layout/leftyvery';
 import LayoutCentered from '../layout/centered';
 import LayoutCenteredWide from '../layout/centeredwide';
 
@@ -61,7 +62,7 @@ const Page = {
         <Grid.Row stretched verticalAlign="middle">
           <AbstractPage Layout={LayoutRightyVery} Theme={ROLE.ATHLETE.name} Slogan={TOUR.ATHLETE.SLOGAN} ConcretePage={Athlete.Home} />
           <AbstractPage Layout={LayoutRightyVery} Theme={ROLE.ATHLETE.name} Slogan={TOUR.ATHLETE.SLOGAN} ConcretePage={Athlete.Profile} />
-          <AbstractPage Layout={LayoutLefty} Theme={ROLE.ATHLETE.name} Slogan={TOUR.ATHLETE.SLOGAN} ConcretePage={Athlete.BeDiscovered} />
+          <AbstractPage Layout={LayoutLeftyVery} Theme={ROLE.ATHLETE.name} Slogan={TOUR.ATHLETE.SLOGAN} ConcretePage={Athlete.BeDiscovered} />
           <AbstractPage Layout={LayoutRighty} Theme={ROLE.ATHLETE.name} Slogan={TOUR.ATHLETE.SLOGAN} ConcretePage={Athlete.Monetise} />
           <AbstractPage Layout={LayoutLefty} Theme={ROLE.ATHLETE.name} Slogan={TOUR.ATHLETE.SLOGAN} ConcretePage={Athlete.Focus} />
           <AbstractPage Layout={LayoutCentered} Theme={ROLE.ATHLETE.name} Slogan={TOUR.ATHLETE.SLOGAN} ConcretePage={Athlete.Action} />
