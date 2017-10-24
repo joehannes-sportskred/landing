@@ -9,9 +9,20 @@
   padding-bottom: 0 !important;
 }
 
-.fluid.main.tour.page.container:not(:first-child) {
+.main.tour.page.container:not(:first-child) {
   border-top: 3px groove $orange;
   &:last-child {
     margin-bottom: 64px;
+  }
+}
+
+.main.profile.container img.fluid.image {
+  border: 1px solid $black;
+  box-shadow: 0 0 10px 1px rgba($white, .3);
+  transition: all .5s ease-in;
+  &:hover {
+    box-shadow: 0 0 10px 1px rgba($white, .7);
+    transform: scale(1.25);
+    transform-origin: center;
   }
 }

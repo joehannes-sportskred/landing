@@ -76,7 +76,7 @@ const Home = {
 
 const Discover = {
   Left: () => (
-    <Card color="yellow" className="children-centered" color="orange">
+    <Card color="orange" className="children-centered" color="orange">
       <Icon color="orange" size="large" name={TOUR.BRAND.ACTION[0].ICON} />
       <Segment basic padded className="rotated-icon-border" />
       <Card.Header as="h4">
@@ -138,7 +138,7 @@ const Choose = {
     </Container>
   ),
   Right: () => (
-    <Card color="yellow">
+    <Card color="orange">
       <Icon color="orange" size="large" name={TOUR.BRAND.ACTION[1].ICON} />
       <Segment basic padded className="rotated-icon-border" />
       <Card.Header as="h4">

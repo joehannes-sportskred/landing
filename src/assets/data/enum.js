@@ -119,7 +119,14 @@ export const TOUR = {
         and define the rates for your sponsorship packages - make it look attractive and unique,
         this is what the brands will see...`,
       SLOGAN: 'Create an attractive profile',
-      IMG_DETAIL_MAIN: '/assets/img/tour/brand/discover_main.jpg',
+      MENU: [
+        'Profile',
+        'Feed',
+        'Career',
+        'Packages',
+        'Proposal',
+        'Experience',
+      ]
     }, {
       ICON: 'find',
       TITLE: 'Get discovered by brands',
@@ -319,6 +326,16 @@ export const IMG = {
     ACTION: '/assets/img/tour/img_in_action.png',
     MARKETEER: '/assets/img/tour/marketeer/cyclist.png',
     ATHLETE: '/assets/img/tour/athlete/runner.png',
+  },
+  ATHLETE: {
+    PROFILE: [
+      '/assets/img/tour/athlete/profile_0.jpg',
+      '/assets/img/tour/athlete/profile_1.jpg',
+      '/assets/img/tour/athlete/profile_2.jpg',
+      '/assets/img/tour/athlete/profile_3.jpg',
+      '/assets/img/tour/athlete/profile_4.jpg',
+      '/assets/img/tour/athlete/profile_5.jpg',
+    ],
   },
 };
 

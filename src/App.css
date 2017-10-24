@@ -52,10 +52,19 @@
   padding-top: 0 !important;
   padding-bottom: 0 !important; }
 
-.fluid.main.tour.page.container:not(:first-child) {
+.main.tour.page.container:not(:first-child) {
   border-top: 3px groove #E16224; }
-  .fluid.main.tour.page.container:not(:first-child):last-child {
+  .main.tour.page.container:not(:first-child):last-child {
     margin-bottom: 64px; }
+
+.main.profile.container img.fluid.image {
+  border: 1px solid #000000;
+  box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.3);
+  transition: all .5s ease-in; }
+  .main.profile.container img.fluid.image:hover {
+    box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.7);
+    transform: scale(1.25);
+    transform-origin: center; }
 
 .toggle.checkbox > label:before {
   background-color: rgba(95, 126, 198, 0.7) !important; }
