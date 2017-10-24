@@ -26,7 +26,6 @@ const Home = {
   Left: () => (
     <Segment basic className="image">
       <Image fluid verticalAlign="middle" src={IMG.TOUR.ATHLETE} className="main tour athlete runner image" />
-      <Image fluid verticalAlign="middle" src={IMG.TOUR.ATHLETE} className="main tour athlete runner image" />
     </Segment>
   ),
   Right: () => (
