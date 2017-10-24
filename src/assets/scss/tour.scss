@@ -119,7 +119,7 @@
   .mini.circular.image.athlete.proposal.logo > img {
     max-width: 32px !important;
   }
-  .main.proposals.container {
+  .main.proposals.container, .main.focus.container {
     border: 1px solid $black;
     box-shadow: 0 0 10px 1px rgba($white, .3);
     background-color: $white;
@@ -130,6 +130,14 @@
     background-color: $white;
     .content > .summary:first-child, .content > .summary:first-child + .text.extra {
       font-size: smaller;
+    }
+  }
+  .main.focus.container {
+    .react-photo-gallery--gallery {
+      img:hover {
+        transform: scale(1.25);
+        transform-origin: center;
+      }
     }
   }
 }

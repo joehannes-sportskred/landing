@@ -254,7 +254,7 @@ iframe#player {
 .main.tour.page .mini.circular.image.athlete.proposal.logo > img {
   max-width: 32px !important; }
 
-.main.tour.page .main.proposals.container {
+.main.tour.page .main.proposals.container, .main.tour.page .main.focus.container {
   border: 1px solid #000000;
   box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.3);
   background-color: #FFFFFF; }
@@ -265,6 +265,10 @@ iframe#player {
   background-color: #FFFFFF; }
   .main.tour.page .main.monetise.container .content > .summary:first-child, .main.tour.page .main.monetise.container .content > .summary:first-child + .text.extra {
     font-size: smaller; }
+
+.main.tour.page .main.focus.container .react-photo-gallery--gallery img:hover {
+  transform: scale(1.25);
+  transform-origin: center; }
 
 nav.ui.menu {
   z-index: 9999999;

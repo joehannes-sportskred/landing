@@ -221,7 +221,53 @@ export const TOUR = {
         and focus on training and competing.
         Your online presence can support your on-field performance!`,
       SLOGAN: 'Focus on your passion',
-      IMG_DETAIL: 'assets/img/tour/brand/measure.png',
+      PHOTOS: [
+        {
+          src: '/assets/img/tour/athlete/focus_0.jpg',
+          width: '7',
+          height: '3',
+        },
+        {
+          src: '/assets/img/tour/athlete/focus_1.jpg',
+          width: '1',
+          height: '1',
+        },
+        {
+          src: '/assets/img/tour/athlete/focus_2.jpg',
+          width: '4',
+          height: '3',
+        },
+        {
+          src: '/assets/img/tour/athlete/focus_3.jpg',
+          width: '2',
+          height: '4',
+        },
+        {
+          src: '/assets/img/tour/athlete/focus_4.jpg',
+          width: '3',
+          height: '3',
+        },
+        {
+          src: '/assets/img/tour/athlete/focus_5.jpg',
+          width: '1',
+          height: '4',
+        },
+        {
+          src: '/assets/img/tour/athlete/focus_6.jpg',
+          width: '3',
+          height: '3',
+        },
+        {
+          src: '/assets/img/tour/athlete/focus_8.jpg',
+          width: '2',
+          height: '4',
+        },/*
+        {
+          src: '/assets/img/tour/athlete/focus_8.jpg',
+          width: '2',
+          height: '4',
+        },*/
+      ],
     }],
   },
   SIGNUP: {

@@ -17,6 +17,7 @@ import {
   Table,
   Segment
 } from 'semantic-ui-react';
+import Gallery from 'react-photo-gallery';
 
 import { DATA, TOUR, IMG } from '../../../assets/data/enum';
 import { TOUR as JSON_TOUR } from '../../../assets/data/sports';
@@ -179,11 +180,11 @@ const Monetise = {
 
 const Focus = {
   Left: () => (
-    <Container fluid className="main measure-impact">
+    <Container fluid className="main focus">
       <Header inverted as="h3" sub textAlign="center" className="main measure-impact header">
         {TOUR.ATHLETE.ACTION[3].SLOGAN}
       </Header>
-      Empty
+      <Gallery photos={TOUR.ATHLETE.ACTION[3].PHOTOS} columns={4}/>
     </Container>
   ),
   Right: () => (
