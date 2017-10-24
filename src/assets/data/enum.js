@@ -191,7 +191,28 @@ export const TOUR = {
         of this relationship - the more original and engaging,
         the better for you and your sponsor`,
       SLOGAN: 'Monetise your social media presence',
-      IMG_DETAIL: 'assets/img/tour/brand/reach.png',
+      IMG_DETAIL: '/assets/img/tour/athlete/monetise_0.jpg',
+      FEED: [
+        {
+          date: '3 days ago',
+          image: '/assets/img/tour/athlete/monetise_1.jpg',
+          meta: '897 Likes',
+          summary: 'Lucie Curutchet posted on her page',
+          extraText: 'Check out a cool surf lifestyle brand, use discount code surf30, for 30% off, www.citizenciao.com'
+        },
+        {
+          summary: 'citizenciao',
+          extraText: 'Thanks for the support, fellow surfer'
+        },
+        {
+          summary: 'broux lee',
+          extraText: 'tu geres la fougeres ...',
+        },
+        {
+          summary: 'joaocamposferreira',
+          extraText: 'What an amazing place, I can already feel the vibe ...'
+        },
+      ]
     }, {
       ICON: 'fire',
       TITLE: 'Focus on your passion',

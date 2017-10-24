@@ -124,4 +124,12 @@
     box-shadow: 0 0 10px 1px rgba($white, .3);
     background-color: $white;
   }
+  .main.monetise.container {
+    border: 1px solid $black;
+    box-shadow: 0 0 10px 1px rgba($white, .3);
+    background-color: $white;
+    .content > .summary:first-child, .content > .summary:first-child + .text.extra {
+      font-size: smaller;
+    }
+  }
 }

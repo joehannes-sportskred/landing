@@ -6,6 +6,7 @@ import {
   Checkbox,
   Container,
   Divider,
+  Feed,
   Header,
   Icon,
   Image,
@@ -164,12 +165,13 @@ const Monetise = {
     </Card>
   ),
   Right: () => (
-    <Container id="svg_flower" fluid className="main reach-audience">
+    <Container id="svg_flower" fluid className="main monetise">
       <Header inverted as="h3" sub textAlign="center" className="main reach-audience header">
         {TOUR.ATHLETE.ACTION[2].SLOGAN}
       </Header>
-      <Segment className="childrenCentered" style={{ marginTop: '0' }}>
-        Empty
+      <Segment style={{ marginTop: '0' }}>
+        <Image fluid src={TOUR.ATHLETE.ACTION[2].IMG_DETAIL} />
+        <Feed events={TOUR.ATHLETE.ACTION[2].FEED} />
       </Segment>
     </Container>
   ),
