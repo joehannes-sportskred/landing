@@ -14,11 +14,16 @@ const Component = ({ history }) => (
     </Reveal.Content>
     <Reveal.Content hidden style={{ width: '100%' }}>
       <Button.Group fluid>
-        <Button negative onClick={() => history.push(`/${LINKS.INACTION.BRAND}`)}>
+        <Button
+          negative
+          onClick={() => history.push(`/${LINKS.INACTION.BRAND}`)}
+        >
           {TEXT.INACTION.BRAND}
         </Button>
         <Button.Or />
-        <Button onClick={() => history.push(`/${LINKS.INACTION.ATHLETE}`)}>
+        <Button
+          onClick={() => history.push(`/${LINKS.INACTION.ATHLETE}`)}
+        >
           {TEXT.INACTION.ATHLETE}
         </Button>
       </Button.Group>

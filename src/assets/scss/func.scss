@@ -5,8 +5,19 @@
     background-color: $c !important;
     width: 100% !important;
     height: 100% !important;
+    z-index: -1;
   }
-  & {
+  background: inherit !important;
+  &:after {
+    content: ' ';
+    position: absolute !important;
     background-image: $p;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: -2;
+  }
+  &:first-child:after {
+    top: 0;
   }
 }

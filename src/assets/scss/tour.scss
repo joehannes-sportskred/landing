@@ -40,25 +40,29 @@
     }
     .container.one {
       &> .segment:first-child {
-        background-color: $complementary_bg_0 !important;
-        &> h6 > span:first-child {
+        @include pattern($pattern_url_light, $complementary_bg_2, 0);
+        &:before { transform: translateX(-1em) translateY(-1em); }
+        // highlight-marker-effect ...
+        /* &> h6 > span:first-child {
           background: linear-gradient(to bottom, transparent 20%, $primary_bg_1 40%, $primary_bg_1 60%, transparent 80%);
-        }
+        } */
         transition: all .3s ease-in;
         &:hover {
           transform: scale(1.13);
-          background-color: $rgba-secondary-1-3 !important;
+          @include pattern($pattern_url_light, $complementary_bg_1, 0);
         }
       }
     }
   }
   .card {
-    background-color: $complementary_bg_0 !important;
+    @include pattern($pattern_url_light, $complementary_bg_2, 0);
+    &:before { transform: translateY(-1em); }
+    display: flex !important;
+    align-items: center;
     padding: 1rem;
     &:hover {
       transform: scale(1.13);
-      z-index: 9;
-      background-color: $rgba-secondary-1-3 !important;
+      background-color: $complementary_bg_2;
       transition: all .3s ease-in;
       .rotated-icon-border {
         transform: translateY(-25%) translateX(-50%) rotate(45deg);

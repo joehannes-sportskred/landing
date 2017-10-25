@@ -8,11 +8,11 @@ const Component = ({ active, onActivate }) => (
   <Segment.Group compact className="video-container-group">
     {VIDEO_ICONS.map((icon, i) => (
       <Segment key={`videoicon_${i}`} basic>
-        <Reveal className="video-container">
-          <Reveal.Content hidden className="video-trigger">
-            <Popup
-              position="right center"
-              trigger={(
+        <Popup
+          position="right center"
+          trigger={(
+            <Reveal className="video-container">
+              <Reveal.Content hidden className="video-trigger">
                 <Button
                   circular
                   primary
@@ -22,33 +22,33 @@ const Component = ({ active, onActivate }) => (
                   onClick={ () => active !== (i + 1) && onActivate(i + 1) }
                   style={{ width: '69px' }}
                 />
-              )}
-              style={{
-                padding: '0',
-                animation: 'movein-right .5s ease-out',
-              }}
-              wide="very"
-            >
-              <Segment.Group>
-                <Segment basic>
-                  {icon.TOOLTIP.NAME}
-                </Segment>
-                <Segment basic inverted>
-                  {icon.TOOLTIP.HASHTAGS}
-                </Segment>
-              </Segment.Group>
-            </Popup>
-          </Reveal.Content>
-          <Reveal.Content visible className="video-poster">
-            <Image
-              shape="circular"
-              size="small"
-              src={icon.AVATAR}
-              style={{ maxWidth: '69px', marginTop: '-1px' }}
-              className={`${active == (i + 1) ? 'video-active' : 'video-inactive'}`}
-            />
-          </Reveal.Content>
-        </Reveal>
+              </Reveal.Content>
+              <Reveal.Content visible className="video-poster">
+                <Image
+                  shape="circular"
+                  size="small"
+                  src={icon.AVATAR}
+                  style={{ maxWidth: '69px', marginTop: '-1px' }}
+                  className={`${active == (i + 1) ? 'video-active' : 'video-inactive'}`}
+                />
+              </Reveal.Content>
+            </Reveal>
+          )}
+          style={{
+            padding: '0',
+            animation: 'movein-right .5s ease-out',
+          }}
+          wide="very"
+        >
+          <Segment.Group>
+            <Segment basic>
+              {icon.TOOLTIP.NAME}
+            </Segment>
+            <Segment basic inverted>
+              {icon.TOOLTIP.HASHTAGS}
+            </Segment>
+          </Segment.Group>
+        </Popup>
       </Segment>
     ))}
   </Segment.Group>

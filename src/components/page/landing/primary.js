@@ -14,7 +14,8 @@ const Left = () => <VideoIcons />;
 
 const Center = () => <Player />;
 
-const Right = () => (
+const Right = () => (<div />);
+/*
   <Segment.Group compact className="social-icons-vertical-container">
     {Object.keys(LINKS.SOCIAL).map((key, i) => (
       <Segment basic key={`socialicon_${i}`} style={{ transform: 'translateX(-36px)' }}>
@@ -32,6 +33,7 @@ const Right = () => (
     ))}
   </Segment.Group>
 );
+*/
 
 const Content = { Left, Center, Right };
 
