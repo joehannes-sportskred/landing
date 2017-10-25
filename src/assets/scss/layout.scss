@@ -18,10 +18,9 @@
 
 .main.profile.container img.fluid.image {
   border: 1px solid $black;
-  box-shadow: 0 0 10px 1px rgba($white, .3);
-  transition: all .5s ease-in;
+      background-image: $pattern_url_light;  transition: all .5s ease-in;
+      box-shadow: 0 10px 5px -5px rgba($orange, 0.7) !important;
   &:hover {
-    box-shadow: 0 0 10px 1px rgba($white, .7);
     transform: scale(1.25);
     transform-origin: center;
   }

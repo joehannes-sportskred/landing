@@ -1,5 +1,7 @@
 .main.tour.page {
+  box-shadow: inset 0 0 5px 0px $rgba-complement-1;
   @include pattern($pattern_url_dark, $complementary_bg_0, 0);
+  borer-radius: 100%;
   &> .grid:first-child {
     .basic.image.segment {
       &:hover {
@@ -40,7 +42,7 @@
     }
     .container.one {
       &> .segment:first-child {
-        @include pattern($pattern_url_light, $complementary_bg_2, 0);
+        @include pattern($pattern_url_light, $complementary_bg_3, 0);
         &:before { transform: translateX(-1em) translateY(-1em); }
         // highlight-marker-effect ...
         /* &> h6 > span:first-child {
@@ -49,21 +51,24 @@
         transition: all .3s ease-in;
         &:hover {
           transform: scale(1.13);
-          @include pattern($pattern_url_light, $complementary_bg_1, 0);
         }
       }
     }
   }
+
+  .card, .segment:not(.basic) {
+    box-shadow: 0 10px 5px -5px rgba($orange, 0.7) !important;
+  }
+
   .card {
-    @include pattern($pattern_url_light, $complementary_bg_2, 0);
+    @include pattern($pattern_url_light, $complementary_bg_3, 0);
+    position: relative;
     &:before { transform: translateY(-1em); }
     display: flex !important;
     align-items: center;
     padding: 1rem;
     &:hover {
       transform: scale(1.13);
-      background-color: $complementary_bg_2;
-      transition: all .3s ease-in;
       .rotated-icon-border {
         transform: translateY(-25%) translateX(-50%) rotate(45deg);
       }
@@ -86,19 +91,19 @@
   .discover.main.header {
     border: 1px solid $black;
     border-bottom: none;
-    box-shadow: 0 0 10px 1px rgba($white, .3);
+    box-shadow: 0 10px 5px -5px rgba($orange, 0.7) !important;
   }
   img.discover.main.image {
     border: 1px soliid $black;
     border-top: none;
-    box-shadow: 0 0 10px 1px rgba($white, .3);
+    box-shadow: 0 10px 5px -5px rgba($orange, 0.7) !important;
   }
   img.discover.detail.image {
     position: absolute;
     top: 75%;
     left: 50%;
     border: 1px solid $black;
-    box-shadow: 0 0 10px 1px rgba($white, .3);
+    box-shadow: 0 10px 5px -5px rgba($orange, 0.7) !important;
     &.one {
       transform: translateX(-75%) rotate(21deg);
     }
@@ -108,7 +113,7 @@
   }
   .main.choose-packages.container, .main.reach-audience.container, .main.measure-impact.container, .main.action-signup.container {
     border: 1px solid $black;
-    box-shadow: 0 0 10px 1px rgba($white, .3);
+    box-shadow: 0 10px 5px -5px rgba($orange, 0.7) !important;
   }
   .main.measure-impact.container, .recharts-legend-item-text, .recharts-text {
     color: $orange;
@@ -125,13 +130,13 @@
   }
   .main.proposals.container, .main.focus.container {
     border: 1px solid $black;
-    box-shadow: 0 0 10px 1px rgba($white, .3);
-    background-color: $white;
+    box-shadow: 0 10px 5px -5px rgba($orange, 0.7) !important;
+    background-image: $pattern_url_light;
   }
   .main.monetise.container {
     border: 1px solid $black;
-    box-shadow: 0 0 10px 1px rgba($white, .3);
-    background-color: $white;
+    box-shadow: 0 10px 5px -5px rgba($orange, 0.7) !important;
+        background-image: $pattern_url_light;
     .content > .summary:first-child, .content > .summary:first-child + .text.extra {
       font-size: smaller;
     }

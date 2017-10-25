@@ -55,10 +55,11 @@ $rgba-complement-3: rgba( 46,156,156,1);
 $rgba-complement-4: rgba( 22,140,140,1);
 
 $primary_bg_0: rgba($rgba-primary-0, 0.3);
-$primary_bg_1: rgba($rgba-primary-0, 0.7);
+$primary_bg_1: rgba($rgba-primary-4, 0.7);
 $complementary_bg_0:rgba(black, 0.1);
 $complementary_bg_1:rgba($rgba-complement-1, 0.3);
 $complementary_bg_2:rgba($rgba-complement-1, 0.7);
+$complementary_bg_3: $rgba-complement-0;
 
 $transparent: rgba(0,0,0,0);
 

@@ -1,23 +1,5 @@
 @mixin pattern($p, $c, $potential) {
-  &:before {
-    content: ' ';
-    position: absolute !important;
-    background-color: $c !important;
-    width: 100% !important;
-    height: 100% !important;
-    z-index: -1;
-  }
-  background: inherit !important;
-  &:after {
-    content: ' ';
-    position: absolute !important;
-    background-image: $p;
-    left: 0;
-    width: 100% !important;
-    height: 100% !important;
-    z-index: -2;
-  }
-  &:first-child:after {
-    top: 0;
-  }
+  background-image: $p, radial-gradient(ellipse farthest-corner, transparent 0%, transparent 50%, $complementary_bg_1 100%);
+  background-color: $c;
+  background-blend-mode: lighten;
 }
