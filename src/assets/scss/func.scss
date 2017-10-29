@@ -1,5 +1,5 @@
 @mixin pattern($p, $c, $potential) {
-  background-image: $p, radial-gradient(ellipse farthest-corner, transparent 0%, transparent 50%, $complementary_bg_1 100%);
+  background-image: $p, radial-gradient(ellipse farthest-corner, transparent 0%, transparent 67%, $complementary_bg_4 100%);
   background-color: $c;
   background-blend-mode: lighten;
 }

@@ -10,6 +10,18 @@
   }
 }
 
+@keyframes blurry {
+  0% {
+    filter: none;
+  }
+  50% {
+    filter: blur(5px);
+  }
+  100% {
+    filter: none;
+  }
+}
+
 @keyframes movein-right {
   0% {
     transform: translateX(50%);

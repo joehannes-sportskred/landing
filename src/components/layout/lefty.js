@@ -7,12 +7,12 @@ const LayoutLefty = ({ content, className, opts }) => {
 
   return (
     <Container fluid className={className}>
-      <Grid>
+      <Grid stretched padded verticalAlign="middle">
         <Grid.Row only="computer">
           <Grid.Column width={2} />
           <Grid.Column verticalAlign="middle" width={7} style={{ textAlign: 'left' }}>
             <Content.Left />
-          </Grid.Column >
+          </Grid.Column>
           <Grid.Column verticalAlign="middle" width={5}>
             <Content.Right />
           </Grid.Column>

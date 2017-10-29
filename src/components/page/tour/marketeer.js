@@ -85,11 +85,12 @@ const Discover = {
     </Card>
   ),
   Right: () => (
-    <Container fluid style={{ transform: 'translateY(-50%)' }}>
+    <Container fluid>
       <Header inverted as="h3" sub textAlign="center" className="discover main header">
         {TOUR.BRAND.ACTION[0].SLOGAN}
       </Header>
       <Image centered src={TOUR.BRAND.ACTION[0].IMG_DETAIL_MAIN} className="discover main image"/>
+      <Image centered src={TOUR.BRAND.ACTION[0].IMG_DETAIL_DETAIL_1} className="discover dummy invisible image"/>
       <Image centered src={TOUR.BRAND.ACTION[0].IMG_DETAIL_DETAIL_1} className="discover detail image one"/>
       <Image centered src={TOUR.BRAND.ACTION[0].IMG_DETAIL_DETAIL_2} className="discover detail image two"/>
     </Container>
@@ -165,7 +166,6 @@ const Reach = {
       </Header>
       <Segment className="childrenCentered" style={{ marginTop: '0' }}>
         <InteractiveForceGraph
-          zoom
           simulationOptions={{
             height: window.innerHeight * 2/3,
             width: window.innerWidth * 7/16,

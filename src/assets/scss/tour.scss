@@ -1,7 +1,26 @@
 .main.tour.page {
-  box-shadow: inset 0 0 5px 0px $rgba-complement-1;
+  box-shadow: inset 0 0 5px 0px rgba($rgba-complement-1, .5);
   @include pattern($pattern_url_dark, $complementary_bg_0, 0);
   borer-radius: 100%;
+  &:first-of-type {
+    margin-top: 64px;
+  }
+  &:last-of-type {
+    margin-bottom: 64px;
+  }
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  &:not(:last-of-type):after {
+    content: " ";
+    position: absolute;
+    left: 50%;
+    width: 170px;
+    height: 90px;
+    transform: translateX(-50%) translateY(5.5rem);
+    background-image: url(/assets/img/tour/logo_separator.png);
+    transition: all .5 ease-in;
+    animation: blurry 3s alternate infinite;
+  }
   &> .grid:first-child {
     .basic.image.segment {
       &:hover {
@@ -100,7 +119,7 @@
   }
   img.discover.detail.image {
     position: absolute;
-    top: 75%;
+    top: 25%;
     left: 50%;
     border: 1px solid $black;
     box-shadow: 0 10px 5px -5px rgba($orange, 0.7) !important;
@@ -123,7 +142,7 @@
     position: relative;
     top: 50%;
     left: 0;
-    transform: translateY(-100%);
+    transform: translateY(-50%);
   }
   .mini.circular.image.athlete.proposal.logo > img {
     max-width: 32px !important;

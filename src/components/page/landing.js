@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { Container, Grid, Image } from 'semantic-ui-react';
 
 import Dimmer from '../../store/containers/dimmer';
-
 import Menu from '../common/menu';
 import AboutUs from '../common/aboutus';
 
+import FlexContainer from '../layout/container';
 import LayoutGoldenRatio from '../layout/goldenratio';
 import LayoutRighty from '../layout/righty';
 import LayoutLefty from '../layout/lefty';
@@ -22,23 +22,15 @@ import Content from './landing/primary';
 import { IMG } from '../../assets/data/enum';
 
 const Page = () => (
-  <Container fluid as="main" className="main landing page">
-    <Grid stretched verticalAlign="middle">
-      <Grid.Row style={{ maxHeight: '64px' }}>
-        <Menu.Primary />
-      </Grid.Row>
-      <Grid.Row stretched verticalAlign="middle">
-        <LayoutRailedCenteredWide
-          content={Content}
-          className="main landing page"
-        />
-      </Grid.Row>
-      <Grid.Row style={{ bottom: 0, position: 'absolute' }}>
-        <AboutUs />
-      </Grid.Row>
-    </Grid>
+  <FlexContainer>
+    <LayoutRailedCenteredWide
+      content={Content}
+      className="main landing page"
+    />
+    <Menu.Primary />
+    <AboutUs />
     <Dimmer />
-  </Container>
+  </FlexContainer>
 );
 
 export default Page;

@@ -78,3 +78,9 @@ $color_agents: $grey;
   display: flex !important;
   align-items: center;
 }
+
+.dummy, .invisible {
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}

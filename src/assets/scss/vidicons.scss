@@ -1,26 +1,3 @@
  .social-icons-vertical-container {
    justify-content: center;
 }
-
-.video-container-group {
-  justify-content: center;
-  align-self: flex-end;
-  .video-container {
-    transform: translateX(94px);
-    z-index: 9;
-    .video-poster {
-      transition: transform 0.5s bounce-out;
-      transform: translateX(0) !important;
-    }
-    .ui.content.video-poster:hover , .ui.content.video-trigger:hover ~ .video-poster {
-      transform: translateX(-121%) !important;
-    }
-    .video-inactive {
-      box-shadow: 0 0 10px 1px black;
-      cursor: pointer;
-    }
-    .video-active {
-      box-shadow: 0 0 10px 1px white;
-    }
-  }
-}
