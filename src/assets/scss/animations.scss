@@ -10,6 +10,49 @@
   }
 }
 
+@keyframes slogan {
+  0% {
+    content: "Reach millions of eyes with social media sponsorships";
+    filter: blur(13px);
+  }
+  5% {
+    content: "Reach millions of eyes with social media sponsorships";
+    filter: blur(0);
+  }
+  28% {
+    content: "Reach millions of eyes with social media sponsorships";
+    filter: blur(0);
+  }
+  33% {
+    content: "Engage with online communities with inspiring athletes";
+    filter: blur(13px);
+  }
+  38% {
+    content: "Engage with online communities with inspiring athletes";
+    filter: blur(0);
+  }
+  62% {
+    content: "Engage with online communities with inspiring athletes";
+    filter: blur(0);
+  }
+  67% {
+    content: "Maximise the power of your social media";
+    filter: blur(13px);
+  }
+  72% {
+    content: "Maximise the power of your social media";
+    filter: blur(0);
+  }
+  95% {
+    content: "Maximise the power of your social media";
+    filter: blur(0);
+  }
+  100% {
+    content: "Maximise the power of your social media";
+    filter: blur(13px);
+  }
+}
+
 @keyframes blurry {
   0% {
     filter: none;
@@ -19,6 +62,24 @@
   }
   100% {
     filter: none;
+  }
+}
+
+@keyframes scaly {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 0 transparent;
+    filter: blur(1px);
+  }
+  50% {
+    transform: scale(2);
+    text-shadow: 0 0 10px white;
+    filter: blur(5px);
+  }
+  100% {
+    transform: scale(1.2);
+    text-shadow: 0 0 0 transparent;
+    filter: blur(0px);
   }
 }
 

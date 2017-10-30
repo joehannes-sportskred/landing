@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Container, Grid } from 'semantic-ui-react';
 
-const LayoutRailedCenteredWide = ({ content, className, opts, callback }) => {
+const LayoutRailedCenteredWide = ({ content, className, opts, callback, Style }) => {
   const Content = content;
 
   return (
-    <Grid padded stretched verticalAlign="middle">
+    <Grid padded stretched verticalAlign="middle" style={Style}>
       <Grid.Row only="computer" verticalAlign="middle" stretched>
         <Grid.Column width={1} />
         <Grid.Column width={1}>
@@ -36,6 +36,7 @@ LayoutRailedCenteredWide.propTypes = {
   className: PropTypes.string,
   opts: PropTypes.object,
   callback: PropTypes.func,
+  Style: PropTypes.object
 };
 
 export default LayoutRailedCenteredWide;

@@ -22,15 +22,24 @@ body, #root, main {
 }
 
 .flex-container {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   justify-content: center;
   min-height: 100%;
   width: 100%;
-  &> *:not(.menu), .grid, .stretched {
+  .scrollmagic-pin-spacer, .grid, .stretched {
     min-height: inherit !important;
     height: auto;
+  }
+  .main.tour.page.container {
+    position: relative;
+    width: 100%;
+    min-height: inherit !important;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 }

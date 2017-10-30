@@ -2,16 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Container, Grid } from 'semantic-ui-react';
 
-const LayoutGoldenRatio = ({ content, className, opts }) => {
+const LayoutGoldenRatio = ({ content, className, opts, style }) => {
   const Content = content;
   return (
-    <Container fluid className={className}>
+    <Container fluid className={className} style={style}>
       <Grid>
         <Grid.Row only="computer" >
           <Grid.Column width={2} />
           <Grid.Column width={7}>
             <Content.Left />
-          </Grid.Column >
+          </Grid.Column>
           <Grid.Column width={6}>
             <Content.Right />
           </Grid.Column>
@@ -46,6 +46,7 @@ LayoutGoldenRatio.propTypes = {
   content: PropTypes.any.isRequired,
   className: PropTypes.string,
   opts: PropTypes.object,
+  style: PropTypes.object,
 };
 
 export default LayoutGoldenRatio;

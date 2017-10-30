@@ -13,7 +13,12 @@ const role = (state = 'about', action) => {
 };
 
 const video = (state = 0, action) => {
-  return action.type == ACTION.VIDEO.PROVIDER.YOUTUBE ? (action.video || state) : state;
+  switch (action.type) {
+    case ACTION.VIDEO.PROVIDER.YOUTUBE:
+      return action.video || (!!action.status ? state : 0);
+    default:
+      return state;
+  }
 }
 
 const contextfab = (state = false, action) => {

@@ -18,6 +18,7 @@ import {
   Segment
 } from 'semantic-ui-react';
 import Gallery from 'react-photo-gallery';
+import Scroll from 'scrollmagic';
 
 import { DATA, TOUR, IMG } from '../../../assets/data/enum';
 import { TOUR as JSON_TOUR } from '../../../assets/data/sports';
@@ -28,34 +29,37 @@ const Home = {
       <Image fluid verticalAlign="middle" src={IMG.TOUR.ATHLETE} className="main tour athlete runner image" />
     </Segment>
   ),
-  Right: () => (
-    <Container fluid className="one">
-      <Segment raised color="orange">
-        <Header.Content as="h6">
-          <Header as="span">
-            {TOUR.ATHLETE.SLOGAN[0]}
-          </Header>
-          <Header as="span" color="orange">
-            &nbsp;{TOUR.ATHLETE.SLOGAN[1]}
-          </Header>
-        </Header.Content>
-      </Segment>
-      <Divider />
-      <Card.Group textAlign="center" itemsPerRow="four">
-        {TOUR.ATHLETE.ACTION.map((tupel, index) => (
-          <Card key={index} className="children-centered" color="orange">
-            <Icon color="orange" size="large" name={tupel.ICON} />
-            <Segment basic padded className="rotated-icon-border" />
-            <Card.Header>
-              <Header color="orange" textAlign="center" as="h4">
-                {tupel.TITLE}
-              </Header>
-            </Card.Header>
-          </Card>
-        ))}
-      </Card.Group>
-    </Container>
-  ),
+  Right: () => {
+    const ScrollController = new Scroll.Controller();
+    return (
+      <Container fluid className="one">
+        <Segment raised color="orange">
+          <Header.Content as="h6">
+            <Header as="span">
+              {TOUR.ATHLETE.SLOGAN[0]}
+            </Header>
+            <Header as="span" color="orange">
+              &nbsp;{TOUR.ATHLETE.SLOGAN[1]}
+            </Header>
+          </Header.Content>
+        </Segment>
+        <Divider />
+        <Card.Group textAlign="center" itemsPerRow="four">
+          {TOUR.ATHLETE.ACTION.map((tupel, index) => (
+            <Card key={index} className="children-centered" color="orange" onClick={() => ScrollController.scrollTo('.scrollmagic-pin-spacer:nth-child(' + (index + 2) + ')') }>
+              <Icon color="orange" size="large" name={tupel.ICON} />
+              <Segment basic padded className="rotated-icon-border" />
+              <Card.Header>
+                <Header color="orange" textAlign="center" as="h4">
+                  {tupel.TITLE}
+                </Header>
+              </Card.Header>
+            </Card>
+          ))}
+        </Card.Group>
+      </Container>
+    );
+  }
 };
 
 const Profile = {

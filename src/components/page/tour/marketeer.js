@@ -30,6 +30,7 @@ import {
   Segment
 } from 'semantic-ui-react';
 import { InteractiveForceGraph, ForceGraphNode, ForceGraphLink } from 'react-vis-force';
+import Scroll from 'scrollmagic';
 
 import Chart from '../../common/chart';
 
@@ -44,34 +45,37 @@ const Home = {
       <Image fluid verticalAlign="middle" src={IMG.TOUR.MARKETEER} className="cyclist" />
     </Segment>
   ),
-  Right: () => (
-    <Container fluid className="one">
-      <Segment raised color="orange">
-        <Header.Content as="h6">
-          <Header as="span">
-            {TOUR.BRAND.SLOGAN[0]}
-          </Header>
-          <Header as="span" color="orange">
-            &nbsp;{TOUR.BRAND.SLOGAN[1]}
-          </Header>
-        </Header.Content>
-      </Segment>
-      <Divider />
-      <Card.Group textAlign="center" itemsPerRow="four">
-        {TOUR.BRAND.ACTION.map((tupel, index) => (
-          <Card key={index} className="children-centered" color="orange">
-            <Icon color="orange" size="large" name={tupel.ICON} />
-            <Segment basic padded className="rotated-icon-border" />
-            <Card.Header>
-              <Header color="orange" textAlign="center" as="h4">
-                {tupel.TITLE}
-              </Header>
-            </Card.Header>
-          </Card>
-        ))}
-      </Card.Group>
-    </Container>
-  ),
+  Right: () => {
+    const ScrollController = new Scroll.Controller();
+    return (
+      <Container fluid className="one">
+        <Segment raised color="orange">
+          <Header.Content as="h6">
+            <Header as="span">
+              {TOUR.BRAND.SLOGAN[0]}
+            </Header>
+            <Header as="span" color="orange">
+              &nbsp;{TOUR.BRAND.SLOGAN[1]}
+            </Header>
+          </Header.Content>
+        </Segment>
+        <Divider />
+        <Card.Group textAlign="center" itemsPerRow="four">
+          {TOUR.BRAND.ACTION.map((tupel, index) => (
+            <Card key={index} className="children-centered" color="orange" onClick={() => ScrollController.scrollTo('.scrollmagic-pin-spacer:nth-child(' + (index + 2) + ')') }>
+              <Icon color="orange" size="large" name={tupel.ICON} />
+              <Segment basic padded className="rotated-icon-border" />
+              <Card.Header>
+                <Header color="orange" textAlign="center" as="h4">
+                  {tupel.TITLE}
+                </Header>
+              </Card.Header>
+            </Card>
+          ))}
+        </Card.Group>
+      </Container>
+    );
+  },
 };
 
 const Discover = {
@@ -85,7 +89,7 @@ const Discover = {
     </Card>
   ),
   Right: () => (
-    <Container fluid>
+    <Container fluid className="main discover">
       <Header inverted as="h3" sub textAlign="center" className="discover main header">
         {TOUR.BRAND.ACTION[0].SLOGAN}
       </Header>
@@ -231,28 +235,30 @@ const Measure = {
       <Header inverted as="h3" sub textAlign="center" className="main measure-impact header">
         {TOUR.BRAND.ACTION[3].SLOGAN}
       </Header>
-      <BarChart width={550} height={250} data={JSON_TOUR.IMPRESSIONS}
-        margin={{top: 5, right: 30, left: 20, bottom: 5}}>
-         <XAxis dataKey="name"/>
-         <YAxis/>
-         <CartesianGrid strokeDasharray="3 3"/>
-         <Tooltip/>
-         <Legend />
-         <Bar dataKey="facebook" fill="#4267b2" />
-         <Bar dataKey="twitter" fill="#1DA1F2" />
-         <Bar dataKey="instagram" fill="#8a3ab9" />
-         <Bar dataKey="youtube" fill="#ff0000" />
-      </BarChart>
-      <RadarChart cx={200} cy={250} outerRadius={150} width={550} height={450} data={JSON_TOUR.RADAR}>
-        <Radar name="Facebook" dataKey="Facebook" stroke="#4267b2" fill="#4267b2" fillOpacity={0.1}/>
-        <Radar name="Twitter" dataKey="Twitter" stroke="#1DA1F2" fill="#1DA1F2" fillOpacity={0.1}/>
-        <Radar name="Youtube" dataKey="Youtube" stroke="#8a3ab9" fill="#8a3ab9" fillOpacity={0.1}/>
-        <Radar name="Instagram" dataKey="Instagram" stroke="#ff0000" fill="#ff0000" fillOpacity={0.1}/>
-        <PolarGrid />
-        <Legend />
-        <PolarAngleAxis dataKey="subject" />
-        <PolarRadiusAxis angle={30} domain={[0, 100]}/>
-      </RadarChart>
+      <Segment>
+        <BarChart width={550} height={250} data={JSON_TOUR.IMPRESSIONS}
+          margin={{top: 5, right: 30, left: 5, bottom: 5}}>
+           <XAxis dataKey="name"/>
+           <YAxis/>
+           <CartesianGrid strokeDasharray="3 3"/>
+           <Tooltip/>
+           <Legend />
+           <Bar dataKey="facebook" fill="#4267b2" />
+           <Bar dataKey="twitter" fill="#1DA1F2" />
+           <Bar dataKey="instagram" fill="#8a3ab9" />
+           <Bar dataKey="youtube" fill="#ff0000" />
+        </BarChart>
+        <RadarChart cx={200} cy={250} outerRadius={150} width={550} height={450} data={JSON_TOUR.RADAR}>
+          <Radar name="Facebook" dataKey="Facebook" stroke="#4267b2" fill="#4267b2" fillOpacity={0.1}/>
+          <Radar name="Twitter" dataKey="Twitter" stroke="#1DA1F2" fill="#1DA1F2" fillOpacity={0.1}/>
+          <Radar name="Youtube" dataKey="Youtube" stroke="#8a3ab9" fill="#8a3ab9" fillOpacity={0.1}/>
+          <Radar name="Instagram" dataKey="Instagram" stroke="#ff0000" fill="#ff0000" fillOpacity={0.1}/>
+          <PolarGrid />
+          <Legend />
+          <PolarAngleAxis dataKey="subject" />
+          <PolarRadiusAxis angle={30} domain={[0, 100]}/>
+        </RadarChart>
+      </Segment>
     </Container>
   ),
   Right: () => (

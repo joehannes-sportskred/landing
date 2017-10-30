@@ -2,17 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Container, Grid } from 'semantic-ui-react';
 
-const LayoutRighty = ({ content, className, opts }) => {
+const LayoutRighty = ({ content, className, opts, Style }) => {
   const Content = content;
 
   return (
-    <Container fluid className={className}>
+    <Container fluid className={className} style={Style}>
       <Grid>
         <Grid.Row only="computer">
           <Grid.Column width={2} />
           <Grid.Column verticalAlign="middle" width={5}>
             <Content.Left />
-          </Grid.Column >
+          </Grid.Column>
           <Grid.Column verticalAlign="middle" width={7}>
             <Content.Right style={{ textAlign: 'right' }} />
           </Grid.Column>
@@ -37,6 +37,7 @@ LayoutRighty.propTypes = {
   content: PropTypes.any.isRequired,
   className: PropTypes.string,
   opts: PropTypes.object,
+  Style: PropTypes.object,
 };
 
 export default LayoutRighty;

@@ -5,7 +5,7 @@ import { Container, Transition, Visibility } from 'semantic-ui-react';
 class FlexContainer extends Component {
   render () {
     return (
-      <div className="flex-container">
+      <div className="flex-container" style={this.props.style}>
         {this.props.children}
       </div>
     );
@@ -14,6 +14,7 @@ class FlexContainer extends Component {
 
 FlexContainer.propTypes = {
   children: PropTypes.any.isRequired,
+  style: PropTypes.object,
 }
 
 export default FlexContainer;

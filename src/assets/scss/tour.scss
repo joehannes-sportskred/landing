@@ -1,27 +1,33 @@
-.main.tour.page {
+.scrollmagic-pin-spacer {
   box-shadow: inset 0 0 5px 0px rgba($rgba-complement-1, .5);
   @include pattern($pattern_url_dark, $complementary_bg_0, 0);
   borer-radius: 100%;
-  &:first-of-type {
-    margin-top: 64px;
+  &:not(:first-of-type) {
+    &:nth-child(even) .card {
+      transform: rotate(-3deg);
+    }
+    &:nth-child(odd) .card {
+      transform: rotate(3deg);
+    }
   }
-  &:last-of-type {
-    margin-bottom: 64px;
-  }
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-  &:not(:last-of-type):after {
+  &:after {
     content: " ";
     position: absolute;
+    top: 0;
     left: 50%;
     width: 170px;
     height: 90px;
-    transform: translateX(-50%) translateY(5.5rem);
+    transform: translateX(-50%) translateY(-50%);
     background-image: url(/assets/img/tour/logo_separator.png);
     transition: all .5 ease-in;
     animation: blurry 3s alternate infinite;
   }
-  &> .grid:first-child {
+  &:not(:last-of-type):nth-child(1):after,
+  &:not(:last-of-type):nth-child(2):after,
+  &:not(:last-of-type):nth-child(4):after, {
+    // transform: translateX(-50%);
+  }
+  .grid:first-child {
     .basic.image.segment {
       &:hover {
         animation: speed-shake 1s alternate;
@@ -61,7 +67,7 @@
     }
     .container.one {
       &> .segment:first-child {
-        @include pattern($pattern_url_light, $complementary_bg_3, 0);
+        @include pattern($pattern_url_light, $complementary_bg_1, 0);
         &:before { transform: translateX(-1em) translateY(-1em); }
         // highlight-marker-effect ...
         /* &> h6 > span:first-child {
@@ -72,24 +78,79 @@
           transform: scale(1.13);
         }
       }
+      &> .cards > .card:hover {
+        transform: scale(1.13) rotate(7deg);
+      }
+    }
+    .main.header {
+      font-size: 1.33rem;
+      padding-bottom: .33rem;
+    }
+    table {
+      @include pattern($pattern_url_light, $complementary_bg_1, 0);
+      margin-top: 0 !important;
+      tr:nth-child(2) {
+        background: rgba($gold, .67);
+      }
+      tr:nth-child(4) {
+        background: rgba($silver, .67);
+      }
+      tr:nth-child(6) {
+        background: rgba($bronze, .67);
+      }
+      tr > td > .ribbon.label:after {
+        transform-origin: left;
+        transform: scaleX(.8);
+      }
+    }
+  }
+  &:nth-child(3), &:nth-child(5) {
+    .five.wide.column {
+      transform: translateX(2.67rem);
     }
   }
 
   .card, .segment:not(.basic) {
-    box-shadow: 0 10px 5px -5px rgba($orange, 0.7) !important;
-  }
-
-  .card {
-    @include pattern($pattern_url_light, $complementary_bg_3, 0);
+    @include pattern($pattern_url_light, $complementary_bg_1, 0);
     position: relative;
-    &:before { transform: translateY(-1em); }
+    border: 1px solid $orange !important;
+    box-shadow: 0 10px 5px -5px rgba($orange, 0.33) !important;
+    background-blend-mode: color-burn !important;
+    border-top-left-radius: 0 !important;
+  }
+  .cards > .card {
+    &> i.icon {
+      transform: translateY(1rem);
+    }
+    &:hover > .rotated-icon-border {
+      top: 0;
+    }
+  }
+  .card {
+    cursor: pointer;
+    position: relative;
     display: flex !important;
     align-items: center;
     padding: 1rem;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-width: 0 34px 34px 0;
+      border-style: solid;
+      border-color: rgba(0,0,0,0) rgba(0,0,0,0) $complementary_bg_3 $complementary_bg_3;
+      background: rgba($orange,.7);
+      box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+    }
+    .rotated-icon-border, i.icon {
+      transition: all .33s ease-in;
+    }
     &:hover {
-      transform: scale(1.13);
+      animation: scaly 0.33s normal forwards;
+      z-index: 9;
       .rotated-icon-border {
-        transform: translateY(-25%) translateX(-50%) rotate(45deg);
+        transform: translateY(-25%) translateX(-50%) rotate(405deg);
       }
       i.icon {
         transform: translateY(-50%);
@@ -101,28 +162,36 @@
       left: 50%;
       transform: translateX(-50%) rotate(45deg);
       border: 1px solid $orange;
+      border-bottom-right-radius: 8px;
       box-shadow: 5px 5px 10px 1px $orange;
     }
     i.icon {
       margin: 2rem auto;
     }
+    .header {
+      padding: 1rem 0;
+    }
   }
   .discover.main.header {
-    border: 1px solid $black;
+    border: 1px solid $orange;
+    border-top-width: 5px;
     border-bottom: none;
-    box-shadow: 0 10px 5px -5px rgba($orange, 0.7) !important;
+    // box-shadow: 0 10px 5px -5px rgba($orange, 0.33) !important;
+    font-family: 'Bad Script', cursive;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
   }
   img.discover.main.image {
-    border: 1px soliid $black;
+    border: 1px soliid $orange;
     border-top: none;
-    box-shadow: 0 10px 5px -5px rgba($orange, 0.7) !important;
+    box-shadow: 0 10px 5px -5px rgba($orange, 0.33) !important;
   }
   img.discover.detail.image {
     position: absolute;
     top: 25%;
     left: 50%;
-    border: 1px solid $black;
-    box-shadow: 0 10px 5px -5px rgba($orange, 0.7) !important;
+    border: 1px solid $orange;
+    box-shadow: 0 10px 5px -5px rgba($orange, 0.33) !important;
     &.one {
       transform: translateX(-75%) rotate(21deg);
     }
@@ -130,13 +199,27 @@
       transform: translateX(-25%) rotate(-17deg);
     }
   }
-  .main.choose-packages.container, .main.reach-audience.container, .main.measure-impact.container, .main.action-signup.container {
-    border: 1px solid $black;
-    box-shadow: 0 10px 5px -5px rgba($orange, 0.7) !important;
+  .main.focus.container, .main.monetise.container, .main.proposals.container, .main.choose-packages.container, .main.reach-audience.container, .main.measure-impact.container, .main.action-signup.container {
+    border: 1px solid $orange;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0 10px 5px -5px rgba($orange, 0.33) !important;
+    padding-top: 3px;
+    &> .main.header {
+      padding-top: .7rem;
+      padding-bottom: .7rem;
+      font-family: 'Bad Script', cursive;
+    }
+    .menu > .active.item {
+      border-color: $white !important;
+    }
   }
   .main.measure-impact.container, .recharts-legend-item-text, .recharts-text {
     color: $orange;
     fill: $orange;
+    & .segment {
+      padding: 1rem 0 !important;
+    }
   }
   .main.action-signup.container {
     position: relative;
@@ -147,15 +230,17 @@
   .mini.circular.image.athlete.proposal.logo > img {
     max-width: 32px !important;
   }
-  .main.proposals.container, .main.focus.container {
-    border: 1px solid $black;
-    box-shadow: 0 10px 5px -5px rgba($orange, 0.7) !important;
+  .main.proposals.container, .main.focus.container, .main.monetise.container {
+    box-shadow: 0 10px 5px -5px rgba($orange, 0.33) !important;
     background-image: $pattern_url_light;
   }
+  .main.container.monetise {
+    &> .main.header {
+      margin-bottom: 0 !important;
+    }
+  }
+
   .main.monetise.container {
-    border: 1px solid $black;
-    box-shadow: 0 10px 5px -5px rgba($orange, 0.7) !important;
-        background-image: $pattern_url_light;
     .content > .summary:first-child, .content > .summary:first-child + .text.extra {
       font-size: smaller;
     }
@@ -166,6 +251,12 @@
         transform: scale(1.25);
         transform-origin: center;
       }
+    }
+  }
+  .main.container {
+    border-top-width: 5px !important;
+    &> h3.main.header {
+      text-transform: none !important;
     }
   }
 }
