@@ -10,12 +10,8 @@
     "npm": "5.4.2"
   },
   "jest": {
-    "mapCoverage": true,
     "collectCoverageFrom": [
       "app/**/*.{js,jsx,ts,tsx}"
-    ],
-    "testMatch": [
-      "**/?(*.)(spec|test).js?(x)"
     ]
   },
   "scripts": {
