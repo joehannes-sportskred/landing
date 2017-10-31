@@ -54,7 +54,7 @@
     "redux-undo": "^0.6.1",
     "scrollmagic": "^2.0.5",
     "semantic-ui": "^2.2.13",
-    "semantic-ui-react": "^0.72.0",
+    "semantic-ui-react": "^0.75.1",
     "youtube-thin-wrapper": "^1.0.1"
   },
   "devDependencies": {

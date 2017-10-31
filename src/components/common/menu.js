@@ -10,12 +10,12 @@ import Roles from '../../store/containers/role';
 import Actions from '../../store/containers/landingactions';
 import ContextFAB from '../../store/containers/contextfab';
 
-const AbstractComponent = ({ SubMenu }) => (
+const Primary = () => (
   <Menu as="nav" fixed="top" fluid size="large" className="main navigation">
     <Menu.Item name="about" active>
-      <Logo logoType="dark" />
+      <Logo logoType="light" />
     </Menu.Item>
-    <SubMenu />
+    <ContextFAB />
     <Menu.Menu position="right">
       <Menu.Item>
         <Actions />
@@ -24,18 +24,24 @@ const AbstractComponent = ({ SubMenu }) => (
   </Menu>
 );
 
-AbstractComponent.propTypes = {
+Primary.propTypes = {
   SubMenu: PropTypes.func.isRequired,
 };
 
-const Primary = () => <ContextFAB />;
-
-const Tour = () => <Steps />;
+const Mobile = ({ onActivate, active }) => {
+  <Menu as="nav" fixed="top" fluid size="large" className="main navigation">
+    <Menu.Item name="about" active>
+      <Logo logoType="light" />
+    </Menu.Item>
+    <Menu.Menu position="right">
+      <Button circular primary icon="sidebar" onClick={() => onActivate(!active)} />
+    </Menu.Menu>
+  </Menu>
+}
 
 const Component = {
-  Bare: ({ Dynamic }) => <AbstractComponent SubMenu={Dynamic} />,
-  Primary: () => <AbstractComponent SubMenu={Primary} />,
-  Tour: () => <AbstractComponent SubMenu={Tour} />,
+  Primary,
+  Mobile,
 };
 
 export default Component;
