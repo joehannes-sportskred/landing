@@ -36,10 +36,14 @@ const Page = {
     state = {
         minHeight: 'inherit',
     }
+    resize = () => this.forceUpdate()
+
     componentWillMount () {
       this.setState({ minHeight: Number(window.innerHeight).toString() + 'px' });
     }
     componentDidMount () {
+      window.addEventListener('resize', this.resize);
+
       const ScrollController = new Scroll.Controller({
   			globalSceneOptions: {
   				triggerHook: 'onLeave'
@@ -55,6 +59,9 @@ const Page = {
   				// .addIndicators() // add indicators (requires plugin)
   				.addTo(ScrollController);
   		}
+    }
+    componentWillUnmount() {
+      window.removeEventListener('resize', this.resize);
     }
     render () {
       const { minHeight } = this.state;

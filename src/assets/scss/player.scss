@@ -10,6 +10,9 @@
     top: auto !important;
     transform: translateX(-50%);
   }
+  &> i.icon {
+    border: 1px solid $orange;
+  }
   &.slogan:before {
     content: "";
     z-index: 10;
@@ -17,14 +20,12 @@
     top: 0;
     left: 0;
     width: 50%;
-    padding: 2rem 2.67rem;
+    padding: 1rem 1rem;
     color: $white;
-    animation: slogan 9s infinite;
-    font-size: 3.67rem;
+    animation: slogan 15s infinite;
     font-weight: bold;
-    line-height: 5.67rem;
     font-family: 'Bad Script', cursive;
-    text-shadow: 0 0 5px white;
+    text-shadow: 0 0 5px $orange;
   }
   &:after {
     content: "";
@@ -41,7 +42,7 @@
 iframe#player {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 1px);
 }
 
 #player-poster + span {
@@ -77,6 +78,46 @@ iframe#player {
     }
     .video-active {
       box-shadow: 0 0 10px 1px white;
+    }
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  #player-wrapper.slogan {
+    &:before {
+      font-size: 5.3rem !important;
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) and (max-width: 1920px) {
+  #player-wrapper.slogan {
+    &:before {
+      font-size: 4rem !important;
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 1366px) and (max-width: 1440px) {
+  #player-wrapper.slogan {
+    &:before {
+      font-size: 3.67rem !important;
+      padding-left: 2.67rem;
+      padding-right: 2.67rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1366px) {
+  #player-wrapper.slogan {
+    &:before {
+      font-size: 2.67rem !important;
+      padding-left: 2.2rem;
+      padding-right: 2.2rem;
     }
   }
 }

@@ -16,5 +16,19 @@
 }
 
 .inverted {
-  @include pattern($pattern_url_dark, $transparent, 1000);
+  &, &.icon.circular {
+    background-image: $pattern_url_dark !important;
+    background-blend-mode: luminosity !important;
+    &.tinted {
+      background-color: rgba($orange, .7) !important;
+    }
+    &.transparently {
+      @include pattern($pattern_url_transparent, rgba($orange, .7), 0);
+      background-blend-mode: lighten !important;
+    }
+  }
+}
+
+.ui.instagram.circular.icon.button {
+  background-color: $instagram-purple;
 }

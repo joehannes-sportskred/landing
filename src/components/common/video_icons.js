@@ -44,7 +44,7 @@ const Component = ({ active, onActivate }) => (
             <Segment basic>
               {icon.TOOLTIP.NAME}
             </Segment>
-            <Segment basic inverted>
+            <Segment basic inverted style={{ border: '1px solid white' }} className="tinted">
               {icon.TOOLTIP.HASHTAGS}
             </Segment>
           </Segment.Group>

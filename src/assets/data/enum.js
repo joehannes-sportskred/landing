@@ -205,12 +205,7 @@ export const TOUR = {
           extraText: 'Thanks for the support, fellow surfer'
         },
         {
-          summary: 'broux lee',
-          extraText: 'tu geres la fougeres ...',
-        },
-        {
-          summary: 'joaocamposferreira',
-          extraText: 'What an amazing place, I can already feel the vibe ...'
+          summary: '...',
         },
       ]
     }, {
