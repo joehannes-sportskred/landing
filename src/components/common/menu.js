@@ -28,16 +28,21 @@ Primary.propTypes = {
   SubMenu: PropTypes.func.isRequired,
 };
 
-const Mobile = ({ onActivate, active }) => {
+const Mobile = ({ onActivate, active }) => (
   <Menu as="nav" fixed="top" fluid size="large" className="main navigation">
     <Menu.Item name="about" active>
       <Logo logoType="light" />
     </Menu.Item>
     <Menu.Menu position="right">
-      <Button circular primary icon="sidebar" onClick={() => onActivate(!active)} />
+      <Button
+        circular
+        primary
+        icon="sidebar"
+        onClick={() => onActivate(!active)}
+      />
     </Menu.Menu>
   </Menu>
-}
+);
 
 const Component = {
   Primary,

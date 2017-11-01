@@ -55,32 +55,6 @@ iframe#player {
   height: auto;
 }
 
-.video-container-group {
-  position: absolute;
-  z-index: 99;
-  justify-content: center;
-  align-self: flex-end;
-  border: none;
-  box-shadow: none !important;
-  transform: translateX(85%);
-  .video-container {
-    z-index: 9;
-    .video-poster {
-      transition: transform 0.5s ease-out;
-      transform: translateX(0) !important;
-    }
-    .ui.content.video-poster:hover , .ui.content.video-trigger:hover ~ .video-poster {
-      transform: translateX(-121%) !important;
-    }
-    .video-inactive {
-      box-shadow: 0 0 10px 1px black;
-      cursor: pointer;
-    }
-    .video-active {
-      box-shadow: 0 0 10px 1px white;
-    }
-  }
-}
 
 @media only screen and (min-width: 1920px) {
   #player-wrapper.slogan {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu } from 'semantic-ui-react';
+import { Button, Menu, Responsive } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 import SocialIcons from './socialicons';
@@ -7,7 +7,7 @@ import InAction from './inaction';
 
 import { LINKS, TEXT } from '../../assets/data/enum';
 
-const Component = () => (
+const Primary = () => (
   <Menu as="nav" fixed="bottom" fluid size="large" className="bottom about menu">
     <Menu.Item as="article">
       <SocialIcons />
@@ -33,4 +33,23 @@ const Component = () => (
   </Menu>
 );
 
-export default Component;
+const Mobile = () => (
+  <Menu as="nav" fixed="bottom" fluid size="large" className="bottom about menu">
+    <Menu.Item as="article">
+      <SocialIcons />
+    </Menu.Item>
+    <Menu.Menu as="article" position="right">
+      <Button
+        circular
+        primary
+        icon="sidebar"
+        onClick={() => onActivate(!active)}
+      />
+    </Menu.Menu>
+  </Menu>
+);
+
+export default {
+  Primary,
+  Mobile,
+};

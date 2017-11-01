@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Scroll from 'scrollmagic';
-import { Container, Grid, Header, Image, Visibility } from 'semantic-ui-react';
+import { Container, Grid, Header, Image, Responsive } from 'semantic-ui-react';
 
 import Dimmer from '../../store/containers/dimmer';
 import Menu from '../common/menu';
@@ -73,8 +73,14 @@ const Page = {
           <AbstractPage Layout={LayoutRighty} ConcretePage={Marketeer.Reach} />
           <AbstractPage Layout={LayoutLefty} ConcretePage={Marketeer.Measure} />
           <AbstractPage Layout={LayoutCentered} ConcretePage={Marketeer.Action} />
-          <Menu.Primary />
-          <AboutUs />
+          <Responsive minWidth={768}>
+            <Menu.Primary />
+            <AboutUs.Primary />
+          </Responsive>
+          <Responsive maxWidth={767}>
+            <Menu.Mobile />
+            <AboutUs.Mobile />
+          </Responsive>
           <Dimmer />
         </FlexContainer>
       );
@@ -112,8 +118,14 @@ const Page = {
           <AbstractPage Layout={LayoutRighty} Theme={ROLE.ATHLETE.name} Slogan={TOUR.ATHLETE.SLOGAN} ConcretePage={Athlete.Monetise} />
           <AbstractPage Layout={LayoutLeftyVery} Theme={ROLE.ATHLETE.name} Slogan={TOUR.ATHLETE.SLOGAN} ConcretePage={Athlete.Focus} />
           <AbstractPage Layout={LayoutCentered} Theme={ROLE.ATHLETE.name} Slogan={TOUR.ATHLETE.SLOGAN} ConcretePage={Athlete.Action} />
-          <Menu.Primary />
-          <AboutUs />
+          <Responsive minWidth={768}>
+            <Menu.Primary />
+            <AboutUs.Primary />
+          </Responsive>
+          <Responsive maxWidth={767}>
+            <Menu.Mobile />
+            <AboutUs.Mobile />
+          </Responsive>
           <Dimmer />
         </FlexContainer>
       );

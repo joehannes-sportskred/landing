@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Grid, Image } from 'semantic-ui-react';
-import { Responsive } from '../../vendor/semantic-addons/Responsive'
+import { Container, Grid, Image, Responsive } from 'semantic-ui-react';
 
 import Dimmer from '../../store/containers/dimmer';
 import Menu from '../common/menu';
@@ -28,9 +27,14 @@ const Page = () => (
       content={Content}
       className="main landing page"
     />
-    <Responsive as={Menu.Primary} minWidth={768} />
-    <Responsive as={Menu.Mobile} maxWidth={767} />
-    <AboutUs />
+    <Responsive minWidth={768}>
+      <Menu.Primary />
+      <AboutUs.Primary />
+    </Responsive>
+    <Responsive maxWidth={767}>
+      <Menu.Mobile />
+      <AboutUs.Mobile />
+    </Responsive>
     <Dimmer />
   </FlexContainer>
 );

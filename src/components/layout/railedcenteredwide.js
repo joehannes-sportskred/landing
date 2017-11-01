@@ -23,7 +23,13 @@ const LayoutRailedCenteredWide = ({ content, className, opts, callback, Style })
       <Grid.Row only="tablet mobile">
         <Grid padded>
           <Grid.Row centered>
+            <Content.Left />
+          </Grid.Row>
+          <Grid.Row centered>
             <Content.Center callback={callback} />
+          </Grid.Row>
+          <Grid.Row centered>
+            <Content.Right />
           </Grid.Row>
         </Grid>
       </Grid.Row>
