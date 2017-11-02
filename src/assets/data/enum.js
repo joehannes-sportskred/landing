@@ -419,7 +419,7 @@ export const LINKS = {
   TOUR: 'tour',
   LANDING: 'landing',
   INACTION: {
-    BRAND: 'tour/marketeer',
+    MARKETEER: 'tour/marketeer',
     ATHLETE: 'tour/athlete',
   },
 };
@@ -468,6 +468,16 @@ export const ACTION = {
   },
   MENU: {
     FAB: 'CONTEXT_FAB',
+  },
+  SIDEBAR_MENU: {
+    MAIN: {
+      ACTIVE: 'SIDEBAR_MENU_MAIN',
+      WHICH: 'SIDEBAR_MENU_MAIN_MENU_ITEM',
+    },
+    ABOUT_US: {
+      ACTIVE: 'SIDEBAR_MENU_ABOUTUS',
+      WHICH: 'SIDEBAR_MENU_ABOUTUS_MEIN_MENUT_ITEM',
+    },
   },
 };
 

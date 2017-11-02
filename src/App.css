@@ -373,13 +373,9 @@ nav.ui.menu {
   background-blend-mode: luminosity !important;
   z-index: 99;
   max-height: 64px; }
-  nav.ui.menu + div {
-    position: relative;
-    margin-top: 64px;
-    padding-top: 2rem; }
-  nav.ui.menu ~ div:last-of-type {
-    position: relative;
-    margin-bottom: calc(64px + 2rem); }
+
+nav.top.navigation.menu + .sidebar {
+  margin-top: 64px !important; }
 
 .fab-menu {
   overflow: hidden; }
@@ -530,7 +526,6 @@ iframe#player {
       .video-container-group .video-container .video-poster {
         transition: transform 0.5s ease-out; }
       .video-container-group .video-container .ui.content.video-poster:active, .video-container-group .video-container .ui.content.video-poster:hover,
-      .video-container-group .video-container .ui.content.video-trigger:active, .video-container-group .video-container .ui.content.video-trigger:hover,
       .video-container-group .video-container .ui.content.video-trigger:hover ~ .video-poster, .video-container-group .video-container .ui.content.video-trigger:active ~ .video-poster {
         transform: translateY(80%) !important; }
       .video-container-group .video-container .video-inactive {

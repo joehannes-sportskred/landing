@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import Scroll from 'scrollmagic';
 import { Container, Grid, Header, Image, Responsive } from 'semantic-ui-react';
 
+import Menu from '../../store/containers/menu';
+import AboutUs from '../../store/containers/aboutus';
 import Dimmer from '../../store/containers/dimmer';
-import Menu from '../common/menu';
-import AboutUs from '../common/aboutus';
 
 import Marketeer from './tour/marketeer';
 import Athlete from './tour/athlete';
@@ -78,8 +78,10 @@ const Page = {
             <AboutUs.Primary />
           </Responsive>
           <Responsive maxWidth={767}>
-            <Menu.Mobile />
-            <AboutUs.Mobile />
+            <Menu.Mobile.Menu />
+            <Menu.Mobile.Sidebar />
+            <AboutUs.Mobile.Menu />
+            <AboutUs.Mobile.Sidebar />
           </Responsive>
           <Dimmer />
         </FlexContainer>
@@ -123,8 +125,10 @@ const Page = {
             <AboutUs.Primary />
           </Responsive>
           <Responsive maxWidth={767}>
-            <Menu.Mobile />
-            <AboutUs.Mobile />
+            <Menu.Mobile.Menu />
+            <Menu.Mobile.Sidebar />
+            <AboutUs.Mobile.Menu />
+            <AboutUs.Mobile.Sidebar />
           </Responsive>
           <Dimmer />
         </FlexContainer>

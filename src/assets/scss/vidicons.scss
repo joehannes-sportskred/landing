@@ -52,7 +52,6 @@
         transition: transform 0.5s ease-out;
       }
       .ui.content.video-poster:active, .ui.content.video-poster:hover ,
-      .ui.content.video-trigger:active, .ui.content.video-trigger:hover,
       .ui.content.video-trigger:hover ~ .video-poster, .ui.content.video-trigger:active ~ .video-poster {
         transform: translateY(80%) !important;
       }

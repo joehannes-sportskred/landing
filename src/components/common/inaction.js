@@ -16,7 +16,7 @@ const Component = ({ history }) => (
       <Button.Group fluid>
         <Button
           negative
-          onClick={() => history.push(`/${LINKS.INACTION.BRAND}`)}
+          onClick={() => history.push(`/${LINKS.INACTION.MARKETEER}`)}
         >
           {TEXT.INACTION.BRAND}
         </Button>

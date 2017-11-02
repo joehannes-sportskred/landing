@@ -53,7 +53,7 @@ const Component = ({ active, onActivate }) => (
         </Segment>
       ))}
     </Responsive>
-    <Responsive as={Segment.Group} horizontal compact basic maxWidth={767} className="video-container-group">
+    <Responsive as={Segment.Group} horizontal compact maxWidth={767} className="video-container-group">
       {VIDEO_ICONS.map((icon, i) => (
         <Segment key={`videoicon_${i}`} basic>
           <Popup

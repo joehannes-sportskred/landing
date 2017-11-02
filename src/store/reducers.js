@@ -41,12 +41,51 @@ const dimmer = (state = ACTION.DIMMER.OFF, action) => {
     case ACTION.DIMMER.RESET:
     case ACTION.DIMMER.TERMS_OF_USE:
     case ACTION.DIMMER.OFF:
-      console.log(action.type);
       return action.type;
+    case ACTION.SIDEBAR_MENU.MAIN.WHICH:
+      return action.status || state;
     default:
       return state;
   }
 };
+
+const sidebarMenuMainVisibility = (state = false, action) => {
+  switch (action.type) {
+    case ACTION.SIDEBAR_MENU.MAIN.ACTIVE:
+      return !state;
+    default:
+      return state;
+  }
+}
+
+
+const sidebarMenuMainActive = (state = null, action) => {
+  switch (action.type) {
+    case ACTION.SIDEBAR_MENU.MAIN.WHICH:
+      return action.status || state;
+    default:
+      return state;
+  }
+}
+
+const sidebarMenuAboutusVisibility = (state = false, action) => {
+  switch (action.type) {
+    case ACTION.SIDEBAR_MENU.ABOUT_US.ACTIVE:
+      return !state;
+    default:
+      return state;
+  }
+}
+
+const sidebarMenuAboutusActive = (state = null, action) => {
+  switch (action.type) {
+    case ACTION.SIDEBAR_MENU.MAIN.WHICH:
+      return action.status || state;
+    default:
+      return state;
+  }
+}
+
 
 const undoable = (state = false, action) => {
   switch (action.type) {
@@ -66,6 +105,8 @@ const rootReducer = combineReducers({
   videoStatus,
   video,
   contextfab,
+  sidebarMenuMainVisibility,
+  sidebarMenuAboutusVisibility,
 });
 
 export default rootReducer;

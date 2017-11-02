@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Container, Grid, Image, Responsive } from 'semantic-ui-react';
 
+import Menu from '../../store/containers/menu';
+
 import Dimmer from '../../store/containers/dimmer';
-import Menu from '../common/menu';
-import AboutUs from '../common/aboutus';
+import AboutUs from '../../store/containers/aboutus';
 
 import FlexContainer from '../layout/container';
 import LayoutGoldenRatio from '../layout/goldenratio';
@@ -32,8 +33,10 @@ const Page = () => (
       <AboutUs.Primary />
     </Responsive>
     <Responsive maxWidth={767}>
-      <Menu.Mobile />
-      <AboutUs.Mobile />
+      <Menu.Mobile.Menu />
+      <Menu.Mobile.Sidebar />
+      <AboutUs.Mobile.Menu />
+      <AboutUs.Mobile.Sidebar />
     </Responsive>
     <Dimmer />
   </FlexContainer>
