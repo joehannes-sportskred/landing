@@ -149,7 +149,14 @@ module.exports = {
             include: paths.appSrc,
             loader: require.resolve('babel-loader'),
             options: {
-
+              presets: [
+                'babel-preset-env',
+                'babel-preset-stage-0',
+                'babel-preset-react'
+              ],
+              plugins: [
+                'babel-plugin-transform-class-properties'
+              ],
               // This is a feature of `babel-loader` for webpack (not Babel itself).
               // It enables caching results in ./node_modules/.cache/babel-loader/
               // directory for faster rebuilds.

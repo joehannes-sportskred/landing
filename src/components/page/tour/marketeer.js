@@ -30,7 +30,6 @@ import {
   Segment
 } from 'semantic-ui-react';
 import { InteractiveForceGraph, ForceGraphNode, ForceGraphLink } from 'react-vis-force';
-import Scroll from 'scrollmagic';
 
 import Scrollable from '../../../util/scrollable';
 
@@ -50,7 +49,7 @@ const Home = {
   Right: () => (
     <Container fluid className="one">
       <Segment raised color="orange">
-        <Header.Content as="h6">
+        <Header.Content as="h6" style={{ textAlign: 'center' }}>
           <Header as="span">
             {TOUR.BRAND.SLOGAN[0]}
           </Header>
@@ -66,7 +65,7 @@ const Home = {
             key={index}
             className="children-centered"
             color="orange"
-            onClick={() => Scrollable.scrollTo(document.querySelector('.scrollmagic-pin-spacer:nth-child(' + (index + 2) + ')')) }
+            onClick={() => Scrollable.scrollTo(document.querySelector('.page:nth-child(' + (index + 2) + ')')) }
           >
             <Icon color="orange" size="large" name={tupel.ICON} />
             <Segment basic padded className="rotated-icon-border" />

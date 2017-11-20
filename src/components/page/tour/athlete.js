@@ -18,7 +18,6 @@ import {
   Segment
 } from 'semantic-ui-react';
 import Gallery from 'react-photo-gallery';
-import Scroll from 'scrollmagic';
 
 import Scrollable from '../../../util/scrollable';
 
@@ -50,7 +49,7 @@ const Home = {
             key={index}
             className="children-centered"
             color="orange"
-            onClick={() => Scrollable.scrollTo(document.querySelector('.scrollmagic-pin-spacer:nth-child(' + (index + 2) + ')')) }
+            onClick={() => Scrollable.scrollTo(document.querySelector('.page:nth-child(' + (index + 2) + ')')) }
           >
             <Icon color="orange" size="large" name={tupel.ICON} />
             <Segment basic padded className="rotated-icon-border" />

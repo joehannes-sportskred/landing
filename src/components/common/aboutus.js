@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Divider, Icon, Menu, Sidebar, Responsive } from 'semantic-ui-react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 import SocialIcons from './socialicons';
 import InAction from './inaction';

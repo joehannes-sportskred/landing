@@ -1,8 +1,23 @@
 nav.ui.menu {
-  @include pattern($pattern_url_transparent, $primary-bg-1, 0);
+  @include pattern($pattern_url_transparent, $primary-bg-1, 1);
   z-index: 99;
   max-height: 64px;
 }
+
 nav.top.navigation.menu + .sidebar {
-  margin-top: 64px !important;
+  opacity: 0;
+  z-index: 99;
+  &.visible {
+    opacity: 1;
+    transform: translateY(64px) !important;
+  }
+}
+
+nav.bottom.about.menu + .sidebar {
+  opacity: 0;
+  z-index: 99;
+  &.visible {
+    opacity: 1;
+    transform: translate3d(0, -64px, 0) !important;
+  }
 }

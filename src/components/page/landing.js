@@ -6,7 +6,8 @@ import Menu from '../../store/containers/menu';
 import Dimmer from '../../store/containers/dimmer';
 import AboutUs from '../../store/containers/aboutus';
 
-import FlexContainer from '../layout/container';
+import FlexContainer from '../common/container';
+
 import LayoutGoldenRatio from '../layout/goldenratio';
 import LayoutRighty from '../layout/righty';
 import LayoutLefty from '../layout/lefty';
@@ -23,7 +24,7 @@ import Content from './landing/primary';
 import { IMG } from '../../assets/data/enum';
 
 const Page = () => (
-  <FlexContainer>
+  <FlexContainer className="main landing container">
     <LayoutRailedCenteredWide
       content={Content}
       className="main landing page"

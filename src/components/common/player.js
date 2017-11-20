@@ -4,7 +4,7 @@ import { Image, Icon, Container } from 'semantic-ui-react';
 
 import YouTube from 'react-youtube';
 
-import FlexContainer from '../layout/container';
+import FlexContainer from '../common/container';
 
 import { VIDEO, VIDEO_ICONS } from '../../assets/data/enum';
 
