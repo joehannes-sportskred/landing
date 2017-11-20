@@ -100,7 +100,6 @@
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^4.0.8",
     "react-scroll": "^1.6.1",
-    "react-skroll": "http://github.com/joehannes-sportskred/react-skroll/tarball/master",
     "react-vis-force": "^0.3.1",
     "react-youtube": "^7.5.0",
     "recharts": "^1.0.0-alpha.4",

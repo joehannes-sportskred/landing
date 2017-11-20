@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ran from 'randf';
-import { Scroll } from 'react-skroll';
+// import { Scroll } from 'react-skroll';
 import { Container, Grid, Header, Image, Responsive, Visibility } from 'semantic-ui-react';
 
 import Menu from '../../store/containers/menu';
