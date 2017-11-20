@@ -8,7 +8,7 @@
   box-shadow: 0 0 33px 3px $black;
   &> i:before {
     top: auto !important;
-    transform: translateX(-50%);
+    transform: translateY(-50%);
   }
   &> i.icon {
     border: 1px solid $orange;

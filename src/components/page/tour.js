@@ -67,25 +67,12 @@ const Page = {
 
       return (
         <main>
-          <img src="/assets/img/tour/marketeer/plx_bg_1.png"
-            width="100%"
-            height="auto"
-            style={{
-              position: 'fixed',
-              marginTop: 'auto',
-              marginBottom: 'auto',
-              top: '0',
-              bottom: '0',
-              opacity: 0.3,
-              filter: 'blur(3px)',
-            }}
-          />
-          <FlexContainer pxHeight={this.state.height} className="main tour marketeer container" style={{ minHeight: minHeight }} onLoad={this.childrenDidLoad.bind(this)}>
+          <FlexContainer className="main tour marketeer container" style={{ minHeight }} onLoad={this.childrenDidLoad.bind(this)}>
             <AbstractPage Layout={LayoutRightyVery} ConcretePage={Marketeer.Home} />
             <AbstractPage Layout={LayoutRighty} ConcretePage={Marketeer.Discover} />
             <AbstractPage Layout={LayoutLefty} ConcretePage={Marketeer.Choose} />
-            <AbstractPage Layout={LayoutRighty} ConcretePage={Marketeer.Reach} />
-            <AbstractPage Layout={LayoutLefty} ConcretePage={Marketeer.Measure} />
+            <AbstractPage Layout={LayoutRightyVery} ConcretePage={Marketeer.Reach} />
+            <AbstractPage Layout={LayoutLeftyVery} ConcretePage={Marketeer.Measure} />
             <AbstractPage Layout={LayoutCentered} ConcretePage={Marketeer.Action} />
             <Dimmer />
           </FlexContainer>
@@ -107,21 +94,35 @@ const Page = {
     state = {
         minHeight: 'inherit',
     }
+    resize = () => {
+      this.forceUpdate();
+    }
     componentWillMount () {
       this.setState({ minHeight: Number(window.innerHeight).toString() + 'px' });
     }
+    componentDidMount () {
+      window.addEventListener('resize', this.resize);
+    }
     childrenDidLoad () {
+    }
+    componentWillUnmount() {
+      window.removeEventListener('resize', this.resize);
     }
     render () {
       const { minHeight } = this.state;
+
       return (
-        <FlexContainer className="main tour athlete page" style={{ minHeight: minHeight }} onLoad={() => this.childrenDidLoad()}>
-          <AbstractPage Layout={LayoutRightyVery} Theme={ROLE.ATHLETE.name} Slogan={TOUR.ATHLETE.SLOGAN} ConcretePage={Athlete.Home} />
-          <AbstractPage Layout={LayoutRightyVery} Theme={ROLE.ATHLETE.name} Slogan={TOUR.ATHLETE.SLOGAN} ConcretePage={Athlete.Profile} />
-          <AbstractPage Layout={LayoutLeftyVery} Theme={ROLE.ATHLETE.name} Slogan={TOUR.ATHLETE.SLOGAN} ConcretePage={Athlete.BeDiscovered} />
-          <AbstractPage Layout={LayoutRighty} Theme={ROLE.ATHLETE.name} Slogan={TOUR.ATHLETE.SLOGAN} ConcretePage={Athlete.Monetise} />
-          <AbstractPage Layout={LayoutLeftyVery} Theme={ROLE.ATHLETE.name} Slogan={TOUR.ATHLETE.SLOGAN} ConcretePage={Athlete.Focus} />
-          <AbstractPage Layout={LayoutCentered} Theme={ROLE.ATHLETE.name} Slogan={TOUR.ATHLETE.SLOGAN} ConcretePage={Athlete.Action} />
+        <main>
+          <FlexContainer className="main tour athlete container" style={{ minHeight }} onLoad={() => this.childrenDidLoad()}>
+            <AbstractPage Layout={LayoutRightyVery} Theme={ROLE.ATHLETE.name} Slogan={TOUR.ATHLETE.SLOGAN} ConcretePage={Athlete.Home} />
+            <AbstractPage Layout={LayoutRightyVery} Theme={ROLE.ATHLETE.name} Slogan={TOUR.ATHLETE.SLOGAN} ConcretePage={Athlete.Profile} />
+            <AbstractPage Layout={LayoutLeftyVery} Theme={ROLE.ATHLETE.name} Slogan={TOUR.ATHLETE.SLOGAN} ConcretePage={Athlete.BeDiscovered} />
+            <AbstractPage Layout={LayoutRighty} Theme={ROLE.ATHLETE.name} Slogan={TOUR.ATHLETE.SLOGAN} ConcretePage={Athlete.Monetise} />
+            <AbstractPage Layout={LayoutLeftyVery} Theme={ROLE.ATHLETE.name} Slogan={TOUR.ATHLETE.SLOGAN} ConcretePage={Athlete.Focus} />
+            <AbstractPage Layout={LayoutCentered} Theme={ROLE.ATHLETE.name} Slogan={TOUR.ATHLETE.SLOGAN} ConcretePage={Athlete.Action} />
+
+            <Dimmer />
+          </FlexContainer>
           <Responsive minWidth={768}>
             <Menu.Primary />
             <AboutUs.Primary />
@@ -132,8 +133,7 @@ const Page = {
             <AboutUs.Mobile.Menu />
             <AboutUs.Mobile.Sidebar />
           </Responsive>
-          <Dimmer />
-        </FlexContainer>
+        </main>
       );
     }
   },

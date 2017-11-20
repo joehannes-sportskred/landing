@@ -43,6 +43,7 @@ body, #root, main {
   min-height: inherit;
   .grid, .stretched {
     align-items: center;
+    flex-grow: 1;
   }
   .main.tour.page.container {
     display: flex;

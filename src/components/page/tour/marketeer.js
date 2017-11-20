@@ -29,7 +29,7 @@ import {
   Table,
   Segment
 } from 'semantic-ui-react';
-import { InteractiveForceGraph, ForceGraphNode, ForceGraphLink } from 'react-vis-force';
+import { Graph } from 'react-d3-graph';
 
 import Scrollable from '../../../util/scrollable';
 
@@ -37,6 +37,7 @@ import Chart from '../../common/chart';
 
 import { DATA, TOUR, IMG } from '../../../assets/data/enum';
 import { TOUR as JSON_TOUR } from '../../../assets/data/sports';
+import { FLOWER_DATA as flowerData, FLOWER_CONFIG as flowerConfig } from '../../../assets/data/graph';
 
 const Home = {
   Left: () => (
@@ -166,70 +167,28 @@ const Reach = {
       </Card.Header>
     </Card>
   ),
-  Right: () => (
-    <Container id="svg_flower" fluid className="main reach-audience">
-      <Header inverted as="h3" sub textAlign="center" className="main reach-audience header">
-        {TOUR.BRAND.ACTION[2].SLOGAN}
-      </Header>
-      <Segment className="childrenCentered" style={{ marginTop: '0' }}>
-        <InteractiveForceGraph
-          simulationOptions={{
-            height: window.innerHeight * 2/3,
-            width: window.innerWidth * 7/16,
-            animate: true,
-          }}
-          labelAttr="label"
-          highlightDependencies
-          strokeWidth={3}
-        >
-          <ForceGraphNode node={{ id: '1-node' }} className="faisal_icon" />
-          <ForceGraphNode node={{ id: 'facebook-node' }} fill="#3b5998" className="custom icon facebook" />
-          <ForceGraphNode node={{ id: 'twitter-node' }} fill="#00aced" className="custom icon twitter" />
-          <ForceGraphNode node={{ id: 'youtube-node' }} fill="#ff0000" className="custom icon youtube" />
-          <ForceGraphNode node={{ id: 'instagram-node' }} fill="#8a3ab9" className="custom icon instagram" />
-          <ForceGraphLink link={{ source: '1-node', target: 'facebook-node' }} />
-          <ForceGraphLink link={{ source: '1-node', target: 'twitter-node' }} />
-          <ForceGraphLink link={{ source: '1-node', target: 'youtube-node' }} />
-          <ForceGraphLink link={{ source: '1-node', target: 'instagram-node' }} />
-          {['facebook', 'twitter', 'youtube', 'instagram'].map((platform, pCounter) => {
-            const colors = ['#3b5998', '#00aced', '#ff0000', '#8a3ab9'];
-            const natural = [3, 5];
-            let elements = [];
-
-            for (let i = 0; i < natural[0]; i++) {
-              elements.push(<ForceGraphNode node={{ id: `${platform}-node_${i}` }} fill={colors[pCounter]}/>);
-              elements.push(
-                <ForceGraphLink link={{
-                  source: `${platform}-node`,
-                  target: `${platform}-node_${i}`
-                }} />
-              );
-              for (let j = 0; j < natural[1]; j++) {
-                elements.push(<ForceGraphNode node={{ id: `${platform}-node_${i}-${j}` }} fill={colors[pCounter]}/>);
-                elements.push(
-                    <ForceGraphLink link={{
-                      source: `${platform}-node_${i}`,
-                      target: `${platform}-node_${i}-${j}`
-                    }} />
-                );
-                for (let k = 0; k < natural[2]; k++) {
-                  elements.push(<ForceGraphNode node={{ id: `${platform}-node_${i}-${j}-${k}` }} fill={colors[pCounter]}/>);
-                  elements.push(
-                    <ForceGraphLink link={{
-                      source: `${platform}-node_${i}-${j}`,
-                      target: `${platform}-node_${i}-${j}-${k}`
-                    }} />
-                  );
-                }
-              }
-            }
-
-            return elements;
-          })}
-        </InteractiveForceGraph>
-      </Segment>
-    </Container>
-  ),
+  Right: class ReachComponent extends React.Component {
+    state = {
+      width: 500,
+    }
+    componentDidMount () {
+      this.setState({ width: document.getElementById("flower-container").clientWidth });
+    }
+    render () {
+      return <Container id="svg_flower" fluid className="main reach-audience">
+        <Header inverted as="h3" sub textAlign="center" className="main reach-audience header">
+          {TOUR.BRAND.ACTION[2].SLOGAN}
+        </Header>
+        <Segment id="flower-container" className="childrenCentered" style={{ marginTop: '0', padding: '0' }}>
+          <Graph
+             id='flower'
+             data={flowerData}
+             config={{...flowerConfig, width: this.state.width }}
+          />
+        </Segment>
+      </Container>
+    }
+  },
 };
 
 const Measure = {
@@ -239,7 +198,7 @@ const Measure = {
         {TOUR.BRAND.ACTION[3].SLOGAN}
       </Header>
       <Segment>
-        <BarChart width={550} height={250} data={JSON_TOUR.IMPRESSIONS}
+        <BarChart width={500} height={250} data={JSON_TOUR.IMPRESSIONS}
           margin={{top: 5, right: 30, left: 5, bottom: 5}}>
            <XAxis dataKey="name"/>
            <YAxis/>
@@ -251,7 +210,7 @@ const Measure = {
            <Bar dataKey="instagram" fill="#8a3ab9" />
            <Bar dataKey="youtube" fill="#ff0000" />
         </BarChart>
-        <RadarChart cx={200} cy={250} outerRadius={150} width={550} height={450} data={JSON_TOUR.RADAR}>
+        <RadarChart cx={200} cy={250} outerRadius={150} width={500} height={450} data={JSON_TOUR.RADAR}>
           <Radar name="Facebook" dataKey="Facebook" stroke="#4267b2" fill="#4267b2" fillOpacity={0.1}/>
           <Radar name="Twitter" dataKey="Twitter" stroke="#1DA1F2" fill="#1DA1F2" fillOpacity={0.1}/>
           <Radar name="Youtube" dataKey="Youtube" stroke="#8a3ab9" fill="#8a3ab9" fillOpacity={0.1}/>

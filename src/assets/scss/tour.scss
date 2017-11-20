@@ -117,9 +117,6 @@
     &> i.icon {
       transform: translateY(1rem);
     }
-    &:hover > .rotated-icon-border {
-      top: 0;
-    }
   }
   .card {
     cursor: pointer;
@@ -145,23 +142,20 @@
       animation: scaly 0.33s normal forwards;
       z-index: 9;
       .rotated-icon-border {
-        transform: translateY(-50%) translateX(-50%) rotate(45deg);
-      }
-      i.icon {
-        transform: translateY(-50%);
+        transform: translateX(-50%) rotate(45deg) scale(1.25);
       }
     }
     .rotated-icon-border {
       position: absolute;
       top: 1rem;
       left: 50%;
-      transform: translateY(-25%) translateX(-50%) rotate(45deg);
+      transform: translateX(-50%) rotate(45deg);
       border: 1px solid $orange;
       border-bottom-right-radius: 8px;
       box-shadow: 5px 5px 10px 1px $orange;
     }
     i.icon {
-      margin: 0 auto 2rem auto;
+      margin: 1rem auto 2rem auto;
     }
     .header {
       padding: 1rem 0;
@@ -169,7 +163,7 @@
   }
   &:not(:first-of-type) .card {
     i.icon {
-      margin: 1rem auto;
+      margin: 2rem auto 0 auto;
     }
   }
   .discover.main.header {
@@ -258,5 +252,9 @@
     &> h3.main.header {
       text-transform: none !important;
     }
+  }
+
+  .recharts-wrapper {
+    margin: auto;
   }
 }

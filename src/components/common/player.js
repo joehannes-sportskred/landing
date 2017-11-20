@@ -30,8 +30,8 @@ const Component = ({ active, video, poster, onActivate }) => {
         inverted
         style={{
           position: 'absolute',
-          top: '100%',
-          left: '50%',
+          top: '50%',
+          left: '100%',
           transform: 'translateX(-50%) translateY(-50%)',
         }}
         width="100%"
