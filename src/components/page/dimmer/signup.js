@@ -7,15 +7,15 @@ import { ACTION, TEXT, ROLE, DATA } from '../../../assets/data/enum';
 
 const FormFields = {
   TextInput: () => (
-    <Input label={{ icon: 'asterisk' }} labelPosition="right corner" />
+    <Input/>
   ),
   PhoneInput: () => (
     <Input>
-      <Form.Field width={6}>
-        <Dropdown placeholder="Country code" fluid selection options={DATA.PHONE_EXTENSIONS} />
+      <Form.Field width={8}>
+        <Dropdown placeholder="Country code" selection options={DATA.PHONE_EXTENSIONS} style={{ marginTop: '-2px'}} />
       </Form.Field>
-      <Form.Field width={10}>
-        <Input label={{ icon: 'asterisk' }} labelPosition="right corner" />
+      <Form.Field width={8}>
+        <Input/>
       </Form.Field>
     </Input>
   ),

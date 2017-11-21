@@ -16,7 +16,7 @@ const Page = ({ onActivate, onDeactivate }) => {
       <Segment attached>
         <Form>
           <Form.Input label="E-Mail" required width={16}>
-            <Input fluid focus placeholder="E-Mail" iconPosition="left" icon="at" label={{ icon: 'asterisk' }} labelPosition="right corner" />
+            <Input fluid focus placeholder="E-Mail" iconPosition="left" icon="at" />
           </Form.Input>
         </Form>
       </Segment>

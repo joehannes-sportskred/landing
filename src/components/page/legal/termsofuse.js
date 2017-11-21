@@ -1,7 +1,7 @@
 import React from 'react';
 import { Segment, Header } from 'semantic-ui-react';
 
-const Main = () => (<Segment attached raised as="section">
+const Main = () => (<Segment attached raised as="section" style={{ color: 'black' }}>
   <header>
     <time>Last updated on 17<sup>th</sup> October 2016</time>
   </header>

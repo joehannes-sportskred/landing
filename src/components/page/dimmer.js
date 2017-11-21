@@ -28,7 +28,7 @@ const TOU = () => (
 
 const Page = ({ dimmer, onDeactivate }) => (<aside>
   <Dimmer
-    as="Sidebar.Pushable"
+    as={Sidebar.Pushable}
     active={(dimmer === ACTION.DIMMER.SIGN_UP)}
     onClickOutside={onDeactivate}
     page
@@ -40,7 +40,7 @@ const Page = ({ dimmer, onDeactivate }) => (<aside>
     </Sidebar.Pusher>
   </Dimmer>
   <Dimmer
-    as="Sidebar.Pushable"
+    as={Sidebar.Pushable}
     active={(dimmer === ACTION.DIMMER.LOG_IN)}
     onClickOutside={onDeactivate}
     page
@@ -51,7 +51,7 @@ const Page = ({ dimmer, onDeactivate }) => (<aside>
     </Sidebar.Pusher>
   </Dimmer>
   <Dimmer
-    as="Sidebar.Pushable"
+    as={Sidebar.Pushable}
     active={(dimmer === ACTION.DIMMER.RESET)}
     onClickOutside={onDeactivate}
     page
@@ -62,7 +62,7 @@ const Page = ({ dimmer, onDeactivate }) => (<aside>
     </Sidebar.Pusher>
   </Dimmer>
   <Dimmer
-    as="Sidebar.Pushable"
+    as={Sidebar.Pushable}
     active={(dimmer === ACTION.DIMMER.TERMS_OF_USE)}
     onClickOutside={onDeactivate}
     page

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Image, Segment, Header } from 'semantic-ui-react';
+import { Image, Segment, Header, Responsive } from 'semantic-ui-react';
 
 import Dimmer from '../../store/containers/dimmer';
 
@@ -33,13 +33,21 @@ const Details = {
 };
 
 const AbstractLayout = ({ concretePage }) => (
-  <main>
-    <Menu.Primary />
+  <main style={{ height: '100vh', overflow: 'scroll', padding: '8rem 0' }}>
     <Segment basic fluid inverted className="children-centered">
       <Image centered fluid spaced src={IMG.LOGO} size="large" className="landing page hero image" />
     </Segment>
     <Layout content={concretePage} className="landing page" />
-    <AboutUs />
+    <Responsive minWidth={768}>
+      <Menu.Primary />
+      <AboutUs.Primary />
+    </Responsive>
+    <Responsive maxWidth={767}>
+      <Menu.Mobile.Menu />
+      <Menu.Mobile.Sidebar />
+      <AboutUs.Mobile.Menu />
+      <AboutUs.Mobile.Sidebar />
+    </Responsive>
     <Dimmer />
   </main>
 );

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { ACTION, TEXT } from '../../../assets/data/enum';
 
 const Page = ({ onSwitch, onActivate, onDeactivate }) => {
-  const Reset = () => (<Form.Button onClick={() => onSwitch(ACTION.DIMMER.RESET)} content="Forgot?" attached="right" />);
+  const Reset = () => (<Form.Button onClick={() => onSwitch(ACTION.DIMMER.RESET)} content="Forgot?" attached="right" style={{ whiteSpace: 'nowrap' }}/>);
   return (
     <Segment.Group raised>
       <Segment inverted attached="top">
@@ -17,11 +17,11 @@ const Page = ({ onSwitch, onActivate, onDeactivate }) => {
       <Segment attached>
         <Form>
           <Form.Input label="E-Mail" required width={16}>
-            <Input fluid focus placeholder="E-Mail" iconPosition="left" icon="at" label={{ icon: 'asterisk' }} labelPosition="right corner" />
+            <Input fluid focus placeholder="E-Mail" iconPosition="left" icon="at" />
           </Form.Input>
           <Form.Input label="Password" required width={16}>
             <Input fluid>
-              <Input label={{ icon: 'asterisk' }} labelPosition="left corner" type="password" placeholder="Password" />
+              <Input type="password" placeholder="Password" />
               <Reset />
             </Input>
           </Form.Input>
