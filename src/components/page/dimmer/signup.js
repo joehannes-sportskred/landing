@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Container, Form, Header, Input, Dropdown, Menu, Segment, Tab } from 'semantic-ui-react';
+import { Button, Container, Form, Header, Icon, Input, Dropdown, Menu, Segment, Tab, Responsive } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 import { ACTION, TEXT, ROLE, DATA } from '../../../assets/data/enum';
@@ -73,16 +73,27 @@ const Content = {
   ),
 };
 
-const Tabs = ({ active, onChangeRole }) => {
-  const Roles = Object.getOwnPropertyNames(ROLE);
-  const Panes = Roles.map((role) => {
+class Tabs extends React.Component {
+  Roles = Object.getOwnPropertyNames(ROLE);
+  Panes = this.Roles.map((role, key) => {
     const TabContent = Content[role];
     return {
-      menuItem: ROLE[role].title,
-      render: () => (<Tab.Pane attached={false} active={active === role}><TabContent /></Tab.Pane>),
+      menuItem: (window.matchMedia("(max-width: 767px)").matches) ?
+        <Menu.Item key={key} icon={ROLE[role].icon} /> :
+        ROLE[role].title,
+      render: () => (<Tab.Pane attached={false} active={this.props.active === role ? true : undefined}><TabContent /></Tab.Pane>),
     };
   });
-  return (<Tab renderActiveOnly activeIndex={Roles.indexOf(active)} menu={{ pointing: true }} panes={Panes} onTabChange={(ev, d) => onChangeRole(ROLE[Roles[d.activeIndex]].name)} />);
+  render () {
+    const { active, onChangeRole } = this.props;
+    return <Tab
+      renderActiveOnly
+      activeIndex={this.Roles.indexOf(active)}
+      menu={{ pointing: true }}
+      panes={this.Panes}
+      onTabChange={(ev, d) => onChangeRole(ROLE[this.Roles[d.activeIndex]].name)}
+    />;
+  }
 };
 
 Tabs.propTypes = {

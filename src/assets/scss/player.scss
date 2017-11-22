@@ -6,9 +6,23 @@
   background-color: $black;
   border: 1px solid $orange;
   box-shadow: 0 0 33px 3px $black;
+  &> i.icon {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateX(-50%) translateY(-50%);
+  }
   &> i:before {
     top: auto !important;
     transform: translateY(-50%);
+  }
+  @media only screen and (max-width: 767px)  {
+    &> i.icon {
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
   }
   &> i.icon {
     border: 1px solid $orange;

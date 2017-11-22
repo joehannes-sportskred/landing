@@ -46,11 +46,13 @@ export default {
       ACTION: "PP",
       TITLE: "Privacy Policy",
       ICON: "spy",
+      LINK: LINKS.LEGAL.PRIVACY_POLICY,
     },
     {
       ACTION: "TOU",
       TITLE: "Terms of Use",
       ICON: "law",
+      LINK: LINKS.LEGAL.TERMS_OF_USE,
     },
   ],
 }

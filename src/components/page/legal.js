@@ -14,7 +14,7 @@ import TermsOfUseDetails from './legal/termsofuse';
 import { TEXT, IMG } from '../../assets/data/enum';
 
 const AbstractPage = ({ Title, Content }) => (
-  <Segment.Group as="article">
+  <Segment.Group as="article" style={{ maxWidth: '100vw' }}>
     <Segment as="header" inverted padded raised attached="top">
       <Header as="h1">{Title}</Header>
     </Segment>
@@ -33,7 +33,7 @@ const Details = {
 };
 
 const AbstractLayout = ({ concretePage }) => (
-  <main style={{ height: '100vh', overflow: 'scroll', padding: '8rem 0' }}>
+  <main style={{ height: '100vh', overflow: 'scroll', padding: '8rem 0', maxWidth: '100vw' }}>
     <Segment basic fluid inverted className="children-centered">
       <Image centered fluid spaced src={IMG.LOGO} size="large" className="landing page hero image" />
     </Segment>

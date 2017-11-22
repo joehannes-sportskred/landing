@@ -60,7 +60,7 @@ const Home = {
         </Header.Content>
       </Segment>
       <Divider />
-      <Card.Group textAlign="center" itemsPerRow="four">
+      <Card.Group stackable textAlign="center" itemsPerRow="four">
         {TOUR.BRAND.ACTION.map((tupel, index) => (
           <Card
             key={index}
@@ -115,7 +115,11 @@ const Choose = {
         return {
           menuItem: (
             <Menu.Item key={p.toLowerCase()} style={{ flexDirection: 'column' }}>
-              <Header sub as="h5" color="orange">{p}</Header>
+              {
+                (window.matchMedia("(max-width: 767px)").matches) ?
+                <Icon inverted name={p.toLowerCase()}/> :
+                <Header sub as="h5" color="orange">{p}</Header>
+              }
               <Label>{5000 + Math.round(Math.random() * 50000)}</Label>
             </Menu.Item>
           ),

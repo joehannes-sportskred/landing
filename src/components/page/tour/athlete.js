@@ -43,7 +43,7 @@ const Home = {
         </Header.Content>
       </Segment>
       <Divider />
-      <Card.Group textAlign="center" itemsPerRow="four">
+      <Card.Group stackable textAlign="center" itemsPerRow="four">
         {TOUR.ATHLETE.ACTION.map((tupel, index) => (
           <Card
             key={index}
