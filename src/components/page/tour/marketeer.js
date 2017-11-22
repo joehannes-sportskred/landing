@@ -173,10 +173,10 @@ const Reach = {
   ),
   Right: class ReachComponent extends React.Component {
     state = {
-      width: 500,
+      width: (window.matchMedia("(max-width: 767px)").matches) ? 300 : 500,
     }
     componentDidMount () {
-      this.setState({ width: document.getElementById("flower-container").clientWidth });
+      this.setState({ width: document.getElementById("flower-container").clientWidth || 300 });
     }
     render () {
       return <Container id="svg_flower" fluid className="main reach-audience">
@@ -202,7 +202,10 @@ const Measure = {
         {TOUR.BRAND.ACTION[3].SLOGAN}
       </Header>
       <Segment>
-        <BarChart width={500} height={250} data={JSON_TOUR.IMPRESSIONS}
+        <BarChart
+          width={(window.matchMedia("(max-width: 767px)").matches) ? (window.clientWidth || 300) : 500}
+          height={250}
+          data={JSON_TOUR.IMPRESSIONS}
           margin={{top: 5, right: 30, left: 5, bottom: 5}}>
            <XAxis dataKey="name"/>
            <YAxis/>
@@ -214,7 +217,13 @@ const Measure = {
            <Bar dataKey="instagram" fill="#8a3ab9" />
            <Bar dataKey="youtube" fill="#ff0000" />
         </BarChart>
-        <RadarChart cx={200} cy={250} outerRadius={150} width={500} height={450} data={JSON_TOUR.RADAR}>
+        <RadarChart
+          cx={200}
+          cy={250}
+          outerRadius={150}
+          width={(window.matchMedia("(max-width: 767px)").matches) ? (window.clientWidth || 300) : 500}
+          height={450}
+          data={JSON_TOUR.RADAR}>
           <Radar name="Facebook" dataKey="Facebook" stroke="#4267b2" fill="#4267b2" fillOpacity={0.1}/>
           <Radar name="Twitter" dataKey="Twitter" stroke="#1DA1F2" fill="#1DA1F2" fillOpacity={0.1}/>
           <Radar name="Youtube" dataKey="Youtube" stroke="#8a3ab9" fill="#8a3ab9" fillOpacity={0.1}/>
