@@ -7,7 +7,7 @@ const LayoutGoldenRatio = ({ content, className, opts, style }) => {
   return (
     <Container fluid className={className} style={style}>
       <Grid>
-        <Grid.Row only="computer" >
+        <Grid.Row only="computer tablet">
           <Grid.Column width={2} />
           <Grid.Column width={7}>
             <Content.Left />

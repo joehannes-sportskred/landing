@@ -103,7 +103,7 @@ export const FLOWER_DATA = {
       "name": "Athlete",
       "color": "black",
       "symbolType": "star",
-      "size": 800
+      "size": 800,
     },
     {
       "id": "facebook",
@@ -135,140 +135,140 @@ export const FLOWER_DATA = {
     },
     {
       "id": "fbfollower1",
-      "name": "Follower",
+      "name": "",
       "color": "#8b9dc3",
       "symbolType": "circle",
       "size": 300
     },
     {
       "id": "fbfollower2",
-      "name": "Follower",
+      "name": "",
       "color": "#8b9dc3",
       "symbolType": "circle",
       "size": 300
     },
     {
       "id": "fbfollower3",
-      "name": "Follower",
+      "name": "",
       "color": "#8b9dc3",
       "symbolType": "circle",
       "size": 300
     },
     {
       "id": "fbfollower4",
-      "name": "Follower",
+      "name": "",
       "color": "#8b9dc3",
       "symbolType": "circle",
       "size": 300
     },
     {
       "id": "fbfollower5",
-      "name": "Follower",
+      "name": "",
       "color": "#8b9dc3",
       "symbolType": "circle",
       "size": 300
     },
     {
       "id": "ytfollower1",
-      "name": "Follower",
+      "name": "",
       "color": "#bb0000",
       "symbolType": "circle",
       "size": 300
     },
     {
       "id": "ytfollower2",
-      "name": "Follower",
+      "name": "",
       "color": "#bb0000",
       "symbolType": "circle",
       "size": 300
     },
     {
       "id": "ytfollower3",
-      "name": "Follower",
+      "name": "",
       "color": "#bb0000",
       "symbolType": "circle",
       "size": 300
     },
     {
       "id": "ytfollower4",
-      "name": "Follower",
+      "name": "",
       "color": "#bb0000",
       "symbolType": "circle",
       "size": 300
     },
     {
       "id": "ytfollower5",
-      "name": "Follower",
+      "name": "",
       "color": "#bb0000",
       "symbolType": "circle",
       "size": 300
     },
     {
       "id": "tfollower1",
-      "name": "Follower",
+      "name": "",
       "color": "#E8F5FD",
       "symbolType": "circle",
       "size": 300
     },
     {
       "id": "tfollower2",
-      "name": "Follower",
+      "name": "",
       "color": "#E8F5FD",
       "symbolType": "circle",
       "size": 300
     },
     {
       "id": "tfollower3",
-      "name": "Follower",
+      "name": "",
       "color": "#E8F5FD",
       "symbolType": "circle",
       "size": 300
     },
     {
       "id": "tfollower4",
-      "name": "Follower",
+      "name": "",
       "color": "#E8F5FD",
       "symbolType": "circle",
       "size": 300
     },
     {
       "id": "tfollower5",
-      "name": "Follower",
+      "name": "",
       "color": "#E8F5FD",
       "symbolType": "circle",
       "size": 300
     },
     {
       "id": "igfollower1",
-      "name": "Follower",
+      "name": "",
       "color": "#8a3ab9",
       "symbolType": "circle",
       "size": 300
     },
     {
       "id": "igfollower2",
-      "name": "Follower",
+      "name": "",
       "color": "#8a3ab9",
       "symbolType": "circle",
       "size": 300
     },
     {
       "id": "igfollower3",
-      "name": "Follower",
+      "name": "",
       "color": "#8a3ab9",
       "symbolType": "circle",
       "size": 300
     },
     {
       "id": "igfollower4",
-      "name": "Follower",
+      "name": "",
       "color": "#8a3ab9",
       "symbolType": "circle",
       "size": 300
     },
     {
       "id": "igfollower5",
-      "name": "Follower",
+      "name": "",
       "color": "#8a3ab9",
       "symbolType": "circle",
       "size": 300
@@ -284,11 +284,11 @@ export const FLOWER_CONFIG = {
   "highlightOpacity": 0.2,
   "maxZoom": 3,
   "minZoom": 0.5,
-  "panAndZoom": true,
+  "panAndZoom": false,
   "staticGraph": false,
   "node": {
     "color": "#000000",
-    "fontSize": 8,
+    "fontSize": 11,
     "fontWeight": "normal",
     "labelProperty": "name",
     "mouseCursor": "pointer",

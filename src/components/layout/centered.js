@@ -8,14 +8,14 @@ const LayoutCentered = ({ content, className, opts, Style }) => {
   return (
     <Container fluid textAlign="justified" className={className} style={Style}>
       <Grid>
-        <Grid.Row only="computer">
+        <Grid.Row only="computer tablet">
           <Grid.Column width={4} />
           <Grid.Column width={8}>
             <Content style={{ textAlign: 'center' }} />
           </Grid.Column>
           <Grid.Column width={4} />
         </Grid.Row>
-        <Grid.Row only="tablet mobile">
+        <Grid.Row only="mobile">
           <Grid padded>
             <Grid.Row centered>
               <Content />

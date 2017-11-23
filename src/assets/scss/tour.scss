@@ -1,6 +1,9 @@
 .main.tour.flex-container .main.tour.page {
   position: relative;
   padding: 8rem 1rem;
+  &:first-of-type {
+    padding: 2rem 1rem 8rem 1rem;
+  }
   &:not(:first-of-type) {
     &:nth-child(even) .card {
       transform: rotate(-3deg);

@@ -6,7 +6,7 @@ import { withRouter, Link } from 'react-router-dom';
 import { LINKS, TEXT } from '../../assets/data/enum';
 
 const Component = ({ history }) => (
-  <Reveal animated='move up' style={{ width: '100%' }}>
+  <Reveal animated='move up' style={{ width: '100%' }} onClick={(ev) => ev.stopPropagation()}>
     <Reveal.Content visible style={{ width: '100%' }}>
       <Button fluid primary>
         {TEXT.INACTION.MAIN}
@@ -18,13 +18,13 @@ const Component = ({ history }) => (
           negative
           onClick={() => history.push(`/${LINKS.INACTION.MARKETEER}`)}
         >
-          {TEXT.INACTION.BRAND}
+          {(window.matchMedia("(min-width: 768px)").matches) ? TEXT.INACTION.BRAND : TEXT.INACTION.MOBILE.BRAND}
         </Button>
         <Button.Or />
         <Button
           onClick={() => history.push(`/${LINKS.INACTION.ATHLETE}`)}
         >
-          {TEXT.INACTION.ATHLETE}
+          {(window.matchMedia("(min-width: 768px)").matches) ? TEXT.INACTION.ATHLETE : TEXT.INACTION.MOBILE.ATHLETE}
         </Button>
       </Button.Group>
     </Reveal.Content>

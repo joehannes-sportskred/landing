@@ -5,16 +5,15 @@ import { Link } from 'react-router-dom';
 import SocialIcons from '../../common/socialicons';
 import Actions from '../../../store/containers/landingactions';
 import Roles from '../../../store/containers/role';
-import VideoIcons from '../../../store/containers/video_icons';
 import Player from '../../../store/containers/player';
 
 import { LINKS, TEXT, VIDEO, VIDEO_ICONS } from '../../../assets/data/enum';
 
-const Left = () => <VideoIcons />;
+const Left = () => <div />;
 
 const Center = () => <Player />;
 
-const Right = () => (<div />);
+const Right = () => <div />;
 /*
   <Segment.Group compact className="social-icons-vertical-container">
     {Object.keys(LINKS.SOCIAL).map((key, i) => (

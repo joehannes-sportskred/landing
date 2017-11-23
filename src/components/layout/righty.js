@@ -8,7 +8,7 @@ const LayoutRighty = ({ content, className, opts, Style }) => {
   return (
     <Container fluid className={className} style={Style}>
       <Grid>
-        <Grid.Row only="computer">
+        <Grid.Row only="computer tablet">
           <Grid.Column width={2} />
           <Grid.Column verticalAlign="middle" width={5}>
             <Content.Left />
@@ -18,7 +18,7 @@ const LayoutRighty = ({ content, className, opts, Style }) => {
           </Grid.Column>
           <Grid.Column width={2} />
         </Grid.Row>
-        <Grid.Row only="tablet mobile">
+        <Grid.Row only="mobile">
           <Grid padded>
             <Grid.Row centered>
               <Content.Left />

@@ -41,7 +41,7 @@ import { FLOWER_DATA as flowerData, FLOWER_CONFIG as flowerConfig } from '../../
 
 const Home = {
   Left: () => (
-    <Segment basic className="image">
+    <Segment basic className="image mobile__smaller">
       <Image fluid verticalAlign="middle" src={IMG.TOUR.MARKETEER} className="cyclist" />
       <Image fluid verticalAlign="middle" src={IMG.TOUR.MARKETEER} className="cyclist" />
       <Image fluid verticalAlign="middle" src={IMG.TOUR.MARKETEER} className="cyclist" />
@@ -120,7 +120,7 @@ const Choose = {
                 <Icon inverted name={p.toLowerCase()}/> :
                 <Header sub as="h5" color="orange">{p}</Header>
               }
-              <Label>{5000 + Math.round(Math.random() * 50000)}</Label>
+              <Label>{(5000 + Math.round(Math.random() * 100000)).toLocaleString('en-GB')}</Label>
             </Menu.Item>
           ),
           render: () => (
@@ -208,7 +208,7 @@ const Measure = {
           data={JSON_TOUR.IMPRESSIONS}
           margin={{top: 5, right: 30, left: 5, bottom: 5}}>
            <XAxis dataKey="name"/>
-           <YAxis/>
+           <YAxis type="number" tickFormatter={val => val.toLocaleString('en-GB')} domain={[0, 'dataMax']} />
            <CartesianGrid strokeDasharray="3 3"/>
            <Tooltip/>
            <Legend />
@@ -217,7 +217,7 @@ const Measure = {
            <Bar dataKey="instagram" fill="#8a3ab9" />
            <Bar dataKey="youtube" fill="#ff0000" />
         </BarChart>
-        <RadarChart
+        {/*<RadarChart
           cx={200}
           cy={250}
           outerRadius={150}
@@ -232,7 +232,7 @@ const Measure = {
           <Legend />
           <PolarAngleAxis dataKey="subject" />
           <PolarRadiusAxis angle={30} domain={[0, 100]}/>
-        </RadarChart>
+        </RadarChart>*/}
       </Segment>
     </Container>
   ),

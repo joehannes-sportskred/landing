@@ -7,7 +7,7 @@ const LayoutRailedCenteredWide = ({ content, className, opts, callback, Style })
 
   return (
     <Grid padded stretched verticalAlign="middle" style={Style}>
-      <Grid.Row only="computer" verticalAlign="middle" stretched>
+      <Grid.Row only="computer tablet" verticalAlign="middle" stretched>
         <Grid.Column width={1} />
         <Grid.Column width={1}>
           <Content.Left />
@@ -20,7 +20,7 @@ const LayoutRailedCenteredWide = ({ content, className, opts, callback, Style })
         </Grid.Column>
         <Grid.Column width={1} />
       </Grid.Row>
-      <Grid.Row only="tablet mobile">
+      <Grid.Row only="mobile">
         <Grid padded>
           <Grid.Row centered>
             <Content.Left />

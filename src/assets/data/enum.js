@@ -363,6 +363,10 @@ export const TEXT = {
     MAIN: 'See Sportskred in Action',
     BRAND: 'As a Marketeer',
     ATHLETE: 'As an Athlete',
+    MOBILE: {
+      BRAND: 'Marketeer',
+      ATHLETE: 'Athlete',
+    }
   },
 };
 

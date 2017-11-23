@@ -41,3 +41,17 @@
     justify-content: center;
   }
 }
+
+.ui.pointing.menu {
+  justify-content: center;
+  &:not(.secondary) > .item:first-child {
+    border-left: 1px solid rgba(34, 36, 38, 0.1);
+  }
+}
+
+.ui.segments {
+  &> .ui.segment.inverted:first-child {
+    border-top: 1px solid white;
+    box-shadow: 0 -5px 5px 0 rgba(white, .3);
+  }
+}

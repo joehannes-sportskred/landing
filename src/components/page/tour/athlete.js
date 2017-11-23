@@ -26,7 +26,7 @@ import { TOUR as JSON_TOUR } from '../../../assets/data/sports';
 
 const Home = {
   Left: () => (
-    <Segment basic className="image">
+    <Segment basic className="image mobile__smaller">
       <Image fluid verticalAlign="middle" src={IMG.TOUR.ATHLETE} className="main tour athlete runner image" />
     </Segment>
   ),

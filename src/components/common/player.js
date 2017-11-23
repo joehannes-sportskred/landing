@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Image, Icon, Container } from 'semantic-ui-react';
+import { Image, Icon, Container, Responsive } from 'semantic-ui-react';
 
 import YouTube from 'react-youtube';
 
+import VideoIcons from '../../store/containers/video_icons';
+
 import FlexContainer from '../common/container';
+import InActionButtons from '../common/inaction';
 
 import { VIDEO, VIDEO_ICONS } from '../../assets/data/enum';
 
@@ -31,8 +34,12 @@ const Component = ({ active, video, poster, onActivate }) => {
         width="100%"
         height="100%"
         circular
-        className="tinted"
+        className="tinted mobile__hidden"
       />
+      <Responsive maxWidth="767" className="inaction-buttons">
+        <InActionButtons />
+      </Responsive>
+      <VideoIcons />
     </Container>
   ) : (
     <Container fluid id="player-wrapper">
@@ -55,6 +62,9 @@ const Component = ({ active, video, poster, onActivate }) => {
           },
         }}
       />
+      <Responsive maxWidth="767" className="inaction-buttons">
+        <InActionButtons />
+      </Responsive>
     </Container>
   );
 }

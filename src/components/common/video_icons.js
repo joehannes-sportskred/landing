@@ -5,7 +5,7 @@ import { Button, Container, Image, Reveal, Segment, Popup, Responsive } from 'se
 import { VIDEO_ICONS } from '../../assets/data/enum';
 
 const Component = ({ active, onActivate }) => (
-  <Container fluid>
+  <Container fluid className="video-icons-container" onClick={(ev) => ev.stopPropagation()}>
     <Responsive minWidth={768} as={Segment.Group} compact className="video-container-group">
       {VIDEO_ICONS.map((icon, i) => (
         <Segment key={`videoicon_${i}`} basic>

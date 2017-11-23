@@ -81,18 +81,28 @@ class Tabs extends React.Component {
       menuItem: (window.matchMedia("(max-width: 767px)").matches) ?
         <Menu.Item key={key} icon={ROLE[role].icon} /> :
         ROLE[role].title,
-      render: () => (<Tab.Pane attached={false} active={this.props.active === role ? true : undefined}><TabContent /></Tab.Pane>),
+      render: () =>
+        <Tab.Pane attached={false} active={this.props.active === role ? true : undefined}>
+          <TabContent />
+        </Tab.Pane>
+      ,
     };
   });
   render () {
     const { active, onChangeRole } = this.props;
-    return <Tab
-      renderActiveOnly
-      activeIndex={this.Roles.indexOf(active)}
-      menu={{ pointing: true }}
-      panes={this.Panes}
-      onTabChange={(ev, d) => onChangeRole(ROLE[this.Roles[d.activeIndex]].name)}
-    />;
+    return <div>
+      <div style={{ color: 'black', lineHeight: '1.8rem' }} className="shiny black text">
+        {(window.matchMedia("(max-width: 767px)").matches) ? "as ... " + this.props.active : null }
+      </div>
+      <Tab
+        renderActiveOnly
+        activeIndex={this.Roles.indexOf(active)}
+        menu={{ pointing: true }}
+        panes={this.Panes}
+        onTabChange={(ev, d) => onChangeRole(ROLE[this.Roles[d.activeIndex]].name)}
+      />
+    </div>
+    ;
   }
 };
 
