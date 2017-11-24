@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
+  Accordion,
   Button,
   Card,
   Checkbox,
@@ -15,7 +16,8 @@ import {
   Menu,
   Tab,
   Table,
-  Segment
+  Segment,
+  Responsive,
 } from 'semantic-ui-react';
 import Gallery from 'react-photo-gallery';
 
@@ -75,23 +77,61 @@ const Profile = {
       </Card.Header>
     </Card>
   ),
-  Right: () => (
-    <Container fluid className="main profile">
-      <Header inverted as="h3" sub textAlign="center" className="discover main header">
-        {TOUR.ATHLETE.ACTION[0].SLOGAN}
-      </Header>
-      <Tab menu={{ primary: true, pointing: true }} panes={IMG.ATHLETE.PROFILE.map((pic, i) => {
-        return {
-          menuItem: (
-            <Menu.Item key={pic} style={{ flexDirection: 'column' }}>
-              <Header sub as="h6" color="orange">{TOUR.ATHLETE.ACTION[0].MENU[i]}</Header>
-            </Menu.Item>
-          ),
-          render: () => <Image fluid src={pic} />
-        };
-      })} />
-    </Container>
-  ),
+  Right: class RightComponent extends React.Component {
+    state = { activeIndex: 0 };
+
+    handleClick = (e, titleProps) => {
+      const { index } = titleProps
+      const { activeIndex } = this.state
+      const newIndex = activeIndex === index ? -1 : index
+
+      this.setState({ activeIndex: newIndex })
+    }
+
+    render() {
+      const { activeIndex } = this.state;
+
+      return <Container fluid className="main profile">
+        <Header inverted as="h3" sub textAlign="center" className="discover main header">
+          {TOUR.ATHLETE.ACTION[0].SLOGAN}
+        </Header>
+        <Responsive minWidth={768}>
+          <Tab menu={{ primary: 'true', pointing: true }} panes={IMG.ATHLETE.PROFILE.map((pic, i) => {
+            return {
+              menuItem: (
+                <Menu.Item key={pic} style={{ flexDirection: 'column' }}>
+                  <Header sub as="h6" color="orange">{TOUR.ATHLETE.ACTION[0].MENU[i]}</Header>
+                </Menu.Item>
+              ),
+              render: () => <Image fluid src={pic + '.jpg'} />
+            };
+          })} />
+        </Responsive>
+        <Responsive maxWidth={767}>
+          <Accordion styled style={{ width: 'auto' }}>
+            <Accordion.Title active={activeIndex === 0} index={0} onClick={this.handleClick}>
+              <Icon name='dropdown' />
+              Profile Overview
+            </Accordion.Title>
+            <Accordion.Content active={activeIndex === 0}>
+               <Image fluid src={IMG.ATHLETE.PROFILE[0] + '.png'} />
+            </Accordion.Content>
+            {IMG.ATHLETE.PROFILE.map((pic, i) => (
+              <div key={i}>
+                <Accordion.Title active={activeIndex === i + 1} index={i + 1} onClick={this.handleClick}>
+                  <Icon name='dropdown' />
+                  {TOUR.ATHLETE.ACTION[0].MENU[i]}
+                </Accordion.Title>
+                <Accordion.Content active={activeIndex === i + 1}>
+                   <Image src={IMG.ATHLETE.MOBILE.PROFILE[i] + '.png'} width={window.clientWidth - 17} />
+                </Accordion.Content>
+              </div>
+            ))}
+          </Accordion>
+        </Responsive>
+      </Container>;
+    }
+  },
 };
 
 const BeDiscovered = {
@@ -102,8 +142,8 @@ const BeDiscovered = {
       </Header>
       <Table selectable>
         <Table.Body>
-          {TOUR.ATHLETE.ACTION[1].DETAILS.map(A => (
-            <Table.Row>
+          {TOUR.ATHLETE.ACTION[1].DETAILS.map((A, key) => (
+            <Table.Row key={key}>
               <Table.Cell>
                 <Image verticalAlign="top" shape="circular" size="mini" src={A.LOGO} className="athlete proposal logo" />
               </Table.Cell>
@@ -122,7 +162,7 @@ const BeDiscovered = {
                 </Item>
               </Table.Cell>
               <Table.Cell>
-                <Segment.Group textAlign="right" compact>
+                <Segment.Group compact>
                   <Segment basic>
                     <Label
                       color={

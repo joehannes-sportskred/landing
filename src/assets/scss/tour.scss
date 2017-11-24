@@ -164,6 +164,13 @@
       padding: 1rem 0;
     }
   }
+  &:first-of-type .card {
+    i.icon {
+      @media only screen and (max-width: 767px) {
+        transform: translateY(100%);
+      }
+    }
+  }
   &:not(:first-of-type) .card {
     i.icon {
       margin: 2rem auto 0 auto;

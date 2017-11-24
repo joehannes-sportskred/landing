@@ -219,43 +219,43 @@ export const TOUR = {
       PHOTOS: [
         {
           src: '/assets/img/tour/athlete/focus_0.jpg',
-          width: '7',
-          height: '3',
+          width: 7,
+          height: 3,
         },
         {
           src: '/assets/img/tour/athlete/focus_1.jpg',
-          width: '1',
-          height: '1',
+          width: 1,
+          height: 1,
         },
         {
           src: '/assets/img/tour/athlete/focus_2.jpg',
-          width: '4',
-          height: '3',
+          width: 4,
+          height: 3,
         },
         {
           src: '/assets/img/tour/athlete/focus_3.jpg',
-          width: '2',
-          height: '4',
+          width: 2,
+          height: 4,
         },
         {
           src: '/assets/img/tour/athlete/focus_4.jpg',
-          width: '3',
-          height: '3',
+          width: 3,
+          height: 3,
         },
         {
           src: '/assets/img/tour/athlete/focus_5.jpg',
-          width: '1',
-          height: '4',
+          width: 1,
+          height: 4,
         },
         {
           src: '/assets/img/tour/athlete/focus_6.jpg',
-          width: '3',
-          height: '3',
+          width: 3,
+          height: 3,
         },
         {
           src: '/assets/img/tour/athlete/focus_8.jpg',
-          width: '2',
-          height: '4',
+          width: 2,
+          height: 4,
         },/*
         {
           src: '/assets/img/tour/athlete/focus_8.jpg',
@@ -442,13 +442,23 @@ export const IMG = {
   },
   ATHLETE: {
     PROFILE: [
-      '/assets/img/tour/athlete/profile_0.jpg',
-      '/assets/img/tour/athlete/profile_1.jpg',
-      '/assets/img/tour/athlete/profile_2.jpg',
-      '/assets/img/tour/athlete/profile_3.jpg',
-      '/assets/img/tour/athlete/profile_4.jpg',
-      '/assets/img/tour/athlete/profile_5.jpg',
+      '/assets/img/tour/athlete/profile_0',
+      '/assets/img/tour/athlete/profile_1',
+      '/assets/img/tour/athlete/profile_2',
+      '/assets/img/tour/athlete/profile_3',
+      '/assets/img/tour/athlete/profile_4',
+      '/assets/img/tour/athlete/profile_5',
     ],
+    MOBILE: {
+      PROFILE: [
+        '/assets/img/tour/athlete/profile_1',
+        '/assets/img/tour/athlete/profile_2',
+        '/assets/img/tour/athlete/profile_3',
+        '/assets/img/tour/athlete/profile_4',
+        '/assets/img/tour/athlete/profile_5',
+        '/assets/img/tour/athlete/profile_6',
+      ],
+    },
   },
 };
 

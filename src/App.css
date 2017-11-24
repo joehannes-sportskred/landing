@@ -331,6 +331,9 @@ body, #root, main {
       margin: 1rem auto 2rem auto; }
     .main.tour.flex-container .main.tour.page .card .header {
       padding: 1rem 0; }
+  @media only screen and (max-width: 767px) {
+    .main.tour.flex-container .main.tour.page:first-of-type .card i.icon {
+      transform: translateY(100%); } }
   .main.tour.flex-container .main.tour.page:not(:first-of-type) .card i.icon {
     margin: 2rem auto 0 auto; }
   .main.tour.flex-container .main.tour.page .discover.main.header {
