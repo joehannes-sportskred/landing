@@ -6,8 +6,8 @@
        Fonts
 --------------------*/
 
-@fontNameHeader    : 'Audiowide';
-@fontNamePages     : 'Raleway';
+@fontNameHeader    : 'Rajdhani';
+@fontNamePages     : 'Titillium+Web';
 @fontSmoothing     : antialiased;
 
 @headerFont        : @fontNameHeader, 'Helvetica Neue', Arial, Helvetica, sans-serif;

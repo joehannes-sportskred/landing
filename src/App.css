@@ -101,7 +101,8 @@
 body, #root, main {
   position: relative;
   min-height: 100%;
-  height: 100%; }
+  height: 100%;
+  font-family: 'Titillium Web', sans-serif; }
 
 #root > .pushable {
   min-height: inherit !important;
@@ -340,7 +341,7 @@ body, #root, main {
     border: 1px solid #E16224;
     border-top-width: 5px;
     border-bottom: none;
-    font-family: 'Bad Script', cursive;
+    font-family: 'Rajdhani', sans-serif;
     padding-top: 0.7rem;
     padding-bottom: 0.7rem; }
   .main.tour.flex-container .main.tour.page img.discover.main.image {
@@ -366,7 +367,7 @@ body, #root, main {
     .main.tour.flex-container .main.tour.page .main.focus.container > .main.header, .main.tour.flex-container .main.tour.page .main.monetise.container > .main.header, .main.tour.flex-container .main.tour.page .main.proposals.container > .main.header, .main.tour.flex-container .main.tour.page .main.choose-packages.container > .main.header, .main.tour.flex-container .main.tour.page .main.reach-audience.container > .main.header, .main.tour.flex-container .main.tour.page .main.measure-impact.container > .main.header, .main.tour.flex-container .main.tour.page .main.action-signup.container > .main.header {
       padding-top: .7rem;
       padding-bottom: .7rem;
-      font-family: 'Bad Script', cursive; }
+      font-family: 'Rajdhani', sans-serif; }
     .main.tour.flex-container .main.tour.page .main.focus.container .menu > .active.item, .main.tour.flex-container .main.tour.page .main.monetise.container .menu > .active.item, .main.tour.flex-container .main.tour.page .main.proposals.container .menu > .active.item, .main.tour.flex-container .main.tour.page .main.choose-packages.container .menu > .active.item, .main.tour.flex-container .main.tour.page .main.reach-audience.container .menu > .active.item, .main.tour.flex-container .main.tour.page .main.measure-impact.container .menu > .active.item, .main.tour.flex-container .main.tour.page .main.action-signup.container .menu > .active.item {
       border-color: #FFFFFF !important; }
   .main.tour.flex-container .main.tour.page .main.measure-impact.container, .main.tour.flex-container .main.tour.page .recharts-legend-item-text, .main.tour.flex-container .main.tour.page .recharts-text {
@@ -451,6 +452,22 @@ nav.bottom.about.menu + .sidebar {
 .fab-menu.active > .fab-item:nth-of-type(odd) > button {
   transform: translateX(0) !important; }
 
+@media only screen and (max-width: 767px) {
+  .slogan:not(#player-wrapper):before {
+    content: "";
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 1rem;
+    font-size: .95rem;
+    color: #FFFFFF;
+    animation: slogan 15s infinite;
+    font-weight: bold;
+    font-family: 'Rajdhani', sans-serif;
+    text-shadow: 0 0 5px #E16224; } }
+
 #player-wrapper {
   z-index: 9;
   position: relative;
@@ -460,6 +477,10 @@ nav.bottom.about.menu + .sidebar {
   background-color: #000000;
   border: 1px solid #E16224;
   box-shadow: 0 0 33px 3px #000000; }
+  @media only screen and (min-width: 768px) {
+    #player-wrapper {
+      margin-left: 0 !important;
+      margin-right: 0 !important; } }
   #player-wrapper > i.icon {
     cursor: pointer;
     position: absolute;
@@ -486,20 +507,21 @@ nav.bottom.about.menu + .sidebar {
         text-align: center; } }
   #player-wrapper > i.icon {
     border: 1px solid #E16224; }
-  #player-wrapper.slogan:before {
-    content: "";
-    z-index: 10;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    padding: 1rem 1rem;
-    font-size: .95rem;
-    color: #FFFFFF;
-    animation: slogan 15s infinite;
-    font-weight: bold;
-    font-family: 'Bad Script', cursive;
-    text-shadow: 0 0 5px #E16224; }
+  @media only screen and (min-width: 768px) {
+    #player-wrapper.slogan:before {
+      content: "";
+      z-index: 10;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      margin-left: 2rem;
+      padding: 1rem 1rem;
+      color: #FFFFFF;
+      animation: slogan 15s infinite;
+      font-weight: bold;
+      font-family: 'Rajdhani', sans-serif;
+      text-shadow: 0 0 5px #E16224; } }
   #player-wrapper:after {
     content: "";
     position: absolute;
@@ -525,26 +547,32 @@ iframe#player {
   height: auto; }
 
 @media only screen and (min-width: 1920px) {
-  #player-wrapper.slogan:before {
+  .slogan:before {
     font-size: 5.3rem !important;
     padding-left: 3rem;
     padding-right: 3rem; } }
 
 @media only screen and (min-width: 1440px) and (max-width: 1920px) {
-  #player-wrapper.slogan:before {
+  .slogan:before {
     font-size: 4rem !important;
     padding-left: 3rem;
     padding-right: 3rem; } }
 
 @media only screen and (min-width: 1366px) and (max-width: 1440px) {
-  #player-wrapper.slogan:before {
+  .slogan:before {
     font-size: 3.67rem !important;
     padding-left: 2.67rem;
     padding-right: 2.67rem; } }
 
-@media only screen and (min-width: 768px) and (max-width: 1366px) {
-  #player-wrapper.slogan:before {
-    font-size: 2.33rem !important;
+@media only screen and (min-width: 1024px) and (max-width: 1366px) {
+  .slogan:before {
+    font-size: 2.5rem !important;
+    padding-left: 2.2rem;
+    padding-right: 2.2rem; } }
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .slogan:before {
+    font-size: 2rem !important;
     padding-left: 2.2rem;
     padding-right: 2.2rem; } }
 
@@ -556,15 +584,16 @@ iframe#player {
   border-radius: 100%; }
 
 @media only screen and (min-width: 768px) {
-  .video-icons-container {
+  .video-icons-container.ui.container {
     position: absolute;
     top: 50%;
-    left: 0; }
+    left: 0;
+    margin-left: -1rem !important; }
   .video-container-group {
     z-index: 99;
     border: none;
     box-shadow: none !important;
-    transform: translateX(-50%) translateY(-50%); }
+    transform: translateY(-50%); }
     .video-container-group > .segment {
       padding-left: 0 !important;
       padding-right: 0 !important; }
@@ -585,13 +614,13 @@ iframe#player {
 
 @media only screen and (max-width: 767px) {
   .video-icons-container.ui.container {
-    position: absolute;
+    position: relative;
     top: 0%;
     left: 50%;
     margin: 0 !important; }
     .video-icons-container.ui.container .video-container-group {
       margin: 0 !important;
-      transform: translateY(-150%) translateX(-50%); }
+      transform: translateX(-50%); }
       .video-icons-container.ui.container .video-container-group .ui.basic.segment {
         padding: 0.5rem !important; }
         .video-icons-container.ui.container .video-container-group .ui.basic.segment:first-of-type {

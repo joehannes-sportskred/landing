@@ -7,16 +7,17 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .video-icons-container {
+  .video-icons-container.ui.container {
     position: absolute;
     top: 50%;
     left: 0;
+    margin-left: -1rem !important;
   }
   .video-container-group {
     z-index: 99;
     border: none;
     box-shadow: none !important;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateY(-50%);
     &> .segment {
       padding-left: 0 !important;
       padding-right: 0 !important;
@@ -46,13 +47,13 @@
 
 @media only screen and (max-width: 767px) {
   .video-icons-container.ui.container {
-    position: absolute;
+    position: relative;
     top: 0%;
     left: 50%;
     margin: 0 !important;
     .video-container-group {
       margin: 0 !important;
-      transform: translateY(-150%) translateX(-50%);
+      transform: translateX(-50%);
       .ui.basic.segment {
         &:first-of-type { padding-left: 0 !important; }
         &:last-of-type { padding-right: 0 !important; }

@@ -1,3 +1,21 @@
+@media only screen and (max-width: 767px) {
+  .slogan:not(#player-wrapper):before {
+    content: "";
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 1rem;
+    font-size: .95rem;
+    color: $white;
+    animation: slogan 15s infinite;
+    font-weight: bold;
+    font-family: 'Rajdhani', sans-serif;
+    text-shadow: 0 0 5px $orange;
+  }
+}
+
 #player-wrapper {
   z-index: 9;
   position: relative;
@@ -7,6 +25,10 @@
   background-color: $black;
   border: 1px solid $orange;
   box-shadow: 0 0 33px 3px $black;
+  @media only screen and (min-width: 768px) {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
   &> i.icon {
     cursor: pointer;
     position: absolute;
@@ -40,20 +62,22 @@
   &> i.icon {
     border: 1px solid $orange;
   }
-  &.slogan:before {
-    content: "";
-    z-index: 10;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    padding: 1rem 1rem;
-    font-size: .95rem;
-    color: $white;
-    animation: slogan 15s infinite;
-    font-weight: bold;
-    font-family: 'Bad Script', cursive;
-    text-shadow: 0 0 5px $orange;
+  @media only screen and (min-width: 768px) {
+    &.slogan:before {
+      content: "";
+      z-index: 10;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      margin-left: 2rem;
+      padding: 1rem 1rem;
+      color: $white;
+      animation: slogan 15s infinite;
+      font-weight: bold;
+      font-family: 'Rajdhani', sans-serif;
+      text-shadow: 0 0 5px $orange;
+    }
   }
   &:after {
     content: "";
@@ -85,7 +109,7 @@ iframe#player {
 
 
 @media only screen and (min-width: 1920px) {
-  #player-wrapper.slogan {
+  .slogan {
     &:before {
       font-size: 5.3rem !important;
       padding-left: 3rem;
@@ -95,7 +119,7 @@ iframe#player {
 }
 
 @media only screen and (min-width: 1440px) and (max-width: 1920px) {
-  #player-wrapper.slogan {
+  .slogan {
     &:before {
       font-size: 4rem !important;
       padding-left: 3rem;
@@ -105,7 +129,7 @@ iframe#player {
 }
 
 @media only screen and (min-width: 1366px) and (max-width: 1440px) {
-  #player-wrapper.slogan {
+  .slogan {
     &:before {
       font-size: 3.67rem !important;
       padding-left: 2.67rem;
@@ -114,10 +138,20 @@ iframe#player {
   }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1366px) {
-  #player-wrapper.slogan {
+@media only screen and (min-width: 1024px) and (max-width: 1366px) {
+  .slogan {
     &:before {
-      font-size: 2.33rem !important;
+      font-size: 2.5rem !important;
+      padding-left: 2.2rem;
+      padding-right: 2.2rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .slogan {
+    &:before {
+      font-size: 2rem !important;
       padding-left: 2.2rem;
       padding-right: 2.2rem;
     }
