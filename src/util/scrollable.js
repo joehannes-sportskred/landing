@@ -52,6 +52,7 @@ class Scrollable {
 
     if ('requestAnimationFrame' in window === false) {
       window.scroll(0, destinationOffsetToScroll);
+      console.log("trouble");
       if (callback) {
         callback();
       }

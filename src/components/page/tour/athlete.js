@@ -21,8 +21,6 @@ import {
 } from 'semantic-ui-react';
 import Gallery from 'react-photo-gallery';
 
-import Scrollable from '../../../util/scrollable';
-
 import { DATA, TOUR, IMG } from '../../../assets/data/enum';
 import { TOUR as JSON_TOUR } from '../../../assets/data/sports';
 
@@ -51,7 +49,10 @@ const Home = {
             key={index}
             className="children-centered"
             color="orange"
-            onClick={() => Scrollable.scrollTo(document.querySelector('.page:nth-child(' + (index + 2) + ')')) }
+            onClick={() => document
+              .querySelector('.page:nth-child(' + (index + 2) + ')')
+              .scrollIntoView({block: "end", behavior: "smooth"})
+            }
           >
             <Icon color="orange" size="large" name={tupel.ICON} />
             <Segment basic padded className="rotated-icon-border" />
@@ -123,7 +124,7 @@ const Profile = {
                   {TOUR.ATHLETE.ACTION[0].MENU[i]}
                 </Accordion.Title>
                 <Accordion.Content active={activeIndex === i + 1}>
-                   <Image src={IMG.ATHLETE.MOBILE.PROFILE[i] + '.png'} width={window.clientWidth - 17} />
+                   <Image src={IMG.ATHLETE.MOBILE.PROFILE[i] + '.png'} width={(window.clientWidth - 17) || '90%'} />
                 </Accordion.Content>
               </div>
             ))}

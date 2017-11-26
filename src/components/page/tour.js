@@ -40,18 +40,47 @@ AbstractPage.propTypes = {
 
 const Page = {
   Marketeer: class MarketeerRoute extends React.Component {
+    viewportRatios = [];
+    viewportContainer = null;
     state = {
         minHeight: 'inherit',
         height: null,
     };
+
     resize = () => {
      this.forceUpdate();
-    }
+   };
+    scrollToPage = (ev) => {
+      (typeof this.isScrolling !== 'undefined') && clearTimeout(this.isScrolling);
+      this.isScrolling = setTimeout(() => {
+        let greatest = { i: 0, ratio: 0 };
+        console.log(this.viewportRatios);
+        this.viewportRatios.forEach((ratio, i, arr) =>{
+          if (ratio > greatest.ratio) {
+            greatest = { i, ratio };
+          }
+        });
+        document
+          .querySelector('.page:nth-child(' + (greatest.i + 1) + ')')
+          .scrollIntoView({ block: "end", behavior: "smooth" });
+      }, 100);
+    };
+
     componentWillMount () {
       this.setState({ minHeight: Number(window.innerHeight).toString() + 'px' });
+      this.intersectionObserver = new IntersectionObserver((entries) => {
+        console.log(entries);
+        for (let i = 0; i < entries.length; i++) {
+          this.viewportRatios[i] = entries[i].intersectionRatio;
+        }
+      });
     }
     componentDidMount () {
+      this.viewportContainer = document.querySelector('.pushable');
+
       window.addEventListener('resize', this.resize);
+      //this.intersectionObserver.observe(document.querySelector('.page'));
+      //this.viewportContainer.addEventListener('scroll', this.scrollToPage);
     }
     childrenDidLoad () {
       /*const h = Array.prototype.map
@@ -61,6 +90,7 @@ const Page = {
     }
     componentWillUnmount() {
       window.removeEventListener('resize', this.resize);
+      //this.viewportContainer.removeEventListener('scroll', this.scrollToPage);
     }
     render () {
       const { minHeight } = this.state;

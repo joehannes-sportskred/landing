@@ -66,7 +66,11 @@ const Home = {
             key={index}
             className="children-centered"
             color="orange"
-            onClick={() => Scrollable.scrollTo(document.querySelector('.page:nth-child(' + (index + 2) + ')')) }
+            onClick={() =>
+              document
+               .querySelector('.page:nth-child(' + (index + 2) + ')')
+               .scrollIntoView({block: "end", behavior: "smooth"})
+            }
           >
             <Icon color="orange" size="large" name={tupel.ICON} />
             <Segment basic padded className="rotated-icon-border" />
