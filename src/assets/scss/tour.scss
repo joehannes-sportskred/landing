@@ -84,21 +84,41 @@
       font-size: 1.33rem;
       padding-bottom: .33rem;
     }
-    table {
+    .accordion {
       @include pattern($pattern_url_light, $complementary_bg_1, 0.8);
       margin-top: 0 !important;
-      tr:nth-child(2) {
+      .content {
+        padding: 1rem;
+      }
+      .title {
+        margin: 0 !important;
+        padding: .8rem 0 !important;
+        clear: both;
+        text-align: left;
+      }
+      .checkbox {
+        padding: 0 !important;
+        margin: .5rem !important;
+        border-radius: 100%;
+      }
+      .content:nth-child(2) {
         background: rgba($gold, .67);
       }
-      tr:nth-child(4) {
+      .content:nth-child(4) {
         background: rgba($silver, .67);
       }
-      tr:nth-child(6) {
+      .content:nth-child(6) {
         background: rgba($bronze, .67);
       }
-      tr > td > .ribbon.label:after {
-        transform-origin: left;
-        transform: scaleX(.8);
+      .ribbon.label {
+        margin: .3rem 0 !important;
+        padding-top: .3rem;
+        padding-bottom: .3rem;
+        transform: translateX(1rem);
+        &:after {
+          transform-origin: left;
+          transform: translateX(-.1rem);
+        }
       }
     }
   }

@@ -15,6 +15,7 @@ import {
   PolarRadiusAxis
 } from 'recharts';
 import {
+  Accordion,
   Button,
   Card,
   Checkbox,
@@ -26,7 +27,6 @@ import {
   Label,
   Menu,
   Tab,
-  Table,
   Segment
 } from 'semantic-ui-react';
 import { Graph } from 'react-d3-graph';
@@ -110,50 +110,56 @@ const Discover = {
 };
 
 const Choose = {
-  Left: () => (
-    <Container fluid className="main choose-packages">
-      <Header inverted as="h3" sub textAlign="center" className="packages main header">
-        {TOUR.BRAND.ACTION[1].SLOGAN}
-      </Header>
-      <Tab menu={{ secondary: true, pointing: true }} panes={Object.keys(TOUR.BRAND.PACKAGES).map(p => {
-        return {
-          menuItem: (
-            <Menu.Item key={p.toLowerCase()} style={{ flexDirection: 'column' }}>
-              {
-                (window.matchMedia("(max-width: 767px)").matches) ?
-                <Icon inverted name={p.toLowerCase()}/> :
-                <Header sub as="h5" color="orange">{p}</Header>
-              }
-              <Label>{(5000 + Math.round(Math.random() * 100000)).toLocaleString('en-GB')}</Label>
-            </Menu.Item>
-          ),
-          render: () => (
-            <Table striped>
-              <Table.Body>
-                {Object.keys(TOUR.BRAND.PACKAGES[p]).map(_p => (
-                  <Table.Body>
-                    <Table.Row>
-                      <Table.Cell>
-                        <Label ribbon>{`${_p.charAt(0)}${_p.slice(1).toLowerCase()} Package`}</Label>
-                      </Table.Cell>
-                    </Table.Row>
-                    <Table.Row>
-                      <Table.Cell>
-                        {TOUR.BRAND.PACKAGES[p][_p].TEXT}
-                      </Table.Cell>
-                      <Table.Cell>
-                        <Checkbox toggle disabled={false} checked={TOUR.BRAND.PACKAGES[p][_p].SELECTED} />
-                      </Table.Cell>
-                    </Table.Row>
-                  </Table.Body>
+  Left: class ChooseLeft extends React.Component {
+    state = { activeIndex: 0 }
+
+    handleClick = (e, titleProps) => {
+      const { index } = titleProps
+      const { activeIndex } = this.state
+      const newIndex = activeIndex === index ? -1 : index
+
+      this.setState({ activeIndex: newIndex })
+    }
+
+    render () {
+      const { activeIndex } = this.state;
+
+      return <Container fluid className="main choose-packages">
+        <Header inverted as="h3" sub textAlign="center" className="packages main header">
+          {TOUR.BRAND.ACTION[1].SLOGAN}
+        </Header>
+        <Tab menu={{ secondary: true, pointing: true }} panes={Object.keys(TOUR.BRAND.PACKAGES).map(p => {
+          return {
+            menuItem: (
+              <Menu.Item key={p.toLowerCase()} style={{ flexDirection: 'column' }}>
+                {
+                  (window.matchMedia("(max-width: 767px)").matches) ?
+                  <Icon inverted name={p.toLowerCase()}/> :
+                  <Header sub as="h5" color="orange">{p}</Header>
+                }
+                <Label>{(5000 + Math.round(Math.random() * 100000)).toLocaleString('en-GB')}</Label>
+              </Menu.Item>
+            ),
+            render: () => (
+              <Accordion>
+                {Object.keys(TOUR.BRAND.PACKAGES[p]).map((_p, i) => (
+                  <div>
+                    <Accordion.Title as={Segment.Group} active={activeIndex === i} index={i} onClick={this.handleClick}>
+                      <Label as={Segment} ribbon>{`${_p.charAt(0)}${_p.slice(1).toLowerCase()} Package`}</Label>
+                      <Checkbox as={Segment} basic floated="right" toggle disabled={false} checked={TOUR.BRAND.PACKAGES[p][_p].SELECTED} />
+                    </Accordion.Title>
+                    <Accordion.Content active={activeIndex === i}>
+                      {TOUR.BRAND.PACKAGES[p][_p].TEXT}
+                    </Accordion.Content>
+                  </div>
                 ).props.children)}
-              </Table.Body>
-            </Table>
-          )
-        };
-      })} />
-    </Container>
-  ),
+              </Accordion>
+            )
+          };
+        })} />
+      </Container>
+    }
+  },
   Right: () => (
     <Card color="orange">
       <Icon color="orange" size="large" name={TOUR.BRAND.ACTION[1].ICON} />

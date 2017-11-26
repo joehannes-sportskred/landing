@@ -170,7 +170,7 @@ export const TOUR = {
         DURATION: '8 November 2017 - 8 November 2018',
         DEADLINE: '7 November 2017',
         LABEL: 'primary',
-        OFFER: '£ 1420',
+        OFFER: '£ 1,420',
         DATE: '13 September 2017',
       },/*
       {
