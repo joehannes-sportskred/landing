@@ -194,11 +194,12 @@ const Reach = {
           {TOUR.BRAND.ACTION[2].SLOGAN}
         </Header>
         <Segment id="flower-container" className="childrenCentered" style={{ marginTop: '0', padding: '0' }}>
-          <Graph
+          <Image alt="Large Audiences" fluid src={IMG.MARKETEER.REACH} />
+          {/*<Graph
              id='flower'
              data={flowerData}
              config={{...flowerConfig, width: this.state.width }}
-          />
+          />*/}
         </Segment>
       </Container>
     }

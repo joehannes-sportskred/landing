@@ -440,6 +440,9 @@ export const IMG = {
     MARKETEER: '/assets/img/tour/marketeer/cyclist.png',
     ATHLETE: '/assets/img/tour/athlete/runner.png',
   },
+  MARKETEER: {
+    REACH: '/assets/img/tour/marketeer/reach_graph.png',
+  },
   ATHLETE: {
     PROFILE: [
       '/assets/img/tour/athlete/profile_0',
