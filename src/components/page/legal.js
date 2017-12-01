@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { Image, Segment, Header, Responsive } from 'semantic-ui-react';
 
 import Dimmer from '../../store/containers/dimmer';
+import Menu from '../../store/containers/menu';
+import AboutUs from '../../store/containers/aboutus';
 
-import Menu from '../common/menu';
 import Layout from '../layout/centeredwide';
-import AboutUs from '../common/aboutus';
 
 import PrivacyPolicyDetails from './legal/privacypolicy';
 import TermsOfUseDetails from './legal/termsofuse';

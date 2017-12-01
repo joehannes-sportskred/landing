@@ -210,9 +210,12 @@ body, #root, main {
 
 .main.tour.flex-container .main.tour.page {
   position: relative;
-  padding: 8rem 1rem; }
+  padding: 8rm 1rem; }
   .main.tour.flex-container .main.tour.page:first-of-type {
-    padding: 2rem 1rem 8rem 1rem; }
+    padding: 5rem 1rem 8rem 1rem; }
+  @media only screen and (max-width: 768px) {
+    .main.tour.flex-container .main.tour.page:first-of-type {
+      padding: 0 1rem 8rem 1rem; } }
   .main.tour.flex-container .main.tour.page:not(:first-of-type):nth-child(even) .card {
     transform: rotate(-3deg); }
   .main.tour.flex-container .main.tour.page:not(:first-of-type):nth-child(odd) .card {
@@ -484,7 +487,7 @@ nav.bottom.about.menu + .sidebar {
     left: 0;
     width: 100%;
     padding: 1rem 1rem;
-    font-size: .95rem;
+    font-size: 1.05rem;
     color: #FFFFFF;
     animation: slogan 15s infinite;
     font-weight: bold;

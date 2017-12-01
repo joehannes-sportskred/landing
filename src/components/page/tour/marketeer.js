@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ran from 'randf';
 import {
   BarChart,
   Bar,
@@ -8,8 +9,7 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  RadarChart,
-  Radar,
+  Text,
   PolarGrid,
   PolarAngleAxis,
   PolarRadiusAxis
@@ -69,7 +69,7 @@ const Home = {
             onClick={() =>
               document
                .querySelector('.page:nth-child(' + (index + 2) + ')')
-               .scrollIntoView({block: "end", behavior: "smooth"})
+               .scrollIntoView({block: "start", behavior: "smooth"})
             }
           >
             <Icon color="orange" size="large" name={tupel.ICON} />
@@ -112,6 +112,9 @@ const Discover = {
 const Choose = {
   Left: class ChooseLeft extends React.Component {
     state = { activeIndex: 0 }
+    random = [1,2,3,4].map(() => Math.round(ran(150000)).toLocaleString('en-GB'));
+
+
 
     handleClick = (e, titleProps) => {
       const { index } = titleProps
@@ -128,7 +131,7 @@ const Choose = {
         <Header inverted as="h3" sub textAlign="center" className="packages main header">
           {TOUR.BRAND.ACTION[1].SLOGAN}
         </Header>
-        <Tab menu={{ secondary: true, pointing: true }} panes={Object.keys(TOUR.BRAND.PACKAGES).map(p => {
+        <Tab menu={{ secondary: true, pointing: true }} panes={Object.keys(TOUR.BRAND.PACKAGES).map((p, i) => {
           return {
             menuItem: (
               <Menu.Item key={p.toLowerCase()} style={{ flexDirection: 'column' }}>
@@ -137,7 +140,7 @@ const Choose = {
                   <Icon inverted name={p.toLowerCase()}/> :
                   <Header sub as="h5" color="orange">{p}</Header>
                 }
-                <Label>{(5000 + Math.round(Math.random() * 100000)).toLocaleString('en-GB')}</Label>
+                <Label>{this.random[i]}</Label>
               </Menu.Item>
             ),
             render: () => (
@@ -213,6 +216,9 @@ const Measure = {
         {TOUR.BRAND.ACTION[3].SLOGAN}
       </Header>
       <Segment>
+        <Header as="h4" sub textAlign="center">
+          Total Reach
+        </Header>
         <BarChart
           width={(window.matchMedia("(max-width: 767px)").matches) ? (window.clientWidth || 300) : 500}
           height={250}
@@ -221,7 +227,7 @@ const Measure = {
            <XAxis dataKey="name"/>
            <YAxis type="number" tickFormatter={val => val.toLocaleString('en-GB')} domain={[0, 'dataMax']} />
            <CartesianGrid strokeDasharray="3 3"/>
-           <Tooltip/>
+           <Tooltip formatter={v => v.toLocaleString('en-GB')} />
            <Legend />
            <Bar dataKey="facebook" fill="#4267b2" />
            <Bar dataKey="twitter" fill="#1DA1F2" />

@@ -16,7 +16,7 @@ const Left = () =>
   <Responsive maxWidth="767">
     <div
       className="slogan"
-      style={{ lineHeight: "5rem" }}
+      style={{ paddingBottom: '3rem' }}
     >
       &nbsp;
     </div>

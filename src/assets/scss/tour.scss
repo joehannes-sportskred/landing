@@ -1,8 +1,13 @@
 .main.tour.flex-container .main.tour.page {
   position: relative;
-  padding: 8rem 1rem;
+  padding: 8rm 1rem;
   &:first-of-type {
-    padding: 2rem 1rem 8rem 1rem;
+    padding: 5rem 1rem 8rem 1rem;
+  }
+  @media only screen and (max-width: 768px) {
+    &:first-of-type {
+      padding: 0 1rem 8rem 1rem;
+    }
   }
   &:not(:first-of-type) {
     &:nth-child(even) .card {

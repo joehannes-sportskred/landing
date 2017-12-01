@@ -51,7 +51,7 @@ const Home = {
             color="orange"
             onClick={() => document
               .querySelector('.page:nth-child(' + (index + 2) + ')')
-              .scrollIntoView({block: "end", behavior: "smooth"})
+              .scrollIntoView({block: "start", behavior: "smooth"})
             }
           >
             <Icon color="orange" size="large" name={tupel.ICON} />
@@ -96,7 +96,7 @@ const Profile = {
         <Header inverted as="h3" sub textAlign="center" className="discover main header">
           {TOUR.ATHLETE.ACTION[0].SLOGAN}
         </Header>
-        <Responsive minWidth={768}>
+        <Responsive minWidth={1201}>
           <Tab menu={{ primary: 'true', pointing: true }} panes={IMG.ATHLETE.PROFILE.map((pic, i) => {
             return {
               menuItem: (
@@ -108,7 +108,7 @@ const Profile = {
             };
           })} />
         </Responsive>
-        <Responsive maxWidth={767}>
+        <Responsive maxWidth={1200}>
           <Accordion styled style={{ width: 'auto' }}>
             <Accordion.Title active={activeIndex === 0} index={0} onClick={this.handleClick}>
               <Icon name='dropdown' />
