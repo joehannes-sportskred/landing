@@ -284,7 +284,7 @@ const Main = () => (<Segment attached raised as="section" style={{ color: 'black
       please contact us at:</span>
     </li>
   </ol>
-  <Segment.Group horizontal>
+  <Segment.Group horizontal={(window.matchMedia("(max-width: 767px)").matches) ? false : true}>
     <Segment basic style={{ verticalAlign: 'bottom' }}>
       <Header sub>
         Contact person:

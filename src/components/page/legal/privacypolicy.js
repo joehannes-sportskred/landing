@@ -92,91 +92,87 @@ const Main = () => (<Segment padded raised attached>
   </p>
   <p><b>What cookies do we use?</b></p>
   <p>Our Site may at any time use the following types of cookies:</p>
-  <table>
-    <thead>
-      <tr>
-        <th style={{ textAlign: 'left' }}>Type of cookie</th>
-        <th>Purpose</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Essential Cookies</td>
-        <td>These cookies are essential to provide you with services available through our site and to
-          use some of its features, such as access to secure areas. Without these cookies, services
-          you have asked for, like transactional pages and secure login accounts, would not be
-          possible.
-        </td>
-      </tr>
-      <tr>
-        <td>Analytics Cookies</td>
-        <td>
-          <p>These cookies are used to collect information about how visitors use our site.</p>
-          <p>The information gathered does not identify any individual visitor and is aggregated. It
-            includes the number of visitors to our site, the sites that referred them to our site
-            and the pages that they visited on our site.
-          </p>
-          <p>We use this information to help operate our site more efficiently, to gather broad
-            demographic information and to monitor the level of activity on our site.
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td>Performance Cookies</td>
-        <td>
-          <p>These cookies collect information about how visitors use the site, so that we can analyse
-            traffic and understand how our visitors use our sites.
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td>Targeted and advertising cookies</td>
-        <td>
-          <p>
-            These cookies track your browsing habits to enable us to show advertising which is more
-            likely to be of interest to you. These cookies use information about your browsing
-            history to group you with other users who have similar interests. Based on that
-            information, and with our permission, third party advertisers can place cookies to
-            enable them to show adverts which we think will be relevant to your interests while you
-            are on third party websites.
-          </p>
-          <p>You can disable cookies which remember your browsing habits and target advertising at you
-            by visiting
-            <a href="http://www.youronlinechoices.com/uk/your-ad-choices" target="_blank" rel="noopener noreferrer">http://www.youronlinechoices.com/uk/your-ad-choices</a>.
-            If you choose to remove targeted or advertising cookies, you will still see adverts but
-            they may not be relevant to you. Even if you do choose to remove cookies by the
-            companies listed at the above link, not all companies that serve online behavioural
-            advertising are included in this list, and so you may still receive some cookies and
-            tailored adverts from companies that are not listed.
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td>Functionality Cookies</td>
-        <td>
-          <p>These cookies allow our site to remember choices you make (such as your user name, or the
-            region you are in) and provide enhanced, more personal features. These cookies can also
-            be used to remember changes you have made to text size, fonts and other parts of web
-            pages that you can customize. They may also be used to provide services you have asked
-            for such as watching a video or commenting on a blog. The information these cookies
-            collect may be anonymised and they cannot track your browsing activity on other
-            websites.
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td>Social Media Cookies</td>
-        <td>
-          <p>These cookies are used when you share information using a social media sharing button or
-            “like” button on our sites or you link your account or engage with our content on or
-            through a social networking site such as Facebook, Twitter or Google+. The social
-            network will record that you have done this. This information may be linked to
-            targeting/ advertising activities.
-          </p>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <Segment.Group>
+    <Header as="h3">
+      Type of cookie
+    </Header>
+    <Header as="h4">
+      Essential Cookies
+    </Header>
+    <Segment attached="bottom">
+      These cookies are essential to provide you with services available through our site and to
+      use some of its features, such as access to secure areas. Without these cookies, services
+      you have asked for, like transactional pages and secure login accounts, would not be
+      possible.
+    </Segment>
+    <Header as="h4">
+      Analytics Cookies
+    </Header>
+    <Segment attached="bottom">
+      <p>These cookies are used to collect information about how visitors use our site.</p>
+      <p>The information gathered does not identify any individual visitor and is aggregated. It
+        includes the number of visitors to our site, the sites that referred them to our site
+        and the pages that they visited on our site.
+      </p>
+      <p>We use this information to help operate our site more efficiently, to gather broad
+        demographic information and to monitor the level of activity on our site.
+      </p>
+    </Segment>
+    <Header as="h4">
+      Performance Cookies
+    </Header>
+    <Segment attached="bottom">
+      <p>These cookies collect information about how visitors use the site, so that we can analyse
+        traffic and understand how our visitors use our sites.
+      </p>
+    </Segment>
+    <Header as="h4">
+      Targeted and advertising cookies
+    </Header>
+    <Segment attached="bottom">
+      <p>
+        These cookies track your browsing habits to enable us to show advertising which is more
+        likely to be of interest to you. These cookies use information about your browsing
+        history to group you with other users who have similar interests. Based on that
+        information, and with our permission, third party advertisers can place cookies to
+        enable them to show adverts which we think will be relevant to your interests while you
+        are on third party websites.
+      </p>
+      <p>You can disable cookies which remember your browsing habits and target advertising at you
+        by visiting
+        <a href="http://www.youronlinechoices.com/uk/your-ad-choices" target="_blank" rel="noopener noreferrer">http://www.youronlinechoices.com/uk/your-ad-choices</a>.
+        If you choose to remove targeted or advertising cookies, you will still see adverts but
+        they may not be relevant to you. Even if you do choose to remove cookies by the
+        companies listed at the above link, not all companies that serve online behavioural
+        advertising are included in this list, and so you may still receive some cookies and
+        tailored adverts from companies that are not listed.
+      </p>
+    </Segment>
+    <Header as="h4">
+      Functionality Cookies
+    </Header>
+    <Segment attached="bottom">
+      <p>These cookies allow our site to remember choices you make (such as your user name, or the
+        region you are in) and provide enhanced, more personal features. These cookies can also
+        be used to remember changes you have made to text size, fonts and other parts of web
+        pages that you can customize. They may also be used to provide services you have asked
+        for such as watching a video or commenting on a blog. The information these cookies
+        collect may be anonymised and they cannot track your browsing activity on other
+        websites.
+      </p>
+    </Segment>
+    <Header as="h4">
+      Social Media Cookies
+    </Header>
+    <Segment attached="bottom">
+      <p>These cookies are used when you share information using a social media sharing button or
+        “like” button on our sites or you link your account or engage with our content on or
+        through a social networking site such as Facebook, Twitter or Google+. The social
+        network will record that you have done this. This information may be linked to
+        targeting/ advertising activities.
+      </p>
+    </Segment>
+  </Segment.Group>
   <p>Further detailed information about the specific cookies used on this site and the third parties who
     serve them can be found on our site.
   </p>
