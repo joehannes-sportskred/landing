@@ -23,11 +23,15 @@ class Gist extends React.Component {
     return class HyperLink extends React.PureComponent {
       render () {
         return (
-          <a href="javascript:;" onClick={() => {
+          <a href={'/assets/blog/' + this.props.href.toLowerCase()} onClick={(ev) => {
+            ev.stopPropagation();
+            ev.preventDefault();
+
             that.setState({
               dimmer: true,
               md: require('../../../assets/blog/' + this.props.href.toLowerCase()),
             });
+            return false;
           }}>
             {this.props.children}
           </a>

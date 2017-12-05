@@ -1,9 +1,14 @@
-# Sportskred News
+# Sportskred Blog
 
-![Sportskred Rocks](https://plchldr.co/i/500x250?text=SPORTSKRED)
+![Sportskred News](/assets/img/blog/header.jpg)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Social media tips and trends in sponsorships for athletes.
+Enjoy the read and feel free to give us your [feedback][9a290407]!
+
+  [9a290407]: mailto:team@sportskred.com "Feedback"
 
 ## Articles
 
-### [Demo Article - MacDown Help](articles/help.md)
+### [How Social Media has changed Sports - 4 Dec 17](articles/social_media_changed_sports_dec17.md)
+
+### [Key Upcoming events in Sports - 4 Dec 17](articles/upcoming_events_dec17.md)
