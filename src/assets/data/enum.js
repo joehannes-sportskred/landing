@@ -278,6 +278,10 @@ export const TOUR = {
 };
 
 export const TEXT = {
+  DEFAULT: {
+    CLOSE: 'CLOSE',
+    OK: 'OK',
+  },
   SLOGAN: {
     TITLE: 'The place for digital sport sponsorships',
     EXPLANATION: `With Sportskred, marketers can create campaigns

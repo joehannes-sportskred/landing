@@ -1,33 +1,73 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Checkbox, Form, Header, Icon, Input, Label, Menu, Select, Segment, Tab } from 'semantic-ui-react';
+import { Button, Dimmer, Label, Icon, Menu, Segment, Sidebar } from 'semantic-ui-react';
 import ReactMarkdown from 'react-markdown';
 
-import MD from '../../../assets/blog/gist.md';
+import Layout from '../../layout/centeredwide';
 
-const Link = (thisAndThat) => {
-  const _this = thisAndThat;
-  return class HyperLink extends React.PureComponent {
-    that = _this;
-    setMD (that, ev, fileName) {
-      const MdFile = require('../../../assets/blog/articles/' + fileName.toLowerCase() + '.md' );
-      that.setState({ md: MdFile });
-      ev.stopPropagation();
-      return false;
-    }
-    render () {
-      return <a href="javascript:;" onClick={(ev) => this.setMD(this.that, ev, this.props.href)}>{this.props.children}</a>;
-    }
-  }
-}
+import MD from '../../../assets/blog/gist.md';
+import { TEXT } from '../../../assets/data/enum';
 
 class Gist extends React.Component {
   state = {
-    md: MD,
+    md: null,
+    dimmer: false,
   };
+
+  toggleDimmer (bool) {
+    this.setState({ dimmer: bool });
+  }
+
+  linkFactory () {
+    const that = this;
+    return class HyperLink extends React.PureComponent {
+      render () {
+        return (
+          <a href="javascript:;" onClick={() => {
+            that.setState({
+              dimmer: true,
+              md: require('../../../assets/blog/' + this.props.href.toLowerCase()),
+            });
+          }}>
+            {this.props.children}
+          </a>
+        );
+      }
+    }
+  }
   render () {
     return <Segment inverted>
-      <ReactMarkdown source={this.state.md} renderers={{ link: Link(this) }} />
+      <ReactMarkdown source={MD} renderers={{ link: this.linkFactory() }} />
+      <Dimmer
+        as={Sidebar.Pushable}
+        active={this.state.dimmer}
+        onClickOutside={() => this.toggleDimmer(false)}
+        page
+        style={{
+          overflowY: 'auto',
+          overflowX: 'hidden',
+          maxWidth: '100vw',
+        }}
+        className="detail blog page"
+      >
+        <Sidebar as={Menu} animation="push" direction="top" visible inverted>
+          <Menu.Item position="right">
+            <Button secondary onClick={() => this.toggleDimmer(false)}>
+              {TEXT.DEFAULT.CLOSE}
+            </Button>
+          </Menu.Item>
+        </Sidebar>
+        <Sidebar.Pusher>
+          <Layout content={() => (<ReactMarkdown source={this.state.md} />)} />
+          <Menu inverted>
+            <Menu.Item position="right">
+              <Button secondary onClick={() => this.toggleDimmer(false)}>
+                {TEXT.DEFAULT.CLOSE}
+              </Button>
+            </Menu.Item>
+          </Menu>
+        </Sidebar.Pusher>
+      </Dimmer>
     </Segment>;
   }
 }

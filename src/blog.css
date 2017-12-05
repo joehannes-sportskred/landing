@@ -5,3 +5,11 @@
     width: auto;
     height: auto;
     max-width: 67vw; }
+
+.detail.blog.page img {
+  width: auto;
+  height: auto;
+  max-width: 67vw; }
+
+.detail.blog.page .mobile.only .centered.row > div {
+  max-width: calc(100vw - 1rem); }

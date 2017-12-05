@@ -215,6 +215,14 @@ body, #root, main {
     height: auto;
     max-width: 67vw; }
 
+.detail.blog.page img {
+  width: auto;
+  height: auto;
+  max-width: 67vw; }
+
+.detail.blog.page .mobile.only .centered.row > div {
+  max-width: calc(100vw - 1rem); }
+
 .main.tour.flex-container .main.tour.page {
   position: relative;
   padding: 8rm 1rem; }
