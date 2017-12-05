@@ -1,0 +1,7 @@
+.main.blog.flex-container {
+  position: absolute;
+  padding: 8rem 1rem; }
+  .main.blog.flex-container img {
+    width: auto;
+    height: auto;
+    max-width: 67vw; }

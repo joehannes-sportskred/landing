@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Button, Divider, Header, Icon, Menu, Sidebar } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
 
 import Steps from './steps';
 import Logo from './dynamiclogo';

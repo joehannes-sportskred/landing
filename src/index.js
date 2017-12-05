@@ -11,6 +11,7 @@ import registerServiceWorker from './registerServiceWorker';
 import Landing from './components/page/landing';
 import Legal from './components/page/legal';
 import Tour from './components/page/tour';
+import Blog from './components/page/blog';
 
 import reducers from './store/reducers';
 
@@ -29,6 +30,7 @@ ReactDOM.render(
         <Route path="/privacy" component={Legal.PrivacyPolicy} />
         <Route path="/tour/marketeer" component={Tour.Marketeer} />
         <Route path="/tour/athlete" component={Tour.Athlete} />
+        <Route path="/blog" component={Blog} />
       </Switch>
     </Router>
   </Provider>,

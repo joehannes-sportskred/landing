@@ -5,6 +5,12 @@ import SPORTS from './sports';
 import STEPS_MENU from './steps_menu';
 import TOUR_CHART from './tour_chart';
 
+export const MD = {
+  MAIN: {
+    FILE: 'assets/blog/gist.md',
+  },
+};
+
 export const TOUR = {
   BRAND: {
     STEPS: {
