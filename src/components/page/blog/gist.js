@@ -5,7 +5,8 @@ import ReactMarkdown from 'react-markdown';
 
 import Layout from '../../layout/centeredwide';
 
-import MD from '../../../assets/blog/gist.md';
+import MD from '~/blog/gist.md';
+
 import { TEXT } from '../../../assets/data/enum';
 
 class Gist extends React.Component {
@@ -23,13 +24,13 @@ class Gist extends React.Component {
     return class HyperLink extends React.PureComponent {
       render () {
         return (
-          <a href={'/assets/blog/' + this.props.href.toLowerCase()} onClick={(ev) => {
+          <a href={'../../../assets/blog/' + this.props.href.toLowerCase()} onClick={(ev) => {
             ev.stopPropagation();
             ev.preventDefault();
 
             that.setState({
               dimmer: true,
-              md: require('/assets/blog/articles/' + this.props.href.toLowerCase() + '/article.md'),
+              md: require('~/blog/articles/' + this.props.href.toLowerCase() + '/article.md'),
             });
             return false;
           }}>
