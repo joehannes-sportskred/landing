@@ -156,6 +156,11 @@ module.exports = {
             options: {
 
               compact: true,
+              plugins: [
+                ['babel-plugin-root-import', {
+                  'rootPathSuffix': 'public/'
+                }]
+              ],
             },
           },
           // The notation here is somewhat confusing.
