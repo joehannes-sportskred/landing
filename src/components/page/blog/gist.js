@@ -29,7 +29,7 @@ class Gist extends React.Component {
 
             that.setState({
               dimmer: true,
-              md: require('../../../assets/blog/' + this.props.href.toLowerCase()),
+              md: require('/assets/blog/articles/' + this.props.href.toLowerCase() + '/article.md'),
             });
             return false;
           }}>
