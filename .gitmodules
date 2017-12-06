@@ -1,0 +1,3 @@
+[submodule "public/assets/blog"]
+	path = public/assets/blog
+	url = git@bitbucket.org:joehannesports/sk-blog.git
