@@ -1,5 +1,7 @@
 # How Social Media has changed Sports
 
+***
+
 ![athlete of medals](/blog/articles/social_media_changed_sports_dec17/olympics_for_athletes.jpg)
 
 ## How Social Media Has Changed The Olympics For Athletes
@@ -9,6 +11,7 @@
 
 Find out more [here](https://sportskred.us14.list-manage.com/track/click?u=8d530b582c8cdbbf62d91b7d4&id=05adde3564&e=1536c0f4b3).
 
+***
 
 ![athlete and his kid](/blog/articles/social_media_changed_sports_dec17/for_better_or_worse.jpg)
 
@@ -19,6 +22,8 @@ Find out more [here](https://sportskred.us14.list-manage.com/track/click?u=8d530
 - Social media is used as a way to humanize superstars.
 
 Read more [here](https://sportskred.us14.list-manage.com/track/click?u=8d530b582c8cdbbf62d91b7d4&id=4c3cc15b98&e=1536c0f4b3).
+
+***
 
 ![basketball team selfie](/blog/articles/social_media_changed_sports_dec17/impact_on_sports_culture.jpg)
 
