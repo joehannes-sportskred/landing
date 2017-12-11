@@ -13,7 +13,7 @@ Enjoy the read and feel free to give us your [feedback][9a290407]!
 
 ### [Your Social Media Strategy - Nov 2017](social_media_strategy_nov17)
 
-### [Building your own Brand - Nov 2017](building_your_own_brand_nov17)
+### [Building your own Brand - Nov 2017](building_your_brand_nov17)
 
 ### [Mastering Social Media - Nov 2017](mastering_social_media_nov17)
 
