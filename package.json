@@ -108,6 +108,7 @@
     "react-youtube": "^7.5.0",
     "recharts": "^1.0.0-alpha.4",
     "redux": "^3.7.2",
+    "redux-observable": "^0.17.0",
     "redux-undo": "^0.6.1",
     "semantic-ui": "^2.2.13",
     "semantic-ui-react": "^0.75.1",
@@ -117,7 +118,7 @@
     "webpack": "3.5.1",
     "webpack-dev-server": "2.8.2",
     "webpack-manifest-plugin": "1.2.1",
-    "whatwg-fetch": "2.0.3",
+    "whatwg-fetch": "^2.0.3",
     "youtube-thin-wrapper": "^1.0.1"
   },
   "devDependencies": {
