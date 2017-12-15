@@ -491,7 +491,7 @@ export const ACTION = {
     TERMS_OF_USE: 'TERMS OF USE',
     LOG_IN: 'LOG IN',
     RESET: 'RESET',
-    OFF: '',
+    OFF: 'OFF',
     LOADING: 'SPINNER',
   },
   ROLE: 'UPSERT_ROLE',
