@@ -281,6 +281,7 @@ export const TEXT = {
   DEFAULT: {
     CLOSE: 'CLOSE',
     OK: 'OK',
+    LOADING: 'LOADING',
   },
   SLOGAN: {
     TITLE: 'The place for digital sport sponsorships',

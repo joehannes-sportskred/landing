@@ -11,6 +11,7 @@ import SignUp from '../../store/containers/signup';
 import LogIn from '../../store/containers/login';
 import Forgot from '../../store/containers/reset';
 
+import Spinner from './dimmer/spinner';
 import ToU from './legal/termsofuse';
 
 import { ACTION, TEXT } from '../../assets/data/enum';
@@ -73,6 +74,13 @@ const Page = ({ dimmer, onDeactivate }) => (<aside>
       <LayoutWide content={TOU} className="neutral text-color" />
     </Sidebar.Pusher>
   </Dimmer>
+  <Dimmer
+    active={(dimmer === ACTION.DIMMER.LOADING)}
+    page
+  >
+    <LayoutWide content={Spinner} className="neutral text-color" />
+  </Dimmer>
+
 </aside>);
 
 Page.propTypes = {
