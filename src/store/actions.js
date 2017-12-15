@@ -4,6 +4,8 @@ export const setRole = role => ({
   type: ACTION.ROLE,
   role,
 });
+export const APIPayload = ({ type, payload }) => ({ type, payload });
+export const APICall = type => ({ type });
 export const activateDimmer = type => ({ type });
 export const deactivateDimmer = () => ({ type: ACTION.DIMMER.OFF });
 export const enableHistory = () => ({ type: ACTION.UNDO.ENABLE });

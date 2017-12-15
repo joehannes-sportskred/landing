@@ -476,12 +476,23 @@ export const IMG = {
 };
 
 export const ACTION = {
+  API: {
+    LOG_IN: 'API_LOG_IN',
+    SIGN_UP: 'API_SIGN_UP',
+    RESET: 'API_RESET',
+  },
+  API_METHOD: {
+    API_LOG_IN: '/login_check',
+    API_SIGN_UP: '',
+    API_RESET: '',
+  },
   DIMMER: {
     SIGN_UP: 'SIGN UP',
     TERMS_OF_USE: 'TERMS OF USE',
     LOG_IN: 'LOG IN',
     RESET: 'RESET',
     OFF: '',
+    LOADING: 'SPINNER',
   },
   ROLE: 'UPSERT_ROLE',
   UNDO: {

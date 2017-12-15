@@ -34,12 +34,47 @@ const videoStatus = (state = false, action) => {
   return action.type == ACTION.VIDEO.PROVIDER.YOUTUBE ? !!action.status : state;
 }
 
+const api = (state, action) => {
+  switch (action.type) {
+    case ACTION.API.LOG_IN:
+    case ACTION.API.SIGN_UP:
+    case ACTION.API.RESET:
+      return {
+        ...(state || {}),
+        [action.type]: {
+          ...(state && state[action.type] || {}),
+          ...action.payload,
+        }
+      };
+    default:
+      return state || {};
+  }
+}
+
+const response = (state, action) => {
+  switch (action.type) {
+    case ACTION.API_METHOD.LOG_IN:
+    case ACTION.API_METHOD.SIGN_UP:
+    case ACTION.API_METHOD.RESET:
+      return {
+        ...(state || {}),
+        [action.type]: {
+          ...(state && state[action.type] || {}),
+          ...action.response,
+        }
+      };
+    default:
+      return state || {};
+  }
+}
+
 const dimmer = (state = ACTION.DIMMER.OFF, action) => {
   switch (action.type) {
     case ACTION.DIMMER.SIGN_UP:
     case ACTION.DIMMER.LOG_IN:
     case ACTION.DIMMER.RESET:
     case ACTION.DIMMER.TERMS_OF_USE:
+    case ACTION.DIMMER.LOADING:
     case ACTION.DIMMER.OFF:
       return action.type;
     case ACTION.SIDEBAR_MENU.MAIN.WHICH:
@@ -99,6 +134,8 @@ const undoable = (state = false, action) => {
 };
 
 const rootReducer = combineReducers({
+  api,
+  response,
   role,
   dimmer: addHistory(dimmer, { filter: distinctState() }),
   undoable,

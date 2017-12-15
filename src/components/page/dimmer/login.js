@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 
 import { ACTION, TEXT } from '../../../assets/data/enum';
 
-const Page = ({ onSwitch, onActivate, onDeactivate }) => {
+const Page = ({ onSwitch, onActivate, onDeactivate, onPayloadUpdate, apiData }) => {
+  const store = apiData.API_LOG_IN || {};
   const Reset = () => (<Form.Button onClick={() => onSwitch(ACTION.DIMMER.RESET)} content="Forgot?" attached="right" style={{ whiteSpace: 'nowrap' }}/>);
   return (
     <Segment.Group raised>
@@ -17,15 +18,15 @@ const Page = ({ onSwitch, onActivate, onDeactivate }) => {
       <Segment attached>
         <Form>
           <Form.Input label="E-Mail" required width={16}>
-            <Input fluid focus placeholder="E-Mail" iconPosition="left" icon="at" />
+            <Input fluid focus placeholder="E-Mail" iconPosition="left" icon="at" name="username" value={store.username} onChange={ (e, { name, value }) => onPayloadUpdate({ [name]: value })}/>
           </Form.Input>
           <Form.Input label="Password" required width={16}>
             <Input fluid>
-              <Input type="password" placeholder="Password" />
+              <Input type="password" placeholder="Password" name="password" onChange={ (e, { name, value }) => onPayloadUpdate({ [name]: value })}/>
               <Reset />
             </Input>
           </Form.Input>
-          <Form.Checkbox inline toggle label="Remember me" />\
+          <Form.Checkbox inline toggle label="Remember me" name="remember" checked={store.remember || false} onChange={ (e, { name, checked }) => onPayloadUpdate({ [name]: checked })} />
         </Form>
       </Segment>
       <Segment attached textAlign="center">
@@ -52,6 +53,8 @@ Page.propTypes = {
   onSwitch: PropTypes.func.isRequired,
   onActivate: PropTypes.func.isRequired,
   onDeactivate: PropTypes.func.isRequired,
+  onPayloadUpdate: PropTypes.func.isRequired,
+  apiData: PropTypes.any.isRequired,
 }
 
 export default Page;

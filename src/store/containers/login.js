@@ -1,19 +1,27 @@
 import { connect } from 'react-redux';
 
-import { activateDimmer, deactivateDimmer, enableHistory } from '../actions';
-
-import { ACTION } from '../../assets/data/enum';
+import { activateDimmer, deactivateDimmer, APICall, APIPayload, enableHistory } from '../actions';
 
 import Component from '../../components/page/dimmer/login';
 
-const mapStateToProps = (state, ownProps) => ({});
+import { ACTION } from '../../assets/data/enum';
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    apiData: state.api,
+  };
+}
 const mapDispatchToProps = (dispatch, ownProps) => ({
   onSwitch: (action) => {
     dispatch(activateDimmer(action));
     dispatch(enableHistory());
   },
-  onActivate: () => alert('LOGGING IN'),
+  onActivate: () => {
+    dispatch(activateDimmer(ACTION.DIMMER.LOADING));
+    dispatch(APICall(ACTION.API_METHOD.API_LOG_IN));
+  },
   onDeactivate: () => dispatch(deactivateDimmer()),
+  onPayloadUpdate: (payloadPart) => dispatch(APIPayload({ type: ACTION.API.LOG_IN, payload: payloadPart })),
 });
 
 const Container = connect(

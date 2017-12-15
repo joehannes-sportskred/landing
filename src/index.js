@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, Switch } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import { createEpicMiddleware } from 'redux-observable';
 // import { ScrollProvider } from 'react-skroll';
 
 import registerServiceWorker from './registerServiceWorker';
@@ -14,11 +15,13 @@ import Tour from './components/page/tour';
 import Blog from './components/page/blog';
 
 import reducers from './store/reducers';
+import epics from './store/epics';
 
 import './semantic/dist/semantic.css';
 import './App.css';
 
-const store = createStore(reducers);
+const epicMiddleware = createEpicMiddleware(epics);
+const store = createStore(reducers, applyMiddleware(epicMiddleware));
 const history = createBrowserHistory();
 
 ReactDOM.render(
