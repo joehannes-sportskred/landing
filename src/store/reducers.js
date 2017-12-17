@@ -68,7 +68,7 @@ const response = (state, action) => {
   }
 }
 
-const dimmer = (state = ACTION.DIMMER.OFF, action) => {
+const dimmer = (state, action) => {
   switch (action.type) {
     case ACTION.DIMMER.SIGN_UP:
     case ACTION.DIMMER.LOG_IN:
@@ -79,8 +79,10 @@ const dimmer = (state = ACTION.DIMMER.OFF, action) => {
       return action.type;
     case ACTION.SIDEBAR_MENU.MAIN.WHICH:
       return action.status || state;
+    case ACTION.API.ERROR:
+      return ACTION.DIMMER.OFF;
     default:
-      return state;
+      return state || ACTION.DIMMER.OFF;
   }
 };
 

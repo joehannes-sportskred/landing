@@ -481,6 +481,7 @@ export const ACTION = {
     LOG_IN: 'API_LOG_IN',
     SIGN_UP: 'API_SIGN_UP',
     RESET: 'API_RESET',
+    ERROR: 'API_ERROR',
   },
   API_METHOD: {
     API_LOG_IN: '/login_check',
