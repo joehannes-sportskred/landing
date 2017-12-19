@@ -2,10 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, Switch } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import { createEpicMiddleware } from 'redux-observable';
-// import { ScrollProvider } from 'react-skroll';
 
 import registerServiceWorker from './registerServiceWorker';
 
@@ -16,12 +15,20 @@ import Blog from './components/page/blog';
 
 import reducers from './store/reducers';
 import epics from './store/epics';
+import stateHistoryMiddleware from './store/stateHistory';
 
 import './semantic/dist/semantic.css';
 import './App.css';
 
+const composeEnhancers =
+typeof window === 'object' &&
+window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
+window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+  // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
+}) : compose;
+
 const epicMiddleware = createEpicMiddleware(epics);
-const store = createStore(reducers, applyMiddleware(epicMiddleware));
+const store = createStore(reducers, composeEnhancers(applyMiddleware(epicMiddleware, stateHistoryMiddleware)));
 const history = createBrowserHistory();
 
 ReactDOM.render(

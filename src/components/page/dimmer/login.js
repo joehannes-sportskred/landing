@@ -7,6 +7,7 @@ import { ACTION, TEXT } from '../../../assets/data/enum';
 
 const Page = ({ onSwitch, onActivate, onDeactivate, onPayloadUpdate, apiData }) => {
   const store = apiData.API_LOG_IN || {};
+  const validate = () => store.username && store.username.length > 0 && store.password && store.password.length > 0
   const Reset = () => (<Form.Button onClick={() => onSwitch(ACTION.DIMMER.RESET)} content="Forgot?" attached="right" style={{ whiteSpace: 'nowrap' }}/>);
   return (
     <Segment.Group raised>
@@ -33,7 +34,7 @@ const Page = ({ onSwitch, onActivate, onDeactivate, onPayloadUpdate, apiData }) 
         <Button.Group>
           <Button negative onClick={onDeactivate}>{TEXT.LOG_IN.BUTTON.CANCEL}</Button>
           <Button.Or />
-          <Button positive onClick={onActivate}>{TEXT.LOG_IN.BUTTON.OK}</Button>
+          <Button positive onClick={onActivate} disabled={!validate()}>{TEXT.LOG_IN.BUTTON.OK}</Button>
         </Button.Group>
       </Segment>
       <Segment attached="bottom">

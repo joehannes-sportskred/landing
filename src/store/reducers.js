@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import addHistory, { distinctState } from 'redux-undo';
+import { undoHistoryReducer } from 'redux-undo-redo';
 
 import { ACTION, VIDEO } from '../assets/data/enum';
 
@@ -78,9 +78,9 @@ const dimmer = (state, action) => {
     case ACTION.DIMMER.OFF:
       return action.type;
     case ACTION.SIDEBAR_MENU.MAIN.WHICH:
-      return action.status || state;
+      return action.status || state || ACTION.DIMMER.OFF;
     case ACTION.API.ERROR:
-      return ACTION.DIMMER.OFF;
+      return state; //ACTION.DIMMER.OFF;
     default:
       return state || ACTION.DIMMER.OFF;
   }
@@ -139,13 +139,14 @@ const rootReducer = combineReducers({
   api,
   response,
   role,
-  dimmer: addHistory(dimmer, { filter: distinctState() }),
+  dimmer,
   undoable,
   videoStatus,
   video,
   contextfab,
   sidebarMenuMainVisibility,
   sidebarMenuAboutusVisibility,
+  undoHistory: undoHistoryReducer,
 });
 
 export default rootReducer;

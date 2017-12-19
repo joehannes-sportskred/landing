@@ -486,7 +486,7 @@ export const ACTION = {
   API_METHOD: {
     API_LOG_IN: '/login_check',
     API_SIGN_UP: '',
-    API_RESET: '',
+    API_RESET: '/recovery',
   },
   DIMMER: {
     SIGN_UP: 'SIGN UP',

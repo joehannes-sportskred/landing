@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 
 import { ACTION, TEXT } from '../../../assets/data/enum';
 
-const Page = ({ onActivate, onDeactivate }) => {
+const Page = ({ onActivate, onDeactivate, onPayloadUpdate, apiData }) => {
+  const store = apiData.API_RESET || {};
+  const validate = () => store.email && store.email.length > 0
   return (
     <Segment.Group raised>
       <Segment inverted attached="top">
@@ -16,7 +18,7 @@ const Page = ({ onActivate, onDeactivate }) => {
       <Segment attached>
         <Form>
           <Form.Input label="E-Mail" required width={16}>
-            <Input fluid focus placeholder="E-Mail" iconPosition="left" icon="at" />
+            <Input fluid focus name="email" placeholder="E-Mail" iconPosition="left" icon="at" value={store.email} onChange={ (e, { name, value }) => onPayloadUpdate({ [name]: value })}/>
           </Form.Input>
         </Form>
       </Segment>
@@ -24,7 +26,7 @@ const Page = ({ onActivate, onDeactivate }) => {
         <Button.Group>
           <Button negative onClick={onDeactivate}>{TEXT.RESET.BUTTON.CANCEL}</Button>
           <Button.Or />
-          <Button positive onClick={onActivate}>{TEXT.RESET.BUTTON.OK}</Button>
+          <Button positive onClick={onActivate} disabled={!validate()}>{TEXT.RESET.BUTTON.OK}</Button>
         </Button.Group>
       </Segment>
     </Segment.Group>
@@ -34,6 +36,8 @@ const Page = ({ onActivate, onDeactivate }) => {
 Page.propTypes = {
   onActivate: PropTypes.func.isRequired,
   onDeactivate: PropTypes.func.isRequired,
+  onPayloadUpdate: PropTypes.func.isRequired,
+  apiData: PropTypes.any.isRequired,
 }
 
 export default Page;

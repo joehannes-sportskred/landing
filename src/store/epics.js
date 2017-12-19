@@ -4,9 +4,10 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/delay';
 import 'rxjs/add/observable/of';
 
-import { ActionCreators } from 'redux-undo';
+import { actions as stateHistory } from 'redux-undo-redo';
 
 import { combineEpics } from 'redux-observable';
 
@@ -20,12 +21,14 @@ export const APICallEpic = (action$, lightStore) =>
       ajax.post(action.type, typeof lightStore.getState().api !== 'undefined' ? lightStore.getState().api[action.type] : {})
         .map(response => { type: ACTION.API_METHOD[action.type], response })
         .catch(error => {
-          lightStore.dispatch(ActionCreators.jump(-2));
-          return Observable.of({
-          	type: ACTION.API.ERROR,
-          	payload: error.xhr.response,
-          	error: true
-          });
+          console.log(error);
+          return Observable
+            .of({
+            	...stateHistory.undo(),
+            	payload: error.xhr.response,
+            	error: true
+            })
+            .delay(1000);
         })
     )
 

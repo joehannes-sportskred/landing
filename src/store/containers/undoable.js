@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ActionCreators as UndoActionCreators } from 'redux-undo';
 import { connect } from 'react-redux';
+import { actions as stateHistory } from 'redux-undo-redo';
 import { Sidebar, Menu, Icon, Button } from 'semantic-ui-react';
 
 import { disableHistory } from '../actions';
@@ -27,7 +27,7 @@ UndoRedo.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    canUndo: state.dimmer.past.length > 0,
+    canUndo: state.undoHistory.undoQueue.length > 0,
     visible: !!state.undoable,
   };
 };
@@ -35,7 +35,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onUndo: () => {
-      dispatch(UndoActionCreators.undo());
+      dispatch(stateHistory.undo());
       dispatch(disableHistory());
     },
   };

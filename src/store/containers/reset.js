@@ -1,13 +1,24 @@
 import { connect } from 'react-redux';
 
-import { deactivateDimmer } from '../actions';
+import {activateDimmer, deactivateDimmer, APIPayload, APICall } from '../actions';
 
 import Component from '../../components/page/dimmer/reset';
 
-const mapStateToProps = (state, ownProps) => ({});
+import { ACTION } from '../../assets/data/enum';
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    apiData: state.api,
+  };
+}
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  onActivate: () => alert('Password Request Sent'),
+  onActivate: () => {
+    dispatch(activateDimmer(ACTION.DIMMER.LOADING));
+    dispatch(APICall(ACTION.API_METHOD.API_RESET));
+  }
+,
   onDeactivate: () => dispatch(deactivateDimmer()),
+  onPayloadUpdate: (payloadPart) => dispatch(APIPayload({ type: ACTION.API.RESET, payload: payloadPart })),
 });
 
 const Container = connect(

@@ -88,6 +88,11 @@ class Tabs extends React.Component {
       ,
     };
   });
+
+  foo () {
+    console.log("zoo");
+  }
+
   render () {
     const { active, onChangeRole } = this.props;
     return <div>
@@ -171,6 +176,7 @@ Page.propTypes = {
   onSwitch: PropTypes.func.isRequired,
   onActivate: PropTypes.func.isRequired,
   onDeactivate: PropTypes.func.isRequired,
+  onChangeRole: PropTypes.func.isRequired,
 };
 
 export default Page;
