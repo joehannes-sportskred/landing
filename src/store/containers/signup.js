@@ -19,6 +19,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
   onDeactivate: () => dispatch(deactivateDimmer()),
   onChangeRole: role => dispatch(setRole(role)),
+  onPayloadUpdate: (payloadPart) => dispatch(APIPayload({ type: ACTION.API.SIGN_UP, payload: payloadPart })),
 });
 
 const Container = connect(

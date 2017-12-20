@@ -6,16 +6,16 @@ import { Link } from 'react-router-dom';
 import { ACTION, TEXT, ROLE, DATA } from '../../../assets/data/enum';
 
 const FormFields = {
-  TextInput: () => (
-    <Input/>
+  TextInput: ({ placeholder, formName, name, value, onUpdate }) => (
+    <Input placeholder={placeholder} name={name} value={value} onChange={ (e, { name, value }) => onUpdate({ [formName + '[' + name + ']']: value })}/>
   ),
-  PhoneInput: () => (
+  PhoneInput: ({ placeholder, formName, name, value, onUpdate }) => (
     <Input>
       <Form.Field width={8}>
         <Dropdown placeholder="Country code" selection options={DATA.PHONE_EXTENSIONS} style={{ marginTop: '-2px'}} />
       </Form.Field>
       <Form.Field width={8}>
-        <Input/>
+        <Input placeholder={placeholder} name={name[1]} value={value.phone} onChange={ (e, { name, value }) => onUpdate({ [formName + '[' + name + ']']: value })} />
       </Form.Field>
     </Input>
   ),
@@ -25,16 +25,16 @@ const FormFields = {
 };
 
 const Content = {
-  BRAND: () => (
+  BRAND: ({ validated, store, onUpdate}) => (
     <Form>
-      <Form.Field required label="First name" control={FormFields.TextInput} placeholder="First name" />
-      <Form.Field required label="Last name" control={FormFields.TextInput} placeholder="Last name" />
-      <Form.Field required label="Brand" control={FormFields.TextInput} placeholder="Sportilicious" />
-      <Form.Field required label="Telephone" control={FormFields.PhoneInput} placeholder="(0) 123 456 789" />
-      <Form.Field required label="Business Email" control={FormFields.TextInput} icon="at" placeholder="email@address.com" />
+      <Form.Field required label="First name" control={FormFields.TextInput} onUpdate={onUpdate} formName="registration_company_brand_form" name="firstName" value={store.firstName} placeholder="First name" />
+      <Form.Field required label="Last name" control={FormFields.TextInput} placeholder="Last name" onUpdate={onUpdate} formName="registration_company_brand_form" name="lastName" value={store.lastName} />
+      <Form.Field required label="Brand" control={FormFields.TextInput} placeholder="Sportilicious" onUpdate={onUpdate} formName="registration_company_brand_form" name="brand" value={store.brand} />
+      <Form.Field required label="Telephone" control={FormFields.PhoneInput} placeholder="(0) 123 456 789" onUpdate={onUpdate} formName="registration_company_brand_form" name={['phone', 'phoneCode']} value={{ phone: store.phone, phoneCode: store.phoneCode }} />
+      <Form.Field required label="Business Email" control={FormFields.TextInput} icon="at" placeholder="email@address.com" onUpdate={onUpdate} formName="registration_company_brand_form" name="email" value={store.email}/>
     </Form>
   ),
-  TEAM: () => (
+  TEAM: ({ validated, store, onUpdate}) => (
     <Form>
       <Form.Field required label="Team name" control={FormFields.TextInput} placeholder="Team Awesome" />
       <Form.Field required label="First name" control={FormFields.TextInput} placeholder="First name" />
@@ -45,7 +45,7 @@ const Content = {
       <Form.Field required label="Email" control={FormFields.TextInput} icon="at" placeholder="email@address.com" />
     </Form>
   ),
-  ATHLETE: () => (
+  ATHLETE: ({ validated, store, onUpdate}) => (
     <Form>
       <Form.Field required label="First name" control={FormFields.TextInput} placeholder="First name" />
       <Form.Field required label="Last name" control={FormFields.TextInput} placeholder="Last name" />
@@ -54,7 +54,7 @@ const Content = {
       <Form.Field required label="Email" control={FormFields.TextInput} icon="at" placeholder="email@address.com" />
     </Form>
   ),
-  'MARKETING AGENT': () => (
+  'MARKETING AGENT': ({ validated, store, onUpdate}) => (
     <Form>
       <Form.Field required label="First name" control={FormFields.TextInput} placeholder="First name" />
       <Form.Field required label="Last name" control={FormFields.TextInput} placeholder="Last name" />
@@ -63,7 +63,7 @@ const Content = {
       <Form.Field required label="Business Email" control={FormFields.TextInput} icon="at" placeholder="email@address.com" />
     </Form>
   ),
-  'SPORT AGENT': () => (
+  'SPORT AGENT': ({ validated, store, onUpdate}) => (
     <Form>
       <Form.Field required label="First name" control={FormFields.TextInput} placeholder="First name" />
       <Form.Field required label="Last name" control={FormFields.TextInput} placeholder="Last name" />
@@ -83,15 +83,11 @@ class Tabs extends React.Component {
         ROLE[role].title,
       render: () =>
         <Tab.Pane attached={false} active={this.props.active === role ? true : undefined}>
-          <TabContent />
+          <TabContent validated={this.props.validated} store={this.props.store} onUpdate={this.props.onUpdate} />
         </Tab.Pane>
       ,
     };
   });
-
-  foo () {
-    console.log("zoo");
-  }
 
   render () {
     const { active, onChangeRole } = this.props;
@@ -114,9 +110,12 @@ class Tabs extends React.Component {
 Tabs.propTypes = {
   active: PropTypes.string.isRequired,
   onChangeRole: PropTypes.func.isRequired,
+  store: PropTypes.any.isRequired,
+  validated: PropTypes.func.isRequired,
+  onUpdate: PropTypes.func.isRequired,
 };
 
-const Footer = ({ onSwitch, onDeactivate, onActivate }) => (
+const Footer = ({ onSwitch, onDeactivate, onActivate, validated }) => (
   <Segment attached="bottom">
     <Segment.Group>
       <Segment inverted attached>
@@ -132,7 +131,7 @@ const Footer = ({ onSwitch, onDeactivate, onActivate }) => (
         <Button.Group>
           <Button negative onClick={onDeactivate}>{TEXT.SIGN_UP.BUTTON.CANCEL}</Button>
           <Button.Or />
-          <Button positive onClick={() => onActivate()}>{TEXT.SIGN_UP.BUTTON.OK}</Button>
+          <Button positive onClick={() => onActivate()} disabled={!validated}>{TEXT.SIGN_UP.BUTTON.OK}</Button>
         </Button.Group>
       </Segment>
       <Segment inverted attached="bottom">
@@ -152,31 +151,37 @@ Footer.propTypes = {
   onSwitch: PropTypes.func.isRequired,
   onActivate: PropTypes.func.isRequired,
   onDeactivate: PropTypes.func.isRequired,
+  validated: PropTypes.bool.isRequired,
 };
 
-const Page = ({ active, onSwitch, onActivate, onDeactivate, onChangeRole }) => {
+const Page = ({ active, apiData, onSwitch, onActivate, onDeactivate, onChangeRole, onPayloadUpdate }) => {
   if (active === 'about') {
     onChangeRole(ROLE.BRAND.name);
   }
+  let validationTruthy = false;
+  const store = apiData.API_SIGN_UP;
+  const validated = (truthy) => { validationTruthy = truthy; }
   return (
     <Segment.Group>
       <Segment inverted attached="top" textAlign="center">
         <Header as="h1" sub>{TEXT.SIGN_UP.TITLE}</Header>
       </Segment>
       <Segment attached>
-        <Tabs active={active} onChangeRole={onChangeRole} />
+        <Tabs active={active} onChangeRole={onChangeRole} store={store} validated={validated} onUpdate={onPayloadUpdate} />
       </Segment>
-      <Footer onSwitch={onSwitch} onDeactivate={onDeactivate} onActivate={onActivate} />
+      <Footer onSwitch={onSwitch} onDeactivate={onDeactivate} onActivate={onActivate} validated={validationTruthy}/>
     </Segment.Group>
   );
 };
 
 Page.propTypes = {
   active: PropTypes.string.isRequired,
+  apiData: PropTypes.any.isRequired,
   onSwitch: PropTypes.func.isRequired,
   onActivate: PropTypes.func.isRequired,
   onDeactivate: PropTypes.func.isRequired,
   onChangeRole: PropTypes.func.isRequired,
+  onPayloadUpdate: PropTypes.func.isRequired,
 };
 
 export default Page;
