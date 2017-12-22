@@ -5,17 +5,40 @@ import { Link } from 'react-router-dom';
 
 import { ACTION, TEXT, ROLE, DATA } from '../../../assets/data/enum';
 
+const Validator = ({ validator, onUpdate }, { store, updates } ) => () => {
+  const truthy = Object.keys(store).reduce((acc = true, c) => !!(acc && store[c].length));
+  validator(truthy);
+  onUpdate(updates);
+}
+
+const curry = (fn, salt) => (...args) => fn(...salt, ...args)
+
 const FormFields = {
   TextInput: ({ placeholder, formName, name, value, onUpdate }) => (
-    <Input placeholder={placeholder} name={name} value={value} onChange={ (e, { name, value }) => onUpdate({ [formName + '[' + name + ']']: value })}/>
+    <Input
+      placeholder={placeholder}
+      name={name}
+      value={value}
+      onChange={ (e, { name, value }) => {
+        Validator({ validator: onUpdate.validated, onUpdate: onUpdate.onUpdate }, { store: onUpdate.store, updates: { [formName + '[' + name + ']']: value }})
+      }}
+    />
   ),
   PhoneInput: ({ placeholder, formName, name, value, onUpdate }) => (
     <Input>
       <Form.Field width={8}>
-        <Dropdown placeholder="Country code" selection options={DATA.PHONE_EXTENSIONS} style={{ marginTop: '-2px'}} />
+        <Dropdown
+          placeholder="Country code" name={name[0]} value={value.phoneCode} selection options={DATA.PHONE_EXTENSIONS} style={{ marginTop: '-2px'}}
+          onChange={ (e, { name, value }) => {
+            Validator({ validator: onUpdate.validated, onUpdate: onUpdate.onUpdate }, {store: onUpdate.store, updates: {[formName + '[' + name + ']']: value }})
+          }}
+        />
       </Form.Field>
       <Form.Field width={8}>
-        <Input placeholder={placeholder} name={name[1]} value={value.phone} onChange={ (e, { name, value }) => onUpdate({ [formName + '[' + name + ']']: value })} />
+        <Input
+          placeholder={placeholder} name={name[1]} value={value.phone}
+          onChange={ (e, { name, value }) => onUpdate({ [formName + '[' + name + ']']: value })}
+        />
       </Form.Field>
     </Input>
   ),
@@ -27,11 +50,26 @@ const FormFields = {
 const Content = {
   BRAND: ({ validated, store, onUpdate}) => (
     <Form>
-      <Form.Field required label="First name" control={FormFields.TextInput} onUpdate={onUpdate} formName="registration_company_brand_form" name="firstName" value={store.firstName} placeholder="First name" />
-      <Form.Field required label="Last name" control={FormFields.TextInput} placeholder="Last name" onUpdate={onUpdate} formName="registration_company_brand_form" name="lastName" value={store.lastName} />
-      <Form.Field required label="Brand" control={FormFields.TextInput} placeholder="Sportilicious" onUpdate={onUpdate} formName="registration_company_brand_form" name="brand" value={store.brand} />
-      <Form.Field required label="Telephone" control={FormFields.PhoneInput} placeholder="(0) 123 456 789" onUpdate={onUpdate} formName="registration_company_brand_form" name={['phone', 'phoneCode']} value={{ phone: store.phone, phoneCode: store.phoneCode }} />
-      <Form.Field required label="Business Email" control={FormFields.TextInput} icon="at" placeholder="email@address.com" onUpdate={onUpdate} formName="registration_company_brand_form" name="email" value={store.email}/>
+      <Form.Field
+        required label="First name" control={FormFields.TextInput} placeholder="First name"
+        onUpdate={{ validated: curry(validated, [store.firstName]), onUpdate, store }}
+        formName="registration_company_brand_form" name="firstName" value={store.firstName} />
+      <Form.Field
+        required label="Last name" control={FormFields.TextInput} placeholder="Last name"
+        onUpdate={{ validated: curry(validated, [store.lastName]), onUpdate, store }}
+        formName="registration_company_brand_form" name="lastName" value={store.lastName} />
+      <Form.Field
+        required label="Brand" control={FormFields.TextInput} placeholder="Sportilicious"
+        onUpdate={{ validated: curry(validated, [store.brand]), onUpdate, store }}
+        formName="registration_company_brand_form" name="brand" value={store.brand} />
+      <Form.Field
+        required label="Telephone" control={FormFields.PhoneInput} placeholder="(0) 123 456 789"
+        onUpdate={{ validated: curry(validated, [store.phone, store.phoneCode]), onUpdate, store }}
+        formName="registration_company_brand_form" name={['phone', 'phoneCode']} value={{ phone: store.phone, phoneCode: store.phoneCode }} />
+      <Form.Field
+        required label="Business Email" control={FormFields.TextInput} icon="at" placeholder="email@address.com"
+        onUpdate={{ validated: curry(validated, [store.email]), onUpdate, store }}
+        formName="registration_company_brand_form" name="email" value={store.email}/>
     </Form>
   ),
   TEAM: ({ validated, store, onUpdate}) => (
