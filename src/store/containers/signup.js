@@ -1,8 +1,10 @@
 import { connect } from 'react-redux';
 
-import { setRole, activateDimmer, deactivateDimmer, enableHistory } from '../actions';
+import { setRole, activateDimmer, deactivateDimmer, enableHistory, APIPayload } from '../actions';
 
 import Component from '../../components/page/dimmer/signup';
+
+import { ACTION } from '../../assets/data/enum';
 
 const mapStateToProps = (state, ownProps) => ({
   active: state.role || 'about',
