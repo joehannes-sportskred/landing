@@ -10,9 +10,9 @@ const Validator = ({ validator, onUpdate }, { store, updates } ) => {
   onUpdate(updates);
 }
 
-const curry = (fn, formName) => (store) => {
-  const s = Object.keys(store).filter(key => !!store.match(formName));
-  const truthy = s.length > 0 ? s.reduce((acc, c) => !!(acc && store[c].length), true) : false;
+const curry = (fn, formName, formLen) => (store) => {
+  const s = Object.keys(store).filter(key => !!key.match(formName));
+  const truthy = s.length == formLen ? s.reduce((acc, c) => !!(acc && store[c].length > 0), true) : false;
   fn(truthy);
 };
 
@@ -58,153 +58,204 @@ const FormFields = {
   ),
 };
 
-const Content = {
-  BRAND: ({ validated, store, onUpdate, formName = 'registration_company_brand_form' }) => (
-    <Form>
-      <Form.Field
-        required label="First name" control={FormFields.TextInput} placeholder="First name"
-        onUpdate={{ validated: curry(validated, formName), onUpdate, store }}
-        formName={formName} name="firstName" value={store[`${formName}[firstName]`]} />
-      <Form.Field
-        required label="Last name" control={FormFields.TextInput} placeholder="Last name"
-        onUpdate={{ validated: curry(validated, formName), onUpdate, store }}
-        formName={formName} name="lastName" value={store[`${formName}[lastName]`]} />
-      <Form.Field
-        required label="Brand" control={FormFields.TextInput} placeholder="Sportilicious"
-        onUpdate={{ validated: curry(validated, formName), onUpdate, store }}
-        formName={formName} name="brand" value={store[`${formName}[brand]`]} />
-      <Form.Field
-        required label="Telephone" control={FormFields.PhoneInput} placeholder="(0) 123 456 789"
-        onUpdate={{ validated: curry(validated, formName), onUpdate, store }}
-        formName={formName} name={['phone', 'phoneCode']} value={{ phone: store[`${formName}[phone]`], phoneCode: store[`${formName}[phoneCode]`] }} />
-      <Form.Field
-        required label="Business Email" control={FormFields.TextInput} icon="at" placeholder="email@address.com"
-        onUpdate={{ validated: curry(validated, formName), onUpdate, store }}
-        formName={formName} name="email" value={store[`${formName}[email]`]}/>
-    </Form>
-  ),
-  TEAM: ({ validated, store, onUpdate, formName = 'registration_team_form'}) => (
-    <Form>
-      <Form.Field
-        required label="Team name" control={FormFields.TextInput} placeholder="Team Awesome"
-        onUpdate={{ validated: curry(validated, formName), onUpdate, store }}
-        formName={formName} name="team" value={store[`${formName}[team]`]}
-      />
-      <Form.Field
-        required label="First name" control={FormFields.TextInput} placeholder="First name"
-        onUpdate={{ validated: curry(validated, formName), onUpdate, store }}
-        formName={formName} name="firstName" value={store[`${formName}[firstName]`]}
-      />
-      <Form.Field
-        required label="Last name" control={FormFields.TextInput} placeholder="Last name"
-        onUpdate={{ validated: curry(validated, formName), onUpdate, store }}
-        formName={formName} name="lastName" value={store[`${formName}[lastName]`]}
-      />
-      <Form.Field
-        required label="Your role" control={FormFields.TextInput} placeholder="Captain"
-        onUpdate={{ validated: curry(validated, formName), onUpdate, store }}
-        formName={formName} name="roleInTeam" value={store[`${formName}[roleInTeam]`]}
-      />
-      <Form.Field
-        required label="Sport" control={FormFields.MultiSportsInput} placeholder="Select your sports ..."
-        onUpdate={{ validated: curry(validated, formName), onUpdate, store }}
-        formName={formName} name="sports" value={store[`${formName}[sports][]`]}
-      />
-      <Form.Field
-        required label="Telephone" control={FormFields.PhoneInput} placeholder="(0) 123 456 789"
-        onUpdate={{ validated: curry(validated, formName), onUpdate, store }}
-        formName={formName} name={['phone', 'phoneCode']} value={{ phone: store[`${formName}[phone]`], phoneCode: store[`${formName}[phoneCode]`] }}
+class Update extends React.Component {
+  on (validated, formName, nrOfFormElements, onUpdate, store) {
+    return { validated: curry(validated, formName, nrOfFormElements), onUpdate, store };
+  } // 6,8,6,6,5
+}
 
-      />
-      <Form.Field
-        required label="Email" control={FormFields.TextInput} icon="at" placeholder="email@address.com"
-        onUpdate={{ validated: curry(validated, formName), onUpdate, store }}
-        formName={formName} name="email" value={ store[`${formName}[email]`] }
-      />
-    </Form>
-  ),
-  ATHLETE: ({ validated, store, onUpdate, formName = 'registration_athlete_form'}) => (
-    <Form>
-      <Form.Field
-        required label="First name" control={FormFields.TextInput} placeholder="First name"
-        onUpdate={{ validated: curry(validated, formName), onUpdate, store }}
-        formName={formName} name="firstName" value={ store[`${formName}[firstName]`] }
-      />
-      <Form.Field
-        required label="Last name" control={FormFields.TextInput} placeholder="Last name"
-        onUpdate={{ validated: curry(validated, formName), onUpdate, store }}
-        formName={formName} name="lastName" value={ store[`${formName}[lastName]`] }
-      />
-      <Form.Field
-        required label="Sport" control={FormFields.MultiSportsInput} placeholder="Select your sports ..."
-        onUpdate={{ validated: curry(validated, formName), onUpdate, store }}
-        formName={formName} name="sports" value={ store[`${formName}[sports][]`] }
-      />
-      <Form.Field
-        required label="Telephone" control={FormFields.PhoneInput} placeholder="(0) 123 456 789"
-        onUpdate={{ validated: curry(validated, formName), onUpdate, store }}
-        formName={formName} name={['phone', 'phoneCode']} value={{ phone: store[`${formName}[phone]`], phoneCode: store[`${formName}[phoneCode]`] }}
-      />
-      <Form.Field
-        required label="Email" control={FormFields.TextInput} icon="at" placeholder="email@address.com"
-        onUpdate={{ validated: curry(validated, formName), onUpdate, store }}
-        formName={formName} name="email" value={ store[`${formName}[email]`] }
-      />
-    </Form>
-  ),
-  'MARKETING AGENT': ({ validated, store, onUpdate, formName = 'registration_media_agent_form' }) => (
-    <Form>
-      <Form.Field
-        required label="First name" control={FormFields.TextInput} placeholder="First name"
-        onUpdate={{ validated: curry(validated, formName), onUpdate, store }}
-        formName={formName} name="firstName" value={ store[`${formName}[firstName]`] }
-      />
-      <Form.Field
-        required label="Last name" control={FormFields.TextInput} placeholder="Last name"
-        onUpdate={{ validated: curry(validated, formName), onUpdate, store }}
-        formName={formName} name="lastName" value={ store[`${formName}[lastName]`] }
-      />
-      <Form.Field
-        required label="Company/Agency" control={FormFields.TextInput} placeholder="Sportilicious"
-        onUpdate={{ validated: curry(validated, formName), onUpdate, store }}
-        formName={formName} name="brand" value={ store[`${formName}[brand]`] }
-      />
-      <Form.Field
-        required label="Telephone" control={FormFields.PhoneInput} placeholder="(0) 123 456 789"
-        onUpdate={{ validated: curry(validated, formName), onUpdate, store }}
-        formName={formName} name={['phone', 'phoneCode']} value={{ phone: store[`${formName}[phone]`], phoneCode: store[`${formName}[phoneCode]`] }}
-      />
-      <Form.Field
-        required label="Business Email" control={FormFields.TextInput} icon="at" placeholder="email@address.com"
-        onUpdate={{ validated: curry(validated, formName), onUpdate, store }}
-        formName={formName} name="email" value={ store[`${formName}[email]`] }
-      />
-    </Form>
-  ),
-  'SPORT AGENT': ({ validated, store, onUpdate, formName = 'registration_sport_agent_form'}) => (
-    <Form>
-      <Form.Field
-        required label="First name" control={FormFields.TextInput} placeholder="First name"
-        onUpdate={{ validated: curry(validated, formName), onUpdate, store }}
-        formName={formName} name="firstName" value={ store[`${formName}[firstName]`] }
-      />
-      <Form.Field
-        required label="Last name" control={FormFields.TextInput} placeholder="Last name"
-        onUpdate={{ validated: curry(validated, formName), onUpdate, store }}
-        formName={formName} name="lastName" value={ store[`${formName}[lastName]`] }
-      />
-      <Form.Field
-        required label="Telephone" control={FormFields.PhoneInput} placeholder="(0) 123 456 789"
-        onUpdate={{ validated: curry(validated, formName), onUpdate, store }}
-        formName={formName} name={['phone', 'phoneCode']} value={{ phone: store[`${formName}[phone]`], phoneCode: store[`${formName}[phoneCode]`] }}
-      />
-      <Form.Field
-        required label="Email" control={FormFields.TextInput} icon="at" placeholder="email@address.com"
-        onUpdate={{ validated: curry(validated, formName), onUpdate, store }}
-        formName={formName} name="email" value={ store[`${formName}[email]`] }
-      />
-    </Form>
-  ),
+const Content = {
+  BRAND: class Brand extends Update {
+    on () {
+      const { validated, store, onUpdate } = this.props;
+      return super.on(validated, 'registration_company_brand_form', 6, onUpdate, store);
+    }
+    render () {
+      const { store } = this.props;
+      const formName = 'registration_company_brand_form';
+
+      return <Form>
+        <Form.Field
+          required label="First name" control={FormFields.TextInput} placeholder="First name"
+          onUpdate={this.on()}
+          formName={formName} name="firstName" value={store[`${formName}[firstName]`]} />
+        <Form.Field
+          required label="Last name" control={FormFields.TextInput} placeholder="Last name"
+          onUpdate={this.on()}
+          formName={formName} name="lastName" value={store[`${formName}[lastName]`]} />
+        <Form.Field
+          required label="Brand" control={FormFields.TextInput} placeholder="Sportilicious"
+          onUpdate={this.on()}
+          formName={formName} name="brand" value={store[`${formName}[brand]`]} />
+        <Form.Field
+          required label="Telephone" control={FormFields.PhoneInput} placeholder="(0) 123 456 789"
+          onUpdate={this.on()}
+          formName={formName} name={['phone', 'phoneCode']} value={{ phone: store[`${formName}[phone]`], phoneCode: store[`${formName}[phoneCode]`] }} />
+        <Form.Field
+          required label="Business Email" control={FormFields.TextInput} icon="at" placeholder="email@address.com"
+          onUpdate={this.on()}
+          formName={formName} name="email" value={store[`${formName}[email]`]}/>
+      </Form>;
+    }
+  },
+  TEAM: class Team extends Update {
+    on () {
+      const { validated, store, onUpdate } = this.props;
+      return super.on(validated, 'registration_company_brand_form', 8, onUpdate, store);
+    }
+    render () {
+      const { store } = this.props;
+      const formName = 'registration_company_brand_form';
+
+      return <Form>
+        <Form.Field
+          required label="Team name" control={FormFields.TextInput} placeholder="Team Awesome"
+          onUpdate={this.on()}
+          formName={formName} name="team" value={store[`${formName}[team]`]}
+        />
+        <Form.Field
+          required label="First name" control={FormFields.TextInput} placeholder="First name"
+          onUpdate={this.on()}
+          formName={formName} name="firstName" value={store[`${formName}[firstName]`]}
+        />
+        <Form.Field
+          required label="Last name" control={FormFields.TextInput} placeholder="Last name"
+          onUpdate={this.on()}
+          formName={formName} name="lastName" value={store[`${formName}[lastName]`]}
+        />
+        <Form.Field
+          required label="Your role" control={FormFields.TextInput} placeholder="Captain"
+          onUpdate={this.on()}
+          formName={formName} name="roleInTeam" value={store[`${formName}[roleInTeam]`]}
+        />
+        <Form.Field
+          required label="Sport" control={FormFields.MultiSportsInput} placeholder="Select your sports ..."
+          onUpdate={this.on()}
+          formName={formName} name="sports" value={store[`${formName}[sports][]`]}
+        />
+        <Form.Field
+          required label="Telephone" control={FormFields.PhoneInput} placeholder="(0) 123 456 789"
+          onUpdate={this.on()}
+          formName={formName} name={['phone', 'phoneCode']} value={{ phone: store[`${formName}[phone]`], phoneCode: store[`${formName}[phoneCode]`] }}
+
+        />
+        <Form.Field
+          required label="Email" control={FormFields.TextInput} icon="at" placeholder="email@address.com"
+          onUpdate={this.on()}
+          formName={formName} name="email" value={ store[`${formName}[email]`] }
+        />
+      </Form>;
+    }
+  },
+  ATHLETE: class Athlete extends Update {
+    on () {
+      const { validated, store, onUpdate } = this.props;
+      return super.on(validated, 'registration_company_brand_form', 6, onUpdate, store);
+    }
+    render () {
+      const { store } = this.props;
+      const formName = 'registration_company_brand_form';
+
+      return <Form>
+        <Form.Field
+          required label="First name" control={FormFields.TextInput} placeholder="First name"
+          onUpdate={this.on()}
+          formName={formName} name="firstName" value={ store[`${formName}[firstName]`] }
+        />
+        <Form.Field
+          required label="Last name" control={FormFields.TextInput} placeholder="Last name"
+          onUpdate={this.on()}
+          formName={formName} name="lastName" value={ store[`${formName}[lastName]`] }
+        />
+        <Form.Field
+          required label="Sport" control={FormFields.MultiSportsInput} placeholder="Select your sports ..."
+          onUpdate={this.on()}
+          formName={formName} name="sports" value={ store[`${formName}[sports][]`] }
+        />
+        <Form.Field
+          required label="Telephone" control={FormFields.PhoneInput} placeholder="(0) 123 456 789"
+          onUpdate={this.on()}
+          formName={formName} name={['phone', 'phoneCode']} value={{ phone: store[`${formName}[phone]`], phoneCode: store[`${formName}[phoneCode]`] }}
+        />
+        <Form.Field
+          required label="Email" control={FormFields.TextInput} icon="at" placeholder="email@address.com"
+          onUpdate={this.on()}
+          formName={formName} name="email" value={ store[`${formName}[email]`] }
+        />
+      </Form>;
+    }
+  },
+  'MARKETING AGENT': class MarketingAgent extends Update {
+    on () {
+      const { validated, store, onUpdate } = this.props;
+      return super.on(validated, 'registration_company_brand_form', 6, onUpdate, store);
+    }
+    render () {
+      const { store } = this.props;
+      const formName = 'registration_company_brand_form';
+
+      return <Form>
+        <Form.Field
+          required label="First name" control={FormFields.TextInput} placeholder="First name"
+          onUpdate={this.on()}
+          formName={formName} name="firstName" value={ store[`${formName}[firstName]`] }
+        />
+        <Form.Field
+          required label="Last name" control={FormFields.TextInput} placeholder="Last name"
+          onUpdate={this.on()}
+          formName={formName} name="lastName" value={ store[`${formName}[lastName]`] }
+        />
+        <Form.Field
+          required label="Company/Agency" control={FormFields.TextInput} placeholder="Sportilicious"
+          onUpdate={this.on()}
+          formName={formName} name="brand" value={ store[`${formName}[brand]`] }
+        />
+        <Form.Field
+          required label="Telephone" control={FormFields.PhoneInput} placeholder="(0) 123 456 789"
+          onUpdate={this.on()}
+          formName={formName} name={['phone', 'phoneCode']} value={{ phone: store[`${formName}[phone]`], phoneCode: store[`${formName}[phoneCode]`] }}
+        />
+        <Form.Field
+          required label="Business Email" control={FormFields.TextInput} icon="at" placeholder="email@address.com"
+          onUpdate={this.on()}
+          formName={formName} name="email" value={ store[`${formName}[email]`] }
+        />
+      </Form>;
+    }
+  },
+  'SPORT AGENT': class SportAgent extends Update {
+    on () {
+      const { validated, store, onUpdate } = this.props;
+      return super.on(validated, 'registration_company_brand_form', 5, onUpdate, store);
+    }
+    render () {
+      const { store } = this.props;
+      const formName = 'registration_company_brand_form';
+
+      return <Form>
+        <Form.Field
+          required label="First name" control={FormFields.TextInput} placeholder="First name"
+          onUpdate={this.on()}
+          formName={formName} name="firstName" value={ store[`${formName}[firstName]`] }
+        />
+        <Form.Field
+          required label="Last name" control={FormFields.TextInput} placeholder="Last name"
+          onUpdate={this.on()}
+          formName={formName} name="lastName" value={ store[`${formName}[lastName]`] }
+        />
+        <Form.Field
+          required label="Telephone" control={FormFields.PhoneInput} placeholder="(0) 123 456 789"
+          onUpdate={this.on()}
+          formName={formName} name={['phone', 'phoneCode']} value={{ phone: store[`${formName}[phone]`], phoneCode: store[`${formName}[phoneCode]`] }}
+        />
+        <Form.Field
+          required label="Email" control={FormFields.TextInput} icon="at" placeholder="email@address.com"
+          onUpdate={this.on()}
+          formName={formName} name="email" value={ store[`${formName}[email]`] }
+        />
+      </Form>
+    }
+  },
 };
 
 class Tabs extends React.Component {
@@ -265,7 +316,7 @@ const Footer = ({ onSwitch, onDeactivate, onActivate, validated }) => (
         <Button.Group>
           <Button negative onClick={onDeactivate}>{TEXT.SIGN_UP.BUTTON.CANCEL}</Button>
           <Button.Or />
-          <Button positive onClick={() => onActivate()} disabled={!validated}>{TEXT.SIGN_UP.BUTTON.OK}</Button>
+          <Button positive onClick={() => onActivate()} disabled={!validated()}>{TEXT.SIGN_UP.BUTTON.OK}</Button>
         </Button.Group>
       </Segment>
       <Segment inverted attached="bottom">
@@ -285,27 +336,36 @@ Footer.propTypes = {
   onSwitch: PropTypes.func.isRequired,
   onActivate: PropTypes.func.isRequired,
   onDeactivate: PropTypes.func.isRequired,
-  validated: PropTypes.bool.isRequired,
+  validated: PropTypes.func.isRequired,
 };
 
-const Page = ({ active, apiData, onSwitch, onActivate, onDeactivate, onChangeRole, onPayloadUpdate }) => {
-  if (active === 'about') {
-    onChangeRole(ROLE.BRAND.name);
+class Page extends React.Component {
+  validationTruthy = false;
+  validated = (truthy = this.validationTruthy) => {
+    return (this.validationTruthy = truthy);
   }
-  let validationTruthy = false;
-  const store = apiData[ACTION.API.SIGN_UP] || {};
-  const validated = (truthy) => { validationTruthy = truthy; }
-  return (
-    <Segment.Group>
+
+  componentWillMount() {
+    if (this.props.active === 'about') {
+      this.props.onChangeRole(ROLE.BRAND.name);
+    }
+  }
+
+  render () {
+    const { active, apiData, onSwitch, onActivate, onDeactivate, onChangeRole, onPayloadUpdate } = this.props;
+    const store = apiData[ACTION.API.SIGN_UP] || {};
+    const validated = this.validated;
+
+    return <Segment.Group>
       <Segment inverted attached="top" textAlign="center">
         <Header as="h1" sub>{TEXT.SIGN_UP.TITLE}</Header>
       </Segment>
       <Segment attached>
         <Tabs active={active} onChangeRole={onChangeRole} store={store} validated={validated} onUpdate={onPayloadUpdate} />
       </Segment>
-      <Footer onSwitch={onSwitch} onDeactivate={onDeactivate} onActivate={onActivate} validated={validationTruthy}/>
-    </Segment.Group>
-  );
+      <Footer onSwitch={onSwitch} onDeactivate={onDeactivate} onActivate={onActivate} validated={validated}/>
+    </Segment.Group>;
+  }
 };
 
 Page.propTypes = {

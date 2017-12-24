@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { setRole, activateDimmer, deactivateDimmer, enableHistory, APIPayload } from '../actions';
+import { setRole, activateDimmer, deactivateDimmer, enableHistory, APIPayload, APICall } from '../actions';
 
 import Component from '../../components/page/dimmer/signup';
 
