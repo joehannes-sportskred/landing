@@ -19,9 +19,7 @@ const curry = (fn, formName, formLen) => (store) => {
 const FormFields = {
   TextInput: ({ placeholder, formName, name, value, onUpdate }) => (
     <Input
-      placeholder={placeholder}
-      name={name}
-      value={value}
+      placeholder={placeholder} name={name} value={value}
       onChange={ (e, { name, value }) => {
         Validator({ validator: onUpdate.validated, onUpdate: onUpdate.onUpdate }, { store: onUpdate.store, updates: { [`${formName}[${name}]`]: value }})
       }}
@@ -47,7 +45,7 @@ const FormFields = {
       </Form.Field>
     </Input>
   ),
-  MultiSportsInput: ({ placeholder, formName, name, value, onUpdate }) => (
+  MultiSportsInput: ({ placeholder, formName, name, value = [], onUpdate }) => (
     <Dropdown
       placeholder={ placeholder || 'Type ahead ...'} value={value}
       fluid multiple search selection options={DATA.SPORTS}
@@ -66,13 +64,15 @@ class Update extends React.Component {
 
 const Content = {
   BRAND: class Brand extends Update {
+    formName = 'registration_company_brand_form';
+
     on () {
       const { validated, store, onUpdate } = this.props;
-      return super.on(validated, 'registration_company_brand_form', 6, onUpdate, store);
+      return super.on(validated, this.formName, 6, onUpdate, store);
     }
     render () {
       const { store } = this.props;
-      const formName = 'registration_company_brand_form';
+      const formName = this.formName;
 
       return <Form>
         <Form.Field
@@ -99,13 +99,15 @@ const Content = {
     }
   },
   TEAM: class Team extends Update {
+    formName = 'registration_team_form';
+
     on () {
       const { validated, store, onUpdate } = this.props;
-      return super.on(validated, 'registration_company_brand_form', 8, onUpdate, store);
+      return super.on(validated, this.formName, 8, onUpdate, store);
     }
     render () {
       const { store } = this.props;
-      const formName = 'registration_company_brand_form';
+      const formName = this.formName;
 
       return <Form>
         <Form.Field
@@ -148,13 +150,15 @@ const Content = {
     }
   },
   ATHLETE: class Athlete extends Update {
+    formName = 'registration_athlete_form';
+
     on () {
       const { validated, store, onUpdate } = this.props;
-      return super.on(validated, 'registration_company_brand_form', 6, onUpdate, store);
+      return super.on(validated, this.formName, 6, onUpdate, store);
     }
     render () {
       const { store } = this.props;
-      const formName = 'registration_company_brand_form';
+      const formName = this.formName;
 
       return <Form>
         <Form.Field
@@ -185,14 +189,16 @@ const Content = {
       </Form>;
     }
   },
-  'MARKETING AGENT': class MarketingAgent extends Update {
+  'MEDIA AGENT': class MarketingAgent extends Update {
+    formName = 'registration_media_agent_form';
+
     on () {
       const { validated, store, onUpdate } = this.props;
-      return super.on(validated, 'registration_company_brand_form', 6, onUpdate, store);
+      return super.on(validated, this.formName, 6, onUpdate, store);
     }
     render () {
       const { store } = this.props;
-      const formName = 'registration_company_brand_form';
+      const formName = this.formName;
 
       return <Form>
         <Form.Field
@@ -224,13 +230,15 @@ const Content = {
     }
   },
   'SPORT AGENT': class SportAgent extends Update {
+    formName = 'registration_sport_agent_form';
+
     on () {
       const { validated, store, onUpdate } = this.props;
-      return super.on(validated, 'registration_company_brand_form', 5, onUpdate, store);
+      return super.on(validated, this.formName, 5, onUpdate, store);
     }
     render () {
       const { store } = this.props;
-      const formName = 'registration_company_brand_form';
+      const formName = this.formName;
 
       return <Form>
         <Form.Field
@@ -274,11 +282,16 @@ class Tabs extends React.Component {
     };
   });
 
+  componentWillMount() {
+    if (this.props.active === 'about') {
+      this.props.onChangeRole(ROLE.BRAND.name);
+    }
+  }
   render () {
     const { active, onChangeRole } = this.props;
     return <div>
       <div style={{ color: 'black', lineHeight: '1.8rem' }} className="shiny black text">
-        {(window.matchMedia("(max-width: 767px)").matches) ? "as ... " + this.props.active : null }
+        {(window.matchMedia("(max-width: 767px)").matches) ? "as ... " + Object.entries(ROLE).filter(r => (r[0] == this.props.active))[0][1].title : null }
       </div>
       <Tab
         renderActiveOnly
@@ -345,12 +358,6 @@ class Page extends React.Component {
     return (this.validationTruthy = truthy);
   }
 
-  componentWillMount() {
-    if (this.props.active === 'about') {
-      this.props.onChangeRole(ROLE.BRAND.name);
-    }
-  }
-
   render () {
     const { active, apiData, onSwitch, onActivate, onDeactivate, onChangeRole, onPayloadUpdate } = this.props;
     const store = apiData[ACTION.API.SIGN_UP] || {};
@@ -361,9 +368,12 @@ class Page extends React.Component {
         <Header as="h1" sub>{TEXT.SIGN_UP.TITLE}</Header>
       </Segment>
       <Segment attached>
-        <Tabs active={active} onChangeRole={onChangeRole} store={store} validated={validated} onUpdate={onPayloadUpdate} />
+        <Tabs
+          active={active}
+          onChangeRole={onChangeRole} onUpdate={onPayloadUpdate}
+          store={store} validated={validated} />
       </Segment>
-      <Footer onSwitch={onSwitch} onDeactivate={onDeactivate} onActivate={onActivate} validated={validated}/>
+      <Footer onSwitch={onSwitch} onDeactivate={onDeactivate} onActivate={() => onActivate(active)} validated={validated}/>
     </Segment.Group>;
   }
 };

@@ -1,14 +1,14 @@
 import { combineReducers } from 'redux';
 import { undoHistoryReducer } from 'redux-undo-redo';
 
-import { ACTION, VIDEO } from '../assets/data/enum';
+import { ACTION, VIDEO, ROLE } from '../assets/data/enum';
 
-const role = (state = 'about', action) => {
+const role = (state, action) => {
   switch (action.type) {
     case ACTION.ROLE:
       return action.role;
     default:
-      return state;
+      return state || ROLE.BRAND.name;
   }
 };
 

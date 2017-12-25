@@ -485,7 +485,7 @@ export const ACTION = {
   },
   API_METHOD: {
     API_LOG_IN: '/login_check',
-    API_SIGN_UP: '',
+    API_SIGN_UP: '/registration',
     API_RESET: '/recovery',
   },
   DIMMER: {
@@ -527,8 +527,8 @@ export const ROLE = {
     title: 'Brand',
     icon: 'trademark',
   },
-  'MARKETING AGENT': {
-    name: 'MARKETING AGENT',
+  'MEDIA AGENT': {
+    name: 'MEDIA AGENT',
     title: 'Marketing Agent',
     icon: 'vcard',
   },

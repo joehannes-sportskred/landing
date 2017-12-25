@@ -15,9 +15,9 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(activateDimmer(action));
     dispatch(enableHistory());
   },
-  onActivate: () => {
+  onActivate: (form) => {
     dispatch(activateDimmer(ACTION.DIMMER.LOADING));
-    dispatch(APICall(ACTION.API_METHOD.API_SIGN_UP));
+    dispatch(APICall({ type: ACTION.API_METHOD.API_SIGN_UP, subType: form }));
   },
   onDeactivate: () => dispatch(deactivateDimmer()),
   onChangeRole: role => dispatch(setRole(role)),
