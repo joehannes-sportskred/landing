@@ -8,7 +8,7 @@ const role = (state, action) => {
     case ACTION.ROLE:
       return action.role;
     default:
-      return state || ROLE.BRAND.name;
+      return state || ROLE['COMPANY/BRAND'].name;
   }
 };
 

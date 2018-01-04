@@ -17,7 +17,7 @@ export const APICallEpic = (action$, lightStore) =>
   action$
     .ofType(...Object.keys(ACTION.API_METHOD).map(key => ACTION.API_METHOD[key]))
     .mergeMap(action => {
-      const API = action.type + (action.subType ? '/' + action.subType.replace(' ', '_').toLowerCase() : '');
+      const API = action.type + (action.subType ? '/' + action.subType.replace(/( |\/)/, '_').toLowerCase() : '');
       return ajax.post(API, typeof lightStore.getState().api !== 'undefined' ? lightStore.getState().api[Object.entries(ACTION.API_METHOD).filter(pair => pair[1] === action.type)[0][0]] : {})
         .map(response => { type: ACTION.API_METHOD[action.type], response })
         .catch(error => {

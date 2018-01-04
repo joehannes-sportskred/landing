@@ -522,8 +522,8 @@ export const ACTION = {
 };
 
 export const ROLE = {
-  BRAND: {
-    name: 'BRAND',
+  'COMPANY/BRAND': {
+    name: 'COMPANY/BRAND',
     title: 'Brand',
     icon: 'trademark',
   },
