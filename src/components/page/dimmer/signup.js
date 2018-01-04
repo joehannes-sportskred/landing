@@ -47,10 +47,11 @@ const FormFields = {
   ),
   MultiSportsInput: ({ placeholder, formName, name, value = [], onUpdate }) => (
     <Dropdown
-      placeholder={ placeholder || 'Type ahead ...'} value={value}
+      placeholder={ placeholder || 'Type ahead ...'} value={DATA.SPORTS.filter(v => value.indexOf(v.text) !== -1).map(v => v.value)}
       fluid multiple search selection options={DATA.SPORTS}
       onChange={ (e, { name, value }) => {
-        Validator({ validator: onUpdate.validated, onUpdate: onUpdate.onUpdate }, { store: onUpdate.store, updates: { [`${formName}[sports][]`]: value }})
+        const jsonValues = value.map(v => DATA.SPORTS[+v.replace('sports','')].text);
+        Validator({ validator: onUpdate.validated, onUpdate: onUpdate.onUpdate }, { store: onUpdate.store, updates: { [`${formName}[sports][]`]: jsonValues }})
       }}
     />
   ),
@@ -63,7 +64,7 @@ class Update extends React.Component {
 }
 
 const Content = {
-  BRAND: class Brand extends Update {
+  'COMPANY/BRAND': class Brand extends Update {
     formName = 'registration_company_brand_form';
 
     on () {
