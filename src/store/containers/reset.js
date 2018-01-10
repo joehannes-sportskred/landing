@@ -14,7 +14,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => ({
   onActivate: () => {
     dispatch(activateDimmer(ACTION.DIMMER.LOADING));
-    dispatch(APICall({ type: ACTION.API_METHOD.API_RESET }));
+    dispatch(APICall({ type: ACTION.API_METHOD.API_RESET, subType: "" }));
   }
 ,
   onDeactivate: () => dispatch(deactivateDimmer()),

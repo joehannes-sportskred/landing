@@ -5,6 +5,8 @@ import createBrowserHistory from 'history/createBrowserHistory';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import { createEpicMiddleware } from 'redux-observable';
+import { composeWithDevTools } from 'redux-devtools-extension/logOnlyInProduction';
+
 
 import registerServiceWorker from './registerServiceWorker';
 
@@ -20,12 +22,8 @@ import stateHistoryMiddleware from './store/stateHistory';
 import './semantic/dist/semantic.css';
 import './App.css';
 
-const composeEnhancers =
-typeof window === 'object' &&
-window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
-window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
-  // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
-}) : compose;
+const composeEnhancers = composeWithDevTools({});
+
 
 const epicMiddleware = createEpicMiddleware(epics);
 const store = createStore(reducers, composeEnhancers(applyMiddleware(epicMiddleware, stateHistoryMiddleware)));
