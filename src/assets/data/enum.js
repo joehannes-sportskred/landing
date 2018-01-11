@@ -488,6 +488,11 @@ export const ACTION = {
     API_SIGN_UP: '/registration',
     API_RESET: '/recovery',
   },
+  API_RESPONSE: {
+    '/login_check': 'RESPONSE_login',
+    '/registration': 'RESPONSE_registration',
+    '/recovery': 'RESPONSE_recovery',
+  },
   DIMMER: {
     SIGN_UP: 'SIGN UP',
     TERMS_OF_USE: 'TERMS OF USE',

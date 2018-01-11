@@ -18,7 +18,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
   onActivate: () => {
     dispatch(activateDimmer(ACTION.DIMMER.LOADING));
-    dispatch(APICall({ type: ACTION.API_METHOD.API_LOG_IN, subType: "" }));
+    dispatch(APICall({ type: ACTION.API_METHOD.API_LOG_IN, subType: '' }));
   },
   onDeactivate: () => dispatch(deactivateDimmer()),
   onPayloadUpdate: (payloadPart) => dispatch(APIPayload({ type: ACTION.API.LOG_IN, payload: payloadPart })),

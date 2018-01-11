@@ -19,16 +19,16 @@ export const APICallEpic = (action$, lightStore) =>
     .mergeMap(action => {
       const API = action.type + (action.subType ? '/' + action.subType.replace(/( |\/)/, '_').toLowerCase() : '');
       return ajax.post(API, typeof lightStore.getState().api !== 'undefined' ? lightStore.getState().api[Object.entries(ACTION.API_METHOD).filter(pair => pair[1] === action.type)[0][0]] : {})
-        .map(response => { type: ACTION.API_METHOD[action.type], response })
+        .map(response => ({ type: ACTION.API_RESPONSE[action.type], response }))
         .catch(error => {
           console.log(error);
           return Observable
             .of({
-            	...stateHistory.undo(),
-            	payload: error.xhr.response,
-            	error: true
+              ...stateHistory.undo(),
+              payload: error.xhr.response,
+              error: true
             })
-            //.delay(1000);
+            .delay(1000);
         });
     })
 

@@ -53,14 +53,14 @@ const api = (state, action) => {
 
 const response = (state, action) => {
   switch (action.type) {
-    case ACTION.API_METHOD.LOG_IN:
-    case ACTION.API_METHOD.SIGN_UP:
-    case ACTION.API_METHOD.RESET:
+    case ACTION.API_RESPONSE[ACTION.API_METHOD.LOG_IN]:
+    case ACTION.API_RESPONSE[ACTION.API_METHOD.SIGN_UP]:
+    case ACTION.API_RESPONSE[ACTION.API_METHOD.RESET]:
       return {
         ...(state || {}),
         [action.type]: {
           ...(state && state[action.type] || {}),
-          ...action.response,
+          response: { ...action.response },
         }
       };
     default:
@@ -80,7 +80,7 @@ const dimmer = (state, action) => {
     case ACTION.SIDEBAR_MENU.MAIN.WHICH:
       return action.status || state || ACTION.DIMMER.OFF;
     case ACTION.API.ERROR:
-      return state; //ACTION.DIMMER.OFF;
+      return state; // ACTION.DIMMER.OFF;
     default:
       return state || ACTION.DIMMER.OFF;
   }
